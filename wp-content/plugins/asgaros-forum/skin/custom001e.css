@@ -1,0 +1,130 @@
+#af-wrapper #forum-profile .display-name,
+#af-wrapper input[type="checkbox"]:checked:before {
+color: #1e73be !important;
+}
+#af-wrapper .button-normal,
+#af-wrapper .title-element,
+#af-wrapper #forum-header,
+#af-wrapper #profile-header .background-avatar,
+#af-wrapper #profile-navigation,
+#af-wrapper input[type="radio"]:checked:before {
+background-color: #1e73be !important;
+}
+#af-wrapper input[type="radio"]:focus,
+#af-wrapper input[type="checkbox"]:focus,
+#af-wrapper #profile-header {
+border-color: #1e73be !important;
+}
+#af-wrapper .button-normal,
+#af-wrapper .title-element,
+#af-wrapper #forum-navigation a,
+#af-wrapper #forum-navigation-mobile a {
+border-color: #065fe5 !important;
+}
+#af-wrapper #profile-navigation a.active {
+background-color: #065fe5 !important;
+}
+#af-wrapper a,
+#af-wrapper .forum-post-menu a,
+#af-wrapper .post-author .topic-author,
+#af-wrapper #bottom-navigation {
+color: #0059b2 !important;
+}
+#af-wrapper input,
+#af-wrapper .forum-poster,
+#af-wrapper .topic-poster,
+#af-wrapper .member-last-seen,
+#af-wrapper .editor-element,
+#af-wrapper .content-container,
+#af-wrapper .forum-post-header,
+#af-wrapper #statistics-body,
+#af-wrapper .statistics-element,
+#af-wrapper #statistics-online-users,
+#af-wrapper .editor-row,
+#af-wrapper .editor-row-subject,
+#af-wrapper .signature,
+#af-wrapper .post-element,
+#af-wrapper .post-wrapper,
+#af-wrapper .forum-subforums,
+#af-wrapper .uploaded-file img,
+#af-wrapper .action-panel-option,
+#af-wrapper .topic-sticky .topic-poster,
+#af-wrapper #profile-layer,
+#af-wrapper #profile-layer .pages-and-menu:first-of-type,
+#af-wrapper #profile-content,
+#af-wrapper #profile-content .profile-row,
+#af-wrapper .history-element,
+#af-wrapper #memberslist-filter,
+#af-wrapper .content-element,
+#af-wrapper .ad-forum,
+#af-wrapper .ad-topic,
+#af-wrapper .spoiler,
+#af-wrapper .spoiler .spoiler-body,
+#af-wrapper .report-element,
+#af-wrapper .report-source,
+#af-wrapper .report-content,
+#af-wrapper .report-actions,
+#af-wrapper #profile-content .profile-section-header,
+#af-wrapper #poll-options,
+#af-wrapper #poll-panel,
+#af-wrapper #poll-panel #poll-headline,
+#af-wrapper #poll-results .poll-result-bar,
+#af-wrapper .post-reactions-summary .reaction-names,
+#af-wrapper #usergroups-filter {
+border-color: #eeee22 !important;
+}
+#af-wrapper {
+font-size: 12px !important;
+}
+#af-wrapper .post-reactions .reaction-icon::before,
+#af-wrapper .post-reactions a:hover,
+#af-wrapper .post-reactions .reaction-active {
+    font-size: 30px !important;
+    text-shadow: 1px 1px #000000;
+    transition: transform 2s;
+}
+#af-wrapper .post-reactions .reaction-number {
+    font-size: 10px;
+}
+#af-wrapper .post-reactions a:hover .down,
+#af-wrapper .post-reactions .down .reaction-icon::before,
+#af-wrapper .post-reactions .down .reaction-number,
+#af-wrapper .post-reactions .down .reaction-active {
+    color: #D5234C;
+}
+#af-wrapper .post-reactions a:hover .up,
+#af-wrapper .post-reactions .up .reaction-icon::before,
+#af-wrapper .post-reactions .up .reaction-number,
+#af-wrapper .post-reactions .up .reaction-active {
+    color: #548DFF;
+}
+#af-wrapper .post-reactions a:hover .heart,
+#af-wrapper .post-reactions .heart .reaction-icon::before,
+#af-wrapper .post-reactions .heart .reaction-number,
+#af-wrapper .post-reactions .heart .reaction-active {
+    color: #F55064;
+}
+#af-wrapper .post-reactions a:hover .laugh,
+#af-wrapper .post-reactions .laugh .reaction-icon::before,
+#af-wrapper .post-reactions .laugh .reaction-number,
+#af-wrapper .post-reactions .laugh .reaction-active {
+    color: #FFDA6A;
+}
+#af-wrapper .post-reactions a:hover .surprise,
+#af-wrapper .post-reactions .surprise .reaction-icon::before,
+#af-wrapper .post-reactions .surprise .reaction-number,
+#af-wrapper .post-reactions .surprise .reaction-active {
+    color: #FFDA6A;
+}
+#af-wrapper .post-reactions a:hover .sad,
+#af-wrapper .post-reactions .sad .reaction-icon::before,
+#af-wrapper .post-reactions .sad .reaction-number,
+#af-wrapper .post-reactions .sad .reaction-active {
+    color: #FFDA6A;
+}
+#af-wrapper .post-reactions a:hover .angry,
+#af-wrapper .post-reactions .angry .reaction-icon::before,
+#af-wrapper .post-reactions .angry .reaction-number,
+#af-wrapper .post-reactions .angry .reaction-active {
+    color: #D5234C;
+}

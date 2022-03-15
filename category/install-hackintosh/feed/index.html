@@ -1,0 +1,3016 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>install hackintosh &#8211; Heavietnam</title>
+	<atom:link href="https://heavietnam.ga/category/install-hackintosh/feed/" rel="self" type="application/rss+xml" />
+	<link>https://heavietnam.ga</link>
+	<description>Everythingforhackintosher</description>
+	<lastBuildDate>Thu, 03 Mar 2022 12:59:35 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.9.2</generator>
+
+<image>
+	<url>https://heavietnam.ga/wp-content/uploads/2021/12/cropped-logo02-2-32x32.png</url>
+	<title>install hackintosh &#8211; Heavietnam</title>
+	<link>https://heavietnam.ga</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>[EB&#124;#LOG:EXITBS:START]</title>
+		<link>https://heavietnam.ga/2022/03/03/eblogexitbsstart/</link>
+					<comments>https://heavietnam.ga/2022/03/03/eblogexitbsstart/#respond</comments>
+		
+		<dc:creator><![CDATA[nghilw]]></dc:creator>
+		<pubDate>Thu, 03 Mar 2022 10:47:59 +0000</pubDate>
+				<category><![CDATA[install hackintosh]]></category>
+		<guid isPermaLink="false">https://heavietnam.ga/?p=2546</guid>
+
+					<description><![CDATA[Phần này sẽ được chia làm 3 phần: Vấn đề về booter Vấn đề về Patch Kernel Vấn đề về UEFI Vấn đề về máy ảo Lỗi liên quan&#160;đến booster Những nguyên nhân chính gây ra lỗi này là: DevirtualiseMmio Một vài vùng MMIO vẫn bắt buộc phải có để hoạt động bình thường, vì [...]]]></description>
+										<content:encoded><![CDATA[
+<p>Phần này sẽ được chia làm 3 phần:</p>
+
+
+
+<ul><li>Vấn đề về booter</li><li>Vấn đề về Patch Kernel</li><li>Vấn đề về UEFI</li><li>Vấn đề về máy ảo</li></ul>
+
+
+
+<h2><strong>Lỗi liên quan&nbsp;đến booster</strong></h2>
+
+
+
+<p>Những nguyên nhân chính gây ra lỗi này là:</p>
+
+
+
+<h3><strong>DevirtualiseMmio</strong></h3>
+
+
+
+<ul><li> Một vài vùng MMIO vẫn bắt buộc phải có để hoạt động bình thường, vì vậy bạn cần phải loại những vùng này ở trong Booter -&gt; MMIOWhitelist hoặc là bạn phải tắt cái dòng config này luôn. Các bạn có thể xem ở đây: <a href="http://heavietnam.ga/2022/01/31/using-devirtualisemmio/">Using Devirtualise MMIO</a><ul><li> Đối với những bạn dùng mainboard chipset TRx40 của AMD thì hãy bật cái dòng config này</li></ul><ul><li> Đối với những bạn dùng Mainboard chipset X99 thì hãy tắt cái dòng config này vì nó có thể vô tác dụng đối với một số firmware</li></ul></li></ul>
+
+
+
+<h3><strong>SetupVirtualMap</strong></h3>
+
+
+
+<ul><li> Dòng config này là bắt buộc phỉa bật đối với hầu hết các firrmware, nếu không có nó thì máy các bạn sẽ dễ bị dính lỗi kernel pannic ở đây, vì vậy các bạn nên bật nó nếu như các bạn vẫn chưa bật nó trong config</li></ul>
+
+
+
+<ul><li> Những máy nào có chipset Z390 hoặc cũ hơn thì bắt buộc phải bật cái này</li></ul>
+
+
+
+<ul><li><strong>Tuy nhiên</strong>,&nbsp;một số firmware(chủ yếu là những firmware từ năm 2020 trở đi) sẽ không tương thích với cái setting này và làm cho máy bạn bị kernel pannic chảng hạn như:<ul><li> CPU Intel dòng Icelake</li></ul><ul><li> Chipset Intel dòng Commet Lake(B460, H470, Z490, vv)</li></ul><ul><li> Mainboard AMD chipset B550 ,A520(bao gồm cả chipset X570 với bios bản mới nhất)</li></ul><ul><li> Một số mainboard AMD chipset B450 và X470 cũng giống với những mainboard ở trên khi cập nhật bios lên bản mới nhất</li><li>Mainboard chipset TRx40 của AMD</li><li>Các máy ảo chẳng hạn như QEMU</li><li> Mainboard chipset X299 với bios từ năm 2020 trở đi (cái này cũng áp dụng cho những mainboard X299 với bản BIOS từ cuối năm 2019 và sau từ năm 2020 trở đi)</li></ul></li></ul>
+
+
+
+<h3><strong>EnableWriteUnprotector</strong></h3>
+
+
+
+<p>&nbsp;&nbsp;&nbsp;  Một vấn đề khác chính là macOS có thể đang bị xung đột với lại chức năng chống ghi từ CR0, để fix cái này chũng ta có 2 lựa chọn:</p>
+
+
+
+<ul><li> Nếu frmware của máy các ban hỗ trợ MATs (firmware tù năm 2018 trở đi)<ul><li> EnableWriteUnprotector -> False</li><li> RebuildAppleMemoryMap -> True</li><li> SyncRuntimePermissions -> True</li></ul></li><li> Đối với những máy có firmware cũ hơn:<ul><li> EnableWriteUnprotector -> True</li><li> RebuildAppleMemoryMap -> False</li><li> SyncRuntimePermissions -> True</li></ul></li></ul>
+
+
+
+<p> Lưu ý: Một vài laptop (ví dụ như Dell Inspiron 5370) mặc dù có hỗ trợ MATs nhưng chũng vẫn bị lỗi khi boot lên, đối với nhũng máy như thế này các bạn có 2 lựa chọn:</p>
+
+
+
+<ul><li> Boot máy với setting của máy có firrmware cũ hơn (*Đối với những máy có firmware cũ hơn)</li></ul>
+
+
+
+<ul><li> Bật DevirtualiseMmio và làm theo <a href="https://heavietnam.ga/2022/01/31/using-devirtualisemmio/">Using DevirtualiseMmio</a></li></ul>
+
+
+
+<p>Về vấn đề hỗ trợ MATs những firmware chống lại EDK 2018đã hỗ trợ MATs và nhều OEM đã support nó từ thời laptop Skylake(2016) vấn đề chỉ là chũng ta không rx liệu các OEM đã cập nhật firrmware đề hỗ trợ tính năng này hay chưa. Để kiểm tra xem amsy các bạn có hỗ tợ MATS hay không, các bạn có thể dùng tính năng lấy log của OpenCore &nbsp;&nbsp;</p>
+
+
+
+<p><code>OCABC: MAT support is 1</code></p>
+
+
+
+<p>*Lưu ý: &nbsp;có nghĩa là firrmware của máy các bạn hỗ trợ MAT còn 0 có nghĩ là nó không hỗ trợ</p>
+
+
+
+<h2><strong>Lỗi liên quan đến</strong><strong>&nbsp;</strong><strong>Patch Kernel</strong>&nbsp;</h2>
+
+
+
+<p>Lỗi liên quan đến cái này sẽ được phân ra làm 2 giữa Intel và AMD</p>
+
+
+
+<h3> AMD</h3>
+
+
+
+<p>     Thiếu các <a href="https://github.com/AMD-OSX/AMD_Vanilla">patch kernel</a> (chỉ áp dụng cho CPU AMD, hãy đảm bảo là chũng là nhũng patch OpenCore chứ không phải Clover). Clover sử dụng MatchOS trong khi OpenCore dùng MinKernel and Maxkernel)</p>
+
+
+
+<p><strong>     Lưu ý là những bản patch cũng gây ra những lỗi tương tự nên các bạn hãy đảm bảo rằng các bạn đang dùng bản patch mới nhất cho AMD OS X</strong></p>
+
+
+
+<h3> Intel</h3>
+
+
+
+<ul><li>AppleXcpmCfgLock và AppleCpuPmCfgLock</li><li>Nếu thiếu patch CFG hoặc XCPM thì các bạn hãy bật AppleXcpmCfgLock và AppleCpuPmCfgLock trong config<ul><li> Các máy dùng CPU Haswell và mới hơn chỉ cần AppleXcpmCfgLock &nbsp;&nbsp;&nbsp;</li><li> Các máy dùng CPU Ivy Bridge và cũ hơn chỉ cần AppleCpuPmCfgLock</li><li> Các máy dùng CPU Broadwell và cũ hơn cần phải bật AppleCpuPmCfgLock khi các bạn chạy OSX 10.10 trở xuống</li></ul></li></ul>
+
+
+
+<p><strong>Ngoài ra các bạn co thể tắt hoàn toàn CFG-Lock: Fixing CFG Lock</strong></p>
+
+
+
+<p>AppleXcpmExtraMsrs Có thể bắt buộc, seting này thường chỉ dành cho các CPU như Pentinum, HEDT và một số các máy khác có CPU không được hỗ trợ chĩnh thức trong macOS</p>
+
+
+
+<ul><li>Các CPU Intel đời rất cũ:<ul><li>Đối với macOS Big Sur, nhiều firmware gặp vấn đề trong việc các định số nhân CPU và khi đó sẽ gặp kernel pannic sớm nên không thể in lỗi này lên màn hình . Thông qua serial, các bạn có thể thấy nó báo như sau: <code>max_cpus_from_firmware not yet initialized</code></li><li>Cách giải quyết:<ul><li>Bật AvoidRuntimeDefrag ở trong Booter -&gt; Quirks</li><li>Cách này sẽ hoạt động đối với hầu hết các firmware</li><li>Trong trường hợp các bạn đã làm cách trên những nó vẫn không fix được thfi các bạn hãy thêm như sau vào mục Kernel -&gt; Patch</li></ul></li></ul></li></ul>
+
+
+
+<figure class="wp-block-image is-style-default"><img alt=""/></figure>
+
+
+
+
+
+<h2>Lỗi liên quan đến UEFI</h2>
+
+
+
+<ul><li>ProvideConsoleGop<ul><li>Bắt buộc phải có cho việc chuyển từ màn hình log của OpenCore. Đây từng là một phần trong AptioMemoryFix nhưng hiện tại thì tính năng này đã được chuyển sang dạng setting trong OpenCore.</li><li>Từ bản OpenCore version 0.5.6, tính năng này đã được bật từ động trong config.plist</li></ul></li></ul>
+
+
+
+<ul><li>IgnoreInvalidFlexRatio<ul><li>Bắt buộc phải có đối với các CPU từ đời Broadwell trờ xuống, Không bắt buộc đối với CPU AMD và CPU Intel từ đời Skylake trờ lên</li></ul></li></ul>
+
+
+
+<p>Sources: <a href="https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/kernel-issues.html#stuck-on-eb-log-exitbs-start">Dortania</a></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://heavietnam.ga/2022/03/03/eblogexitbsstart/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Using DevirtualiseMmio</title>
+		<link>https://heavietnam.ga/2022/01/31/using-devirtualisemmio/</link>
+					<comments>https://heavietnam.ga/2022/01/31/using-devirtualisemmio/#comments</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Mon, 31 Jan 2022 01:57:05 +0000</pubDate>
+				<category><![CDATA[install hackintosh]]></category>
+		<guid isPermaLink="false">https://heavietnam.ga/?p=2432</guid>
+
+					<description><![CDATA[đối với 1 số main như z390 và hầu hết dòng hedt chúng ta cần lập 1 danh sách trắng. Đó là lúc MmioWhitelist phát huy tác dụng B1: tạo 1 EFI debug theo hướng dẫn tại đây ( nhớ enable DevirtualiseMmio ) B2: bạn sẽ nhận được 1 file log mở nó ra và [...]]]></description>
+										<content:encoded><![CDATA[
+<p>đối với 1 số main như z390 và hầu hết dòng hedt chúng ta cần lập 1 danh sách trắng. Đó là lúc MmioWhitelist phát huy tác dụng </p>
+
+
+
+<p>B1: tạo 1 EFI debug theo hướng dẫn <a href="https://heavietnam.ga/forum/topic/opencore-debugging/">tại đây</a> ( nhớ enable <code>DevirtualiseMmio</code> )</p>
+
+
+
+<p>B2: bạn sẽ nhận được 1 file log mở nó ra và ta sẽ có </p>
+
+
+
+<pre class="wp-block-code"><code>21:495 00:009 OCABC: MMIO devirt start
+<strong>21:499 00:003 OCABC: MMIO devirt 0x60000000 (0x10000 pages, 0x8000000000000001) skip 0
+21:503 00:003 OCABC: MMIO devirt 0xFE000000 (0x11 pages, 0x8000000000000001) skip 0
+21:506 00:003 OCABC: MMIO devirt 0xFEC00000 (0x1 pages, 0x8000000000000001) skip 0
+21:510 00:003 OCABC: MMIO devirt 0xFED00000 (0x1 pages, 0x8000000000000001) skip 0
+21:513 00:003 OCABC: MMIO devirt 0xFEE00000 (0x1 pages, 0x800000000000100D) skip 0
+21:516 00:003 OCABC: MMIO devirt 0xFF000000 (0x1000 pages, 0x800000000000100D) skip 0</strong>
+21:520 00:003 OCABC: MMIO devirt end, saved 278608 KB</code></pre>
+
+
+
+<p>bây giờ ta có 6 regions cần thêm vào danh sách trắng ( in đậm )</p>
+
+
+
+<p>Ta cần convert hex to decimal ( có thể dùng hackintool )</p>
+
+
+
+<ul><li>MMIO devirt 0x60000000 -&gt; 1610612736</li><li>MMIO devirt 0xFE000000 -&gt; 4261412864</li><li>MMIO devirt 0xFEC00000 -&gt; 4273995776</li><li>MMIO devirt 0xFED00000 -&gt; 4275044352</li><li>MMIO devirt 0xFEE00000 -&gt; 4276092928</li><li>MMIO devirt 0xFF000000 -&gt; 4278190080</li></ul>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/4a65sZl.png" alt=""/></figure>
+
+
+
+<p>B3: add vào config ==&gt; booter ==&gt; MmioWhitelist</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://heavietnam.ga/2022/01/31/using-devirtualisemmio/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Tìm hiểu về Hackintosh</title>
+		<link>https://heavietnam.ga/2021/09/29/tim-hieu-ve-hackintosh/</link>
+					<comments>https://heavietnam.ga/2021/09/29/tim-hieu-ve-hackintosh/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Tue, 28 Sep 2021 20:50:22 +0000</pubDate>
+				<category><![CDATA[install hackintosh]]></category>
+		<guid isPermaLink="false">https://heavietnam.ga/?p=265</guid>
+
+					<description><![CDATA[Tìm hiểu về thuật ngữ Trước tiên ta phải hiểu kext là gì? Ta có thiểu hiểu như sau kext là 1 trình điểu khiển phần cứng mà bên win gọi là drivers&#160; Thế thêm kext vào đâu? Có 3 nơi thêm kext O/K&#160; (OC⇒ KEXT) hoặc C/K/O (CLOVER ==&#62; kext ==&#62; other) L/E (Library [...]]]></description>
+										<content:encoded><![CDATA[
+<h1 id="tim-hiểu-về-thuật-ngữ"><strong><em> Tìm hiểu về thuật ngữ</em></strong></h1>
+
+
+
+<ul><li>Trước tiên ta phải hiểu kext là gì? Ta có thiểu hiểu như sau kext là 1 trình điểu khiển phần cứng mà bên win gọi là drivers&nbsp;</li><li>Thế thêm kext vào đâu? Có 3 nơi thêm kext</li></ul>
+
+
+
+<ul><li>O/K&nbsp; (<strong>OC⇒ KEXT</strong>) hoặc C/K/O (CLOVER ==&gt; kext ==&gt; other)</li><li>L/E (<strong>Library ⇒ Extensions )</strong></li><li>S/L/E ( <strong>System ⇒ Library ⇒ Extentions )</strong></li></ul>
+
+
+
+<ul><li>Thứ tự ưu tiên O/K (C/K/O)  ⇒ L/E ⇒ S/L/E&nbsp;</li><li>Khi bỏ kext vào L/E hoặc S/L/E ta cần prebuilt kext cache (để bỏ kext vào L/E ta dùng <a href="https://github.com/chris1111/Kext-Droplet-Big-Sur/releases">kext droplet </a>&nbsp;| để bỏ kext vào S/L/E ta có thể dùng <a href="https://taimienphi.vn/download-kext-utility-for-mac-34434">kext utility</a>)</li><li>Khi bỏ hoặc xoá kext ta cần empty trash (đối với oc clover không cần)&nbsp;</li><li>Khi bỏ kext vào O/K ta cần snapshot kext&nbsp;(khi bỏ kext vào C/K/O ta chỉ việc bỏ kext vào thôi)</li></ul>
+
+
+
+<ul><li>Mở config bằng <a href="https://github.com/corpnewt/ProperTree">propertree</a> (có thể dùng các công cụ khác như <a href="https://mackie100projects.altervista.org/download-opencore-configurator/">opencore configurator</a>). Đối với các bạn dùng app này thì cần chọn phiên bản phù hợp với phiên bản oc hiện tại ) hoặc nếu đang sử dụng clover bạn có thể dùng <a href="https://mackie100projects.altervista.org/download-clover-configurator/">clover configurator</a></li><li>Chọn file ⇒ oc snapshot (Đối với opencore)<img loading="lazy" width="602" height="339" src="https://lh6.googleusercontent.com/SCT2Gq_55sCnidkxh8Kn2GjrTrkFc-lj0-5v9yBHi_YUZEK9Zy-OLojhKH-VaT_78oZfvBH8gCl-sdLuwnCyBg5RZv4PLtaeWq81Xlg4oRc9G3AiAXvU21W2A0Q8DdcuLZQSH5W8=s0"></li><li>Build propertree thành app&nbsp;</li></ul>
+
+
+
+<ul><li>Tải propertree theo links trên&nbsp;</li><li>Mở folder Scripts</li><li>Mở file ​​buildapp-select.command ( sẽ được như hình )</li></ul>
+
+
+
+<figure class="wp-block-image"><img src="https://lh5.googleusercontent.com/7ug14hH_jAB2IVMR43n7KPWJVohXGU62HF2rjNrAXxvPIoGJpAr4PaEaoxGtohtXga44oqI7Qzqc9sPTyys9uYsKeLeMgLHYHoCEQIH8NPc0Ameq5ij6eMvV9WtgSIjtKpVNkvF7=s0" alt=""/></figure>
+
+
+
+<ul><li>Tuỳ theo sở thích mà các bạn chọn phiên bản phù hợp nhưng ở đây mình khuyến khích các bạn nên chọn bản đầu tiên&nbsp;</li><li>Sau khi build app sẽ được như hình&nbsp;</li></ul>
+
+
+
+<figure class="wp-block-image"><img src="https://lh3.googleusercontent.com/mGEcV3zarD_ztiXZ21ZGLeYVyedjRLkDQ3JyUda6T62XZ4S_gP7Li6sQFX_7G3ykzOmSpMBnuZS-z14q8YAdcEX1TXC8DcE_j4wPSnVLAwLrbmughjhs6kn-EgCoBtTpOq94jcc1=s0" alt=""/></figure>
+
+
+
+<ul><li>Các bạn ra ngoài folder sẽ thấy có app propertree&nbsp;</li></ul>
+
+
+
+<figure class="wp-block-image"><img src="https://lh5.googleusercontent.com/7oU6l35cuJRTITzdgOpx9pIAYsg1lYXnA25D4Zzp84ATaovZx20os6PYht7nZe_GGE8DMDTACYUsfmkBN8tAjj28jKdH6H7-gRr3cPmlaGOoMu63e4lby0tWBjvDhwUxJhzx9YKq=s0" alt=""/></figure>
+
+
+
+<ul><li>Các bạn chỉ việc kéo app vừa built vào mục applications&nbsp; là done</li></ul>
+
+
+
+<h1 id="ssdt-dsdt-la-gi">S<strong><em>sdt/dsdt là gì </em></strong></h1>
+
+
+
+<ul><li>Ta có thể hiểu nó là các bản giao thức điều khiển thiết bị&nbsp;</li><li>Tại sao cần patch dsdt/ssdt khi hackintosh ?&nbsp;</li></ul>
+
+
+
+<ul><li>Do dsdt/ssdt của macos được apple quản lý theo 1 quy định chặt chẽ tối ưu cho các máy macreal do là hackintosh nên 1 số phần cứng như pin , card âm thanh , đồ hoạ v.v có thể không hoạt động nên ta phải patch dsdt/ssdt để máy hoạt động giống macreal nhất có thể</li><li>Cấu trúc của dsdt và ssdt có thể nói là giống nhau nhưng dsdt thì sẽ chứa hầu hết các phần cứng trên main (card đồ hoạ , âm thanh , chip v.v) còn ssdt đa phần đều là trích xuất từ dsdt&nbsp;</li><li>Ta có thể dump dsdt từ các công cụ như như acpidump.exe, rw-everything, acpidump.efi, ssdt-time, v.v….. (các dump dsdt mình có hướng dẫn <a href="https://docs.google.com/document/d/1CUwpBGi_dOMRoIpiNbbnMChfeDZz3JW7_9XF6TzmsQw/edit?usp=sharing">ở đây</a>)</li><li>Để patch dsdt&nbsp; ta cần fix sạch error trên dsdt bằng công cụ <a href="https://github.com/acidanthera/MaciASL/releases">maciasl</a> (Warning các bạn muốn fix cũng đc ko fix cũng được)</li><li>Các cách patch dsdt chủ yếu?</li></ul>
+
+
+
+<ul><li>Có 2 cách patch dsdt chủ yếu là Static patch và Hot patch&nbsp;</li><li>Static patch là gì? Ta có thể hiểu đây là cách patch truyền thống đối với cách patch này ta cần dump dsdt ra và fix lỗi trực tiếp trên dsdt sau đó bỏ nó vào bộ nạp khởi động nó sẽ được enjects ra khi vào os cần gì fix đó nhược điểm của cách patch này là khi update bios ta sẽ phải patch lại toàn bộ&nbsp;</li><li>Hot patch là gì? Ta có thể hiểu hot patch là cách patch tìm những đoạn mã cần sửa trong dsdt và sửa lại không sửa trực tiếp đối nó sẽ tự động enjects ra khi khởi động vào opencore (hoặc clover) với cách patch này khi update bios ta không cần patch lại&nbsp;</li><li>các cách dump dsdt :</li></ul>
+
+
+
+<ul><li>có rất nhiều cách dump dsdt (ssdt-time, terminal, sysreport, clover, rw-everything, uefi shell, v.v………) nhưng không phải cách nào cũng cho ra 1 dsdt chuẩn (native)&nbsp;</li><li>Theo mình các bạn chỉ nên dùng các cách dump sau clover, sysreport, uefi shell terminal đối với ssdt-time trên win nếu các bạn dual bằng opencore thì dsdt sẽ không native nữa dẫn đến sinh ra nhiều error các bạn nhớ lưu ý kỹ&nbsp;</li></ul>
+
+
+
+<h1 id="cac-tool-hackintosh"><strong><em> Các tool hackintosh </em></strong></h1>
+
+
+
+<ul><li>trong&nbsp; efi hackintosh opencore (bao gồn cả clover) ta có 1 folder tool thật chất folder này không quan trọng (các bạn có thể xoá nó đi) nhưng nó có thể giúp ích nhiều cho các bạn&nbsp;</li><li>1 số tool mình thấy hữu ích :</li></ul>
+
+
+
+<ul><li>openshell.efi : giúp gỡ lỗi opencore (kèm sẵn trong opencorepkg ⇒ x64 ⇒ efi ⇒ oc ⇒ tool)</li><li><a href="https://github.com/dortania/OpenCore-Install-Guide/blob/master/extra-files/acpidump.efi.zip">Acpidump.efi</a> : giúp dump dsdt&nbsp;(chỉ opencore)</li></ul>
+
+
+
+<h1 id="tắt-sip-va-gatekeeper"><strong><em> Tắt sip và gatekeeper</em></strong></h1>
+
+
+
+<ul><li>Sip là gì ?</li></ul>
+
+
+
+<ul><li>Kể từ macos 11.0 trở lên apple đã thêm tính năng System Integrity Protection ngắn cản ko cài app crack và app nguồn thứ 3 (clover không hỗ trợ sip)</li><li>Gatekeeper là một tính năng bảo mật của hệ điều hành MacOS của Apple. Nó thực thi ký mã và xác minh các ứng dụng đã tải xuống trước khi cho phép chúng chạy, do đó làm giảm khả năng vô tình thực thi phần mềm độc hại.&nbsp;</li></ul>
+
+
+
+<ul><li>Tại sao phải tắt sip và gatekeeper (từ catalina trở lên muốn cài app bên thứ 3 ta bắt buộc phải tắt)</li><li>Cách tắt sip các bạn vào config search allow toggle sip và bật nó lên sau đó các bạn restart nhấn vào tool toggle sip&nbsp;</li><li>Cách tắt getakeeper các ban dán code sao vào terminal &nbsp;<em>sudo spctl &#8211;master-disable</em></li><li><em>Một số app hay cho newbie&nbsp;</em></li></ul>
+
+
+
+<ul><li><a href="https://maclife.vn/cleanmymac-x4-cong-cu-don-dep-toi-uu-he-thong-hieu-qua-nhat.html"><em>clean my mac</em></a><em> : Giúp xoá app tận gốc và dọn dẹp</em></li></ul>
+
+
+
+<ul><li><a href="https://maclife.vn/huong-dan-cai-dat-va-cau-hinh-macs-fan-control.html"><em>Macs fan controller</em></a><em> : Điều khiển tốc độ fan&nbsp;</em></li></ul>
+
+
+
+<ul><li><a href="https://www.neatdownloadmanager.com/index.php/en/"><em>Neet-down-loadmaneger</em></a><em> : Hỗ trợ download nhanh</em></li></ul>
+
+
+
+<ul><li><a href="https://evkeyvn.com/"><em>evkey</em></a><em> : Hỗ trợ gõ tiếng việt&nbsp;</em></li></ul>
+
+
+
+<ul><li><a href="https://maclife.vn/istat-menus-theo-doi-thong-tren-menubar.html"><em>istatus menu</em></a><em> : Hỗ trợ theo dõi các chỉ số cpu, fan, nhiệt độ&nbsp;</em></li></ul>
+
+
+
+<ul><li><a href="https://maclife.vn/archiver-phan-mem-nen-giai-nen-nho-gon-manh-me.html"><em>archive</em></a><em> : Công cụ giải nén mạnh mẽ trên mac</em></li></ul>
+
+
+
+<ul><li><a href="https://maclife.vn/sublime-text-4-code-editor-manh-me-tren-mac.html"><em>Sublimtext</em></a><em> : Công cụ code mạnh mẽ trên mac</em></li></ul>
+
+
+
+<ul><li><a href="https://maclife.vn/parallels-desktop-16-for-mac-ho-tro-cai-windows-tren-mac-ban-moi-nhat.html"><em>Parallel desktop</em></a><em> :&nbsp; Công cụ ảo hoá mạnh mẽ</em></li></ul>
+
+
+
+<ul><li><a href="https://maclife.vn/swish-ho-tro-them-rat-nhieu-thao-tac-tren-trackpad.html"><em>Swish</em></a><em> : Hỗ trợ nhiều thao tác cho trackpad&nbsp;</em></li></ul>
+
+
+
+<h1 id="boot-arg-la-gi"> Boot-arg là gì ?</h1>
+
+
+
+<ul><li><em>boot-arg là nơi chưa các tham số khi khởi động&nbsp;</em>( tên đầy đủ là boot-arguments )</li><li><em>1 số tham số quan trọng&nbsp;</em></li><li></li><li><em>Verbose (-v) : giúp hiện thị các debug khi boot</em></li><li><em>darkwake ( darkwake= ) : giúp fix darkwake sau khi sleep ( wake )</em></li><li><em>cpus=1: thường dùng để fix 1 số lỗi liên quan đến core ( hay dùng ở hp )</em></li><li><em>debug=0x100 : thường dùng kèm với verbose giúp hiển thị lỗi khi panic</em></li><li><em>nvda_drv=1 : dùng cho card đồ hoạ ndiva</em></li><li><em>igfxonln=1 : dùng để force-online</em></li><li><em>-igfxblr : dùng để fix backlight&nbsp;</em></li><li><em>-wegnoegpu : dùng để disable dgpu ( card rời )</em></li><li><em>-wegnoegpu : dùng để disable igpu&nbsp;</em></li><li><em>-x : safe mode&nbsp;</em></li><li><em>alcid= “codec” ( dùng để fix âm thanh )</em></li><li><em>Add tham số vào boot-arg như thế nào ?</em></li><li><em>Các bạn vào mục nvram ⇒ 7C436110-AB2A-4BBB-A880-FE41995C9F82 ⇒ boot-arg&nbsp;</em> (chỉ opencore cò đối với clover các bạn thêm vào boot ==&gt; arguments)</li></ul>
+
+
+
+<figure class="wp-block-image"><img src="https://lh5.googleusercontent.com/CtWqLw5-5wT8cOnGnj_5W2Ot8R6siAOO_F8-bp5Jn_bnsfgm0YZ9RCnJcNf4Dpy01AD4TL3Wtjj7rnzp3tDYfmyNm-hGLYH0RIoqCZULEgOqZwntj6W0cLQ42_LhrwoMWil9I961=s0" alt=""/></figure>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-12-at-11.25.28.png?w=1024" alt="" class="wp-image-453"/></figure>
+
+
+
+<ul><li><em>Các bạn gõ các tham số vào&nbsp;</em></li><li><em>Save lại&nbsp; và reboot</em></li></ul>
+
+
+
+<h1 id="deviceproperties-hay-device-properties-la-gi"> DeviceProperties hay device==> properties là gì ?</h1>
+
+
+
+<ul><li><em>Dây là nơi các bạn có thể injects PCle (thông tin phần cứng) vd như igpu,audio,lan,&#8230;..</em></li><li>Nên tại đây bạn có thể patch igpu, audio và các cổng xuất màn hình  </li></ul>
+
+
+
+<p class="has-text-align-center">&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;HẾT&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://heavietnam.ga/2021/09/29/tim-hieu-ve-hackintosh/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Tìm hiểu phần cứng</title>
+		<link>https://heavietnam.ga/2020/12/25/tim-hieu-phan-cung/</link>
+					<comments>https://heavietnam.ga/2020/12/25/tim-hieu-phan-cung/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Fri, 25 Dec 2020 04:53:18 +0000</pubDate>
+				<category><![CDATA[install hackintosh]]></category>
+		<guid isPermaLink="false">https://heavietnam.ga/?p=1892</guid>
+
+					<description><![CDATA[Cpu Các cpu amd Bulldozer (15h), Jaguar (16h) and Ryzen (17h) CPUs chỉ được hỗ trợ cho desktop laptop ko đc hỗ trợ Các cpu intel được hỗ trợ 32 bit được hỗ trợ từ 10.4.1 --> 10.6.8 64 bit được hỗ trợ từ 10.4.1+ SEE hỗ trợ: SSE3 : hỗ trợ tất cả các [...]]]></description>
+										<content:encoded><![CDATA[
+<h2>Cpu</h2>
+
+
+
+<ul><li>Các cpu amd Bulldozer (15h), Jaguar (16h) and Ryzen (17h) CPUs chỉ được hỗ trợ cho desktop laptop ko đc hỗ trợ</li><li>Các cpu intel được hỗ trợ</li></ul>
+
+
+
+<ul><li>32 bit được hỗ trợ từ 10.4.1 --> 10.6.8</li><li>64 bit được hỗ trợ từ 10.4.1+</li></ul>
+
+
+
+<ul><li>SEE hỗ trợ:<ul><li>SSE3 : hỗ trợ tất cả các version osx/macos </li><li>SSSE3: hỗ trợ tất cả các version 64 bit osx/macos</li><li>SSE4: hỗ trợ 10.12+</li><li>SSE4.2: hỗ trợ 10.14+</li></ul></li><li>Firmware hỗ trợ:<ul><li>10.4.1-10.4.7 yêu cầu EFI32 ( IA32 )</li><li>10.4.8-10.7.5 hỗ trợ cả 32 bit lẫn 64 bit</li><li>10.8+ yêu cầu EFI64 ( X64 )</li><li>10.7-10.9 yêu cầu OpenPartitionDxe.efi để có thể boot được vào phần vùng recovery</li></ul></li><li>kernel yêu cầu:<ul><li>10.4-10.5 yêu cầu kext 32 bit do chỉ support 32-bit kernelspace</li><li>10.6-10.7 support cả 32 bit và 64 bit</li><li>10.8+ yêu cầu kext 64 bit do chỉ support 64-bit kernelspace</li></ul></li><li>Nhân và luồng<ul><li>từ osx10.10 có thể không boot được với 24 luồng nó sẽ gặp lỗi <code> mp_cpus_call_wait() timeout</code>&nbsp;panic</li><li>Từ osx10.11+ bị giới hạn ở 64 luồng</li><li>cpus=1 có thể là giải pháp giúp disable hyperthreading</li></ul></li><li>Lưu ý: <ul><li>lilu yêu cầu version 10.8+ ( đối với osx thì nên dùng fake smc )</li><li>đối với version 10.6 và cũ hơn sẽ yêu cầu RebuildAppleMemoryMap</li></ul></li><li>bảng tóm tắt các version hỗ trợ cho các đời cpu và cpuid intel ( bảng này dựa trên <a href="https://dortania.github.io/OpenCore-Install-Guide/macos-limits.html#cpu-support">Hardware Limitations | OpenCore Install Guide (dortania.github.io)</a> | thank you )</li></ul>
+
+
+
+<style>
+  table {
+    border-collapse: collapse;
+  }
+  table,
+  th,
+  td {
+    border: 1px solid blue;
+  }
+  th,
+  td {
+    padding: 15px;
+  }
+</style>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left;">Cpu-gen</th>
+      <th style="text-align: left;">min version</th>
+      <th style="text-align: left;">Max version</th>
+      <th style="text-align: left;">ghi chú</th>
+      <th style="text-align: left;">CPUID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left;">
+        Pentium 4
+      </td>
+      <td style="text-align: left;">10.4.1</td>
+      <td style="text-align: left;">10.5.8</td>
+      <td style="text-align: left;">Only used in dev kits</td>
+      <td style="text-align: left;">0x0F41</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+        Yonah
+      </td>
+      <td style="text-align: left;">10.4.4</td>
+      <td style="text-align: left;">10.6.8</td>
+      <td style="text-align: left;">32-Bit</td>
+      <td style="text-align: left;">0x0006E6</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+        Conroe, Merom
+      </td>
+      <td style="text-align: left;">10.4.7</td>
+      <td style="text-align: left;">10.11.6</td>
+      <td style="text-align: left;">No SSE4</td>
+      <td style="text-align: left;">0x0006F2</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+        Penryn
+      </td>
+      <td style="text-align: left;">10.4.10</td>
+      <td style="text-align: left;">10.13.6</td>
+      <td style="text-align: left;">No SSE4.2</td>
+      <td style="text-align: left;">0x010676</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+        Nehalem
+      </td>
+      <td style="text-align: left;">10.5.6</td>
+      <td rowspan="15" style="text-align: left;">
+        <span style="color: green;"> Current </span>
+      </td>
+      <td style="text-align: left;">N/A</td>
+      <td style="text-align: left;">0x0106A2</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+        Lynnfield
+      </td>
+      <td style="text-align: left;">10.6.3</td>
+      <td rowspan="3" style="text-align: left;">No iGPU support 10.14+</td>
+      <td style="text-align: left;">0x0106E0</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+        Westmere, Clarkdale, Arrandale
+      </td>
+      <td style="text-align: left;">10.6.7</td>
+      <td style="text-align: left;">0x0206A0(M/H)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+        Sandybirdge
+      </td>
+      <td style="text-align: left;">10.6.7</td>
+
+      <td style="text-align: left;">0x0206A0(M/H)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+        Ivy Bridge
+      </td>
+      <td style="text-align: left;">10.7.3</td>
+      <td style="text-align: left;">No iGPU support 11+</td>
+      <td style="text-align: left;">0x0306A0(M/H/G)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+        Ivy Bridge-E5
+      </td>
+      <td style="text-align: left;">10.9.2</td>
+      <td rowspan="9" style="text-align: left;">N/A</td>
+      <td style="text-align: left;">0x0306E0</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+        Haswell
+      </td>
+      <td style="text-align: left;">10.8.5</td>
+      <td style="text-align: left;">0x0306C0(S)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+        Broadwell
+      </td>
+      <td style="text-align: left;">10.10.0</td>
+      <td style="text-align: left;">0x0306D4(U/Y)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+        Skylake
+      </td>
+      <td style="text-align: left;">10.11.0</td>
+      <td style="text-align: left;">0x0506e3(H/S) 0x0406E3(U/Y)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+        kaby Lake
+      </td>
+      <td style="text-align: left;">10.12.4</td>
+      <td style="text-align: left;">0x0906E9(H/S/G) 0x0806E9(U/Y)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+        coffee Lake
+      </td>
+      <td style="text-align: left;">10.12.6</td>
+      <td style="text-align: left;">0x0906EA(S/H/E) 0x0806EA(U)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+        Amber Whiskey Comet Lake
+      </td>
+      <td style="text-align: left;">10.14.1</td>
+      <td style="text-align: left;">0x0806E0(U/Y)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+        Comet Lake
+      </td>
+      <td rowspan="3" style="text-align: left;">10.15.4</td>
+      <td style="text-align: left;">0x0906E0(S/H)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+        Ice Lake
+      </td>
+      <td style="text-align: left;">0x0706E5(U)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+        Rocket Lake
+      </td>
+      <td style="text-align: left;">Requires Comet Lake CPUID</td>
+      <td style="text-align: left;">0x0A0671</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+        Tiger Lake
+      </td>
+      <td style="text-align: left;"><span style="color: red;"> N/A </span></td>
+      <td style="text-align: left;"><span style="color: red;"> N/A </span></td>
+      <td style="text-align: left;">
+        <span style="color: red;"> Untested </span>
+      </td>
+      <td style="text-align: left;">0x0806C0(U)</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<ul><li>Nhiều tính năng trên macos hoàn toàn ko hoạt động và 1 số bị lỗi trên cpu amd bao gồm<ul><li>ảo hóa dựa trên apple HV ( VMWare, Parallels, Docker, Android Studio,&#8230;. ) bị vô hiệu hóa VirtualBox được hỗ trở</li><li>Các phần mềm adobe</li><li>phần mềm 32 bit</li><li>Và 1 vài app audio</li></ul></li></ul>
+
+
+
+<h2>GPU</h2>
+
+
+
+<p>card amd GCN được hỗ trợ trên các phiên bản mới nhất</p>
+
+
+
+<ul><li>AMD apus không được hỗ trợ</li><li>Card amd nhân lexa  không native </li><li>GeForce 900 series ( Maxwell 9XX ), GeForce 10 series ( Pascal 10XX ) được hỗ trợ giới hạn trong macos 10.13 </li><li>GeForce 20 series, GeForce 16 series không được hỗ trợ </li><li>GeForce 30 series cũng không được hỗ trợ </li><li>GeForce 600 series, GeForce 700 series ( Kepler ) vẫn đang được hỗ trợ hiện tại là monterey beta 9 ( từ monterey các bạn phải dùng tool Geforce-Kepler-patcher để patch không native xem hướng dẫn <a href="https://heavietnam.ga/2021/09/29/xxiipatch-card-do-hoa-nvidia/">tại đây</a> )</li><li>Igpu GT2 được support</li><li>GMA sieries được hỗ trợ 1 số dòng xem chi tiết <a href="https://heavietnam.ga/2021/10/22/patch-gma-gpu/">tại đây</a> </li><li>IGPU GT1 trên pentium, Celerons và Atoms không được support </li></ul>
+
+
+
+<p><li>bảng tóm tắt các version hỗ trợ cho các đời IGPU intel ( bảng này dựa trên <a href="https://dortania.github.io/OpenCore-Install-Guide/macos-limits.html#cpu-support">Hardware Limitations | OpenCore Install Guide (dortania.github.io)</a> | thank you )</li></p>
+
+
+
+<style>
+  table {
+    border-collapse: collapse;
+    border: 1px solid black;
+  }
+  table th {
+    border: 1px solid black;
+    padding: 5px;
+  }
+  table td {
+    border: 1px solid black;
+    padding: 5px;
+  }
+</style>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left;">GPU</th>
+      <th style="text-align: left;">min version</th>
+      <th style="text-align: left;">max version</th>
+      <th style="text-align: left;">ghi chú</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left;">
+3rd Gen GMA
+      </td>
+      <td style="text-align: left;">10.4.1</td>
+      <td rowspan="2" style="text-align: left;">10.7.5</td>
+      <td rowspan="2" style="text-align: left;">
+Requires 32-bit kernel and patches
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+4th Gen GMA
+      </td>
+      <td style="text-align: left;">10.5.0</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+        Arrandale(HD Graphics)
+      </td>
+      <td style="text-align: left;">10.6.4</td>
+      <td rowspan="2" style="text-align: left;">10.13.6</td>
+      <td style="text-align: left;">
+        Only LVDS is supported, eDP and external outputs are not
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+Sandy Bridge(HD 3000)
+      </td>
+      <td style="text-align: left;">10.6.7</td>
+      <td rowspan="8" style="text-align: left;">N/A</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+Ivy Bridge(HD 4000)
+      </td>
+      <td style="text-align: left;">10.7.3</td>
+      <td style="text-align: left;">11.6.1</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+Haswell(HD 4XXX, 5XXX)
+      </td>
+      <td style="text-align: left;">10.8.5</td>
+      <td rowspan="7" style="text-align: left;">
+        <span style="color: green;"> Current </span>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+Broadwell(5XXX, 6XXX)
+      </td>
+      <td style="text-align: left;">10.10.0</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+Skylake(HD 5XX)
+      </td>
+      <td style="text-align: left;">10.11.0</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+Kaby Lake(HD 6XX)
+      </td>
+      <td style="text-align: left;">10.12.4</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+Coffee Lake(UHD 6XX)
+      </td>
+      <td style="text-align: left;">10.13.6</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+Comet Lake(UHD 6XX)
+      </td>
+      <td style="text-align: left;">10.15.4</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+Ice Lake(Gx)
+      </td>
+      <td style="text-align: left;">10.15.4</td>
+      <td style="text-align: left;">
+        Requires <code>-igfxcdc</code> and <code>-igfxdvmt</code> in boot-args
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+iger Lake(Xe)
+      </td>
+      <td style="text-align: left;"><span style="color: red;"> N/A </span></td>
+      <td style="text-align: left;"><span style="color: red;"> N/A </span></td>
+      <td style="text-align: left;">
+        <span style="color: red;"> No drivers available </span>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+Rocket Lake
+      </td>
+      <td style="text-align: left;"><span style="color: red;"> N/A </span></td>
+      <td style="text-align: left;"><span style="color: red;"> N/A </span></td>
+      <td style="text-align: left;">
+        <span style="color: red;"> No drivers available </span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<ul><li>bảng tóm tắt các version hỗ trợ cho các đời GPU amd ( bảng này dựa trên <a href="https://dortania.github.io/OpenCore-Install-Guide/macos-limits.html#cpu-support">Hardware Limitations | OpenCore Install Guide (dortania.github.io)</a> | thank you )</li></ul>
+
+
+
+<style>
+  table {
+    border-collapse: collapse;
+    border: 1px solid black;
+  }
+  table th {
+    border: 1px solid black;
+    padding: 5px;
+  }
+  table td {
+    border: 1px solid black;
+    padding: 5px;
+  }
+</style>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left;">GPU</th>
+      <th style="text-align: left;">Min version</th>
+      <th style="text-align: left;">Max version</th>
+      <th style="text-align: left;">Ghi chú</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left;">
+        X800
+      </td>
+      <td style="text-align: left;">10.3.x</td>
+      <td rowspan="2" style="text-align: left;">10.7.5</td>
+      <td style="text-align: left;">yêu cầu kernel 32 bit</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+        X1000
+      </td>
+    </tr>
+
+    <tr>
+      <td style="text-align: left;">
+        TeraScale
+      </td>
+      <td style="text-align: left;">10.4.x</td>
+      <td rowspan="2" style="text-align: left;">10.13.6</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+        TeraScale 2/3
+      </td>
+      <td style="text-align: left;">10.6.x</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+        GCN 1
+      </td>
+      <td style="text-align: left;">10.8.3</td>
+      <td rowspan="7" style="text-align: left;">
+        <span style="color: green;"> Current </span>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+        GCN 2/3
+      </td>
+      <td style="text-align: left;">10.10.x</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+        Polaris 10,20
+      </td>
+      <td style="text-align: left;">10.12.1</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+        Vega 10
+      </td>
+      <td style="text-align: left;">10.12.6</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+        Vega 20
+      </td>
+      <td style="text-align: left;">10.14.5</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+        Navi 10
+      </td>
+      <td style="text-align: left;">10.15.1</td>
+      <td style="text-align: left;">
+        yêu cầu <code>agdpmod=pikera</code> trong boot-arg
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+        Navi 20
+      </td>
+      <td style="text-align: left;">11.4</td>
+      <td style="text-align: left;">
+        <span style="color: blue;"> Hiện tại 1 vài navi 21 vẫn hoạt động </span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<p><li>bảng tóm tắt các version hỗ trợ cho các đời DGPU Intel ( bảng này dựa trên <a href="https://dortania.github.io/OpenCore-Install-Guide/macos-limits.html#cpu-support">Hardware Limitations | OpenCore Install Guide (dortania.github.io)</a> | thank you )</li></p>
+
+
+
+<style>
+  table {
+    border-collapse: collapse;
+    border: 1px solid black;
+  }
+  table th {
+    border: 1px solid black;
+    padding: 5px;
+  }
+  table td {
+    border: 1px solid black;
+    padding: 5px;
+  }
+</style>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left;">GPU </th>
+      <th style="text-align: left;">Min version</th>
+      <th style="text-align: left;">Max version</th>
+      <th style="text-align: left;">Ghi chú</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left;">
+GeForce 6
+      </td>
+      <td style="text-align: left;">10.2.x</td>
+      <td rowspan="2" style="text-align: left;">10.7.5</td>
+      <td style="text-align: left;">
+        yêu cầu kernel 32 bit  và <a href="https://heavietnam.ga/2021/09/29/xiii-fix-connect-hdmi/">
+                                     NVCAP patching</a>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+GeForce 7
+      </td>
+      <td style="text-align: left;">10.4.x</td>
+      <td rowspan="4" style="text-align: left;">
+        <a href="https://heavietnam.ga/2021/09/29/xiii-fix-connect-hdmi/">yêu cầu NVCAP patching</a>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+Tesla
+      </td>
+      <td style="text-align: left;">10.4.x</td>
+      <td rowspan="3" style="text-align: left;">10.13.6</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+Tesla v2
+      </td>
+      <td style="text-align: left;">10.5.x</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+Fermi
+      </td>
+      <td style="text-align: left;">10.7.x</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+Kepler
+      </td>
+      <td style="text-align: left;">10.7.x</td>
+      <td rowspan="2" style="text-align: left;color:green;">current</td>
+      <td rowspan="2" style="text-align: left;"><a href="https://heavietnam.ga/2021/09/29/xxiipatch-card-do-hoa-nvidia/">macos 12 yêu cầu Geforce-Kepler-patcher
+        </a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+Kepler v2
+      </td>
+      <td style="text-align: left;">10.8.x</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+Maxwell
+      </td>
+      <td style="text-align: left;">10.10.x</td>
+      <td rowspan="2" style="text-align: left;">10.13.6</td>
+      <td rowspan="2" style="text-align: left;"><a href="https://heavietnam.ga/2021/09/29/xxiipatch-card-do-hoa-nvidia/">
+        yêu cầu NVIDIA Web Drivers</a>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+Pascal
+      </td>
+      <td style="text-align: left;">10.12.4</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+Turing
+      </td>
+      <td rowspan="2" style="text-align: left;">
+        <span style="color: red;"> N/A </span>
+      </td>
+      <td rowspan="2" style="text-align: left;">
+        <span style="color: red;"> N/A </span>
+      </td>
+      <td rowspan="2" style="text-align: left;">
+        <span style="color: red;"> No drivers available </span>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+Ampere
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<h2>Main board</h2>
+
+
+
+<p>Hầu hết các main đề hỗ trợ miễn là cpu được hồ trợ trước đó main B550 gặp 1 vài vấn đề. Tuy nhiên hiện nay các bạn chỉ cần thêm <a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-CPUR.aml">ssdt-cpur</a> và SetupVirtualMap=false</p>
+
+
+
+<h2>Ổ cứng</h2>
+
+
+
+<p>Phần lớn các ổ cứng đều được hỗ trợ ( sata và nvme hầu hết đều được hỗ trợ ngoại trừ 1 vài dòng sau đây )</p>
+
+
+
+<ul><li>các ổ Samsung PM981, PM991 and Micron 2200S NVMe SSDs hỗ trợ không tốt do đó bạn cần <a href="https://github.com/acidanthera/NVMeFix/releases" target="_blank" rel="noreferrer noopener">NVMeFix.kext</a> trong EFI ==&gt; OC ==&gt; Kext và snaps hoặc EFI ==&gt; Clover ==&gt; Kext ==&gt; other </li><li>Tuy nhiên ổ Samsung 970 EVO Plus NVMe SSDs trước đó gặp 1 vài vấn đề nhưng ở bản FIRMWARE mới nhất đã được fix các bạn có thể tải <a href="https://www.samsung.com/semiconductor/minisite/ssd/download/tools/">ở đây</a></li></ul>
+
+
+
+<ul><li>Intel 600p hỗ trợ không tốt nó có rất nhiều bug ( khuyến khích nên tránh | cần <a href="https://github.com/acidanthera/nvmefix">NVMeFix</a> để khởi động  )</li></ul>
+
+
+
+<h2>Lan </h2>
+
+
+
+<p>Hầu hết đều được hỗ trợ tốt ( xem bài patch Lan <a href="https://heavietnam.ga/2021/09/29/viii-fix-ethernet/">ở đây</a> )</p>
+
+
+
+<p>Tuy nhiên 1 số card vẫn gặp lỗi vd:</p>
+
+
+
+<ul><li>Intel I225 2.5Gb NIC trên các dòng Desktop cao cấp Comet Lake các bạn có thể tham khảo cách fix <a href="https://www.hackintosh-forum.de/forum/thread/48568-i9-10900k-gigabyte-z490-vision-d-er-l%C3%A4uft/?postID=606059#post606059">tại đây</a> </li><li>Intel I350 1Gb server NIC được tìm thấy trên các dòng intel và Supermicro server và đây là cách fix các bạn add mục </li></ul>
+
+
+
+<pre class="wp-block-code"><code>PciRoot(0x0)/Pci(0x1,0x1)/Pci(0x0,0x0) | dictionray -&gt; device-id | data | 33150000</code></pre>
+
+
+
+<p>Đôi khi các bạn sẽ gặp kernel panic xem cách fix chi tiết <a href="https://github.com/dortania/bugtracker/issues/213">tại đây</a> </p>
+
+
+
+<ul><li>Intel 10Gb server NICs cách fix cho các dòng X520 and X540 chipsets <a href="https://www.tonymacx86.com/threads/how-to-build-your-own-imac-pro-successful-build-extended-guide.229353/">tại đây</a></li></ul>
+
+
+
+<h2>Wifi và bluetooth</h2>
+
+
+
+<p>Hầu hết đều được hỗ trợ bao gồm các card</p>
+
+
+
+<ul><li>Intel </li><li>Broadcom</li><li>Atheros</li></ul>
+
+
+
+<p>Xem chi tiết <a href="https://heavietnam.ga/2021/09/29/vii-fix-wifi-va-bluetooth/">tại đây</a> </p>
+
+
+
+<p><strong>Source tham khảo: <a href="https://dortania.github.io/OpenCore-Install-Guide/macos-limits.html#miscellaneous">Hardware Limitations | OpenCore Install Guide (dortania.github.io)</a></strong></p>
+
+
+]]></content:encoded>
+					
+					<wfw:commentRss>https://heavietnam.ga/2020/12/25/tim-hieu-phan-cung/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Convert bootloader</title>
+		<link>https://heavietnam.ga/2020/12/24/convert-bootloader/</link>
+					<comments>https://heavietnam.ga/2020/12/24/convert-bootloader/#comments</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Thu, 24 Dec 2020 04:52:20 +0000</pubDate>
+				<category><![CDATA[install hackintosh]]></category>
+		<guid isPermaLink="false">https://heavietnam.ga/?p=1890</guid>
+
+					<description><![CDATA[Lý do có guide này: guide này hình thành là do 1 số bạn muốn chuyển bootloader ( clover and opencore ) nhưng gặp số tình trạng như ko biết tính năng này ở đâu trong bootloader mới do đó mọi thứ bạn cần đề ở đây do hiện nay mọi người có xu hướng [...]]]></description>
+										<content:encoded><![CDATA[
+<p>Lý do có guide này: guide này hình thành là do 1 số bạn muốn chuyển bootloader ( clover and opencore ) nhưng gặp số tình trạng như ko biết tính năng này ở đâu trong bootloader mới do đó mọi thứ bạn cần đề ở đây do hiện nay mọi người có xu hướng dùng opencore nhiều hơn nên ở đây mình sẽ viết theo lối convert từ clover sang opencore nhưng người dùng clover hoàn toàn có thể làm theo </p>
+
+
+
+<h2>Cấu trúc EFI</h2>
+
+
+
+<ul><li>config</li></ul>
+
+
+
+<p>Cả hai opencore và clover đề có </p>
+
+
+
+<ul><li>Drivers</li></ul>
+
+
+
+<p>Opencore: EFI --> drivers</p>
+
+
+
+<p>Clover: EFI --> drivers --> uefi ( ngoài ra còn mục bios và off nhưng nó nằm ngoài phạm vi bài này )</p>
+
+
+
+<ul><li>Tool</li></ul>
+
+
+
+<p>cấu trúc tương đương nhau </p>
+
+
+
+<ul><li>Kext</li></ul>
+
+
+
+<p>Opencore: EFI --> kext</p>
+
+
+
+<p>Clover: EFI --> kext --> other</p>
+
+
+
+<ul><li>Acpi</li></ul>
+
+
+
+<p>cấu trúc đường dẫn tương đương nhau</p>
+
+
+
+<h2>Config</h2>
+
+
+
+<h3>ACPI</h3>
+
+
+
+<h4><span data-mce-type="bookmark" id="mce_1_start" data-mce-style="overflow:hidden;line-height:0px" style="overflow:hidden;line-height:0px">Acpi rename:</span></h4>
+
+
+
+<ul><li>xhci patch ( bạn có thể <a href="https://heavietnam.ga/2021/09/29/vi-1map-usb-intel-and-amd/">map usb</a> để thay thế )<ul><li>xhci to xhc </li><li>Xhc1 to xhc</li></ul></li><li>sta rename ( opencore đã có )<ul><li>change SAT0 to SATA</li><li>change SAT1 to SATA</li></ul></li><li>imei rename ( dùng WhateverGreen )<ul><li>change HECI to IMEI</li><li>change HEC1 to IMEI</li><li>change MEI to IMEI</li><li>change IDER to MEID</li></ul></li><li>graphics patches ( dùng whatevergreen )<ul><li>change GFX0 to IGPU</li><li>change PEG0 to GFX0</li><li>change PEGP to GFX0</li><li>change SL01 to PEGP</li></ul></li><li>EC patches ( bạn có thể dùng <a href="https://heavietnam.ga/2021/09/29/xxix-dung-ssdt-time-de-prebuilt-ssdt/">ssdt-ec</a> )<ul><li>change EC0 to EC</li><li>change H_EC to EC</li><li>change ECDV to EC</li><li>change PGEC to EC</li></ul></li><li>audio rename ( dùng <a href="https://heavietnam.ga/2021/09/29/ii-patch-am-thanh-voi-apple-alc-with-patch-hpet/">apple alc</a> )<ul><li>change HDAS to HDEF</li><li>change CAVS to HDEF</li><li>change AZAL to HDEF</li><li>change ALZA to HDEF</li><li>change B0D3 to HDAU</li></ul></li><li>Fix rtc ( sử dụng ssdt-awac hoặc <a href="https://heavietnam.ga/2021/10/14/fix-rtc/">patch rtc</a> )<ul><li>change STAS to [Blank]</li><li>Fix Z390 BIOS DSDT Device(RTC) bug</li><li>Fix 300-series RTC Bug</li></ul></li><li>Fix nvme ( dùng <a href="https://github.com/acidanthera/NVMeFix">nvme fixup</a> để thay thế )<ul><li>change PXSX to ANS1</li><li>change PXSX to ANS2</li></ul></li><li>airport/wifi patches bcrm ( dùng <a href="https://github.com/acidanthera/AirportBrcmFixup">airport bcrm fixup</a> )<ul><li>change PXSX to ARPT</li></ul></li><li>other<ul><li>change LPC0 to LPCB( dùng&nbsp;<a href="https://github.com/acidanthera/OpenCorePkg/tree/master/Docs/AcpiSamples/Source/SSDT-SBUS-MCHC.dsl" target="_blank" rel="noreferrer noopener">SSDT-SBUS-MCHC</a> )</li><li>change PC00 to PCIO</li><li>change FPU to MATH</li><li>change TMR to TIMR</li><li>change PIC to IPIC</li><li>change GBE1 to ETH0<span data-mce-type="bookmark" id="mce_1_start" data-mce-style="overflow:hidden;line-height:0px" style="overflow:hidden;line-height:0px"><span data-mce-type="bookmark" id="mce_1_end" data-mce-style="overflow:hidden;line-height:0px" style="overflow:hidden;line-height:0px"></span></span></li></ul></li></ul>
+
+
+
+<h4>patches:</h4>
+
+
+
+<ul><li>TgtBridge patches:<ul><li><code>ACPI -&gt; Patch -&gt; ... -&gt; Base</code></li></ul></li><li>DisableASPM:<ul><li><code>DeviceProperties -&gt; Add -&gt; PciRoot... -&gt; pci-aspm-default | Data | &lt;00&gt;</code></li></ul></li><li>HaltEnabler:<ul><li><code>ACPI -&gt; Quirks -&gt; FadtEnableReset -&gt; YES</code></li></ul></li></ul>
+
+
+
+<h4>Fixes:</h4>
+
+
+
+<ul><li><strong>FixIPIC</strong>:<ul><li>&nbsp;<a href="https://github.com/corpnewt/SSDTTime" target="_blank" rel="noreferrer noopener">SSDTTime</a>  là phương pháp thay thế</li></ul></li><li><strong>FixSBUS</strong>:<ul><li><a href="https://github.com/acidanthera/OpenCorePkg/tree/master/Docs/AcpiSamples/Source/SSDT-SBUS-MCHC.dsl" target="_blank" rel="noreferrer noopener">SSDT-SBUS-MCHC</a> là phương pháp thay thế</li></ul></li><li><strong>FixShutdown</strong>:<ul><li><a href="https://github.com/dortania/OpenCore-Post-Install/blob/master/extra-files/FixShutdown-USB-SSDT.dsl" target="_blank" rel="noreferrer noopener">FixShutdown-USB-SSDT</a></li><li><a href="https://github.com/dortania/OpenCore-Post-Install/blob/master/extra-files/FixShutdown-Patch.plist" target="_blank" rel="noreferrer noopener"><code>_PTS</code>&nbsp;to&nbsp;<code>ZPTS</code>&nbsp;Patch</a></li></ul></li><li><strong>FixDisplay</strong>:<ul><li>Patch framebuffer xem chi tiết <a href="https://heavietnam.ga/2021/09/29/xii-patch-igpu/">tại đây</a></li></ul></li><li><strong>FixHDA</strong>:<ul><li> <a href="https://heavietnam.ga/2021/09/29/ii-patch-am-thanh-voi-apple-alc-with-patch-hpet/">AppleALC</a> sử dụng</li></ul></li><li><strong>FixHPET</strong>:<ul><li>&nbsp;<a href="https://heavietnam.ga/2021/09/29/ii-patch-am-thanh-voi-apple-alc-with-patch-hpet/" target="_blank" rel="noreferrer noopener">Fix hpet</a> </li></ul></li><li><strong>FixSATA</strong>:<ul><li><code>Kernel -&gt; Quirks -&gt; ExternalDiskIcons -&gt; YES</code></li></ul></li></ul>
+
+
+
+<ul><li><strong>FixRTC</strong>:<ul><li>&nbsp;<a href="https://github.com/corpnewt/SSDTTime" target="_blank" rel="noreferrer noopener">SSDTTime&nbsp;</a> dùng ssdt time patch hpet để thay thế</li></ul></li><li><strong>FixTMR</strong>:<ul><li>&nbsp;<a href="https://github.com/corpnewt/SSDTTime" target="_blank" rel="noreferrer noopener">SSDTTime</a> dùng ssdt time để patch hpet</li></ul></li><li><strong>AddPNLF</strong>:<ul><li>&nbsp;<a href="https://dortania.github.io/Getting-Started-With-ACPI/Laptops/backlight.html" target="_blank" rel="noreferrer noopener">SSDT-PNLF</a> dùng ssdt pnlf</li></ul></li><li><strong>AddMCHC</strong>:<ul><li><a href="https://github.com/acidanthera/OpenCorePkg/tree/master/Docs/AcpiSamples/Source/SSDT-SBUS-MCHC.dsl" target="_blank" rel="noreferrer noopener">SSDT-SBUS-MCHC</a> dùng ssdt này để thay thế </li></ul></li><li><strong>AddIMEI</strong>:<ul><li><a href="https://github.com/acidanthera/OpenCorePkg/tree/master/Docs/AcpiSamples/Source/SSDT-SBUS-MCHC.dsl" target="_blank" rel="noreferrer noopener">SSDT-SBUS-MCHC</a></li><li>cũng có thế dùng whatevergreen</li><li>1 số Sandy Bridge hoặc IvyBridge cần sử dụng &nbsp;<a href="https://github.com/acidanthera/OpenCorePkg/tree/master/Docs/AcpiSamples/Source/SSDT-IMEI.dsl" target="_blank" rel="noreferrer noopener">SSDT-IMEI</a></li></ul></li></ul>
+
+
+
+<ul><li><strong>FakeLPC</strong>:<ul><li><code>DeviceProperties -&gt; Add -&gt; PciRoot... -&gt; device-id</code></li><li>fake device id để dử dụng bộ điều khiển LPC trong apple LPC</li></ul></li><li><strong>FixIntelGfx</strong>:<ul><li>bạn có thể sử dụng <a href="https://github.com/acidanthera/whatevergreen/releases">WhateverGreen</a></li></ul></li><li><strong>AddHDMI</strong>:<ul><li>bạn có thể sử dụng <a href="https://github.com/acidanthera/whatevergreen/releases">WhateverGreen</a></li></ul></li></ul>
+
+
+
+<h4><strong>DropTables</strong>:</h4>
+
+
+
+<ul><li><code>ACPI -&gt; Delete</code> </li></ul>
+
+
+
+<p><strong>SSDT</strong>:</p>
+
+
+
+<ul><li><strong>PluginType</strong>:<ul><li><a href="https://dortania.github.io/Getting-Started-With-ACPI/Universal/plug.html" target="_blank" rel="noreferrer noopener">SSDT-PLUG</a></li></ul></li><li><strong> P States</strong>:&nbsp;<a href="https://github.com/Piker-Alpha/ssdtPRGen.sh" target="_blank" rel="noreferrer noopener">ssdtPRGen.sh&nbsp;</a>(nếu Sandy Bridge và IvyBridge)</li><li><strong> C States</strong>:&nbsp;<a href="https://github.com/Piker-Alpha/ssdtPRGen.sh" target="_blank" rel="noreferrer noopener">ssdtPRGen.sh&nbsp; </a>(nếu Sandy Bridge và IvyBridge)</li></ul>
+
+
+
+<h1 id="boot">Boot</h1>
+
+
+
+<p><strong>Boot Argument</strong>:</p>
+
+
+
+<ul><li><code>NVRAM -&gt; Add -&gt; 7C436110-AB2A-4BBB-A880-FE41995C9F82 -&gt; boot-args</code></li></ul>
+
+
+
+<p><strong>NeverHibernate</strong>:</p>
+
+
+
+<ul><li><code>Misc -&gt; Boot -&gt; HibernateMode -&gt; None</code></li></ul>
+
+
+
+<p><strong>Default Boot Volume</strong>:</p>
+
+
+
+<ul><li><code>Misc -&gt; Security -&gt; AllowSetDefault -&gt; True</code><ul><li>ấnCtrl+Enter ở màn hình gui opencore để chọn boot mặc định</li></ul></li><li>hoạc bạn có thể dùng như real mac ở trong setting</li></ul>
+
+
+
+<h2>Boot Graphics</h2>
+
+
+
+<p><strong>DefaultBackgroundColor</strong>:</p>
+
+
+
+<ul><li><code>NVRAM -&gt; Add -&gt; 4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14 -&gt; DefaultBackgroundColor</code><ul><li><code>00000000</code>: Syrah Black</li><li><code>BFBFBF00</code>: Light Gray</li><li>bạn có thể tùy chọn màu bằng các convert mã màu rgb của bạn sang hex bằng hackintool hoặc bất kì trình chuyển đổi hex nào mà bạn muốn</li></ul></li></ul>
+
+
+
+<p><strong>EFILoginHiDPI</strong>:</p>
+
+
+
+<ul><li> OpenCore sử dụng UI scaling &nbsp;<code>UEFI -&gt; Output</code></li></ul>
+
+
+
+<p><strong>flagstate</strong>:</p>
+
+
+
+<ul><li><code>NVRAM -&gt; Add -&gt; 4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14 -&gt; flagstate | Data | &lt;&gt;</code><ul><li>0 -&gt;&nbsp;<code>&lt;00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000</code>&gt; </li></ul></li></ul>
+
+
+
+<p><strong>UIScale</strong>:</p>
+
+
+
+<ul><li><code>NVRAM -&gt; Add -&gt; 4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14 -&gt; UIScale | Data | &lt;&gt;</code><ul><li>1 -&gt;&nbsp;<code>&lt;01&gt;</code></li><li>2 -&gt;&nbsp;<code>&lt;02&gt;</code></li></ul></li></ul>
+
+
+
+<h1 id="devices">Devices</h1>
+
+
+
+<p><strong>USB</strong>:</p>
+
+
+
+<ul><li>FixOwnership:&nbsp;<code>UEFI -&gt; Quirk -&gt; ReleaseUsbOwnership</code></li><li>ClockID:&nbsp;<code>DeviceProperties -&gt; Add -&gt; PciRoot... -&gt; AAPL,clock-id</code></li><li>HighCurrent:&nbsp;<code>DeviceProperties -&gt; Add -&gt; PciRoot... -&gt; AAPL, HighCurrent</code><ul><li>từ for OS X 10.11 and mới hơn</li><li>đối với phiên bản mới hơn được xác định ở &nbsp;<code>IOUSBHostFamily.kext -&gt; AppleUSBHostPlatformProperties</code>&nbsp;hoặc được add vào ssdt-ec usbx cho skylake smbios mới hơn ( gen 6 + )</li></ul></li></ul>
+
+
+
+<p><strong>Audio</strong>:</p>
+
+
+
+<p>bạn sẽ cần biết âm thanh đc đièu khiên qua device nào bạn có thể sử dụng để tìm ra chúng&nbsp;<a href="https://github.com/acidanthera/gfxutil/releases" target="_blank" rel="noreferrer noopener">gfxutil</a>:</p>
+
+
+
+<pre class="wp-block-code"><code>// mở terminal
+path/to/gfxutil -f HDEF
+</code></pre>
+
+
+
+<ul><li>Inject:&nbsp;<code>DeviceProperties -&gt; Add -&gt; PciRoot... -&gt; layout-id</code></li><li>AFGLowPowerState:&nbsp;<code>DeviceProperties -&gt; Add -&gt; PciRoot... -&gt; AFGLowPowerState -&gt; &lt;01000000&gt;</code></li><li>ResetHDA:&nbsp;<code>UEFI -&gt; Audio -&gt; ResetTrafficClass</code><ul><li>hoặc bạn có thể add vào boot-arg &nbsp;<code>alctsel=1</code> cho apple alc</li></ul></li></ul>
+
+
+
+<p><strong>Add Properties</strong>:</p>
+
+
+
+<ul><li>bạn cần xác định đường dẫn của PciRoot</li></ul>
+
+
+
+<p><strong>Properties</strong>:</p>
+
+
+
+<ul><li><code>DeviceProperties -&gt; Add</code></li></ul>
+
+
+
+<p><strong>FakeID</strong>: bạn sẽ cần tìm đường dẫn tới PciRoot và cho nó vào&nbsp;<code>DeviceProperties -&gt; Add</code>, tìm đường dẫnPciRoot bằng&nbsp;<a href="https://github.com/acidanthera/gfxutil/releases" target="_blank" rel="noreferrer noopener">gfxutil</a></p>
+
+
+
+<ul><li><strong>USB</strong><ul><li><code>device-id</code></li><li><code>device_type</code></li><li><code>device_type</code></li></ul></li><li><strong>IMEI</strong><ul><li><code>device-id</code></li><li><code>vendor-id</code></li></ul></li><li><strong>WIFI</strong><ul><li><code>name</code></li><li><code>compatible</code></li></ul></li><li><strong>LAN</strong><ul><li><code>device-id</code></li><li><code>compatible</code></li><li><code>vendor-id</code></li></ul></li><li><strong>XHCI</strong><ul><li><code>device-id</code></li><li><code>device_type: UHCI</code></li><li><code>device_type: OHCI</code></li></ul></li></ul>
+
+
+
+<ul><li>device_type: EHCI<ul><li><code>device-id</code></li><li><code>AAPL,current-available</code></li><li><code>AAPL,current-extra</code></li><li><code>AAPL,current-available</code></li><li><code>AAPL,current-extra</code></li><li><code>AAPL,current-in-sleep</code></li><li><code>built-in</code></li></ul></li></ul>
+
+
+
+<ul><li>device_type: XHCI<ul><li><code>device-id</code></li><li><code>AAPL,current-available</code></li><li><code>AAPL,current-extra</code></li><li><code>AAPL,current-available</code></li><li><code>AAPL,current-in-sleep</code></li><li><code>built-in</code></li></ul></li></ul>
+
+
+
+<p><strong>ForceHPET</strong>:</p>
+
+
+
+<ul><li><code>UEFI -&gt; Quirks -&gt; ActivateHpetSupport</code></li></ul>
+
+
+
+<h2>Disable Drivers</h2>
+
+
+
+<p>bạn có thể ko thêm vào <code>UEFI -&gt; Drivers</code> hoặcthêm dấu # vào trc driver trong config để opencore skip it</p>
+
+
+
+<h2>Gui</h2>
+
+
+
+<p>Cả 2 đều có gui xem chi tiết <a href="https://heavietnam.ga/2021/09/29/xvii-tao-gui/">tại đây</a> </p>
+
+
+
+<h2>Graphics</h2>
+
+
+
+<p><strong>InjectIntel</strong>:</p>
+
+
+
+<ul><li><a href="https://dortania.github.io/OpenCore-Post-Install/gpu-patching/" target="_blank" rel="noreferrer noopener">GMA Patching</a></li></ul>
+
+
+
+<p><strong>InjectAti</strong>:</p>
+
+
+
+<ul><li><code>DeviceProperties -&gt; Add -&gt; PciRoot... -&gt; device-id</code><ul><li>ví dụ:&nbsp;<code>&lt;B0670000&gt;</code>&nbsp;cho R9 390X</li></ul></li><li><code>DeviceProperties -&gt; Add -&gt; PciRoot... -&gt; @0,connector-type</code><ul><li>bạn có thể cần patch connector theo bản sau chi <a href="https://heavietnam.ga/2021/09/29/xiv-patch-connect-type-force-rgb-injects-edid/">ở đây</a></li></ul></li></ul>
+
+
+
+<pre class="wp-block-code"><code>LVDS                    &lt;02 00 00 00&gt;
+DVI (Dual Link)         &lt;04 00 00 00&gt;
+DVI (Single Link)       &lt;00 02 00 00&gt;
+VGA                     &lt;10 00 00 00&gt;
+S-Video                 &lt;80 00 00 00&gt;
+DP                      &lt;00 04 00 00&gt;
+HDMI                    &lt;00 08 00 00&gt;
+DUMMY                   &lt;01 00 00 00&gt;
+</code></pre>
+
+
+
+<p><strong>InjectNvidia</strong>:</p>
+
+
+
+<ul><li><a href="https://heavietnam.ga/2021/09/29/xiii-fix-connect-hdmi/">Patch nvcap</a></li></ul>
+
+
+
+<p><strong>FakeIntel</strong>:</p>
+
+
+
+<ul><li><code>DeviceProperties -&gt; Add -&gt; PciRoot(0x0)/Pci(0x2,0x0) -&gt; device-id</code><ul><li>ví dụ.&nbsp;<code>66010003</code>&nbsp;cho the HD 4000</li></ul></li><li><code>DeviceProperties -&gt; Add -&gt; PciRoot(0x0)/Pci(0x2,0x0) -&gt; vendor-id -&gt; &lt;86800000&gt;</code></li></ul>
+
+
+
+<p><strong>FakeAti</strong>:</p>
+
+
+
+<ul><li><code>DeviceProperties -&gt; Add -&gt; PciRoot... -&gt; device-id</code><ul><li>ie:&nbsp;<code>&lt;B0670000&gt;</code>&nbsp;for the R9 390X</li></ul></li><li><code>DeviceProperties -&gt; Add -&gt; PciRoot... -&gt; ATY,DeviceID</code><ul><li>ie:&nbsp;<code>&lt;B067&gt;</code>&nbsp;for the R9 390X</li></ul></li><li><code>DeviceProperties -&gt; Add -&gt; PciRoot... -&gt; @0,compatible</code><ul><li>ie.&nbsp;<code>ATY,Elodea</code>&nbsp;for HD 6970M</li></ul></li><li><code>DeviceProperties -&gt; Add -&gt; PciRoot... -&gt; vendor-id-&gt; &lt;02100000&gt;</code></li><li><code>DeviceProperties -&gt; Add -&gt; PciRoot... -&gt; ATY,VendorID -&gt; &lt;0210&gt;</code></li></ul>
+
+
+
+<p>xem chi tiết <a href="https://heavietnam.ga/2021/09/29/xxiii-patch-card-doi-hoa-amd/">tại đây</a></p>
+
+
+
+<p><strong>Custom EDID</strong></p>
+
+
+
+<ul><li>xem chi tiết <a href="https://heavietnam.ga/2021/09/29/xiv-patch-connect-type-force-rgb-injects-edid/">tại đây</a></li></ul>
+
+
+
+<p><strong>Dual Link</strong>:</p>
+
+
+
+<ul><li><code>DeviceProperties -&gt; Add -&gt; PciRoot... -&gt; AAPL00,DualLink</code><ul><li>1 -&gt;&nbsp;<code>&lt;01000000&gt;</code></li><li>0 -&gt;&nbsp;<code>&lt;00000000&gt;</code></li></ul></li></ul>
+
+
+
+<p><strong>NVCAP</strong></p>
+
+
+
+<ul><li>xem chi tiết <a href="https://heavietnam.ga/2021/09/29/xiii-fix-connect-hdmi/">tại đây</a></li></ul>
+
+
+
+<p><strong>display-cfg</strong>:</p>
+
+
+
+<ul><li><code>DeviceProperties -&gt; Add -&gt; PciRoot... -&gt; @0,display-cfg</code></li><li>tham khảo tại&nbsp;<a href="https://www.insanelymac.com/forum/topic/215236-nvidia-injection/" target="_blank" rel="noreferrer noopener">Nvidia injection</a></li></ul>
+
+
+
+<p><strong>LoadVBios</strong>:</p>
+
+
+
+<p>Tạo 1 cấu trúc ssdt tương tự như sau </p>
+
+
+
+<pre class="wp-block-code"><code>External (<em>SB</em>.PCI0.GFX0, DeviceObj)
+External (<em>SB</em>.PCI0.PEG0, DeviceObj)
+External (<em>SB</em>.PCI0.PEG0.PEGP, DeviceObj)
+External ( DTGP , MethodObj)
+
+Scope (\_SB.PCI0)
+{
+    Scope (PEG0)
+    {
+        Scope (PEGP)
+        {
+            Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+            {
+                Store (Package ()
+                {
+                    Buffer (0x00010000)
+                    {
+                        // Put your VBIOS here (you could extract it with Linux or Windows)
+                    }
+
+                }, Local0)
+                DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
+                Return (Local0)
+            }
+        }
+     }
+  }
+}   </code></pre>
+
+
+
+<p><strong>NvidiaGeneric</strong>:</p>
+
+
+
+<ul><li><code>DeviceProperties -&gt; Add -&gt; PciRoot... -&gt; model | string | Add the GPU name</code></li></ul>
+
+
+
+<p><strong>NvidiaSingle</strong>:</p>
+
+
+
+<p>xem chi tiết tại đây&nbsp;<a href="https://heavietnam.ga/2021/09/29/xxi-disable-dgpu/" target="_blank" rel="noreferrer noopener">disable dgpu</a></p>
+
+
+
+<p><strong>NvidiaNoEFI</strong>:</p>
+
+
+
+<ul><li><code>DeviceProperties -&gt; Add -&gt; PciRoot... -&gt; NVDA,noEFI | Boolean | True</code></li><li>tham khảo tại đây:&nbsp;<a href="https://www.insanelymac.com/forum/topic/306156-clover-problems-and-solutions/?do=findComment&amp;comment=2443062" target="_blank" rel="noreferrer noopener">GT 640 scramble</a></li></ul>
+
+
+
+<p><strong>ig-platform-id</strong>:</p>
+
+
+
+<ul><li><code>DeviceProperties -&gt; Add -&gt; PciRoot(0x0)/Pci(0x2,0x0) -&gt; APPL,ig-platform-id</code></li></ul>
+
+
+
+<p><strong>BootDisplay</strong>:</p>
+
+
+
+<ul><li><code>DeviceProperties -&gt; Add -&gt; PciRoot... -&gt; @0,AAPL,boot-display</code></li></ul>
+
+
+
+<p><strong>RadeonDeInit</strong>:</p>
+
+
+
+<ul><li>Tính năng này hầu như ko cần nếu bạn có sử dụng WhateverGreen</li></ul>
+
+
+
+<h1 id="kernel-and-kext-patches">Kernel and Kext Patches</h1>
+
+
+
+<p><strong>KernelPm</strong>:</p>
+
+
+
+<ul><li><code>Kernel -&gt; Quirks -&gt; AppleXcpmCfgLock -&gt; YES</code></li></ul>
+
+
+
+<p><strong>AppleIntelCPUPM</strong>:</p>
+
+
+
+<ul><li><code>Kernel -&gt; Quirks -&gt; AppleCpuPmCfgLock -&gt; YES</code></li></ul>
+
+
+
+<p><strong>DellSMBIOSPatch</strong>:</p>
+
+
+
+<p>sử dụng cho các hệ thống dell cũ sử dụng APTIO V</p>
+
+
+
+<ul><li><code>Kernel -&gt; Quirks -&gt; CustomSMBIOSGuid -&gt; YES</code></li><li><code>PlatformInfo -&gt; UpdateSMBIOSMode -&gt; Custom</code></li></ul>
+
+
+
+<p><strong>KextsToPatch</strong>:</p>
+
+
+
+<ul><li><code>Kernel -&gt; Patch</code></li><li>1 số quy tắc đổi</li></ul>
+
+
+
+<pre class="wp-block-code"><code>comment : sử dụng cho cả opencore và clover
+
+Disabled : tương ứng với mục enable ben opencore
+
+MatchBuild : được thay thế bằng minkernel và maxkernel 
+
+MatchOS : được thay thế bằng minkernel và maxkernel
+
+Find : có ở opencore và clover
+
+Replace : có cả ở opencore và clover
+
+MaskFind : opencore sử dụng mask để thay thế
+
+Mask replace : có cả ở opencore và clover
+
+count ,limit, skip thường được đặt thành 0
+
+Identifier thường được đặt thành kernel ( trông 1 số trường hợp khi bạn patch kext nào thì sẽ để đường dẫn theo kext đó vd như com.apple.iokit.IOGraphicsFamily )
+</code></pre>
+
+
+
+<p><strong>KernelToPatch</strong>:</p>
+
+
+
+<ul><li><code>Kernel -&gt; Patch</code></li></ul>
+
+
+
+<p><strong>ForceKextsToLoad</strong>:</p>
+
+
+
+<ul><li><code>Kernel -&gt; Force</code></li></ul>
+
+
+
+<p><strong>Kernel LAPIC</strong>:</p>
+
+
+
+<ul><li><code>Kernel -&gt; Quirks -&gt; LapicKernelPanic -&gt; YES</code></li></ul>
+
+
+
+<p><strong>KernelXCPM</strong>:</p>
+
+
+
+<ul><li><code>Kernel -&gt; Quirks -&gt; AppleXcpmExtraMsrs -&gt; YES</code></li></ul>
+
+
+
+<p>patch xcpm theo bảng dưới xem chi tiết <a href="https://heavietnam.ga/2021/09/29/vi-3fix-power-manager/">tại đây</a></p>
+
+
+
+<pre class="wp-block-code"><code>Base: _xcpm_bootstrap
+Comment: _xcpm_bootstrap (Ivy Bridge) 10.15
+Count: 1
+Enabled: YES
+Find: 8D43C43C22
+Identifier: kernel
+Limit: 0
+Mask: FFFF00FFFF
+MinKernel: 19.
+MaxKernel: 19.99.99
+Replace: 8D43C63C22
+ReplaceMask: 0000FF0000
+Skip: 0</code></pre>
+
+
+
+<p>cho low-end haswell+ pentium Celerons</p>
+
+
+
+<p><strong>USB Port Limit Patches</strong>:</p>
+
+
+
+<ul><li><code>Kernel -&gt; Quirks -&gt; XhciPortLimit -&gt; YES</code></li></ul>
+
+
+
+<p><strong>External Icons Patch</strong>:</p>
+
+
+
+<ul><li><code>Kernel -&gt; Quirks -&gt; ExternalDiskIcons -&gt; YES</code></li><li>được sử dụng để cho ổ đĩa trong ở macos đc xem như ổ đĩa ngoài</li></ul>
+
+
+
+<p><strong>AppleRTC</strong></p>
+
+
+
+<p>1 số lỗi về rtc </p>
+
+
+
+<ul><li>config.plist -&gt; Kernel -&gt; Quirks -&gt; DisableRtcChecksum -&gt; true</li></ul>
+
+
+
+<p>xem chi tiết <a href="https://heavietnam.ga/2021/10/14/fix-rtc/">tại đây</a></p>
+
+
+
+<p>bạn có thể ađ vào boot-arg để qua khỏi lỗi sau đó patch lại</p>
+
+
+
+<pre class="wp-block-code"><code>rtcfx_exclude=00-FF</code></pre>
+
+
+
+<p><strong>FakeCPUID</strong>:</p>
+
+
+
+<ul><li><code>Kernel -&gt; Emulate</code>:</li></ul>
+
+
+
+<pre class="wp-block-code"><code>Cpuid1mask:  
+
+//remove 0x và tách thành từng cặp
+
+0x0306A9 ==> <meta charset="utf-8">03 06 A9
+
+// đảo ngược thứ tự các cặp
+<meta charset="utf-8">
+03 06 A9 ==> A9 06 03
+
+//thêm các số 0 vào sau dãy sô vừa đổi sao cho đủ 4 cặp mỗi cặp gồm 8 chữ số
+<meta charset="utf-8">
+A9 06 03 ==> A9060300 00000000 00000000 00000000
+
+Cpuid1Data:
+
+FFFFFFFF 00000000 00000000 00000000</code></pre>
+
+
+
+<p>xem chi tiết <a href="https://heavietnam.ga/2021/09/29/xxiv-fake-cpu-id/">tại đây</a></p>
+
+
+
+<h1 id="rt-variables">Rt Variables</h1>
+
+
+
+<p><strong>ROM</strong>:</p>
+
+
+
+<ul><li>xem chi tiết <a href="https://heavietnam.ga/2021/09/29/xix-fix-imessage/">tại đây</a></li></ul>
+
+
+
+<p><strong>MLB</strong>:</p>
+
+
+
+<ul><li><code>PlatformInfo -&gt; Generic -&gt; MLB</code></li></ul>
+
+
+
+<p><strong>BooterConfig</strong>:</p>
+
+
+
+<ul><li><code>NVRAM -&gt; Add -&gt; 4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14-&gt; UIScale</code>:<ul><li>0x28:&nbsp;<code>Data | &lt;01&gt;</code></li><li>0x2A:&nbsp;<code>Data | &lt;02&gt;</code></li></ul></li></ul>
+
+
+
+<p><strong>CsrActiveConfig</strong>:</p>
+
+
+
+<ul><li><code>NVRAM -&gt; Add -&gt; 7C436110-AB2A-4BBB-A880-FE41995C9F82 -&gt; csr-active-config</code>:<ul><li>0x0:&nbsp;<code>00000000</code></li><li>0x3:&nbsp;<code>03000000</code></li><li>0x67:&nbsp;<code>67000000</code></li><li>0x3E7:&nbsp;<code>E7030000</code></li></ul></li></ul>
+
+
+
+<h1 id="smbios">SMBIOS</h1>
+
+
+
+<p><strong>Product Name</strong>:</p>
+
+
+
+<ul><li><code>PlatformInfo -&gt; Generic -&gt; SystemProductName</code></li></ul>
+
+
+
+<p><strong>Serial Number</strong>:</p>
+
+
+
+<ul><li><code>PlatformInfo -&gt; Generic -&gt; SystemSerialNumber</code></li></ul>
+
+
+
+<p><strong>Board Serial Number</strong>:</p>
+
+
+
+<ul><li><code>PlatformInfo -&gt; Generic -&gt; MLB</code></li></ul>
+
+
+
+<p><strong>SmUUID</strong>:</p>
+
+
+
+<ul><li><code>PlatformInfo -&gt; Generic -&gt; SystemUUID</code></li></ul>
+
+
+
+<p><strong>Memory</strong>:</p>
+
+
+
+<ul><li><code>PlatformInfo -&gt; CustomMemory -&gt; True</code></li><li><code>PlatformInfo -&gt; Memory</code></li></ul>
+
+
+
+<p><strong>Slots AAPL Injection</strong>:</p>
+
+
+
+<ul><li><code>DeviceProperties -&gt; Add -&gt; PciRoot... -&gt; APPL,slot-name | string | Add slot</code></li></ul>
+
+
+
+<h1 id="system-parameters">System Parameters</h1>
+
+
+
+<p><strong>CustomUUID</strong>:</p>
+
+
+
+<ul><li>Tính năng này dường như ko cần thiết</li></ul>
+
+
+
+<p><strong>InjectSystemID</strong>:</p>
+
+
+
+<ul><li>gần như vô dụng</li></ul>
+
+
+
+<p><strong>BacklightLevel</strong>:</p>
+
+
+
+<ul><li>set tính năng này trong nvram</li><li><code>NVRAM -&gt; Add -&gt; 7C436110-AB2A-4BBB-A880-FE41995C9F82 -&gt; backlight-level | Data | &lt;Insert value&gt;</code><ul><li>0x0101 -&gt;&nbsp;<code>&lt;0101&gt;</code></li></ul></li></ul>
+
+
+
+<p><strong>InjectKexts</strong>:</p>
+
+
+
+<ul><li>thật sự ko cần thiết</li></ul>
+
+
+
+<p><strong>NoCaches</strong>:</p>
+
+
+
+<ul><li>được sử dụng cho macos 10.7 và opencore yêu cầu macos phải từ 10.7+ nên ko có bản tương đương</li></ul>
+
+
+
+<p><strong>ExposeSysVariables</strong>:</p>
+
+
+
+<ul><li>chỉ cần thêm nó và dưới <code>platformInfo</code></li></ul>
+
+
+
+<p><strong>NvidiaWeb</strong>:</p>
+
+
+
+<ul><li>điều này có nghĩa là bạn đang áp dụng dòng vào terminal  <code>sudo nvram nvda_drv=1</code> mỗi lần khởi động có thể áp dụng nó vào opencore theo đường dẫn sau:</li><li><span style="background-color: inherit; font-family: monospace; font-size: inherit; color: initial;">NVRAM -&gt; Add -&gt; 7C436110-AB2A-4BBB-A880-FE41995C9F82 -&gt; nvda_drv: &lt;31&gt;</span></li></ul>
+
+
+
+<p><strong>Source tham khảo: <a href="https://dortania.github.io/OpenCore-Install-Guide/clover-conversion/Clover-config.html">Converting common properties from Clover to OpenCore | OpenCore Install Guide (dortania.github.io)</a></strong></p>
+
+
+]]></content:encoded>
+					
+					<wfw:commentRss>https://heavietnam.ga/2020/12/24/convert-bootloader/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Cách tạo bộ cài online</title>
+		<link>https://heavietnam.ga/2020/12/23/cach-tao-bo-cai-online/</link>
+					<comments>https://heavietnam.ga/2020/12/23/cach-tao-bo-cai-online/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Wed, 23 Dec 2020 04:48:51 +0000</pubDate>
+				<category><![CDATA[install hackintosh]]></category>
+		<guid isPermaLink="false">https://heavietnam.ga/?p=1883</guid>
+
+					<description><![CDATA[chỉ áp dụng với opencore Formart usb Usb 4gb B1: nhấn chuột phải tại nút start trên windown B2: chọn disk management B3: chuột phải chọn formart sử dụng định dạng fat32 Usb 16gb B1: down load rufus tại đây B2: chọn mục boot selection là noonbootable B3: chọn type là fat32 B4: click start [...]]]></description>
+										<content:encoded><![CDATA[
+<p>chỉ áp dụng với opencore </p>
+
+
+
+<h2 id="formart-usb">Formart usb </h2>
+
+
+
+<h3 id="usb-4gb">Usb 4gb </h3>
+
+
+
+<p>B1: nhấn chuột phải tại nút start trên windown </p>
+
+
+
+<p>B2: chọn disk management</p>
+
+
+
+<p>B3: chuột phải chọn formart sử dụng định dạng fat32</p>
+
+
+
+<p></p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-14-at-12.25.19-1.png?w=533" alt="" class="wp-image-701"/></figure>
+
+
+
+<h3 id="usb-16gb">Usb 16gb</h3>
+
+
+
+<p>B1: down load rufus <a href="https://rufus.ie/en/">tại đây</a></p>
+
+
+
+<p>B2: chọn mục boot selection là noonbootable </p>
+
+
+
+<p>B3: chọn type là fat32</p>
+
+
+
+<p>B4: click start </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-14-at-12.37.44-2.png?w=471" alt="" class="wp-image-705"/></figure>
+
+
+
+<h3 id="legacy">Legacy</h3>
+
+
+
+<p>B1: nhấn tổ hợp phím windown + r gõ diskpart và enter</p>
+
+
+
+<p>B2: gõ list disk</p>
+
+
+
+<p>B3: nhìn vào tên usbở disk mấy sau đó gõ select disk # ( thay # thành số thứ tự của usb vd disk 1 )</p>
+
+
+
+<p>B4: gõ clean</p>
+
+
+
+<p>B5: gõ convert gpt</p>
+
+
+
+<p>B6: gõ create partition primary</p>
+
+
+
+<p>B7: gõ list partition </p>
+
+
+
+<p>B7: gõ select partition # ( thay # thành số thứ tự của partion )</p>
+
+
+
+<p>B8: gõ format fs=fat32 quick</p>
+
+
+
+<p>B9: gõ ASSIGN LETTER=# ( thay # thành tên letter mà bạn muốn )</p>
+
+
+
+<h2 id="tải-bộ-cai">Tải bộ cài </h2>
+
+
+
+<p>B1: các bạn tải file <a href="https://github.com/acidanthera/opencorepkg/releases">opencorepkg</a></p>
+
+
+
+<p>B2: đến mục /Utilities/macrecovery/ và chọn mục copy path</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-14-at-18.55.12.png?w=898" alt="" class="wp-image-710"/></figure>
+
+
+
+<p>B3: mở cmd và gõ lệnh cd + control v</p>
+
+
+
+<p>B4: gõ các lệnh sau</p>
+
+
+
+<div class="wp-container-622f5ee365229 wp-block-group"><div class="wp-block-group__inner-container">
+<pre class="wp-block-code"><code># Lion(10.7):
+python macrecovery.py -b Mac-2E6FAB96566FE58C -m 00000000000F25Y00 download
+python macrecovery.py -b Mac-C3EC7CD22292981F -m 00000000000F0HM00 download
+
+# Mountain Lion(10.8):
+python macrecovery.py -b Mac-7DF2A3B5E5D671ED -m 00000000000F65100 download
+
+# Mavericks(10.9):
+python macrecovery.py -b Mac-F60DEB81FF30ACF6 -m 00000000000FNN100 download
+
+# Yosemite(10.10):
+python macrecovery.py -b Mac-E43C1C25D4880AD6 -m 00000000000GDVW00 download
+
+# El Capitan(10.11):
+python macrecovery.py -b Mac-FFE5EF870D7BA81A -m 00000000000GQRX00 download
+
+# Sierra(10.12):
+python macrecovery.py -b Mac-77F17D7DA9285301 -m 00000000000J0DX00 download
+
+# High Sierra(10.13)
+python macrecovery.py -b Mac-7BA5B2D9E42DDD94 -m 00000000000J80300 download
+python macrecovery.py -b Mac-BE088AF8C5EB4FA2 -m 00000000000J80300 download
+
+# Mojave(10.14)
+python macrecovery.py -b Mac-7BA5B2DFE22DDD8C -m 00000000000KXPG00 download
+
+# Catalina(10.15)
+python macrecovery.py -b Mac-00BE6ED71E35EB86 -m 00000000000000000 download
+
+# Latest version
+# ie. Big Sur(11)
+python macrecovery.py -b Mac-E43C1C25D4880AD6 -m 00000000000000000 download</code></pre>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-14-at-19.04.38-1.png?w=904" alt="" class="wp-image-718"/></figure>
+
+
+
+<p>B5: các bạn bỏ 2 file base system vào thư mục com.apple.recovery.boot ( tạo thư mục này ở usb )</p>
+
+
+
+<p>B6: Các bạn tạo EFI theo hướng dẫn <a href="https://heavietnam.ga/2021/11/23/cach-tao-efi-cho-opencore/">ở đây</a> sau đó bỏ folder EFI vào usb  ( chung partion với folder com.apple.recovery.boot )</p>
+</div></div>
+
+
+
+<p></p>
+
+
+
+<p> </p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://heavietnam.ga/2020/12/23/cach-tao-bo-cai-online/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Cách tạo bộ cài offline</title>
+		<link>https://heavietnam.ga/2020/12/23/cach-tao-bo-cai-offline/</link>
+					<comments>https://heavietnam.ga/2020/12/23/cach-tao-bo-cai-offline/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Wed, 23 Dec 2020 04:47:50 +0000</pubDate>
+				<category><![CDATA[install hackintosh]]></category>
+		<guid isPermaLink="false">https://heavietnam.ga/?p=1881</guid>
+
+					<description><![CDATA[B1: formart usb theo định dạng ntfs hoặc hfs+ B2: các bạn vào trang image ( ở trên menu ) B3: download đúng phiên bản macos cần tải về và balena etcher B4: mở balena etcher lên và chọn như hình B5: các bạn build EFI theo hướng dẫn ở đây ( nếu opencore ) [...]]]></description>
+										<content:encoded><![CDATA[
+<p>B1: formart usb theo định dạng ntfs hoặc hfs+ </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-26-at-23.01.00.png?w=352" alt="" class="wp-image-872"/></figure>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-26-at-22.59.38.png?w=1024" alt="" class="wp-image-870"/></figure>
+
+
+
+<p>B2: các bạn vào trang image ( ở trên menu )</p>
+
+
+
+<p>B3: download đúng phiên bản macos cần tải về và balena etcher</p>
+
+
+
+<p>B4: mở balena etcher lên và chọn như hình</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-26-at-23.01.44-1.png?w=987" alt="" class="wp-image-876"/></figure>
+
+
+
+<p>B5: các bạn build EFI theo hướng dẫn <a href="https://heavietnam.ga/2021/11/23/cach-tao-efi-cho-opencore/">ở đây</a> ( nếu opencore ) và <a href="https://heavietnam.ga/2021/11/23/cach-tao-efi-clover/">ở đây</a> ( nếu clover )</p>
+
+
+
+<p>B6:các bạn tải explorer++ <a href="https://explorerplusplus.com/download">tại đây</a> và down minitool <a href="https://www.partitionwizard.com/free-partition-manager.html">tại đây</a></p>
+
+
+
+<p>B7: các bạn mở mintool partion lên và chọn change letter vào phân vùng efi</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-26-at-23.06.20.png?w=663" alt="" class="wp-image-881"/></figure>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-26-at-23.06.56.png?w=679" alt="" class="wp-image-882"/></figure>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-26-at-23.05.55.png?w=679" alt="" class="wp-image-879"/></figure>
+
+
+
+<p>B8: các bạn chạy explorer++ dưới quyền admin</p>
+
+
+
+<p>B9: bỏ thư mục EFI vào partion EFI vừa mount</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://heavietnam.ga/2020/12/23/cach-tao-bo-cai-offline/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Cách tạo EFI clover</title>
+		<link>https://heavietnam.ga/2020/11/23/cach-tao-efi-clover/</link>
+					<comments>https://heavietnam.ga/2020/11/23/cach-tao-efi-clover/#comments</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Mon, 23 Nov 2020 04:51:11 +0000</pubDate>
+				<category><![CDATA[install hackintosh]]></category>
+		<guid isPermaLink="false">https://heavietnam.ga/?p=1888</guid>
+
+					<description><![CDATA[Bigsur+ ( đương nhiên cata trở xuỗng vẫn dùng được ) P1: chuẩn bị B1: down các bạn tải clover pkg tại đây B2 : các bạn xóa các folder đi và chừa lại các folder sau ACPI KEXT THEME TOOL DRIVER BOOT CLOVERX64.EFI BOOT P2 chỉnh sửa driver B1: các bạn vào mục driver [...]]]></description>
+										<content:encoded><![CDATA[
+<h1 id="bigsur-dương-nhien-cata-trở-xuỗng-vẫn-dung-dược">Bigsur+ ( đương nhiên cata trở xuỗng vẫn dùng được )</h1>
+
+
+
+<h2 id="p1-chuẩn-bị">P1: chuẩn bị </h2>
+
+
+
+<p>B1: down các bạn tải clover pkg <a href="https://github.com/CloverHackyColor/CloverBootloader/releases">tại đây</a> </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-10.41.49.png?w=1024" alt="" class="wp-image-536"/></figure>
+
+
+
+<p>B2 : các bạn xóa các folder đi và chừa lại các folder sau </p>
+
+
+
+<ul><li>ACPI</li><li>KEXT </li><li>THEME</li><li>TOOL</li><li>DRIVER </li><li>BOOT</li><li>CLOVERX64.EFI</li><li>BOOT</li></ul>
+
+
+
+<h2 id="p2-chỉnh-sửa-driver">P2 chỉnh sửa driver</h2>
+
+
+
+<p>B1: các bạn vào mục driver ==&gt; UEFI và xóa hết các mục driver trong đây đi </p>
+
+
+
+<p>B2: các bạn copy mục driver ==&gt; off ==&gt; uefi ==&gt; memory fixup ==&gt; openruntime .efi và driver ==&gt; uefi </p>
+
+
+
+<p>B3: copy mục driver ==&gt; off ==&gt; uefi ==&gt; file system ==&gt; apfs driver.efi</p>
+
+
+
+<p>B4: down<a href="https://github.com/JrCs/CloverGrowerPro/blob/master/Files/HFSPlus/X64/HFSPlus.efi?raw=true"> hfs+.efi</a> </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-10.49.17.png?w=1024" alt="" class="wp-image-539"/></figure>
+
+
+
+<h2 id="p2-chỉnh-mục-acpi">P2 : chỉnh mục ACPI</h2>
+
+
+
+<p>Để boot được các bạn chỉ cần mỗi <a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-DESKTOP.aml">ssdt-ec</a> mà thôi nhưng để hoạt động đầy đủ chức năng các bạn vào trang <a href="https://dortania.github.io/OpenCore-Install-Guide/ktext.html#ssdts">sau</a> và tải các ssdt theo chipset của các bạn </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-10.51.40.png?w=913" alt="" class="wp-image-541"/></figure>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-10.51.51.png?w=771" alt="" class="wp-image-542"/></figure>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-10.52.33.png?w=918" alt="" class="wp-image-544"/></figure>
+
+
+
+<p>Các bạn sấy ssdt như sau :</p>
+
+
+
+<ul><li>B1 : chọn ssdt cần sử dụng </li><li>B2: chọn prebuilt</li></ul>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-10.53.38.png?w=1024" alt="" class="wp-image-546"/></figure>
+
+
+
+<ul><li>B3: chọn ssdt đúng với hardware</li></ul>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-10.54.24.png?w=1024" alt="" class="wp-image-548"/></figure>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-10.55.12.png?w=1024" alt="" class="wp-image-549"/></figure>
+
+
+
+<ul><li>B4: các bạn bỏ ssdt vừa tải vào EFI ==&gt; Clover ==&gt; ACPI ==&gt; Patched</li></ul>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-10.56.46.png?w=1024" alt="" class="wp-image-551"/></figure>
+
+
+
+<h2 id="p4-chỉnh-kext">P4 : chỉnh kext</h2>
+
+
+
+<p>Các bạn down các kext sau đây và bỏ vào mục EFI ==&gt; CLOVER ==&gt; Kext ==&gt; Other</p>
+
+
+
+<h3 id="kext-bắt-buộc">Kext bắt buộc</h3>
+
+
+
+<ul><li><a href="https://github.com/acidanthera/Lilu/releases">Lilu</a> : đây là mục kext vô cùng quan trọng nếu không có nó bạn sẽ không thể boot được </li><li><a href="https://github.com/acidanthera/whatevergreen/releases">whatevergreen</a> : đây là mục kext giúp patch đồ họa </li><li><a href="https://github.com/acidanthera/VirtualSMC/releases">vistual smc</a> : dùng để mô phỏng smc không có nó bạn sẽ không thể boot được </li></ul>
+
+
+
+<h2 id="kext-khong-bắt-buộc">Kext không bắt buộc</h2>
+
+
+
+<p>các plugin của vistual smc </p>
+
+
+
+<ul><li>SMCProcessor.kext : dùng để theo dỗi nhiệu đô cpu ( amd không hoạt động )</li></ul>
+
+
+
+<ul><li>SMCSuperIO.kext : dùng để theo dõi tốc độ quạt ( amd không hoạt động )</li></ul>
+
+
+
+<ul><li>SMCLightSensor.kext : dùng để fix backlight</li><li>SMCBatteryManager.kext : dùng để hiển thị phần trăm pin</li><li>SMCDellSensors.kext : dùng để theo dõi tốc độ quạt trên dell</li></ul>
+
+
+
+<p><a href="https://github.com/acidanthera/AppleALC/releases">apple alc</a> : dùng để patch âm thanh</p>
+
+
+
+<p>các kext ethernet xem chi tiết ở bài <a href="https://everythingforhackintosher.wordpress.com/2021/09/09/fix-ethernet/">này</a></p>
+
+
+
+<p>Các kext wifi và bluetooth xem chi tiết ở bài <a href="https://everythingforhackintosher.wordpress.com/2021/09/09/40/">này</a></p>
+
+
+
+<p><a rel="noreferrer noopener" href="https://bitbucket.org/RehabMan/os-x-usb-inject-all/downloads/" target="_blank">USBInjectAll</a>  : để injects usb</p>
+
+
+
+<p><a rel="noreferrer noopener" href="https://github.com/RehabMan/OS-X-USB-Inject-All" target="_blank">XHCI-unsupported</a> :  cần trên các chipset </p>
+
+
+
+<ul><li>H370</li><li>B360</li><li>H310</li><li>Z390 (Không cần thiết trên Mojave và mới hơn)</li><li>X79</li><li>X99</li><li>Bảng AsRock (Trên bo mạch chủ Intel cụ thể, bảng B460 / Z490+ không cần nó tuy nhiên)</li></ul>
+
+
+
+<p id="wifi-and-bluetooth"><a rel="noreferrer noopener" href="https://cdn.discordapp.com/attachments/566705665616117760/566728101292408877/XLNCUSBFix.kext.zip" target="_blank">XLNCUSBFIX</a> : injects usb trên amd </p>
+
+
+
+<p><a rel="noreferrer noopener" href="https://sourceforge.net/projects/voodoohda/" target="_blank">VoodooHDA</a> : fix âm thanh trên amd</p>
+
+
+
+<p><a rel="noreferrer noopener" href="https://github.com/acidanthera/bugtracker/files/3703498/AppleMCEReporterDisabler.kext.zip" target="_blank">AppleMCEReporterDisabler</a> : dùng để vô hiệu hóa AppleMCEReporter trên amd yêu cần macos 10.15+</p>
+
+
+
+<p><a rel="noreferrer noopener" href="https://github.com/lvs1974/CpuTscSync/releases" target="_blank">CpuTscSync</a> :  Cần thiết để đồng bộ hóa TSC trên một số bo mạch chủ HEDT và máy chủ của Intel, nếu không có macOS này có thể cực kỳ chậm hoặc thậm chí không thể vào được ( 1 số máy )</p>
+
+
+
+<p><a rel="noreferrer noopener" href="https://github.com/acidanthera/VoodooPS2/releases" target="_blank">VoodooPS2</a> : để patch bàn phím và trackpad</p>
+
+
+
+<p><a rel="noreferrer noopener" href="https://github.com/VoodooSMBus/VoodooRMI/releases/" target="_blank">VoodooRMI</a> : cho các trackpad synapitcs</p>
+
+
+
+<p><a rel="noreferrer noopener" href="https://github.com/VoodooSMBus/VoodooSMBus/releases" target="_blank">VoodooSMBus</a> :  cho các trackpad elan smbus</p>
+
+
+
+<p><a rel="noreferrer noopener" href="https://github.com/VoodooI2C/VoodooI2C/releases" target="_blank">VoodooI2C</a> cho các trackpad i2c</p>
+
+
+
+<p><a rel="noreferrer noopener" href="https://github.com/1Revenger1/ECEnabler/releases" target="_blank">ECEnabler</a> : dùng để enable ec patch pin là chính</p>
+
+
+
+<p><a rel="noreferrer noopener" href="https://github.com/acidanthera/BrightnessKeys/releases" target="_blank">BrightnessKeys</a> : dùng để enable hostkey chỉnh độ sáng</p>
+
+
+
+<h2 id="p5-chỉnh-config">P5 : chỉnh config </h2>
+
+
+
+<p>B1 : các bạn truy cập vào trang <a href="https://dortania.github.io/OpenCore-Install-Guide">sau</a></p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-11.02.55.png?w=1024" alt="" class="wp-image-555"/></figure>
+
+
+
+<p>B2: các bạn chọn gen chip thích hợp </p>
+
+
+
+<p>cách biết máy các bạn gen mấy các bạn làm theo sau </p>
+
+
+
+<ul><li>B1: dùng <a href="https://www.aida64.com/downloads">aida64</a> để check thông tin cpu </li><li>B2: gõ tên cpu của bạn vào trình duyệt ( ví dụ Intel(R) Core(TM) i3-3217U CPU @ 1.80GHz )</li></ul>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-08.30.44.png?w=1024" alt="" class="wp-image-509"/></figure>
+
+
+
+<ul><li>B3: truy cập vào trang đầu tiên </li></ul>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-08.42.37.png?w=1024" alt="" class="wp-image-518"/></figure>
+
+
+
+<ul><li>B4:  chú ý vào phần tên mã </li></ul>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-08.32.56.png?w=1024" alt="" class="wp-image-511"/></figure>
+
+
+
+<p>Ở đây mình có mã máy là ivy birdge  </p>
+
+
+
+<p>Đối với các máy gen 3 &#8211; thì ssdt cpu pm sau khi cài đặt macos vào các bạn mới patch power management xem chi tiết <a href="https://everythingforhackintosher.wordpress.com/2021/09/10/157/">ở đây</a> </p>
+
+
+
+<p>B2: các bạn tìm đến 2 mục :</p>
+
+
+
+<ul><li>booter ==&gt; quirks</li></ul>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-11.06.27.png?w=1024" alt="" class="wp-image-558"/></figure>
+
+
+
+<ul><li>kernel ==&gt; quirks </li></ul>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-11.07.52.png?w=1024" alt="" class="wp-image-560"/></figure>
+
+
+
+<p>dựa vào 2 mục trên để chỉnh mục quirks trong config</p>
+
+
+
+<p>Những mục có thì chỉnh không có thì bỏ qua  ( chỉnh config với <a href="https://github.com/corpnewt/ProperTree">propertree</a> )</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-11.12.08-1.png?w=874" alt="" class="wp-image-563"/></figure>
+
+
+
+<p>B3: các bạn chỉnh lại smbios như sau </p>
+
+
+
+<ul><li>Mở config với <a href="https://mackie100projects.altervista.org/download-clover-configurator/">clover configurator </a></li><li>tới mục smbios </li></ul>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-11.15.10.png?w=1024" alt="" class="wp-image-565"/></figure>
+
+
+
+<ul><li>Bấm vào dấu </li></ul>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-11.15.22.png?w=62" alt="" class="wp-image-566"/></figure>
+
+
+
+<ul><li>chỉnh smbios đúng với smbios trong mục platfrominfo của trang dortarnia theo đúng gen chip của các bạn </li></ul>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-11.17.15.png?w=1024" alt="" class="wp-image-568"/></figure>
+
+
+
+<p>B4 : chỉnh mục device ==&gt; properties theo mục device properties của dortarnia </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-11.18.14.png?w=1024" alt="" class="wp-image-570"/></figure>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-11.19.34.png?w=1024" alt="" class="wp-image-574"/></figure>
+
+
+
+<p>các tìm xem igpu của các bạn thuộc loại nào </p>
+
+
+
+<p>Lưu ý đối với mục device properties đây là mục dùng để patch igpu các bạn cần xác định name igpu ( có thể dùng aida64 hoặc đơn giản hơn các bạn chỉ việc gõ tên cpu vào trình duyệt vào trang intel ark kéo xuống mục đồ họa bộ sử lý chú ý vào mục đầu tiên </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-08.41.47.png?w=1024" alt="" class="wp-image-516"/></figure>
+
+
+
+<p> Lưu ý 2 : mục ig, platfrom-id các bạn có thể injects ở mục graphics ==&gt; ig, platfron-id hoặc injects trực tiếp qua device ==&gt; properties </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-11.21.44.png?w=1024" alt="" class="wp-image-575"/></figure>
+
+
+
+<h1 id="catalina-trở-xuống-khong-ap-dụng-cho-bigsur">catalina trở xuống ( không áp dụng cho bigsur )</h1>
+
+
+
+<p>B1 : các bạn tải clover bản <a href="https://github.com/CloverHackyColor/CloverBootloader/releases?after=5121">5119 </a></p>
+
+
+
+<p>B2: các bạn xóa hết các mục và chỉ chừa lại những mục sau :</p>
+
+
+
+<ul><li>acpi</li><li>themes</li><li>tool ( chỉ chừa shell64.efi hoặc shell 32.efi )</li><li>driver ( mục uefi xóa sạch )</li><li>cloverX64.efi</li><li>Boot ( bootX64.efi )</li><li>đổi tên config-sample.plist thành config.plist</li></ul>
+
+
+
+<p>B3: bỏ <a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-DESKTOP.aml">ssdt-ec</a> vào acpi ==&gt; patched </p>
+
+
+
+<p>B4: mục drivers các bạn thêm AptioMemoryFix.efi ( ở mục drivers ==&gt; off==&gt; uefi ==&gt; MemoryFix đến mục drivers ==&gt; uefi )</p>
+
+
+
+<p>B5: tải <a href="https://github.com/acidanthera/OcBinaryData/blob/master/Drivers/HfsPlus.efi">hfs+.efi</a> tại đây và bỏ vào mục drivers ==&gt; uefi</p>
+
+
+
+<p>B6: tải kext như phần tải kext ở trên</p>
+
+
+
+<p>B7: chỉnh smbios như hd ở trên </p>
+
+
+
+<p>B8: chỉnh igpu theo trang <a href="">sau</a></p>
+
+
+
+<p> </p>
+
+
+
+<p></p>
+
+
+
+<p></p>
+
+
+
+<h2 id="p6-chỉnh-bios-setting">P6 : chỉnh bios setting </h2>
+
+
+
+<h2 id="đối-với-pc">Đối với PC</h2>
+
+
+
+<ul><li>XHCI Handoff: Enabled (nếu có, một số main sẽ không có lựa chọn này)</li><li>OS Type: Other (nếu có)</li><li>Secure Boot: Disabled (nếu không thấy đâu thì sẽ thấy cái OS Type bên trên chỉnh nó về other là được)</li><li>Legacy/CSM support: Enable [Nhiều main tắt cũng được nhưng nhiều main tắt thì boot màn hình sẽ bị lỗi, bật cho chắc]</li><li>Fast Boot: Disable</li><li>SATA Mode: AHCI</li><li>VT-d: Disable</li><li>Nếu bạn dùng Nvidia/AMD GPU:<ul><li><strong>KHÔNG</strong>&nbsp;kết nối màn hình với các cổng DP/HDMI/VGA/DVI trên main.</li><li>Phần Graphics Settings, Main Display, Initial Display/Graphic: PEG hoặc PCIE (Chọn đến khe cắm card rời)</li><li>Disable những lựa chọn liên quan đến card onboard như: Hybrid Graphics, Dual Graphics, DVMT size …</li></ul></li><li>Nếu bạn dùng Intel HD Graphics GPU:<ul><li>Phần Graphics Settings, Main Display, Initial Display/Graphic: IGD hoặc IGFX (chọn card onboard)</li><li>DVMT pre-alloc, Graphic Memory: 64MB (hoặc cao hơn, phần lớn thì 64MB là đủ)</li><li>DMVT total/size/apertures/whatever: MAX</li></ul></li></ul>
+
+
+
+<h2 id="đối-với-laptop">Đối với laptop</h2>
+
+
+
+<ul><li>Disabled Secure Boot</li><li>Disable Fast Boot</li><li>SATA Mode: AHCI</li><li>Disable VT-d, VT-x nên enable không thì không chạy máy ảo được.</li><li>Security Chips/Security modules: Disabled (nếu có thể, chúng có thể gây lỗi khi boot)</li><li>DVMT-prealloc, Graphics Memory: 64MB (nếu có thể, một số bios laptop không có lựa chọn này mặc định ở 32MB thì bạn cần phải patch framebuffer)</li><li>Nếu màn hình của bạn là 2K, 4K thì cần chỉnh Graphics Memory lên 128MB hoặc cao hơn.</li><li>Legacy/CSM support: Enable (nếu tắt hay bị vỡ hình khi boot, nếu boot bình thường thì cứ tắt)</li><li>Disable LAN/WLAN/WWAN boot/wake</li><li>Disable wake on usb</li></ul>
+
+
+
+<p><strong>Lưu ý : đối với các cpu pentium hoặc celeron các bạn muốn hackinotsh cần phải có vga rời được hỗ trợ vì các igpu của dòng này đều tạch và bắt buộc phải fake cpuid xem chi tiết ở <a href="https://everythingforhackintosher.wordpress.com/2021/09/11/fake-cpuid/">bài này</a> </strong></p>
+
+
+
+<p><strong>Lưu ý 2 : các cpu gen 11 desktop 1 số thì các bạn chỉ cần chỉnh config theo gen 10 thì boot được 1 số cần fake cpuid xem chi tiết <a href="https://everythingforhackintosher.wordpress.com/2021/09/11/fake-cpuid/">tại đây</a></strong> </p>
+
+
+]]></content:encoded>
+					
+					<wfw:commentRss>https://heavietnam.ga/2020/11/23/cach-tao-efi-clover/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Cách tạo efi cho opencore</title>
+		<link>https://heavietnam.ga/2020/11/23/cach-tao-efi-cho-opencore/</link>
+					<comments>https://heavietnam.ga/2020/11/23/cach-tao-efi-cho-opencore/#comments</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Mon, 23 Nov 2020 04:50:19 +0000</pubDate>
+				<category><![CDATA[install hackintosh]]></category>
+		<guid isPermaLink="false">https://heavietnam.ga/?p=1885</guid>
+
+					<description><![CDATA[Chuẩn bị B1: down file opencore tại đây B2: chọn thư mục 32 bits hoặc 64 bits ( &#60;4gb ram : 32 bits , &#62;4gb ram :64 bits ) B3: các bạn cần loại bỏ 1 số mục và chỉ giữ lại những mục sau đây driver : openruntime + hfs plush Tool: xóa nó [...]]]></description>
+										<content:encoded><![CDATA[
+<h1>Chuẩn bị</h1>
+
+
+
+<p>B1: down file opencore <a href="https://github.com/acidanthera/OpenCorePkg/releases">tại đây </a></p>
+
+
+
+<p>B2: chọn thư mục 32 bits hoặc 64 bits ( &lt;4gb ram : 32 bits , &gt;4gb ram :64 bits )</p>
+
+
+
+<p>B3: các bạn cần loại bỏ 1 số mục và chỉ giữ lại những mục sau đây</p>
+
+
+
+<ul><li>driver : openruntime + <a href="https://github.com/JrCs/CloverGrowerPro/blob/master/Files/HFSPlus/X64/HFSPlus.efi?raw=true">hfs plush</a></li><li>Tool: xóa nó hoặc chừa lại openshell.efi ( tùy chọn )</li><li>opencore.efi</li><li>Acpi</li><li>Kext</li><li>Boot</li></ul>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-12-at-23.34.21.png?w=1024" alt="" class="wp-image-481"/></figure>
+
+
+
+<p>B4: bạn vào file docs và copy file sample.plist sau đó đổi tên nó thành file config.plist</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-12-at-23.41.10.png?w=1024" alt="" class="wp-image-483"/></figure>
+
+
+
+<h2>Thu thập kext</h2>
+
+
+
+<p>các bạn bỏ các kext sau vào EFI ==&gt; OC ==&gt; kext </p>
+
+
+
+<h3>Kext bắt buộc</h3>
+
+
+
+<ul><li><a href="https://github.com/acidanthera/Lilu/releases">Lilu</a> : đây là mục kext vô cùng quan trọng nếu không có nó bạn sẽ không thể boot được </li><li><a href="https://github.com/acidanthera/whatevergreen/releases">whatevergreen</a> : đây là mục kext giúp patch đồ họa </li><li><a href="https://github.com/acidanthera/VirtualSMC/releases">vistual smc</a> : dùng để mô phỏng smc không có nó bạn sẽ không thể boot được </li></ul>
+
+
+
+<h2>Kext không bắt buộc</h2>
+
+
+
+<p>các plugin của vistual smc </p>
+
+
+
+<ul><li>SMCProcessor.kext : dùng để theo dỗi nhiệu đô cpu ( amd không hoạt động )</li></ul>
+
+
+
+<ul><li>SMCSuperIO.kext : dùng để theo dõi tốc độ quạt ( amd không hoạt động )</li></ul>
+
+
+
+<ul><li>SMCLightSensor.kext : dùng để fix backlight</li><li>SMCBatteryManager.kext : dùng để hiển thị phần trăm pin</li><li>SMCDellSensors.kext : dùng để theo dõi tốc độ quạt trên dell</li></ul>
+
+
+
+<p><a href="https://github.com/acidanthera/AppleALC/releases">apple alc</a> : dùng để patch âm thanh</p>
+
+
+
+<p>các kext ethernet xem chi tiết ở bài <a href="https://everythingforhackintosher.wordpress.com/2021/09/09/fix-ethernet/">này</a></p>
+
+
+
+<p>Các kext wifi và bluetooth xem chi tiết ở bài <a href="https://everythingforhackintosher.wordpress.com/2021/09/09/40/">này</a></p>
+
+
+
+<p><a rel="noreferrer noopener" href="https://bitbucket.org/RehabMan/os-x-usb-inject-all/downloads/" target="_blank">USBInjectAll</a>  : để injects usb</p>
+
+
+
+<p><a rel="noreferrer noopener" href="https://github.com/RehabMan/OS-X-USB-Inject-All" target="_blank">XHCI-unsupported</a> :  cần trên các chipset </p>
+
+
+
+<ul><li>H370</li><li>B360</li><li>H310</li><li>Z390 (Không cần thiết trên Mojave và mới hơn)</li><li>X79</li><li>X99</li><li>Bảng AsRock (Trên bo mạch chủ Intel cụ thể, bảng B460 / Z490+ không cần nó tuy nhiên)</li></ul>
+
+
+
+<p id="wifi-and-bluetooth"><a rel="noreferrer noopener" href="https://cdn.discordapp.com/attachments/566705665616117760/566728101292408877/XLNCUSBFix.kext.zip" target="_blank">XLNCUSBFIX</a> : injects usb trên amd </p>
+
+
+
+<p><a rel="noreferrer noopener" href="https://sourceforge.net/projects/voodoohda/" target="_blank">VoodooHDA</a> : fix âm thanh trên amd</p>
+
+
+
+<p><a rel="noreferrer noopener" href="https://github.com/acidanthera/bugtracker/files/3703498/AppleMCEReporterDisabler.kext.zip" target="_blank">AppleMCEReporterDisabler</a> : dùng để vô hiệu hóa AppleMCEReporter trên amd yêu cần macos 10.15+</p>
+
+
+
+<p><a rel="noreferrer noopener" href="https://github.com/lvs1974/CpuTscSync/releases" target="_blank">CpuTscSync</a> :  Cần thiết để đồng bộ hóa TSC trên một số bo mạch chủ HEDT và máy chủ của Intel, nếu không có macOS này có thể cực kỳ chậm hoặc thậm chí không thể vào được ( 1 số máy )</p>
+
+
+
+<p><a rel="noreferrer noopener" href="https://github.com/acidanthera/VoodooPS2/releases" target="_blank">VoodooPS2</a> : để patch bàn phím và trackpad</p>
+
+
+
+<p><a rel="noreferrer noopener" href="https://github.com/VoodooSMBus/VoodooRMI/releases/" target="_blank">VoodooRMI</a> : cho các trackpad synapitcs</p>
+
+
+
+<p><a rel="noreferrer noopener" href="https://github.com/VoodooSMBus/VoodooSMBus/releases" target="_blank">VoodooSMBus</a> :  cho các trackpad elan smbus</p>
+
+
+
+<p><a rel="noreferrer noopener" href="https://github.com/VoodooI2C/VoodooI2C/releases" target="_blank">VoodooI2C</a> cho các trackpad i2c</p>
+
+
+
+<p><a rel="noreferrer noopener" href="https://github.com/1Revenger1/ECEnabler/releases" target="_blank">ECEnabler</a> : dùng để enable ec patch pin là chính</p>
+
+
+
+<p><a rel="noreferrer noopener" href="https://github.com/acidanthera/BrightnessKeys/releases" target="_blank">BrightnessKeys</a> : dùng để enable hostkey chỉnh độ sáng</p>
+
+
+
+<h2>Thu thập ssdt </h2>
+
+
+
+<p>Các bạn vào trang <a href="https://dortania.github.io/OpenCore-Install-Guide/ktext.html#ssdts">sau</a> để lấy ssdt theo 2 bảng sau </p>
+
+
+
+<p> </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-00.26.55.png?w=809" alt="" class="wp-image-490"/></figure>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-00.27.41-1.png?w=716" alt="" class="wp-image-494"/></figure>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-00.27.18.png?w=771" alt="" class="wp-image-491"/></figure>
+
+
+
+<p>các bạn lấy ssdt như sau :</p>
+
+
+
+<ul><li>B1: chọn ssdt cần lấy </li><li>B2: chọn prebuilt</li></ul>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-00.30.29.png?w=1024" alt="" class="wp-image-496"/></figure>
+
+
+
+<ul><li>B3: chọn ssdt theo  hardware </li></ul>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-00.31.17.png?w=1024" alt="" class="wp-image-498"/></figure>
+
+
+
+<p>B4: bỏ vào EFI ==&gt; OC ==&gt; ACPI</p>
+
+
+
+<h2>Chỉnh sửa config </h2>
+
+
+
+<p>B1 : các bạn xóa hết các warming như hình và tiến hành snapshot như sau </p>
+
+
+
+<ul><li>mở config bằng&nbsp;<a href="https://github.com/corpnewt/ProperTree">propertree</a>&nbsp;</li><li>Chọn file ⇒ oc snapshot ( đối với opencore )<img loading="lazy" width="602" height="339" src="https://lh6.googleusercontent.com/SCT2Gq_55sCnidkxh8Kn2GjrTrkFc-lj0-5v9yBHi_YUZEK9Zy-OLojhKH-VaT_78oZfvBH8gCl-sdLuwnCyBg5RZv4PLtaeWq81Xlg4oRc9G3AiAXvU21W2A0Q8DdcuLZQSH5W8=s0"></li></ul>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-08.23.31.png?w=874" alt="" class="wp-image-503"/></figure>
+
+
+
+<p>B2: các bạn truy cập vào trang <a href="https://dortania.github.io/OpenCore-Install-Guide/prerequisites.html#prerequisites">sau</a></p>
+
+
+
+<p>B3: chọn loại máy tính ( desktop or laptop )</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-08.25.52.png?w=1024" alt="" class="wp-image-505"/></figure>
+
+
+
+<p>B4: chọn gen máy </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-08.26.53.png?w=1024" alt="" class="wp-image-507"/></figure>
+
+
+
+<p>cách biết máy các bạn gen mấy các bạn làm theo sau </p>
+
+
+
+<ul><li>B1: dùng <a href="https://www.aida64.com/downloads">aida64</a> để check thông tin cpu </li><li>B2: gõ tên cpu của bạn vào trình duyệt ( ví dụ Intel(R) Core(TM) i3-3217U CPU @ 1.80GHz )</li></ul>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-08.30.44.png?w=1024" alt="" class="wp-image-509"/></figure>
+
+
+
+<ul><li>B3: truy cập vào trang đầu tiên </li></ul>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-08.42.37.png?w=1024" alt="" class="wp-image-518"/></figure>
+
+
+
+<ul><li>B4:  chú ý vào phần tên mã </li></ul>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-08.32.56.png?w=1024" alt="" class="wp-image-511"/></figure>
+
+
+
+<p>Ở đây mình có mã máy là ivy birdge  </p>
+
+
+
+<p>Đối với các máy gen 3 &#8211; thì ssdt cpu pm sau khi cài đặt macos vào các bạn mới patch power management xem chi tiết <a href="https://everythingforhackintosher.wordpress.com/2021/09/10/157/">ở đây</a> </p>
+
+
+
+<p>Lưu ý đối với mục device properties đây là mục dùng để patch igpu các bạn cần xác định name igpu ( có thể dùng aida64 hoặc đơn giản hơn các bạn chỉ việc gõ tên cpu vào trình duyệt vào trang intel ark kéo xuống mục đồ họa bộ sử lý chú ý vào mục đầu tiên </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-08.41.47.png?w=1024" alt="" class="wp-image-516"/></figure>
+
+
+
+<h2>Chỉnh bios :</h2>
+
+
+
+<h2>Chung :</h2>
+
+
+
+<h3 id="đối-với-pc">Đối với PC</h3>
+
+
+
+<ul><li>XHCI Handoff: Enabled (nếu có, một số main sẽ không có lựa chọn này)</li><li>OS Type: Other (nếu có)</li><li>Secure Boot: Disabled (nếu không thấy đâu thì sẽ thấy cái OS Type bên trên chỉnh nó về other là được)</li><li>Legacy/CSM support: Enable [Nhiều main tắt cũng được nhưng nhiều main tắt thì boot màn hình sẽ bị lỗi, bật cho chắc]</li><li>Fast Boot: Disable</li><li>SATA Mode: AHCI</li><li>VT-d: Disable</li><li>Nếu bạn dùng Nvidia/AMD GPU:<ul><li><strong>KHÔNG</strong>&nbsp;kết nối màn hình với các cổng DP/HDMI/VGA/DVI trên main.</li><li>Phần Graphics Settings, Main Display, Initial Display/Graphic: PEG hoặc PCIE (Chọn đến khe cắm card rời)</li><li>Disable những lựa chọn liên quan đến card onboard như: Hybrid Graphics, Dual Graphics, DVMT size …</li></ul></li><li>Nếu bạn dùng Intel HD Graphics GPU:<ul><li>Phần Graphics Settings, Main Display, Initial Display/Graphic: IGD hoặc IGFX (chọn card onboard)</li><li>DVMT pre-alloc, Graphic Memory: 64MB (hoặc cao hơn, phần lớn thì 64MB là đủ)</li><li>DMVT total/size/apertures/whatever: MAX</li></ul></li></ul>
+
+
+
+<h3 id="đối-với-laptop">Đối với laptop</h3>
+
+
+
+<ul><li>Disabled Secure Boot</li><li>Disable Fast Boot</li><li>SATA Mode: AHCI</li><li>Disable VT-d, VT-x nên enable không thì không chạy máy ảo được.</li><li>Security Chips/Security modules: Disabled (nếu có thể, chúng có thể gây lỗi khi boot)</li><li>DVMT-prealloc, Graphics Memory: 64MB (nếu có thể, một số bios laptop không có lựa chọn này mặc định ở 32MB thì bạn cần phải patch framebuffer)</li><li>Nếu màn hình của bạn là 2K, 4K thì cần chỉnh Graphics Memory lên 128MB hoặc cao hơn.</li><li>Legacy/CSM support: Enable (nếu tắt hay bị vỡ hình khi boot, nếu boot bình thường thì cứ tắt)</li><li>Disable LAN/WLAN/WWAN boot/wake</li><li>Disable wake on usb</li></ul>
+
+
+
+<h2>Cho từng gen máy :</h2>
+
+
+
+<p>các bạn kéo xuống mục intel bios setting để chỉnh bios theo từng dòng máy </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-08.39.19.png?w=1024" alt="" class="wp-image-514"/></figure>
+
+
+
+<p>Lưu ý : đối với các cpu pentium hoặc celeron các bạn muốn hackinotsh cần phải có vga rời được hỗ trợ vì các igpu của dòng này đều tạch và bắt buộc phải fake cpuid xem chi tiết ở <a href="https://everythingforhackintosher.wordpress.com/2021/09/11/fake-cpuid/">bài này</a> </p>
+
+
+
+<p>Lưu ý 2 : các cpu gen 11 desktop 1 số thì các bạn chỉ cần chỉnh config theo gen 10 thì boot được 1 số cần fake cpuid xem chi tiết <a href="https://everythingforhackintosher.wordpress.com/2021/09/11/fake-cpuid/">tại đây </a></p>
+
+
+
+<p>Lưu ý 3: 1 số bạn có macreal có thể dùng tính năng config check của oc configurator ( chỉ mang tính tham khảo ) các làm như sau </p>
+
+
+
+<p>B1 : down oc configurator <a href="https://mackie100projects.altervista.org/download-opencore-configurator/">tại đây </a></p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-08.51.42.png?w=1024" alt="" class="wp-image-520"/></figure>
+
+
+
+<p>B2: bấm tổ hợp phím option + c</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-08.52.31.png?w=1024" alt="" class="wp-image-522"/></figure>
+
+
+
+<p>B3: chọn gen máy </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-08.52.54.png?w=1024" alt="" class="wp-image-523"/></figure>
+
+
+
+<p>B4: chọn version phiên bản opencore </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-08.53.11.png?w=1024" alt="" class="wp-image-525"/></figure>
+
+
+
+<p>B5: chọn cách thức thả config vào </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-08.53.45.png?w=1024" alt="" class="wp-image-526"/></figure>
+
+
+
+<p>B6: kéo config vào ô </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-08.54.08.png?w=1024" alt="" class="wp-image-528"/></figure>
+
+
+
+<p>B7: bấm check </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-08.55.25.png?w=1024" alt="" class="wp-image-530"/></figure>
+
+
+
+<p>B8: nhìn vào những mục màu vàng hoặc màu đỏ sau đó check lại ở trang <a href="https://dortania.github.io/OpenCore-Install-Guide/config.plist/ivy-bridge.html#intel-bios-settings">sau</a> </p>
+
+
+
+<p> </p>
+
+
+]]></content:encoded>
+					
+					<wfw:commentRss>https://heavietnam.ga/2020/11/23/cach-tao-efi-cho-opencore/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

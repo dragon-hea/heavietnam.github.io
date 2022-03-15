@@ -1,0 +1,4134 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>post install &#8211; Heavietnam</title>
+	<atom:link href="https://heavietnam.ga/category/post-install/feed/" rel="self" type="application/rss+xml" />
+	<link>https://heavietnam.ga</link>
+	<description>Everythingforhackintosher</description>
+	<lastBuildDate>Sat, 12 Mar 2022 12:47:24 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.9.2</generator>
+
+<image>
+	<url>https://heavietnam.ga/wp-content/uploads/2021/12/cropped-logo02-2-32x32.png</url>
+	<title>post install &#8211; Heavietnam</title>
+	<link>https://heavietnam.ga</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Fix Internal/External Card Reader</title>
+		<link>https://heavietnam.ga/2022/03/12/fix-internal-external-card-reader/</link>
+					<comments>https://heavietnam.ga/2022/03/12/fix-internal-external-card-reader/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Sat, 12 Mar 2022 12:47:00 +0000</pubDate>
+				<category><![CDATA[post install]]></category>
+		<guid isPermaLink="false">https://heavietnam.ga/?p=2602</guid>
+
+					<description><![CDATA[Chuẩn bị: B1: mở terminal và dán đoạn code sau vào B2: tải propertree ( hoặc các trình edit file plist khác ) B3: tải hackintool Hoặc kext-droplet cho bigsur Tiến hành B1: mở finder và nhấn tổ hợp phím shift + command + G và gõ đừng dẫn /System/Library/Extensions ( S/L/E ) B2: ấn [...]]]></description>
+										<content:encoded><![CDATA[
+<h2>Chuẩn bị:</h2>
+
+
+
+<p>B1: mở terminal và dán đoạn code sau vào</p>
+
+
+
+<pre class="wp-block-code"><code>// dán từng dòng 1 vào terminal
+
+defaults write com.apple.Finder AppleShowAllFiles true
+
+killall Finder</code></pre>
+
+
+
+<p>B2: tải <a href="https://github.com/corpnewt/ProperTree">propertree</a> ( hoặc các trình edit file plist khác )</p>
+
+
+
+<p>B3: tải <a href="https://github.com/headkaze/Hackintool">hackintool</a> Hoặc <a href="https://github.com/chris1111/Kext-Droplet-Big-Sur">kext-droplet</a> cho bigsur</p>
+
+
+
+<h2>Tiến hành</h2>
+
+
+
+<p>B1: mở finder và nhấn tổ hợp phím <code>shift + command + G</code> và gõ đừng dẫn  <code>/System/Library/Extensions</code> ( S/L/E )</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://i.imgur.com/b3ziwa6.png" alt=""/></figure>
+
+
+
+<p>B2: ấn command + F và search <code>AppleStorageDriver</code></p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://i.imgur.com/bBnKxpo.png" alt=""/></figure>
+
+
+
+<p>B3: copy kext đó ra ngoài desktop ( hoặc bất cứ chỗ nào bạn thích )</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://i.imgur.com/a47Jh2i.png" alt=""/></figure>
+
+
+
+<p>B4: bạn ấn chuột phải vào kext sau đó chọn <code>Show Package Contents</code> và truy cập vào <code>Contents > Plugin</code> sau đó tìm kext <code>AppleUSBCardReader.kext</code> trong đó </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/AU6fSld.png" alt=""/></figure>
+
+
+
+<p>B5: bạn tiếp tục chọn <code>Show package Contents</code> > <code>Contents</code> và edit file <code>info.plist</code> bằng propertree hoặc trình edit file plist của bạn </p>
+
+
+
+<p>B6: bạn ấn command + F và search <code>Physical Interconnect</code> sau đó edit giá trị của nó thành <code>External</code></p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://i.imgur.com/Ve4S4HW.png" alt=""/></figure>
+
+
+
+<p>B7: bạn có thể edit Vendor Identification thành tên của bạn hoặc bất cứ cái gì bạn thích ( nếu tôn trọng tác giả thì thay đổi thành <code>Generic Reader by NoobsPlanet</code> )</p>
+
+
+
+<p>B8: vào system report </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/fNWCjVv.png" alt=""/></figure>
+
+
+
+<p>B9: vào tab usb sau đó copy <code>Product ID and Vendor ID</code></p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://i.imgur.com/frzLwOV.png" alt=""/></figure>
+
+
+
+<p>B10: bạn ấn command + F và search <code>Apple_Internal_SD_Card_Reader_1_00</code></p>
+
+
+
+<p>B11: sửa <code>idProduct</code> và <code>idVenedor</code> bằng các giá trị vừa lấy ở bước 9 ( lưu ý chuyển nó về decimal trước khi nhập )</p>
+
+
+
+<ul><li>B1: mở hackintool tap caculator</li><li>B2: nhập dữ liệu lấy được ở bước 9 vào ô hex </li></ul>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://i.imgur.com/IkrVgZQ.png" alt=""/></figure>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://i.imgur.com/unbgWtf.png" alt=""/></figure>
+
+
+
+<p>B12: chỉnh 2 mục <code>dProduct</code> và <code>idVenedor</code> ở <code>Apple_Internal_SD_Card_Reader_2_00</code> với cùng giá trị dữ liệu như ở b11</p>
+
+
+
+<p>B13: chỉnh mục <code>Physical Interconnect</code> ở <code>Apple_internal_SD_Card_Reader_1_00</code> và <code>Apple_Internal_SD_Card_Reader_2_00</code> thành <code>External</code></p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://i.imgur.com/1Yl1PAP.png" alt=""/></figure>
+
+
+
+<p>B14: save kext lại ( ấn tổ hợp phím command + S )</p>
+
+
+
+<h2>Inject kext</h2>
+
+
+
+<h3>Catalina </h3>
+
+
+
+<p>B1: bạn mở hackintool lên </p>
+
+
+
+<p>B2: bạn chọn như ảnh </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://i.imgur.com/qWXwm70.png" alt=""/></figure>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://i.imgur.com/KufJX3R.png" alt=""/></figure>
+
+
+
+<p>B3: reboot</p>
+
+
+
+<h3>Bigsur</h3>
+
+
+
+<p>B1: các bạn chỉnh <code>CFBundleShortVersionString</code> và <code>CFBundleVersion</code> trong cả 2 file<code> info.plist</code> và <code>version.plist</code> cao hơn file gốc ( cao hơn trong hình vd 511.141.2 )</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://i.imgur.com/wfgokdH.png" alt=""/></figure>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://i.imgur.com/uIqevTJ.png" alt=""/></figure>
+
+
+
+<p>B2: Các bạn sử dụng kext-droplet để inject vào L/E ( nhớ tắt sip và <code>gatekeeper</code> và <code>sip</code> )</p>
+
+
+
+<p>B3: reboot</p>
+
+
+
+<p><strong>Lưu ý: source tham khảo <a href="https://noobsplanet.com/threads/32/">https://noobsplanet.com/threads/32/</a> | <a href="https://www.youtube.com/watch?v=rIvoIfG6yzc">https://www.youtube.com/watch?v=rIvoIfG6yzc</a></strong></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://heavietnam.ga/2022/03/12/fix-internal-external-card-reader/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>SSDT  recomend</title>
+		<link>https://heavietnam.ga/2022/03/10/ssdt-recomend/</link>
+					<comments>https://heavietnam.ga/2022/03/10/ssdt-recomend/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Thu, 10 Mar 2022 12:54:37 +0000</pubDate>
+				<category><![CDATA[post install]]></category>
+		<guid isPermaLink="false">https://heavietnam.ga/?p=2565</guid>
+
+					<description><![CDATA[Đối với hầu hết các model chỉ cần SSDT-EC là đã có thể boot lên. Tuy nhiên để sử được đầy đủ chức năng thì các bạn sẽ cần add đầy đủ các SSDT. Sau đây là 1 sô ssdt khuyến khích nên có: Desktop Penryn/Lynnfield/Clarkdale SSDT-EC SandyBridge/Ivy Bridge CPU-PM SSDT-EC Haswell/Broadwell SSDT-PLUG ( hoặc [...]]]></description>
+										<content:encoded><![CDATA[
+<p>Đối với hầu hết các model chỉ cần <a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-DESKTOP.aml">SSDT-EC</a> là đã có thể boot lên. Tuy nhiên để sử được đầy đủ chức năng thì các bạn sẽ cần add đầy đủ các SSDT. Sau đây là 1 sô ssdt khuyến khích nên có:</p>
+
+
+
+<h2>Desktop</h2>
+
+
+
+<h3>Penryn/Lynnfield/Clarkdale</h3>
+
+
+
+<ul><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-DESKTOP.aml">SSDT-EC</a></li></ul>
+
+
+
+<h3>SandyBridge/Ivy Bridge</h3>
+
+
+
+<ul><li><a href="https://heavietnam.ga/2021/09/29/vi-3fix-power-manager/">CPU-PM</a></li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-DESKTOP.aml">SSDT-EC</a></li></ul>
+
+
+
+<h3>Haswell/Broadwell</h3>
+
+
+
+<ul><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-PLUG-DRTNIA.aml">SSDT-PLUG</a> ( hoặc <a href="https://heavietnam.ga/2021/09/29/vi-3fix-power-manager/">SSDT-PM</a> )</li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-DESKTOP.aml">SSDT-EC</a></li></ul>
+
+
+
+<h3>Skylake/Kaby Lake</h3>
+
+
+
+<ul><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-PLUG-DRTNIA.aml">SSDT-PLUG</a> ( hoặc <a href="https://heavietnam.ga/2021/09/29/vi-3fix-power-manager/">SSDT-PM</a> )</li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-USBX-DESKTOP.aml">SSDT-EC</a></li></ul>
+
+
+
+<h3>Coffee Lake</h3>
+
+
+
+<ul><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-PLUG-DRTNIA.aml">SSDT-PLUG</a> ( hoặc <a href="https://heavietnam.ga/2021/09/29/vi-3fix-power-manager/">SSDT-PM</a> )</li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-USBX-DESKTOP.aml">SSDT-EC</a></li><li><a href="https://heavietnam.ga/2021/09/29/xxix-dung-ssdt-time-de-prebuilt-ssdt/">SSDT-AWAC</a> ( dùng ssdt-time để prebuilt ssdt )</li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-PMC.aml">SSDT-PMC</a></li></ul>
+
+
+
+<h3>Comet Lake</h3>
+
+
+
+<ul><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-PLUG-DRTNIA.aml">SSDT-PLUG</a> ( hoặc <a href="https://heavietnam.ga/2021/09/29/vi-3fix-power-manager/">SSDT-PM</a> )</li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-USBX-DESKTOP.aml">SSDT-EC</a></li><li><a href="https://heavietnam.ga/2021/09/29/xxix-dung-ssdt-time-de-prebuilt-ssdt/">SSDT-AWAC</a> ( dùng ssdt-time để prebuilt ssdt )</li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-RHUB.aml">SSDT-RHUB</a></li></ul>
+
+
+
+<h3>AMD (17/19h)</h3>
+
+
+
+<ul><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-CPUR.aml">SSDT-CPUR</a></li></ul>
+
+
+
+<h2>High End Desktop</h2>
+
+
+
+<h3>Nehalem and Westmere</h3>
+
+
+
+<ul><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-USBX-DESKTOP.aml"><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-DESKTOP.aml">SSDT-EC</a></a></li></ul>
+
+
+
+<h3>Sandy Bridge-E/Ivy Bridge-E</h3>
+
+
+
+<ul><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-USBX-DESKTOP.aml"><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-DESKTOP.aml">SSDT-EC</a></a></li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-UNC.aml">SSDT-UNC</a></li></ul>
+
+
+
+<h3>Haswell-E/Broadwell-E</h3>
+
+
+
+<ul><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-PLUG-DRTNIA.aml">SSDT-PLUG</a> ( hoặc <a href="https://heavietnam.ga/2021/09/29/vi-3fix-power-manager/">SSDT-PM</a> )</li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-USBX-DESKTOP.aml">SSDT-EC</a></li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-RTC0-RANGE-HEDT.aml">SSDT-RTC0-RANGE</a></li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-UNC.aml">SSDT-UNC</a></li></ul>
+
+
+
+<h3>Skylake-X</h3>
+
+
+
+<ul><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-PLUG-DRTNIA.aml">SSDT-PLUG</a> ( hoặc <a href="https://heavietnam.ga/2021/09/29/vi-3fix-power-manager/">SSDT-PM</a> )</li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-USBX-DESKTOP.aml">SSDT-EC</a></li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-RTC0-RANGE-HEDT.aml">SSDT-RTC0-RANGE</a></li></ul>
+
+
+
+<h2>Laptop</h2>
+
+
+
+<h3>Clarksfield and Arrandale</h3>
+
+
+
+<ul><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-LAPTOP.aml">SSDT-EC</a></li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-PNLF.aml">SSDT-PNLF</a></li><li><a href="https://heavietnam.ga/2021/09/29/ii-patch-am-thanh-voi-apple-alc-with-patch-hpet/">SSDT-IRQ</a></li></ul>
+
+
+
+<h3>SandyBridge/Ivy Bridge</h3>
+
+
+
+<ul><li><a href="https://heavietnam.ga/2021/09/29/vi-3fix-power-manager/">SSDT-PM</a></li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-LAPTOP.aml">SSDT-EC</a></li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-PNLF.aml">SSDT-PNLF</a></li><li><a href="https://heavietnam.ga/2021/09/29/ii-patch-am-thanh-voi-apple-alc-with-patch-hpet/">SSDT-IRQ</a></li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-IMEI.aml">SSDT-IMEI</a></li></ul>
+
+
+
+<h3>Haswell/Broadwell</h3>
+
+
+
+<ul><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-PLUG-DRTNIA.aml">SSDT-PLUG</a> ( hoặc <a href="https://heavietnam.ga/2021/09/29/vi-3fix-power-manager/">SSDT-PM</a> )</li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-LAPTOP.aml">SSDT-EC</a></li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-PNLF.aml">SSDT-PNLF</a></li><li><a href="https://heavietnam.ga/2021/09/29/ii-patch-am-thanh-voi-apple-alc-with-patch-hpet/">SSDT-IRQ</a></li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-XOSI.aml">SSDT-XOSI</a> ( hoặc <a href="https://heavietnam.ga/2021/09/29/v-fix-trackpad/">SSDT-GPI0</a> )</li></ul>
+
+
+
+<h3>Skylake/Kaby Lake</h3>
+
+
+
+<ul><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-PLUG-DRTNIA.aml">SSDT-PLUG</a> ( hoặc <a href="https://heavietnam.ga/2021/09/29/vi-3fix-power-manager/">SSDT-PM</a> )</li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-USBX-LAPTOP.aml">SSDT-EC</a></li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-PNLF.aml">SSDT-PNLF</a></li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-XOSI.aml">SSDT-XOSI</a> ( hoặc <a href="https://heavietnam.ga/2021/09/29/v-fix-trackpad/">SSDT-GPI0</a> )</li></ul>
+
+
+
+<h3>Coffee Lake/Whiskey Lake/Comet Lake</h3>
+
+
+
+<ul><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-PLUG-DRTNIA.aml">SSDT-PLUG</a> ( hoặc <a href="https://heavietnam.ga/2021/09/29/vi-3fix-power-manager/">SSDT-PM</a> )</li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-USBX-LAPTOP.aml">SSDT-EC</a></li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-PNLF.aml">SSDT-PNLF</a></li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-XOSI.aml">SSDT-XOSI</a> ( hoặc <a href="https://heavietnam.ga/2021/09/29/v-fix-trackpad/">SSDT-GPI0</a> )</li><li><a href="https://heavietnam.ga/2021/09/29/xxix-dung-ssdt-time-de-prebuilt-ssdt/">SSDT-AWAC</a> ( dùng ssdt-time để prebuilt ssdt )</li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-PMC.aml">SSDT-PMC</a> ( chỉ sử dụng cho coffelake gen 9 )</li></ul>
+
+
+
+<h3>Ice Lake</h3>
+
+
+
+<ul><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-PLUG-DRTNIA.aml">SSDT-PLUG</a> ( hoặc <a href="https://heavietnam.ga/2021/09/29/vi-3fix-power-manager/">SSDT-PM</a> )</li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-USBX-LAPTOP.aml">SSDT-EC</a></li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-PNLF.aml">SSDT-PNLF</a></li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-XOSI.aml">SSDT-XOSI</a> ( hoặc <a href="https://heavietnam.ga/2021/09/29/v-fix-trackpad/">SSDT-GPI0</a> )</li><li><a href="https://heavietnam.ga/2021/09/29/xxix-dung-ssdt-time-de-prebuilt-ssdt/">SSDT-AWAC</a> ( dùng ssdt-time để prebuilt ssdt )</li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-RHUB.aml">SSDT-RHUB</a></li></ul>
+
+
+
+<p><strong>Lưu ý: đối với ssdt-awac các bạn có thay thế bằng cách sử dụng <a href="https://heavietnam.ga/2021/10/14/fix-rtc/">fix rtc</a></strong></p>
+
+
+
+<p><strong>Main source: <a href="https://dortania.github.io/OpenCore-Install-Guide/ktext.html#ssdts">https://dortania.github.io/OpenCore-Install-Guide/ktext.html#ssdts</a></strong></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://heavietnam.ga/2022/03/10/ssdt-recomend/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Hotplug thunderbolt 3</title>
+		<link>https://heavietnam.ga/2022/02/13/hotplug-thunderbolt-3/</link>
+					<comments>https://heavietnam.ga/2022/02/13/hotplug-thunderbolt-3/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Sun, 13 Feb 2022 10:44:51 +0000</pubDate>
+				<category><![CDATA[post install]]></category>
+		<guid isPermaLink="false">https://heavietnam.ga/?p=2475</guid>
+
+					<description><![CDATA[Tìm hiểu chung patch thunder bolt là 1 việc khá vất vả bạn nên tìm hiểu việc patch dsdt trước khi đọc guide này ( patch dsdt phần 1, patch dsdt phần 2, patch dsdt phần 3 ) Trước tiên chúng ta hãy cùng nhau tìm hiểu sự hoạt động của thunderbolt trên windown và [...]]]></description>
+										<content:encoded><![CDATA[
+<h2 id="tim-hiểu-chung">Tìm hiểu chung </h2>
+
+
+
+<p>patch thunder bolt là 1 việc khá vất vả bạn nên tìm hiểu việc patch dsdt trước khi đọc guide này ( <a href="https://heavietnam.ga/2021/09/29/xxvi-patch-dsdt-phan-1/">patch dsdt phần 1</a>, <a href="https://heavietnam.ga/2021/09/29/xxvii-patch-dsdt-phan-2/">patch dsdt phần 2</a>, <a href="https://heavietnam.ga/2021/09/29/xxviii-patch-dsdt-phan-3/">patch dsdt phần 3</a> )</p>
+
+
+
+<p>Trước tiên chúng ta hãy cùng nhau tìm hiểu sự hoạt động của thunderbolt trên windown và macos</p>
+
+
+
+<p>ở trên windown cổng thunderbolt được cấp nguồn khi có 1 thiết bị được cắm vào cổng thunderbolt. Khi bị ngắt kết nối thì nguồn điện cũng tự ngắt khỏi cổng thunderbolt.</p>
+
+
+
+<p>Mặt khác ở macos thunderbolt luôn được cấp nguồn khi được kết nối thì nó sẽ được kết nối vào thunderbolt cho đến khi tắt máy </p>
+
+
+
+<p>Nhưng đối với hackintosh nó là sự hỗ hợp của windown và macos do đó bạn chỉ có thể sử dụng thunderbolt nếu bạn cắm nó trước khi khởi động do đó chúng ta cần hotplug</p>
+
+
+
+<h2 id="setting-bios">Setting bios</h2>
+
+
+
+<h3 id="lưu-y">Lưu ý:</h3>
+
+
+
+<p>Nhưng giá trị mặc định tức là giữ nguyên sau khi bạn đặt lại bios</p>
+
+
+
+<p>Nếu dòng máy của bạn không có những option trong đây thì hãy để mặc định </p>
+
+
+
+<p>Nếu bạn đang dùng Thunderbolt cards or chips with flashed firmware thì disable <code>Thunderbolt USB Support</code> hoặc không tìm thấy option này thì disable <code>Thunderbolt Boot Support</code></p>
+
+
+
+<p>Nếu máy không có tùy chọn GPIO Force Pwr thì hãy xem cách enable nó ở phần dưới</p>
+
+
+
+<h3 id="desktop">Desktop </h3>
+
+
+
+<h4 id="general-1">General: </h4>
+
+
+
+<ul><li>Discrete Thunderbolt(TM) Support: Enabled</li><li>TBT Vt-d base security: Disable </li><li>Thunderbolt Boot Support: Enabled / Boot Once</li><li>GPIO Force Pwr: Enabled </li><li>Skip PCI OptionRom: Enable </li><li>Wake from Thunderbolt(TM) Devices: enable </li><li>Security Level: SL0-No Security</li><li>DTBT Controller 0: enable</li><li>TBT Host Router: two port</li><li>Extra Bus Reserved: mặc định  </li><li>Reserved Memory: mặc định </li><li>Reserved PMemory: mặc định </li><li>Reserved I/O: mặc định </li></ul>
+
+
+
+<h4 id="asus-600-series">Asus 600 series:</h4>
+
+
+
+<ul><li>PCIE Tunneling Over USB4: Disable</li><li>Discrete Thunderbolt(TM) Support: enable </li><li>Wake from Thunderbolt(TM) Devices: enable</li><li>Thunderbolt Boot Support: enable</li><li>DTBT Go2Sx Command: enable</li><li>Windows 10 Thunderbolt support: enable</li><li>DTBT Controller 0: enable</li><li>TBT Host Router: enable</li><li>Extra Bus Reserved: mặc định </li><li>Reserved Memory: mặc định </li><li>Memory Alignment: mặc định </li><li>Reserved PMemory: mặc định </li><li>PMemory Alignment: mặc định </li><li>Reserved I/O: mặc định </li></ul>
+
+
+
+<h4 id="msi">MSI:</h4>
+
+
+
+<ul><li>Discrete Thunderbolt(TM) Support: Enable </li><li>Wake from Thunderbolt(TM) Devices: enable</li><li>Current Security Level: enable </li><li>Native OS Security for TBT: enable</li><li>Thunderbolt USB Support: enable </li><li>Thunderbolt Boot Support: enable </li><li>Titan Ridge Workaround for OSUP: enable </li><li>Tbt Dynamic AC/DC L1: enable </li><li>GPIO Force Pwr: enable </li><li>Wait time in ms after applying Force Pwr: Mặc định </li><li>GPIO filter: enable </li><li>DTBT Controller 0: enable </li><li>TBT Host Router: two port </li><li>Extra Bus Reserved: mặc định </li><li>Reserved Memory: mặc định </li><li>Memory Alignment: mặc định </li><li>Reserved PMemory: mặc định </li><li>PMemory Alignment: mặc định </li><li>Reserved I/O: mặc định </li><li>Windows 10 Thunderbolt support: Enable + RTD3</li></ul>
+
+
+
+<h3 id="laptop">Laptop</h3>
+
+
+
+<h4 id="asus-clevo">ASUS/Clevo:</h4>
+
+
+
+<ul><li>Intel Thunderbolt Technology: enable </li><li>Security: <ul><li>Unique ID:  trên lap đời mới</li><li>Normal Mode w/o NHI: trên lap cũ hơn như haswell </li></ul></li><li>Thunderbolt Boot Support: Enable</li><li>Security Level: SL0-No Security</li><li>Extra Bus Reserved: mặc định </li><li>Reserved Memory: mặc định </li><li>Reserved PMemory: mặc định </li><li>PMemory Alignment: mặc định </li><li>Reserved I/O: mặc định</li></ul>
+
+
+
+<h4 id="general">General:</h4>
+
+
+
+<ul><li>Intel Thunderbolt Technology: enable</li><li>Discrete Thunderbolt(TM) Support: enable </li><li>TBT Vt-d Base Security: disable</li><li>Thunderbolt Boot Support: disable</li><li>Wake from Thunderbolt(TM) Devices: enable</li><li>Security Level:<ul><li>No Security: đối với hầu hết các loại máy</li><li>SL0-No Security: giống như tùy chọn No Security sử dụng khi không có tùy chọn No Security</li><li>Legacy Mode: thiết bị legacy</li><li>Unique ID: chỉ áp dụng đối với laptop</li></ul><ul><li>One time saved Key: One time saved Key</li><li>DP++ only: DP++ only</li><li>Normal Mode w/o NHI: ở trên 1 số laptop cũ như haswell sử dụng tùy chọn này thay cho debug mode</li><li>Debug Mode: ở trên 1 số laptop cũ như haswell sử dụng tùy chọn <code>Normal Mode w/o NH</code> thay cho tùy chọn này </li></ul></li><li>Thunderbolt Usb Support: enable/ disable </li><li>GPIO Force Pwr: enable </li><li>DTBT Controller 0: enable</li><li>TBT Host Router: mặc định</li><li>Extra Bus Reserved: mặc định </li><li>Reserved Memory: mặc định </li><li>Memory Alignment: mặc định </li><li>Reserved PMemory: mặc định </li><li>PMemory Alignment: mặc định </li><li>Reserved I/O: mặc định </li><li>TBT Root port Selector: <ul><li>Auto Detect: tự động chọn cổng thunderbolt</li><li>Thunderbolt USB: nếu Thunderbolt USB hoạt động thì nên chọn tùy chọn này </li></ul></li><li>Thunderbolt(TM) PCI Cache-line size: mặc định</li><li>Wait time in ms after applying Force Pwr: mặc định </li><li>Skip PCI OptionRom: enable</li><li>Reserve memory per phy slot: mặc định</li><li>Reserve P memory per phy slot: mặc định </li><li>Reserve IO per phy slot: mặc định</li><li>Delay before SX Exit: mặc định</li><li>GPIO Filter: enable</li><li>Enable CLK REQ: disable</li><li>Enable ASPM: disable</li><li>Enable LTR: disable</li><li>Alpine Ridge XHCi WA: enable</li><li>AR XHCI Host Pre-Wake: enable</li><li>AR XHCI Host Active LTR: mặc định</li><li>AR XHCI Host High LTR: mặc định</li><li>AR XHCI Host Medium LTR: mặc định</li><li>AR XHCI Host Low LTR: mặc định</li></ul>
+
+
+
+<h2 id="enable-gpio-force-pwr">Enable GPIO Force Pwr</h2>
+
+
+
+<h3 id="cach-1-dung-uefitool">Cách 1: Dùng UEFITool</h3>
+
+
+
+<p>B1: tải UEFITool <a href="https://github.com/LongSoft/UEFITool/releases">tại đây</a> Không tải version Axx</p>
+
+
+
+<p>B2: tải file bios của các bạn ( định dạng .bin )</p>
+
+
+
+<p>B3: mở file bios ra bằng UEFITool và nhấn command + F sau đó search <code>Force Pwr</code> ( định dạng là unicode )</p>
+
+
+
+<p>B4: bạn sẽ nhận được kết quả tìm kiếm ở mục có subtext là <code>DXE driver </code>text là <code>setup</code></p>
+
+
+
+<p>B5: nhấn extra body </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://www.tonymacx86.com/attachments/screen-shot-2020-06-29-at-13-01-53-png.478421/" alt=""/></figure>
+
+
+
+<p>B6: tải <a href="https://github.com/LongSoft/Universal-IFR-Extractor/releases/" target="_blank" rel="noreferrer noopener">Universal-IFR-Extractor</a> và run ở trên terminal ( các run tham khảo <a href="https://heavietnam.ga/2021/10/28/xxxviii-disable-cfg-clock/#Cach_1_Disable_trong_config">XXXVIII. Disable CFG-Clock &#8211; Heavietnam February 2022</a> )</p>
+
+
+
+<figure class="wp-block-image"><img src="https://www.tonymacx86.com/attachments/screen-shot-2020-06-29-at-13-07-03-png.478422/" alt=""/></figure>
+
+
+
+<p>B7: mở file text vừa dump ra và search <code>GPIO3 Force Pwr</code> ( mặc định là disable | hoặc search <code>GPIO Force Pwr</code>  )</p>
+
+
+
+<p>B8: nhìn phía trên dòng tìm được </p>
+
+
+
+<figure class="wp-block-image"><img src="https://www.tonymacx86.com/attachments/screen-shot-2020-06-29-at-13-12-03-png.478423/" alt=""/></figure>
+
+
+
+<p>B9: copy <code>12 06 25 2B 00 00</code> và thay thế bằng <code>12 06 25 2B&nbsp;<strong>FF</strong>&nbsp;00</code></p>
+
+
+
+<p>B10: sử dụng hex editor để thay thế ( ấn replace on )</p>
+
+
+
+<figure class="wp-block-image"><img src="https://www.tonymacx86.com/attachments/screen-shot-2020-06-29-at-13-15-32-png.478424/" alt=""/></figure>
+
+
+
+<p>B11 save file lại</p>
+
+
+
+<p>B12: mở lại file bin ban đầu và ấn <code>replace body</code> sau đó chọn đến file vừa sửa và save lại tiếp theo reboot</p>
+
+
+
+<figure class="wp-block-image"><img src="https://www.tonymacx86.com/attachments/screen-shot-2020-06-29-at-13-17-01-png.478425/" alt=""/></figure>
+
+
+
+<h3 id="cach-2-dung-driver-tbtforcepower-efi">Cách 2: dùng driver TbtForcePower.efi </h3>
+
+
+
+<p>B1: tải <a href="https://github.com/al3xtjames/ThunderboltPkg">TbtForcePower.efi</a></p>
+
+
+
+<p>B2: bỏ file driver vào <code>EFI ==&gt; OC ==&gt; driver</code>  hoặc <code>EFI ==&gt; Clover ==&gt; driver ==&gt; UEFI</code></p>
+
+
+
+<p>B3: snapshot lại nếu ở opencore</p>
+
+
+
+<p>B4: reboot</p>
+
+
+
+<h5 id="lưu-y-dối-với-1-số-pc-thi-khi-dung-cach-2-sẽ-bị-panic-bạn-phải-dung-cach-1">Lưu ý: </h5>
+
+
+
+<p id="lưu-y-dối-với-1-số-pc-thi-khi-dung-cach-2-sẽ-bị-panic-bạn-phải-dung-cach-1">Đối với 1 số pc thì khi dùng cách 2 sẽ bị panic bạn phải dùng cách 1</p>
+
+
+
+<h2 id="hotplug-thunderbolt-3">Hotplug thunderbolt 3</h2>
+
+
+
+<h3 id="xac-dịnh-acpi-path">Xác dịnh acpi path</h3>
+
+
+
+<h4 id="cach-1-dung-ioreg">Cách 1: dùng ioreg</h4>
+
+
+
+<p>B1: tải ioreg <a href="https://github.com/vulgo/IORegistryExplorer">tại đây</a> </p>
+
+
+
+<p>B2: cắm thunderbolt ( cắm trước khi mở máy )</p>
+
+
+
+<p>B3: nhấn command + f và search thunderbolt </p>
+
+
+
+<figure class="wp-block-image"><img src="https://elitemacx86.com/attachments/screenshot-2020-01-28-at-5-52-53-am-png.2047/" alt=""/></figure>
+
+
+
+<p>Ta có thể thấy đường dẫn dẫn tới thunderbolt sẽ là <code>PCI0.RP21.PXSX</code></p>
+
+
+
+<h4 id="cach-2-dung-device-manager">Cách 2: dùng device manager</h4>
+
+
+
+<p>B1: chọn option thunderbolt</p>
+
+
+
+<p>B2: chọn vào mục <code>Details ==&gt; Location Paths</code></p>
+
+
+
+<p>B3: lấy đường dẫn ( chi tiết về cách lấy xem ở bài <a href="https://heavietnam.ga/2021/09/29/xxiii-patch-card-doi-hoa-amd/">này</a> ) </p>
+
+
+
+<h4 id="lưu-y-cho-multiple-cards">Lưu ý cho <strong>Multiple Cards</strong>: </h4>
+
+
+
+<p>Đối với những máy có nhiều card thunderbolt thì bạn sẽ xác định đường dẫn card bằng cách cắm vào từng port trước khi khởi động. </p>
+
+
+
+<p>Ngoài ra để sử dụng type c bạn sẽ cần 1 cầu nối trong ssdt thunderbolt và thường cầu nói đó sẽ là <code>PEGP</code></p>
+
+
+
+<pre class="wp-block-code"><code>// ví dụ chúng ta có các đường dẫn là 
+
+PCI0.RP21.PXSX
+PCI0.BR1A.SL01
+PCI0.BR3A.SL09
+
+// khi thêm cầu nối sẽ là 
+
+PCI0.RP21.PEGP
+PCI0.BR1A.PEGP
+PCI0.BR3A.PEGP
+</code></pre>
+
+
+
+<h3 id="lấy-mẫu-ssdt-từ-hackindrom">Lấy mẫu SSDT từ <a href="https://hackindrom.zapto.org/">HackinDrom</a></h3>
+
+
+
+<p>B1: các bản tải ssdt từ <a href="https://hackindrom.zapto.org/">HackinDrom</a></p>
+
+
+
+<p>B2: các bạn chọn 1 mẫu thunderbolt device phù hợp với cấu hình của bạn </p>
+
+
+
+<p>B3: Đối với những bạn sử dụng Multiple Cards thì hãy chọn vào mục custom và và định dạng busid là 0 hoặc 1. Số 0 hoặc 1 chính là thunderbolt card thứ nhất của bạn. Ví dụ bạn có 3 card thunderbolt nếu card đầu tiên có bus id là 0 thì các card tiếp theo sẽ là 1 và 2. Ngược lại thì busid của card đầu tiên là 0 thì 2 card tiếp theo tương ứng sẽ là 2 và 3</p>
+
+
+
+<p>B4: ấn COMPILE</p>
+
+
+
+<p>B5: ấn download</p>
+
+
+
+<h3 id="thay-dổi-dường-dẫn-của-ssdt-thunderbolt">thay đổi đường dẫn của ssdt thunderbolt</h3>
+
+
+
+<p>B1: tìm đường dẫn mặc định của ssdt </p>
+
+
+
+<p>B2: Ấn replace</p>
+
+
+
+<p>B3: Rồi thay bằng đường dẫn bạn đã tìm được ở phần trên ví dụ như thay <code>RP05 to RP21</code><img src="https://imgur.com/9LKnktd.png"> </p>
+
+
+
+<h4 id="lưu-y-cho-lưu-y-cho-multiple-cards">Lưu ý cho Lưu ý cho <strong>Multiple Cards</strong>: </h4>
+
+
+
+<p>như đã nói ở trên đối với Multiple Cards thì ta sẽ cần dùng cầu nối nên ta vẫn cần sử dụng method gốc</p>
+
+
+
+<p>B1: thêm cầu nối vào đường dẫn </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/aR0JH68.png" alt=""/></figure>
+
+
+
+<p>B2: add method gốc ( paste trước dòng method pegp )</p>
+
+
+
+<pre class="wp-block-code"><code>Scope (PXSX)
+            {
+                Name (_STA, Zero)  // _STA: Status
+            }
+// thay method thích hợp</code></pre>
+
+
+
+<p>B3: khai báo method vừa add </p>
+
+
+
+<pre class="wp-block-code"><code>External (_SB_.PCI0.RP21.PXSX, DeviceObj)   </code></pre>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/zvkylQQ.png" alt=""/><figcaption>Sau khi hoàn thành sẽ được</figcaption></figure>
+
+
+
+<h2 id="lưu-y-cuối-bai">Lưu ý cuối bài </h2>
+
+
+
+<p>Các bạn đừng quên cho ssdt vào EFI ==&gt; OC ==&gt; ACPI hoặc EFI ==&gt; Clover ==&gt; ACPI ( nhớ snapshot nếu ở opencore )</p>
+
+
+
+<p>Đối với Multiple Cards. Bạn nên thử bus id cho card đầu tiên là busid 0 và thử tiếp sau đó</p>
+
+
+
+<p>Để hotplug cho Alpine Ridge Cards thì bạn phải disable THB_C Header</p>
+
+
+
+<p>Ngoài ra khi patch Multiple Cards có thể sẽ không hiện trong about this mac đó là vì mac chưa nhận dạng được chipset của thunderbolt. Nhưng cũng không cần quan tâm vì mọi chức năng đều hoạt động ( 1 số chức năng không chạy như kết nối màn 5k )</p>
+
+
+
+<p>Source tham khảo: <a href="https://elitemacx86.com/threads/how-to-enable-thunderbolt-3-hotplug-on-macos.462/">GUIDE &#8211; How to Enable Thunderbolt 3 Hotplug on macOS | EliteMacx86 Forum</a> | <a href="https://elitemacx86.com/threads/how-to-enable-thunderbolt-2-thunderbolt-3-and-thunderbolt-4-on-macos.461/">GUIDE &#8211; How to Enable ThunderBolt 2, Thunderbolt 3 and Thunderbolt 4 on macOS | EliteMacx86 Forum</a> | <a href="https://www.tonymacx86.com/threads/howto-real-thunderbolt-hotplug-hotswap-on-the-fly.282953/page-3">HowTo: Real Thunderbolt HotPlug/HotSwap on the fly | Page 3 | tonymacx86.com</a></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://heavietnam.ga/2022/02/13/hotplug-thunderbolt-3/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>XXXXII. Fix System Clocks on HEDT</title>
+		<link>https://heavietnam.ga/2022/01/22/fix-system-clocks-on-hedt/</link>
+					<comments>https://heavietnam.ga/2022/01/22/fix-system-clocks-on-hedt/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Sat, 22 Jan 2022 07:04:24 +0000</pubDate>
+				<category><![CDATA[post install]]></category>
+		<guid isPermaLink="false">https://heavietnam.ga/?p=2378</guid>
+
+					<description><![CDATA[Chuẩn bị: Dump dsdt theo hướng dẫn tại đây Maciasl SSDT-RTC0-RANGE Xác định vấn đề: Các bạn cần xác định vấn đề của mình có thật sự cần dùng ssdt-rtc0 hay không B1: mở ssdt ra và ấn tổ hợp phím command + f và gõ từ khóa PNP0B00 nhìn vào dòng _CRS Chúng ta [...]]]></description>
+										<content:encoded><![CDATA[
+<h2>Chuẩn bị:</h2>
+
+
+
+<ul><li>Dump dsdt theo hướng dẫn <a href="https://heavietnam.ga/2021/09/29/xxvi-patch-dsdt-phan-1/">tại đây</a></li><li><a href="https://github.com/acidanthera/MaciASL/releases">Maciasl</a></li><li><a href="https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/Source/SSDT-RTC0-RANGE.dsl">SSDT-RTC0-RANGE </a></li></ul>
+
+
+
+<h2>Xác định vấn đề:</h2>
+
+
+
+<p>Các bạn cần xác định vấn đề của mình có thật sự cần dùng ssdt-rtc0 hay không </p>
+
+
+
+<p>B1: mở ssdt ra và ấn tổ hợp phím <code>command + f</code> và gõ từ khóa <code>PNP0B00</code> nhìn vào dòng  <code>_CRS</code></p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://dortania.github.io/Getting-Started-With-ACPI/assets/img/rtc-range-check.d964e9c9.png" alt=""/></figure>
+
+
+
+<p>Chúng ta có </p>
+
+
+
+<pre class="wp-block-code"><code>                Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
+                {
+                    IO (Decode16,
+                        0x0070,             // Range Minimum 1
+                        0x0070,             // Range Maximum 1
+                        0x01,               // Alignment 1
+                        0x02,               // Length 1
+                       )
+                    IO (Decode16,
+                        0x0074,             // Range Minimum 2
+                        0x0074,             // Range Maximum 2
+                        0x01,               // Alignment 2
+                        0x04,               // Length 2
+                       )
+                    IRQNoFlags ()
+                        {8}
+                })</code></pre>
+
+
+
+<p>Các bạn để ý vào các dòng <meta charset="utf-8"><code>IRQNoFlags</code> ( số vùng bao phủ ) và 2 dòng <meta charset="utf-8"><code>IO (Decode16,</code> chúng ta có rtc bao phủ 8 vùng là 0x70 (0x007 chính là 0x70 do được viết bằng hex), 0x71, 0x72, 0x73, 0x74, 0x75, 0x76, 0x77  ta có </p>
+
+
+
+<ul><li>Dòng io đầu tiên<ul><li>bắt đầu ở 0x70</li><li>Bao gồm 2 vùng</li><li>chứa 0x70, 0x71</li></ul></li><li>Dòng io thứ 2<ul><li>bắt đầu ở 0x74</li><li>Bao gồm 4 vùng </li><li>Chứa 0x74, 0x75, 0x76, 0x77</li></ul></li></ul>
+
+
+
+<p>Thiếu 0x72 và 0x73</p>
+
+
+
+<p>Ta cần sửa phạm vi ở dòng io đầu tiên thành 4</p>
+
+
+
+<h2>Tìm ACPI Path</h2>
+
+
+
+<p>B1: mở dsdt lên và ấn <code>command + f</code> </p>
+
+
+
+<p>B2: search các từ khóa sau</p>
+
+
+
+<ul><li><code>PNP0B00</code> : dùng để tìm tên của device rtc</li><li><code>Name (_ADR, 0x001F0000)</code>: dùng để tìm LPC path (LowPinCount path)</li><li><code>PNP0A08</code>: dùng để tìm PCI path (có thể có nhiều kết quả cùng xuất iện hãy chọn cái đầu tiên)</li></ul>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://dortania.github.io/Getting-Started-With-ACPI/assets/img/rtc-name.afa4c3f4.png" alt=""/><figcaption>RTC Pathing</figcaption></figure>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://dortania.github.io/Getting-Started-With-ACPI/assets/img/lpc.bfa9cf23.png" alt=""/><figcaption>LPC Pathing</figcaption></figure>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://dortania.github.io/Getting-Started-With-ACPI/assets/img/pci0.4477f361.png" alt=""/><figcaption>PCI Pathing</figcaption></figure>
+
+
+
+<p>Bây giờ chúng ta có các path của acpi là <code>rtc,lpc,pci0</code></p>
+
+
+
+<h2>Edit SSDT:</h2>
+
+
+
+<p>B1: Mở ssdt-rtc0 vừa tải ở bước chuẩn bị lên và sửa lại các path như sau </p>
+
+
+
+<pre class="wp-block-code"><code>//Path mặc định sẽ là
+
+PC00.LPC0.RTC
+
+//chúng ta cần sửa lại là
+
+PCI0.LPC.RTC </code></pre>
+
+
+
+<p>B2: rename trong ssdt</p>
+
+
+
+<pre class="wp-block-code"><code>//Trước khi rename
+
+External (_SB_.PC00.LPC0, DeviceObj) &lt;- Rename 
+
+External (_SB_.PC00.LPC0.RTC_, DeviceObj) &lt;- Rename 
+
+Scope (_SB.PC00.LPC0) &lt;- Rename
+
+//Sau khi rename
+
+External (_SB_.PCI0.LPC, DeviceObj) &lt;- Renamed
+
+Scope (_SB.PCI0.LPC.RTC) &lt;- Renamed
+
+Scope (_SB.PCI0.LPC) &lt;- Renamed</code></pre>
+
+
+
+<p>B3: Tiếp theo search <code>device(ACPI000E)</code> ( hoặc <meta charset="utf-8"><code>ACPI000E</code> ) Nếu DSDT của bạn có dòng này thì </p>
+
+
+
+<pre class="wp-block-code"><code>  /* &lt;- xóa nó trong ssdt
+  Scope (RTC)
+        {
+            Method (_STA, 0, NotSerialized)  // _STA: Status
+            {
+                If (_OSI ("Darwin"))
+                {
+                    Return (Zero)
+                }
+                Else
+                {
+                    Return (0x0F)
+                }
+            }
+        }
+  */ &lt;- xóa nó trong ssdt
+
+// Nếu không có thì xóa luôn phần ghi chú này trong ssdt</code></pre>
+
+
+
+<p>B4: chúng ta có phần này</p>
+
+
+
+<pre class="wp-block-code"><code>            Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
+            {
+                IO (Decode16,
+                    0x0070,             // Range Minimum 1
+                    0x0070,             // Range Maximum 1
+                    0x01,               // Alignment 1
+                    0x04,               // Length 1      (Expanded to include 0x72 and 0x73)
+                    )
+                IO (Decode16,
+                    0x0074,             // Range Minimum 2
+                    0x0074,             // Range Maximum 2
+                    0x01,               // Alignment 2
+                    0x04,               // Length 2
+                    )
+                IRQNoFlags ()
+                    {8}
+            })
+// Sửa các giá trị theo phân tích ở bước xác định vấn đề ở đây mình đã sửa dòng io đầu tiên có phạm vi giá trị là 0x04</code></pre>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/oBdHjTa.png" alt=""/></figure>
+
+
+
+<p>Chúng ta có </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/pHiUOhF.png" alt=""/></figure>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/H0oVCx0.png" alt=""/></figure>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/id7Wk74.png" alt=""/></figure>
+
+
+
+<p>B5: save lại dưới dạng file aml theo hướng dẫn <a href="https://heavietnam.ga/2021/09/29/xxvii-patch-dsdt-phan-2/">tại đây</a></p>
+
+
+
+<p>B6: bỏ file SSDT vừa sửa vào EFI ==&gt; OC ==&gt; ACPI và snaps lại ( hoặc EFI ==&gt; Clover ==&gt; ACPI ) sau đó restart</p>
+
+
+
+<p>Lưu ý: source tham khảo: <a href="https://dortania.github.io/Getting-Started-With-ACPI/Universal/awac-methods/manual-hedt.html#edits-to-the-sample-ssdt">Fixing System Clocks on HEDT: Manual | Getting Started With ACPI (dortania.github.io)</a> | <a href="https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/Source/SSDT-RTC0-RANGE.dsl">OpenCorePkg/SSDT-RTC0-RANGE.dsl at master · acidanthera/OpenCorePkg (github.com)</a></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://heavietnam.ga/2022/01/22/fix-system-clocks-on-hedt/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>XXXXI. Patch sata controller</title>
+		<link>https://heavietnam.ga/2021/12/06/xxxxi-patch-sata-controller/</link>
+					<comments>https://heavietnam.ga/2021/12/06/xxxxi-patch-sata-controller/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Mon, 06 Dec 2021 12:36:47 +0000</pubDate>
+				<category><![CDATA[post install]]></category>
+		<guid isPermaLink="false">https://heavietnam.ga/?p=2141</guid>
+
+					<description><![CDATA[Trước tiên ta phải tìm hiểu Patch sata controller dùng để làm gì. Nó dùng để inject device id sata controller ( ahci mode ) Nếu device id không được inject thì các bạn sẽ không thể nhận ổ cứng hoặc gặp lỗi still waiting for root device Cách 1: Dùng kext B1: Các bạn [...]]]></description>
+										<content:encoded><![CDATA[
+<p>Trước tiên ta phải tìm hiểu Patch sata controller dùng để làm gì. Nó dùng để inject device id sata controller ( ahci mode ) Nếu device id không được inject thì các bạn sẽ không thể nhận ổ cứng hoặc gặp lỗi <code>still waiting for root device</code></p>
+
+
+
+<h2>Cách 1: Dùng kext</h2>
+
+
+
+<p>B1: Các bạn sẽ chọn kext theo sau:</p>
+
+
+
+<ul><li><a href="https://github.com/khronokernel/Legacy-Kexts/blob/master/Injectors/Zip/SATA-unsupported.kext.zip">SATA-unsupported.kext</a>:  dùng để kích hoạt các bộ điều khiển sata thường dùng với laptop</li></ul>
+
+
+
+<ul><li><a href="https://github.com/dortania/OpenCore-Install-Guide/blob/master/extra-files/CtlnaAHCIPort.kext.zip">CtlnaAHCIPort.kext</a>: thường được sử dụng ở bigsur thay cho nhiều bộ điều khiển bị loại bỏ</li></ul>
+
+
+
+<ul><li>Legacy SATA Kexts<ul><li><a href="https://github.com/khronokernel/Legacy-Kexts/blob/master/Injectors/Zip/AHCIPortInjector.kext.zip">AHCIPortInjector.kext</a>: sử dụng trên Legacy SATA/AHC thường cần ở Penryn trở về trước</li><li><a href="https://github.com/khronokernel/Legacy-Kexts/blob/master/Injectors/Zip/ATAPortInjector.kext.zip">ATAPortInjector.kext</a>: thường được dùng khi không có tùy chọn AHCI trong bios</li></ul></li></ul>
+
+
+
+<p>B2: Các bạn bỏ kext vào <code>EFI ==&gt; OC ==&gt; kext </code>và snapshot lại config hoặc bỏ kext vào <code>EFI ==&gt; Clover ==&gt; kext ==&gt; other</code> nếu dùng clover</p>
+
+
+
+<p>B3: reboot</p>
+
+
+
+<p><strong>Lưu ý: 1 số trưởng hợp không kích hoạt được các bạn có thể thử bỏ vào L/E sử dụng <a href="https://github.com/chris1111/Kext-Droplet-Big-Sur/releases">kext dropletV2</a> hoặc S/L/E sử dụng <a href="https://github.com/chris1111/Kext-Droplet/releases/tag/V2">kextdroplet</a></strong></p>
+
+
+
+<h2>Cách 2: inject qua device properties</h2>
+
+
+
+<p>B1: Các bạn cần xác định series của sata controler bằng cách vào device manager ==&gt; IDE ATA/ATAPI controllers</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://photo2.tinhte.vn/data/attachment-files/2020/12/5260111_image.png" alt=""/></figure>
+
+
+
+<p>Đối với 1 số máy sẽ không thấy đc series các bạn tiến hành cài driver cho nó links chi tiết <a href="https://tinhte.vn/thread/sua-loi-full-disk-100-thanh-cong-tren-windows-10-bang-driver-hardisk-controller.3238245/">tại đây</a></p>
+
+
+
+<p>B2: Các bạn tiến hành tải app <a href="https://www.hwinfo.com/download/">aida64</a> về sau đó tiến hành đổi chiếu để tìn ra model gần với model của bạn nhất. Nhưng đặc biệt là phải trùng series và vendor id của các bạn  của các bạn </p>
+
+
+
+<p>B3: Các bạn truy cập vào trang <a href="https://devicehunt.com/">sau</a></p>
+
+
+
+<p>B4: tìm đến model các bạn cần fake nhập vendor id vào tìm đến model sát cấu hình nhất và lấy device id</p>
+
+
+
+<p>Ở đây mình được device-id là <code>1E03</code></p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/ELQLcyW.png" alt=""/></figure>
+
+
+
+<p>B5: Mở hackintool lên tìm ở phần device name là sata controller và nhìn vào tab device path </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/DuQ2lxc.png" alt=""/></figure>
+
+
+
+<p>B6: mở config lên vào mục <code>device properties</code> hoặc <code>device ==&gt; prperties</code> nếu ở clover add 1 key với kiểu dữ liệu là <code>dictionary</code> và tên là device path vừa xác định ở trên sao đó add <code>device-id</code> vào với kiểu dữ liệu là <code>data</code></p>
+
+
+
+<p>Biến đổi device-id theo quy tắc sau</p>
+
+
+
+<pre class="wp-block-code"><code>// Thêm chữ số 0 vào trước dãy số để được 8 chứ số 
+
+1e03 ==&gt; 00001e03
+
+// Tác thành từng cặp 2 chứ số 
+
+<meta charset="utf-8">00001e03 ==&gt; <meta charset="utf-8">00 00 1e 03
+
+// Đảo thứ tự các cặp
+
+<meta charset="utf-8">00 00 1e 03 ==&gt; <meta charset="utf-8">00 00 1e 03
+
+// Viết lại thành device-id
+
+<meta charset="utf-8">00 00 1e 03 ==&gt; <meta charset="utf-8">00001e03</code></pre>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/6AD50xQ.png" alt=""/></figure>
+
+
+
+<p>B7: save lại và reboot</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://heavietnam.ga/2021/12/06/xxxxi-patch-sata-controller/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>XXXX. Patch applehda ( phần 2 )</title>
+		<link>https://heavietnam.ga/2021/11/15/xxxx-patch-applehda-phan-2/</link>
+					<comments>https://heavietnam.ga/2021/11/15/xxxx-patch-applehda-phan-2/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Mon, 15 Nov 2021 14:28:14 +0000</pubDate>
+				<category><![CDATA[post install]]></category>
+		<guid isPermaLink="false">https://heavietnam.ga/?p=1647</guid>
+
+					<description><![CDATA[Phần 1: Chuẩn bị: B1: 1 cái usb 8gb B2: 1 file iso linux ( khuyến khích dùng ubuntu hoăc có thể dùng wsl ) B3: xcode B4: tải pin configuration và giải nén B5: tải layout và platform B6: tải graphviz.pkg B7: tải CodecGraph Và giải nén B8: tải propertree B9: tải apple alc [...]]]></description>
+										<content:encoded><![CDATA[
+<h2>Phần 1: Chuẩn bị:</h2>
+
+
+
+<p>B1: 1 cái usb 8gb</p>
+
+
+
+<p>B2: 1 file iso linux ( khuyến khích dùng ubuntu hoăc có thể dùng wsl )</p>
+
+
+
+<p>B3: xcode</p>
+
+
+
+<p>B4: tải <a href="https://www.mediafire.com/file/u196a0fsjz2mrcc/PinConfigurator.zip/file">pin configuration</a> và giải nén</p>
+
+
+
+<p>B5: tải <a href="https://www.mediafire.com/folder/vb127kviaqlv4/Layout+&amp;+Platform">layout và platform</a></p>
+
+
+
+<p>B6: tải <a href="https://www.mediafire.com/file/x6gkjnwoyddyn4v/graphviz-2.32.0.pkg/file">graphviz.pkg</a></p>
+
+
+
+<p>B7: tải <a href="https://www.mediafire.com/file/zz7jm3pjo9on3do/codecgraph.zip/file">CodecGraph</a> Và giải nén</p>
+
+
+
+<p>B8: tải <a href="https://github.com/corpnewt/ProperTree">propertree</a></p>
+
+
+
+<p>B9: tải <a href="https://github.com/acidanthera/AppleALC">apple alc repo</a> Và <a href="https://github.com/acidanthera/Lilu">lilu.kext</a></p>
+
+
+
+<h2>Phần 2: dump codec</h2>
+
+
+
+<p>B1: các bạn boot qua linux ( có thể sử dụng dualboot hoặc live trên usb hoặc wsl )</p>
+
+
+
+<p>B2: mở terminal ( ấn ctrl + t ) và gõ các lệnh sau </p>
+
+
+
+<pre class="wp-block-code"><code>cat /proc/asound/card0/codec#1 &gt; ~/Desktop/codec_dump.txt
+</code></pre>
+
+
+
+<p>hoặc</p>
+
+
+
+<pre class="wp-block-code"><code>cat /proc/asound/card0/codec#0 &gt; ~/Desktop/codec_dump.txt
+</code></pre>
+
+
+
+<p>hoặc</p>
+
+
+
+<pre class="wp-block-code"><code>cd ~/Desktop &amp;&amp; mkdir CodecDump &amp;&amp; for c in /proc/asound/card*/codec#*; do f="${c/\/*card/card}"; cat "$c" &gt; CodecDump/${f//\//-}.txt; done &amp;&amp; zip -r CodecDump.zip CodecDump
+</code></pre>
+
+
+
+<p>sau đó các bạn copy file <code>codecdump.zip</code> sang mac</p>
+
+
+
+<h2>Phần 3: chuẩn bị sơ đồ path map và verbs</h2>
+
+
+
+<p>B1: cài <code>graphviz.pkg</code></p>
+
+
+
+<p>B2: giải nén file codec dump.zip và copy file  <code>c<meta charset="utf-8">codec_dump.txt</code> vào folder CodecGraph ( folder này nên đạt ngoài desktop )</p>
+
+
+
+<p>B3: gõ lệnh sau vào terminal </p>
+
+
+
+<pre class="wp-block-code"><code>cd ~/Desktop/codecgraph
+
+// và sau đó gõ tiếp lệnh dưới
+
+kéo thả file script patch codec vào rồi enter</code></pre>
+
+
+
+<p>B4: chúng ta sẽ copy 2 file&nbsp;<code>codec_dump_dec.txt.svg</code>&nbsp;và&nbsp;<code>finalverbs.txt</code> ra một nơi khác </p>
+
+
+
+<h2>Phần 4: xác định verb data</h2>
+
+
+
+<p>Ở đây các bạn mở file finalverbs.txt lên sẽ có dạng </p>
+
+
+
+<pre class="wp-block-code"><code>
+Verbs from Linux Codec Dump File: codec_dump.txt
+
+Codec: Realtek ALC269VC   Address: 0   DevID: 283902569 (0x10ec0269)
+
+   Jack   Color  Description                  Node     PinDefault             Original Verbs
+--------------------------------------------------------------------------------------------------------
+Digital Unknown  Mic at Int N/A              18 0x12   0x90a60930   01271c30 01271d09 01271ea6 01271f90
+ Speaker at Int N/A    0x14 0x14                        2417426704 01471c10 01471d01     01471e17 01471f90  
+ HP Out at Ext Left    0x15 0x15                        52498463 01571c1f 01571d10     01571e21 01571f03  
+    1/8   Black  Speaker at Ext Rear         23 0x17   0x411111f0   01771cf0 01771d11 01771e11 01771f41
+ Mic at Ext Left    0x18 0x18                        60905504 01871c20 01871d58     01871ea1 01871f03  
+    1/8   Black  Speaker at Ext Rear         25 0x19   0x411111f0   01971cf0 01971d11 01971e11 01971f41
+    1/8   Black  Speaker at Ext Rear         26 0x1a   0x411111f0   01a71cf0 01a71d11 01a71e11 01a71f41
+    1/8   Black  Speaker at Ext Rear         27 0x1b   0x411111f0   01b71cf0 01b71d11 01b71e11 01b71f41
+  ATAPI  Purple  Speaker at Ext N/A          29 0x1d   0x40138205   01d71c05 01d71d82 01d71e13 01d71f40
+    1/8   Black  Speaker at Ext Rear         30 0x1e   0x411111f0   01e71cf0 01e71d11 01e71e11 01e71f41
+--------------------------------------------------------------------------------------------------------
+
+
+   Jack   Color  Description                  Node     PinDefault             Modified Verbs
+--------------------------------------------------------------------------------------------------------
+Digital Unknown  Mic at Int N/A              18 0x12   0x90a60930   01271c30 01271d00 01271ea6 01271f90
+ Speaker at Int N/A    0x14 0x14                        2417426704 01471c10 01471d00     01471e17 01471f90  
+ HP Out at Ext Left    0x15 0x15                        52498463 01571c40 01571d10     01571e21 01571f00  
+ Mic at Ext Left    0x18 0x18                        60905504 01871c20 01871d50     01871ea1 01871f00  
+  ATAPI  Purple  Speaker at Ext N/A          29 0x1d   0x40138205   01d71c50 01d71d80 01d71e13 01d71f40
+--------------------------------------------------------------------------------------------------------</code></pre>
+
+
+
+<p>ở đây 2 có 2 mục cần quan tâm mục đầu tiên là devid ( sẽ dùng ở phần dưới ) mục thứ 2 là <meta charset="utf-8"> Modified Verbs ( ta sẽ làm việc với mục này )</p>
+
+
+
+<p>Ta có dòng đầu tiên đc chia thành 4 nhóm hãy cùng tìm hiểu chức năng và ý nghĩa các nhóm nhưng trước hết ta sẽ hiểu định nghĩa chung</p>
+
+
+
+<pre class="wp-block-code"><code><meta charset="utf-8"><strong><meta charset="utf-8"></strong> <strong>01271c30</strong> 01271d00 01271ea6 01271f90</code></pre>
+
+
+
+<p>ta có <meta charset="utf-8"><strong><code><meta charset="utf-8"> <strong>0 12 71c 30</strong></code></strong> có nghĩa là </p>
+
+
+
+<p>0 : codec address</p>
+
+
+
+<p>12: node id</p>
+
+
+
+<p>71c : verb command ( sẽ tuần theo 1uy tắt nhóm đầu sẽ là 71c nhóm 2 là 71d nhóm 3 là 71 e nhóm 4 là 71f và 70c EAPD )</p>
+
+
+
+<p>30: verb data ( đây là phần quan trọng nhất )</p>
+
+
+
+<h2>Phần 5: Patch verb data</h2>
+
+
+
+<p>B1: các bạn copy Modified Verbs ra 1 text riêng sao đó sao chép vào bộ nhớ tạm ( command + c | node 1d là 1 node không cần thiết nên các bạn xóa đi  )</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/5ZseMVX.png" alt=""/></figure>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/KjF0DFy.png" alt=""/></figure>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/EZz9cBg.png" alt=""/></figure>
+
+
+
+<p>các bạn sẽ cần chú ý kỹ vào ảnh trên ta thấy 12 và node 18 đều là micin nhưng 18 lại là external nên ta cần file chuyển 18 về line in  như thế này </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/u1jy4Pi.png" alt=""/></figure>
+
+
+
+<p>Vậy quy tắt chuyển như thế nào thì các bạn xem phần dưới nhé:</p>
+
+
+
+<p>bây giờ mình sẽ lấy node 18 làm vd chuyển</p>
+
+
+
+<p>Đầu tiên là nhóm 1:</p>
+
+
+
+<pre class="wp-block-code"><code><strong>01871c20</strong> 01871d50 01871e81 01871f00  </code></pre>
+
+
+
+<p>20 là verb data ( như đã nói ở trên ) ở đây mình sẽ gọi verb data là xy sẽ có dạng</p>
+
+
+
+<p><meta charset="utf-8">01871cXY</p>
+
+
+
+<ul><li>X: Là thông tin port ( ở đây các thông tin port không được trùng nhau vd như&nbsp;<strong>5</strong>0,<strong>&nbsp;5</strong>0,&nbsp;<strong>2</strong>0 ta có 2 lần giá trị 5 xuất hiện ở X thì các bạn phải đổi 1 giá trị thành 1 giá trị khác bất kì miễn là không trùng lặp vd ở đây ta có&nbsp;<strong>5</strong>0,<strong>&nbsp;3</strong>0,&nbsp;<strong>2</strong>0 )</li></ul>
+
+
+
+<p></p>
+
+
+
+<ul><li>Y: là thông tin kênh ( các bạn chỉnh hết về 0 )</li></ul>
+
+
+
+<p><meta charset="utf-8">Tiếp tục ta chuyển đến nhóm thứ 2</p>
+
+
+
+<pre class="wp-block-code"><code><meta charset="utf-8">01871c20 <strong>01871d50</strong> 01871e81 01871f00 
+ </code></pre>
+
+
+
+<p>cũng như ở trên mình gọi verbs data là X và Y ta có </p>
+
+
+
+<p><meta charset="utf-8">01871dXY</p>
+
+
+
+<ul><li>X là màu của jack ( dựa vào bảng dưới để xác định màu )</li></ul>
+
+
+
+<p>Tùy chỉnh theo bảng sau:</p>
+
+
+
+<pre class="wp-block-preformatted">Unknown 0 
+Black 1 
+Grey 2
+Blue 3 
+Green 4
+Red 5
+Orange 6
+Yellow 7
+Purple 8
+Pink 9
+Reserved A-D
+White E
+Other F</pre>
+
+
+
+<ul><li>Y là thông tin jack cắm ( external là 0 và internal là 1 )</li></ul>
+
+
+
+<p>tiếp theo là nhóm thứ 3 </p>
+
+
+
+<pre class="wp-block-code"><code><meta charset="utf-8">01871c20 01871d50 <strong>01871e81</strong> 01871f00 </code></pre>
+
+
+
+<p><meta charset="utf-8">01871eXY</p>
+
+
+
+<ul><li>X là thiết bị âm thanh ( xem bảng dưới để xác định )</li></ul>
+
+
+
+<pre class="wp-block-preformatted">Line Out: 0 
+Speaker:  1 
+HP Out: 2 
+CD: 3 
+SPDIF Out: 4 
+Digital Other Out: 5 
+Modem Line Side: 6 
+Modem Handset Side: 7 
+Line In: 8 
+AUX: 9 
+Mic In: A 
+Telephony: B 
+SPDIF In: C 
+Digital Other In: D 
+Reserved: E 
+Other: F</pre>
+
+
+
+<ul><li>Y là cổng kết nối âm thanh ( xem bảng dưới để xác định )</li></ul>
+
+
+
+<pre class="wp-block-preformatted">Unknown: 0  
+1/8" stereo/mono: 1 
+1/4" stereo/mono: 2 
+ATAPI internal: 3 
+RCA: 4 
+Optical: 5 
+Other Digital: 6 
+Other Analog: 7 
+Multichannel Analog (DIN): 8 
+XLR/Professional: 9 
+RJ-11 (Modem): A 
+Combination: B  
+Other: F</pre>
+
+
+
+<p>Cặp thứ 4</p>
+
+
+
+<pre class="wp-block-code"><code><meta charset="utf-8">01871c20 01871d50 01871e81 <strong>01871f00</strong> </code></pre>
+
+
+
+<p><meta charset="utf-8">01871fXY</p>
+
+
+
+<ul><li>X là Port Connectivity ( giúp ứng dụng biết đang kết nói vói speaker, hp hay line in )</li><li>Y là vị trí port</li></ul>
+
+
+
+<pre class="wp-block-code"><code>//*
+ta lấy xy chuyển về dạng nhị phân ( dùng hackintool )
+
+sau đó thêm các số 0 vào trước dãy số đến khi nào đủ 8 chữ số trong dãy số
+tiếp theo bạn tách dãy số từ trái sang phải theo quy tắt 2-2-4 
+Sau đó thay X và Y lần lượt theo bảng sau 
+Ví dụ:
+01011001 --&gt; 01 01 1001
+*//
+
+Port Connectivity bits 7:6 
+-----------------------------------------------------------
+00 - Port is connected to a Jack
+01 - No External Port -or- No physical connection for Port  
+10 - Fixed Function/Built In Device (integrated speaker, mic, etc)
+11 - Jack and Internal device are attached 
+
+Location Part 1 - bits 5:4
+-----------------------------------------------------------
+00 - External on primary chassis
+01 - Internal
+10 - Separate chassis
+11 - Other
+
+Location Part 2 - bits 3:0
+-----------------------------------------------------------
+The meaning depends on Location Part 1 
+
+00 0000	N/A
+00 0001   Rear
+00 0010   Front
+00 0011   Left
+00 0100   Right
+00 0101   Top
+00 0110   Bottom
+00 0111   Special (Rear panel)
+00 1000   Special (Drive bay)
+
+01 0000   N/A
+01 0111   Special (Riser)
+01 1000   HDMI
+01 1001   ATAPI
+
+10 0000	N/A
+10 0001   Rear
+10 0010   Front
+10 0011   Left
+10 0100   Right
+10 0101   Top
+10 0110   Bottom
+
+11 0000   N/A
+11 0110   ?
+11 0111   Inside Mobile Lid (example: mic)
+11 1000   Outside Mobile Lid
+
+		Bits
+Hex	  76 54 3210
+-------------------
+71cf01 = 00 00 0001 - Port has a jack - It is External - Rear Location
+71cf02 = 00 00 0010 - Port has a jack - It is External - Front Panel Location 
+71cf59 = 01 01 1001 - No External Port - ATAPI 
+71cf18 = 00 01 1000 - Port has a jack - External - HDMI
+71cf90 = 10 01 0000 - Built In Device - Internal - N/A 
+	   |  |  ||||
+	   |  |  |--------- Location part 2
+	   |  |------------ Location part 1  
+	   |--------------- Port Connectivity</code></pre>
+
+
+
+<p>Nếu bạn sử dụng jack combo thì chắc bạn sẽ cần EAPD thì thêm verb 0XY70c02 thêm nó vào sau cùng và thay XY là node id của speaker</p>
+
+
+
+<h2>Phần 6: Xác định path map</h2>
+
+
+
+<p>đây là lúc bạn dùng đến file <code>codec_dump_dec.txt.svg</code> được dump từ terminal ở phần 3</p>
+
+
+
+<p>Các bạn mở lên và sẽ xuất hiện như sau </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/n04PdIg.png" alt=""/></figure>
+
+
+
+<p>nhìn khá rối đúng không nào nhưng các bạn đừng vội nản vì nó thật sự rất dễ  và dễ hơn cách thủ công nhiều</p>
+
+
+
+<p>trước hết ta cần tìm hiểu các kí hiệu trong sơ đồ sau </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="http://3.bp.blogspot.com/-WyG40Fq1qEk/ViPT-GHvfmI/AAAAAAAAAsM/hzkCMkVHs4Y/s1600/20.png" alt=""/></figure>
+
+
+
+<p>và đây là thứ tự đọc của output</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="	http://4.bp.blogspot.com/-YMRr0VNgDnY/ViPJY7IeALI/AAAAAAAAArk/6tIf8AP3vPE/s1600/17.png" alt=""/><figcaption>Audio mixer có thể có hoặc không</figcaption></figure>
+
+
+
+<p>thứ tự của input </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="	http://2.bp.blogspot.com/-tkCiU6zflJg/ViPJYyJhILI/AAAAAAAAAro/sguGvTiot_s/s1600/16.png" alt=""/><figcaption>Audio mixer và audio selector có thể có hoặc không</figcaption></figure>
+
+
+
+<p>Tiếp theo các bạn hãy chú ý đến các node nào có chữ [N/A] đằng trước tức đây là các node ảo các bạn có thể bỏ qua các node này </p>
+
+
+
+<ul><li><strong>Bây giờ ta sẽ xác định các node của audio output </strong></li></ul>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/laa3aOn.png" alt=""/></figure>
+
+
+
+<p>Nhưng nhìn vào mục số 3 ( node 24 ) đây là mic nhưng chúng ta đang patch output tức là chỉ qua tâm đến speaker và headphone nên ta có mục 2 và mục 1 là 2 mục cần quan tâm</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/HzvkWzv.png" alt=""/></figure>
+
+
+
+<p>ta thấy đc liên kết với node 33 là 2 audio mixer 12, 13 nhưng ta thấy node 13 liên kết với node 33 bằng đường không ưu tiên nên ta sẽ loại node 13 đi  ta tiếp tục nhìn vào node 12 có 2 đường ưu tiên đc nối đến node 12 nhưng chỉcó 1 audio output đc nối với node 12 nên ta sẽ loại đường kia đi vậy ta có headphone là 33-12-2 tương tự ta có speaker là 20-13-3</p>
+
+
+
+<ul><li>Input </li></ul>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/iqZps6q.png" alt=""/></figure>
+
+
+
+<p>Ở đây thì tương dối dễ xác định hơn ta có node 25 có 2 luồng kết nối 1 luồn kết nối đến audio mixer 11 và audio mixer 35 nhưng đường nối đến audio mixer 35 là luồng ưu tiên nên ta loại audio mixer 11 đi và audio mixer đc nối đến audio input 8 nên ta có path map mic in như sau 8-35-25 tương tự ta có path map line in như sau 9-34-24</p>
+
+
+
+<h2>Phần 7: Patch Platforms.xml và layout#.xml</h2>
+
+
+
+<p>B1: mở file layout#.xml đã tải ở Phần 1</p>
+
+
+
+<p>Và chỉnh những nội dung sau:</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/sShKBC2.png" alt=""/></figure>
+
+
+
+<ul><li>LayoutID: bạn thay đổi hoặc giữ nguyên hoặc đổi đây mình sẽ thay thành 15</li></ul>
+
+
+
+<ul><li>CodecID: Phần này các bạn đã sửa ở phần 3</li></ul>
+
+
+
+<ul><li>Inputs: tuỳ vào codec của bạn có LineIn hay không, nếu không có thì xoá đi</li></ul>
+
+
+
+<ul><li>PatchMapID: bạn cho vào đây 1 số ngẫu nhiên </li></ul>
+
+
+
+<p>B2: mở file Platforms.xml lên </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/eSGoYik.png" alt=""/></figure>
+
+
+
+<p>bạn điền path map đã xác định phần 7 vào đây</p>
+
+
+
+<ul><li>PathMaps -&gt; 0 -&gt; PathMap -&gt; 0 -&gt; 0 là Mic</li></ul>
+
+
+
+<ul><li>PathMaps -&gt; 0 -&gt; PathMap -&gt; 0 -&gt; 1 là LineIn ( mic gắn ngoài do macos không hỗ trợ nên phải khai báo là linein )</li></ul>
+
+
+
+<ul><li>PathMaps -&gt; 0 -&gt; PathMap -&gt; 1 -&gt; 0 là HP ( headphone )</li></ul>
+
+
+
+<ul><li>PathMaps -&gt; 0 -&gt; PathMap -&gt; 1 -&gt; 1 là Speaker</li></ul>
+
+
+
+<ul><li>PathMaps -&gt; 0 -&gt; PathMap -&gt; PathMapID: ở đây bạn cần điền số giống với PathMapID ở layout#.xml</li></ul>
+
+
+
+<p>Nếu trường hợp không có Audio Mixer/Selector thì bạn xoá đi key 1, chỉ điền vào key 0 và key 2 thôi nhé!</p>
+
+
+
+<h2>Phần 8: Build kext</h2>
+
+
+
+<p>B1: bỏ kext lilu vào folder apple alc </p>
+
+
+
+<p>B2: vào resource xóa hết codec thừa và chừa lại codec của bạn </p>
+
+
+
+<p>B3: bỏ 2 file layoutid# và platformid# và folder tên codec ( nên rename lại theo layout id bạn đã set )</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/HZnoUwe.png" alt=""/></figure>
+
+
+
+<p>B4: <strong>&nbsp;</strong>Mở AppleALC.xcodeproj --> PinConfigs --> Info.plist --> IOKitPersonalities --> HDA Hardware Config Resource --> HDAConfigDefault bằng xcode bạn có thể tự tạo hoặc edit 1 cái có sẳn</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/h7WD12F.png" alt=""/></figure>
+
+
+
+<p>Các bạn sửa lại như sau:</p>
+
+
+
+<ul><li>Codec: thay đổi tuỳ thích</li><li>CodecID: thay bằng Vendor Id của codec ở hệ decimal đã chuẩn bị trên</li><li>ConfigData: bạn copy codec verb đã chuẩn bị đưa vào đây</li><li>LayoutID: nhập layout-id bạn đã chọn để patch ở trên</li></ul>
+
+
+
+<p>B5: &nbsp;Mở AppleALC.xcodeproj --> Resources --> (tên codec bạn đang patch) --> Info.plist --> Information Property List --> Files</p>
+
+
+
+<p>Và chỉnh những thứ sau:</p>
+
+
+
+<ul><li>Codec id: id codec của các bạn </li><li>Codec name: tên codec của các bạn </li><li>layout -&gt; 0 -&gt; comment: điền tên bạn muốn đặt</li><li>layout -&gt; 0 -&gt; id: điền id của bạn đã đặt ở phần 8</li><li>layout -&gt; 0 -&gt; path: điền path của file layout#.xml vào đây</li><li>platforms -&gt; 0 -&gt; comment: điền tên bạn muốn đặt</li><li>platforms -&gt; 0 -&gt; id: điền id của bạn đã đặt ở phần 8</li><li>platforms -&gt; 0 -&gt; path: điền path của file layout#.xml vào đây</li></ul>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/VhzXusw.png" alt=""/></figure>
+
+
+
+<p>B6: Các bạn ấn build kext</p>
+
+
+
+<h2>Phần 9: load kext apple alc</h2>
+
+
+
+<p>B1: bỏ kext vừa build vào EFI--> Oc --> Kext và snaps lại hoặc bỏ vào EFI --> Clover --> kext --> other  </p>
+
+
+
+<p>B2: add vào boot-arg <code>alcid=#</code> ( thay <code>#</code> thành layout id bạn đã đặt ở trên như của mình là <code>alcid=15</code> ) </p>
+
+
+
+<p><strong>Lưu ý: source tham khảo <a href="https://hackintosh.vn/patch-applehda-cho-cac-laptop-chay-hackintosh">Patch AppleHDA cho các laptop chạy Hackintosh – Hackintosh Vietnam – Chuyên trang cung cấp hướng dẫn cài hackintosh</a> | <a href="https://www.olarila.com/topic/1817-how-to-patch-applehda/">How to patch AppleHDA &#8211; Guides and Tutorials &#8211; Olarila</a> | <a href="http://trungnguyenblogs.blogspot.com/2015/10/huong-dan-patch-applehda-cho-cac-laptop.html">[Hướng dẫn] Patch AppleHDA cho các laptop chạy Hackintosh &#8211; Sharing Is Caring (trungnguyenblogs.blogspot.com)</a> </strong></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://heavietnam.ga/2021/11/15/xxxx-patch-applehda-phan-2/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>XXXIX.Patch apple HDA ( phần 1 )</title>
+		<link>https://heavietnam.ga/2021/11/13/patch-apple-hda/</link>
+					<comments>https://heavietnam.ga/2021/11/13/patch-apple-hda/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Sat, 13 Nov 2021 16:46:56 +0000</pubDate>
+				<category><![CDATA[post install]]></category>
+		<guid isPermaLink="false">https://heavietnam.ga/?p=1620</guid>
+
+					<description><![CDATA[Phần 1: Chuẩn bị B1: tải propertree B2: tải &#160;Platforms.xml B3: tải &#160;layout11.xml ( Realtek ) hoặc&#160;layout26.xml ( Conexant và IDT ) B4: tải hackintool B5: Tải iso linux ( mình khuyến khích dùng ubuntu ) B6: tải AppleALC repo&#160;và&#160;Lilu sau đó giải nén B7: tải xcode Phần 2: Dump codec B1: các bạn cần [...]]]></description>
+										<content:encoded><![CDATA[
+<h2>Phần 1: Chuẩn bị </h2>
+
+
+
+<p>B1: tải propertree</p>
+
+
+
+<p>B2: tải &nbsp;<a href="https://hackintosh.vn/wp-content/uploads/Platforms.xml_.zip">Platforms.xml</a></p>
+
+
+
+<p>B3: tải &nbsp;<a href="https://hackintosh.vn/wp-content/uploads/layout11.xml_.zip">layout11.xml</a> ( Realtek ) hoặc&nbsp;<a href="https://hackintosh.vn/wp-content/uploads/layout26.xml_.zip">layout26.xml</a> ( Conexant và IDT )</p>
+
+
+
+<p>B4: tải <a href="https://github.com/headkaze/Hackintool/releases">hackintool</a></p>
+
+
+
+<p>B5: Tải iso linux ( mình khuyến khích dùng <a href="https://ubuntu.com/download">ubuntu</a> )</p>
+
+
+
+<p>B6: tải <a href="https://github.com/acidanthera/AppleALC">AppleALC</a> repo&nbsp;và&nbsp;<a href="https://github.com/acidanthera/lilu/releases">Lilu</a> sau đó giải nén</p>
+
+
+
+<p>B7: tải xcode</p>
+
+
+
+<h2>Phần 2: Dump codec </h2>
+
+
+
+<p>B1: các bạn cần quan linux os để có thể dump codec ( bạn có thể dùng wsl hoặc là chạy live trên usb )</p>
+
+
+
+<p>B2: các bạn mở terminal lên và gõ </p>
+
+
+
+<pre class="wp-block-preformatted">cat /proc/asound/card0/codec#0 &gt; ~/Desktop/codec_dump_0.txt 
+hoặc
+cat /proc/asound/card0/codec1 &gt; ~/Desktop/codec_dump_1.txt 
+hoặc
+cat /proc/asound/card0/codec#2 &gt; ~/Desktop/codec_dump_2.txt</pre>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/GZcdxPO.png" alt=""/><figcaption>do ở đây mình custom giao diện cho giống macos nha bắt buộc các bạn phải dùng linux nhé</figcaption></figure>
+
+
+
+<p>Các bạn giải nén file <code>CodecDump.zip</code> để lấy file codec nhé </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/dIAfeNs.png" alt=""/></figure>
+
+
+
+<p>Ở đây ta cần chú ý </p>
+
+
+
+<ul><li>Codec</li><li>Address</li><li>Vendor</li><li>Codec verb</li></ul>
+
+
+
+<h2>Phần 3: Patch Vendor&nbsp;ID</h2>
+
+
+
+<p>B1: các bạn tiến hành chuyển vendor sang decimal ( số thập phân )</p>
+
+
+
+<p>Ở đây mình khuyến khích dùng hackintool</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/8B3fJsB.png" alt=""/></figure>
+
+
+
+<p>B2: Các bạn tiến hành add vendor id ( vào file layout# vừa tải ở trên | add vào dòng codec )</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/9GnmAHV.png" alt=""/></figure>
+
+
+
+<h2>Phần 4: Xác định codec verb</h2>
+
+
+
+<p>B1: Mở file vừa dump codec ở trên ra và search <code>Pin Complex</code> sau đó copy ra 1 file riêng mình tạm đặt tên là file Pin Complex tiếp đó các bạn search trong file Pin Complex <code>[N/A]</code> dòng nào có thì xóa node đó đi cuối cùng ta được</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/32eQpV2.png" alt=""/></figure>
+
+
+
+<pre class="wp-block-code"><code>Node 0x12 &#91;Pin Complex] wcaps 0x40040b: Stereo Amp-In
+   Control: name="Internal Mic Boost Volume", index=0, device=0
+     ControlAmp: chs=3, dir=In, idx=0, ofs=0
+   Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0
+   Amp-In vals:  &#91;0x00 0x00]
+   Pincap 0x00000020: IN
+   Pin Default 0x90a60160: &#91;Fixed] Mic at Int N/A
+     Conn = Digital, Color = Unknown
+     DefAssociation = 0x6, Sequence = 0x0
+     Misc = NO_PRESENCE
+   Pin-ctls: 0x20: IN
+   Power states:  D0 D1 D2 D3 EPSS
+   Power: setting=D0, actual=D0
+
+ Node 0x14 &#91;Pin Complex] wcaps 0x40058d: Stereo Amp-Out
+   Control: name="Speaker Playback Switch", index=0, device=0
+     ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+   Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+   Amp-Out vals:  &#91;0x00 0x00]
+   Pincap 0x00010014: OUT EAPD Detect
+   EAPD 0x2: EAPD
+   Pin Default 0x90170120: &#91;Fixed] Speaker at Int N/A
+     Conn = Analog, Color = Unknown
+     DefAssociation = 0x2, Sequence = 0x0
+     Misc = NO_PRESENCE
+   Pin-ctls: 0x40: OUT
+   Unsolicited: tag=00, enabled=0
+   Power states:  D0 D1 D2 D3 EPSS
+   Power: setting=D0, actual=D0
+   Connection: 1
+      0x0c
+
+ Node 0x21 &#91;Pin Complex] wcaps 0x40058d: Stereo Amp-Out
+   Control: name="Headphone Playback Switch", index=0, device=0
+     ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+   Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+   Amp-Out vals:  &#91;0x80 0x80]
+   Pincap 0x0001001c: OUT HP EAPD Detect
+   EAPD 0x2: EAPD
+   Pin Default 0x02211030: &#91;Jack] HP Out at Ext Front
+     Conn = 1/8, Color = Black
+     DefAssociation = 0x3, Sequence = 0x0
+   Pin-ctls: 0xc0: OUT HP
+   Unsolicited: tag=01, enabled=1
+   Power states:  D0 D1 D2 D3 EPSS
+   Power: setting=D0, actual=D0
+   Connection: 2
+      0x0c 0x0d*
+
+Node 0x19 &#91;Pin Complex] wcaps 0x40048b: Stereo Amp-In
+   Control: name="Headset Mic Boost Volume", index=0, device=0
+     ControlAmp: chs=3, dir=In, idx=0, ofs=0
+   Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0
+   Amp-In vals:  &#91;0x00 0x00]
+   Pincap 0x00003724: IN Detect
+     Vref caps: HIZ 50 GRD 80 100
+   Pin Default 0x411111f0: &#91;N/A] Speaker at Ext Rear
+     Conn = 1/8, Color = Black
+     DefAssociation = 0xf, Sequence = 0x0
+     Misc = NO_PRESENCE
+   Pin-ctls: 0x24: IN VREF_80
+   Unsolicited: tag=00, enabled=0
+   Power states:  D0 D1 D2 D3 EPSS
+   Power: setting=D0, actual=D0
+
+ Node 0x1a &#91;Pin Complex] wcaps 0x40048b: Stereo Amp-In
+   Control: name="Headphone Mic Boost Volume", index=0, device=0
+     ControlAmp: chs=3, dir=In, idx=0, ofs=0
+   Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0
+   Amp-In vals:  &#91;0x00 0x00]
+   Pincap 0x00003724: IN Detect
+     Vref caps: HIZ 50 GRD 80 100
+   Pin Default 0x411111f0: &#91;N/A] Speaker at Ext Rear
+     Conn = 1/8, Color = Black
+     DefAssociation = 0xf, Sequence = 0x0
+     Misc = NO_PRESENCE
+   Pin-ctls: 0x20: IN VREF_HIZ
+   Unsolicited: tag=00, enabled=0
+   Power states:  D0 D1 D2 D3 EPSS
+   Power: setting=D0, actual=D0
+</code></pre>
+
+
+
+<p>B2: các bạn xuất verb data + pin default + node</p>
+
+
+
+<ul><li>Để xuất verb data các bạn sẽ chia pin default thành các cặp và đọc người từ phải sang trái </li></ul>
+
+
+
+<pre class="wp-block-code"><code>0x90170120 --&gt; <meta charset="utf-8">90170120 ( xóa 0x )
+<meta charset="utf-8">90170120 --&gt; <meta charset="utf-8">90 17 01 20 ( tách thành từng cặp )
+<meta charset="utf-8"><meta charset="utf-8">90 17 01 20 --&gt; 20 <meta charset="utf-8">01 <meta charset="utf-8">17 <meta charset="utf-8">90 ( đọc ngược )
+<meta charset="utf-8"><meta charset="utf-8">20 <meta charset="utf-8">01 <meta charset="utf-8">17 <meta charset="utf-8">90 --&gt; 20011790 ( ta được verb data )</code></pre>
+
+
+
+<p>B3: các bạn tìm từ khóa <code>Headset Mic Boost Volume</code> và <code>Headphone Mic Boost Volume</code> trong file Pin Complex và copy nó ra 1 file mới mình tạm gọi là file jack combo </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/fanr6Vf.png" alt=""/></figure>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/ceoTQtB.png" alt=""/></figure>
+
+
+
+<p>Ta có các codec verb  đc chia như sau </p>
+
+
+
+<pre class="wp-block-code"><code>// các  codec verb thông thường
+
+Node 14 : Pin Default 0x90170120 Verb data: 20 01 17 90 
+
+Node 21 : Pin Default 0x02211030 Verb data: 30 10 21 02
+
+Node 12 : Pin Default 0x90a60160 Verb data: 60 01 a6 90
+
+// jack combo ( gòm mic và tai nghe ngoài )
+
+Node 19 : Pin Default 0x411111f0 Verb data: f0 11 11 41 
+
+Node 1a : Pin Default 0x411111f0 Verb data: f0 11 11 41 
+</code></pre>
+
+
+
+<div class="wp-container-622f5f5548a8e wp-block-group"><div class="wp-block-group__inner-container">
+<h2>Phần 5: Chỉnh sửacodec verb</h2>
+
+
+
+<p>B1: ta sẽ nhìn vào cặp đầu tiên của các node đã xác định ở trên </p>
+
+
+
+<pre class="wp-block-code"><code><meta charset="utf-8">// các  codec verb thông thường
+
+Node 14 Verb data: <strong>20</strong> 01 17 90 
+
+Node 21 Verb data: <strong>30</strong> 10 21 02
+
+Node 12 Verb data: <strong>60</strong> 01 a6 90
+
+// jack combo ( gòm mic và tai nghe ngoài )
+
+Node 19 Verb data: <strong>f0</strong> 11 11 41 
+
+Node 1a Verb data: <strong>f0</strong> 11 11 41 
+</code></pre>
+
+
+
+<p>B2: Ở đây mình tạm gọi giá trị đầu tiên trong các cặp đã xác định ở bước 1 là x ( 2, 3, 6, f, f ) và giá trị thứ 2 của các cặp đã xác định ở trên là y ( 0, 0, 0, 0, 0 )</p>
+
+
+
+<p>vậy x và y có ý nghĩa gì </p>
+
+
+
+<ul><li>X: Là thông tin port ( ở đây các thông tin port không được trùng nhau vd như <strong>5</strong>0,<strong> 5</strong>0, <strong>2</strong>0 ta có 2 lần giá trị 5 xuất hiện ở X thì các bạn phải đổi 1 giá trị thành 1 giá trị khác bất kì miễn là không trùng lặp vd ở đây ta có <strong>5</strong>0,<strong> 3</strong>0, <strong>2</strong>0 )</li><li>Y:  là thông tin kênh ( các bạn chỉnh hết về 0 )</li></ul>
+
+
+
+<p>Tổng kết lại ta có: </p>
+
+
+
+<pre class="wp-block-code"><code><meta charset="utf-8">// các  codec verb thông thường
+
+Node 14 Verb data: <strong>20</strong> 01 17 90 
+
+Node 21 Verb data: <strong>30</strong> 10 21 02
+
+Node 12 Verb data: <strong>60</strong> 01 a6 90
+
+// jack combo ( gòm mic và tai nghe ngoài )
+
+Node 19 Verb data: <strong>70</strong> 11 11 41 ( do 2 giá trị f trùng nhau nên mình đổi 1 giá trị thành 7 )
+
+Node 1a Verb data: <strong>f0</strong> 11 11 41 
+</code></pre>
+
+
+
+<p>B3: ta tiếp tục làm việc với cặp giá trị thứ 2 </p>
+
+
+
+<pre class="wp-block-code"><code><meta charset="utf-8">// các  codec verb thông thường
+
+Node 14 Verb data: 20 <strong>01</strong> 17 90 
+
+Node 21 Verb data: 30 <strong>10</strong> 21 02
+
+Node 12 Verb data: 60 <strong>01</strong> a6 90
+
+// jack combo ( gòm mic và tai nghe ngoài )
+
+Node 19 Verb data: f0 <strong>11 </strong>11 41 
+
+Node 1a Verb data: f0 <strong>11</strong> 11 41 
+</code></pre>
+
+
+
+<p>Mình cũng sẽ tiếp tục gọi là X ( 0, 1, 0, 1, 1 ) và Y ( 1, 0, 1, 1, 1)</p>
+
+
+
+<p>Ta có:</p>
+
+
+
+<ul><li> X là màu của jack ( dựa vào bảng dưới để xác định màu )</li></ul>
+
+
+
+<pre class="wp-block-preformatted">Unknown 0 
+Black 1 
+Grey 2
+Blue 3 
+Green 4
+Red 5
+Orange 6
+Yellow 7
+Purple 8
+Pink 9
+Reserved A-D
+White E
+Other F</pre>
+
+
+
+<ul><li>Y là thông tin jack cắm ( external là 0 và internal là 1 )</li></ul>
+
+
+
+<p>Tổng kết:</p>
+
+
+
+<pre class="wp-block-code"><code><meta charset="utf-8">// các  codec verb thông thường
+
+Node 14 Verb data: 20 <strong>01</strong> 17 90 
+
+Node 21 Verb data: 30 <strong>10</strong> 21 02
+
+Node 12 Verb data: 60 <strong>01</strong> a6 90
+
+// jack combo ( gòm mic và tai nghe ngoài )
+
+Node 19 Verb data: f0 <strong>10 </strong>11 41 ( ta chuyển y về 0 vì đây là external )
+
+Node 1a Verb data: f0 <strong>00</strong> 11 41 ( ta chuyển x về 0 để ngăn chặn rè, hú,.... Y chuyển về 0 vì đây là external )
+</code></pre>
+
+
+
+<p>B4: tiếp tục làm việc với cặp giá trị thứ 3</p>
+
+
+
+<pre class="wp-block-code"><code><meta charset="utf-8">// các  codec verb thông thường
+
+Node 14 Verb data: 20 01 <strong>17</strong> 90 
+
+Node 21 Verb data: 30 10 <strong>21</strong> 02
+
+Node 12 Verb data: 60 01 <strong>a6</strong> 90
+
+// jack combo ( gồm mic và tai nghe ngoài )
+
+Node 19 Verb data: f0 10 <strong>11</strong> 41
+
+Node 1a Verb data: f0 00 <strong>11</strong> 41</code></pre>
+
+
+
+<p>ta vẫn sẽ gọi X và Y</p>
+
+
+
+<ul><li>X là thiết bị âm thanh ( xem bảng dưới để xác định )</li></ul>
+
+
+
+<pre class="wp-block-preformatted">Line Out: 0 
+Speaker:  1 
+HP Out: 2 
+CD: 3 
+SPDIF Out: 4 
+Digital Other Out: 5 
+Modem Line Side: 6 
+Modem Handset Side: 7 
+Line In: 8 
+AUX: 9 
+Mic In: A 
+Telephony: B 
+SPDIF In: C 
+Digital Other In: D 
+Reserved: E 
+Other: F</pre>
+
+
+
+<ul><li>Y là cổng kết nối âm thanh ( xem bảng dưới để xác định )</li></ul>
+
+
+
+<pre class="wp-block-preformatted">Unknown: 0  
+1/8" stereo/mono: 1 
+1/4" stereo/mono: 2 
+ATAPI internal: 3 
+RCA: 4 
+Optical: 5 
+Other Digital: 6 
+Other Analog: 7 
+Multichannel Analog (DIN): 8 
+XLR/Professional: 9 
+RJ-11 (Modem): A 
+Combination: B  
+Other: F</pre>
+
+
+
+<p>Tổng kết:</p>
+
+
+
+<pre class="wp-block-code"><code><meta charset="utf-8">// các  codec verb thông thường
+
+Node 14 Verb data: 20 01 <strong>17</strong> 90 
+
+Node 21 Verb data: 30 10 <strong>21</strong> 02
+
+Node 12 Verb data: 60 01 <strong>a6</strong> 90
+
+// jack combo ( gồm mic và tai nghe ngoài )
+
+Node 19 Verb data: f0 10 <strong>ab</strong> 41 ( X ở đây mình cho a để nó nhận mic còn Y cho B để nó liên kết với node 21 )
+
+Node 1a Verb data: f0 00 <strong>00</strong> 41 ( X ở đây mình cho là 0 để nó nhận là line out va Y ở đây cũng cho là 0 )
+</code></pre>
+
+
+
+<p>B5: ta tiếp tục làm việc với cặp giá trị cuối cùng </p>
+
+
+
+<ul><li>X là Port Connectivity ( giúp ứng dụng biết đang kết nói vói speaker, hp hay line in )</li><li>Y là vị trí port </li></ul>
+
+
+
+<pre class="wp-block-code"><code>//*
+ta lấy xy chuyển về dạng nhị phân ( dùng hackintool )
+
+sau đó thêm các số 0 vào trước dãy số đến khi nào đủ 8 chữ số trong dãy số
+tiếp theo bạn tách dãy số từ trái sang phải theo quy tắt 2-2-4 
+Sau đó thay X và Y lần lượt theo bảng sau 
+Ví dụ:
+01011001 --&gt; 01 01 1001
+*//
+
+Port Connectivity bits 7:6 
+-----------------------------------------------------------
+00 - Port is connected to a Jack
+01 - No External Port -or- No physical connection for Port  
+10 - Fixed Function/Built In Device (integrated speaker, mic, etc)
+11 - Jack and Internal device are attached 
+
+Location Part 1 - bits 5:4
+-----------------------------------------------------------
+00 - External on primary chassis
+01 - Internal
+10 - Separate chassis
+11 - Other
+
+Location Part 2 - bits 3:0
+-----------------------------------------------------------
+The meaning depends on Location Part 1 
+
+00 0000	N/A
+00 0001   Rear
+00 0010   Front
+00 0011   Left
+00 0100   Right
+00 0101   Top
+00 0110   Bottom
+00 0111   Special (Rear panel)
+00 1000   Special (Drive bay)
+
+01 0000   N/A
+01 0111   Special (Riser)
+01 1000   HDMI
+01 1001   ATAPI
+
+10 0000	N/A
+10 0001   Rear
+10 0010   Front
+10 0011   Left
+10 0100   Right
+10 0101   Top
+10 0110   Bottom
+
+11 0000   N/A
+11 0110   ?
+11 0111   Inside Mobile Lid (example: mic)
+11 1000   Outside Mobile Lid
+
+		Bits
+Hex	  76 54 3210
+-------------------
+71cf01 = 00 00 0001 - Port has a jack - It is External - Rear Location
+71cf02 = 00 00 0010 - Port has a jack - It is External - Front Panel Location 
+71cf59 = 01 01 1001 - No External Port - ATAPI 
+71cf18 = 00 01 1000 - Port has a jack - External - HDMI
+71cf90 = 10 01 0000 - Built In Device - Internal - N/A 
+	   |  |  ||||
+	   |  |  |--------- Location part 2
+	   |  |------------ Location part 1  
+	   |--------------- Port Connectivity
+
+</code></pre>
+
+
+
+<p>Tổng kết cuối cùng ta được</p>
+
+
+
+<pre class="wp-block-preformatted">Node 14 : Verb data: 20 01 17 90 
+Node 21 : Verb data: 30 10 21 02
+Node 12 : Verb data: 60 01 a0 90
+Node 19 : Verb data: 70 10 ab 02 
+Node 1a : Verb data: f0 00 00 40 </pre>
+
+
+
+<h2> Phần 6: Patch codec verb</h2>
+
+
+
+<p><strong>Cách tính codec verb:</strong></p>
+
+
+
+<p>Codec verb = Codec Address + NodeID + Verb Commands + Verb data</p>
+
+
+
+<ul><li>Codec address: đã xác định ở trên </li><li>node id: đã xác định ở trên </li><li>Verb command: sẽ là luôn phiên theo thứ tự 71c, 71d, 71e, 71f và 70c dành cho EAPD ( tự động chuyển giữa speaker và headphone )</li><li>Verb data: đã xác định ở trên</li></ul>
+
+
+
+<p><strong>Tiến hành thôi:</strong></p>
+
+
+
+<ul><li>Node 14:</li></ul>
+
+
+
+<pre class="wp-block-code"><code>0 + 14 + 71c + 20 = 01471c20
+
+0 + 14 + 71d + 01 = 01471d01
+
+0 + 14 + 71e + 17 = 01471e17
+
+0 + 14 + 71f + 90 = 01471f90
+
+0 + 14 + 70c + 02 = 01470c02
+ 
+
+// ở đây mình thêm dòng <meta charset="utf-8"><strong>01470c02</strong> nhầm kích hoạt EAPD các bạn có thể đổi node id thành node id card âm thanh của các bạn
+</code></pre>
+
+
+
+<ul><li>Node 21:</li></ul>
+
+
+
+<pre class="wp-block-code"><code>0 + 21 + 71c + 30 = 02171c30
+
+0 + 21 + 71d + 10 = 02171d10
+
+0 + 21 + 71e + 21 = 02171e21
+
+0 + 21 + 71f + 02 = 02171f02</code></pre>
+
+
+
+<ul><li>Node 12:</li></ul>
+
+
+
+<pre class="wp-block-code"><code>0 + 12 + 71c + 60 = 01271c60
+
+0 + 12 + 71d + 01 = 01271d01
+
+0 + 12 + 71e + a0 = 01271ea0
+
+0 + 12 + 71f + 90 = 01271f90</code></pre>
+
+
+
+<ul><li>Node 19:</li></ul>
+
+
+
+<pre class="wp-block-code"><code>0 + 19 + 71c + 70 = 01971c70
+
+0 + 19 + 71d + 10 = 01971d10
+
+0 + 19 + 71e + ab = 01971eab
+
+0 + 19 + 71f + 02 = 01971f02</code></pre>
+
+
+
+<ul><li>Node 1a:</li></ul>
+
+
+
+<pre class="wp-block-code"><code>0 + 1a + 71c + f0 = 01a71cf0
+
+0 + 1a + 71d + 00 = 01a71d00
+
+0 + 1a + 71e + 00 = 01a71e00
+
+0 + 1a + 71f + 40 = 01a71f40</code></pre>
+
+
+
+<p>Bây giờ ta tiến hành sắp xếp lại chúng:</p>
+
+
+
+<pre class="wp-block-preformatted">01471c20 01471d01 01471e17 01471f90 01470c02 02171c30 02171d10 02171e21 02171f02 01271c60 01271d01 01271ea0 01271f90 01971c70 01971d10 01971eab 01971f02 01a71cf0 01a71d00 01a71e00 01a71f40</pre>
+
+
+
+<h2>Phần 7: Xác định path Map</h2>
+
+
+
+<p><strong>Ta có công thức:</strong></p>
+
+
+
+<ul><li>Speaker và HP: Pin Complex --> ( Audio Mixer ) --> Audio Output ( Audio Mixer có thể có hoặc không )</li></ul>
+
+
+
+<ul><li>Mic, LineIn và jack combo: &nbsp;Audio Input --> ( Audio Selector/Mixer ) --> Pin Complex ( Audio selector/mixer có thể có hoặc không  ) </li></ul>
+
+
+
+<p><strong>Xác định node:</strong></p>
+
+
+
+<p>B1: Các bạn sẽ tận dụng lại file <code>Pin Complex</code> xác định ở phần 4</p>
+
+
+
+<pre class="wp-block-code"><code><meta charset="utf-8">Node 0x12 &#91;Pin Complex] wcaps 0x40040b: Stereo Amp-In
+   Control: name="Internal Mic Boost Volume", index=0, device=0
+     ControlAmp: chs=3, dir=In, idx=0, ofs=0
+   Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0
+   Amp-In vals:  &#91;0x00 0x00]
+   Pincap 0x00000020: IN
+   Pin Default 0x90a60160: &#91;Fixed] Mic at Int N/A
+     Conn = Digital, Color = Unknown
+     DefAssociation = 0x6, Sequence = 0x0
+     Misc = NO_PRESENCE
+   Pin-ctls: 0x20: IN
+   Power states:  D0 D1 D2 D3 EPSS
+   Power: setting=D0, actual=D0
+
+ Node 0x14 &#91;Pin Complex] wcaps 0x40058d: Stereo Amp-Out
+   Control: name="Speaker Playback Switch", index=0, device=0
+     ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+   Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+   Amp-Out vals:  &#91;0x00 0x00]
+   Pincap 0x00010014: OUT EAPD Detect
+   EAPD 0x2: EAPD
+   Pin Default 0x90170120: &#91;Fixed] Speaker at Int N/A
+     Conn = Analog, Color = Unknown
+     DefAssociation = 0x2, Sequence = 0x0
+     Misc = NO_PRESENCE
+   Pin-ctls: 0x40: OUT
+   Unsolicited: tag=00, enabled=0
+   Power states:  D0 D1 D2 D3 EPSS
+   Power: setting=D0, actual=D0
+   Connection: 1
+      0x0c
+
+ Node 0x21 &#91;Pin Complex] wcaps 0x40058d: Stereo Amp-Out
+   Control: name="Headphone Playback Switch", index=0, device=0
+     ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+   Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+   Amp-Out vals:  &#91;0x80 0x80]
+   Pincap 0x0001001c: OUT HP EAPD Detect
+   EAPD 0x2: EAPD
+   Pin Default 0x02211030: &#91;Jack] HP Out at Ext Front
+     Conn = 1/8, Color = Black
+     DefAssociation = 0x3, Sequence = 0x0
+   Pin-ctls: 0xc0: OUT HP
+   Unsolicited: tag=01, enabled=1
+   Power states:  D0 D1 D2 D3 EPSS
+   Power: setting=D0, actual=D0
+   Connection: 2
+      0x0c 0x0d*
+
+Node 0x19 &#91;Pin Complex] wcaps 0x40048b: Stereo Amp-In
+   Control: name="Headset Mic Boost Volume", index=0, device=0
+     ControlAmp: chs=3, dir=In, idx=0, ofs=0
+   Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0
+   Amp-In vals:  &#91;0x00 0x00]
+   Pincap 0x00003724: IN Detect
+     Vref caps: HIZ 50 GRD 80 100
+   Pin Default 0x411111f0: &#91;N/A] Speaker at Ext Rear
+     Conn = 1/8, Color = Black
+     DefAssociation = 0xf, Sequence = 0x0
+     Misc = NO_PRESENCE
+   Pin-ctls: 0x24: IN VREF_80
+   Unsolicited: tag=00, enabled=0
+   Power states:  D0 D1 D2 D3 EPSS
+   Power: setting=D0, actual=D0
+
+ Node 0x1a &#91;Pin Complex] wcaps 0x40048b: Stereo Amp-In
+   Control: name="Headphone Mic Boost Volume", index=0, device=0
+     ControlAmp: chs=3, dir=In, idx=0, ofs=0
+   Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0
+   Amp-In vals:  &#91;0x00 0x00]
+   Pincap 0x00003724: IN Detect
+     Vref caps: HIZ 50 GRD 80 100
+   Pin Default 0x411111f0: &#91;N/A] Speaker at Ext Rear
+     Conn = 1/8, Color = Black
+     DefAssociation = 0xf, Sequence = 0x0
+     Misc = NO_PRESENCE
+   Pin-ctls: 0x20: IN VREF_HIZ
+   Unsolicited: tag=00, enabled=0
+   Power states:  D0 D1 D2 D3 EPSS
+   Power: setting=D0, actual=D0
+</code></pre>
+
+
+
+<p>B2: Các bạn tìm từ khóa <code>Audio Mixer</code> và <code>Audio Selector</code> trong file codec được dump ở Phần 1</p>
+
+
+
+<pre class="wp-block-preformatted">Node 0x0b [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+   Control: name="Headset Mic Playback Volume", index=0, device=0
+     ControlAmp: chs=3, dir=In, idx=1, ofs=0
+   Control: name="Headset Mic Playback Switch", index=0, device=0
+     ControlAmp: chs=3, dir=In, idx=1, ofs=0
+   Control: name="Headphone Mic Playback Volume", index=0, device=0
+     ControlAmp: chs=3, dir=In, idx=2, ofs=0
+   Control: name="Headphone Mic Playback Switch", index=0, device=0
+     ControlAmp: chs=3, dir=In, idx=2, ofs=0
+   Control: name="Beep Playback Volume", index=0, device=0
+     ControlAmp: chs=3, dir=In, idx=4, ofs=0
+   Control: name="Beep Playback Switch", index=0, device=0
+     ControlAmp: chs=3, dir=In, idx=4, ofs=0
+   Amp-In caps: ofs=0x17, nsteps=0x1f, stepsize=0x05, mute=1
+   Amp-In vals:  [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80]
+   Connection: 5
+      0x18 0x19 0x1a 0x1b 0x1d
+ Node 0x0c [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+   Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+   Amp-In vals:  [0x00 0x00] [0x80 0x80]
+   Connection: 2
+      0x02 0x0b
+ Node 0x0d [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+   Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+   Amp-In vals:  [0x00 0x00] [0x80 0x80]
+   Connection: 2
+      0x03 0x0b
+ Node 0x0f [Audio Mixer] wcaps 0x20010a: Mono Amp-In
+   Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+   Amp-In vals:  [0x00 0x00]
+   Connection: 1
+      0x0d
+Node 0x22 [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+   Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+   Amp-In vals:  [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80]
+   Connection: 6
+      0x18 0x19 0x1a 0x1b 0x1d 0x0b
+ Node 0x23 [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+   Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+   Amp-In vals:  [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x00 0x00]
+   Connection: 7
+      0x18 0x19 0x1a 0x1b 0x1d 0x0b 0x12</pre>
+
+
+
+<p>B3: Các bạn tìm từ khóa <code>Audio input</code> trong file codec dump ở Phần 1</p>
+
+
+
+<pre class="wp-block-code"><code>Node 0x02 &#91;Audio Output] wcaps 0x41d: Stereo Amp-Out
+   Control: name="Speaker Playback Volume", index=0, device=0
+     ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+   Amp-Out caps: ofs=0x57, nsteps=0x57, stepsize=0x02, mute=0
+   Amp-Out vals:  &#91;0x3c 0x3c]
+   Converter: stream=1, channel=0
+   PCM:
+     rates &#91;0x60]: 44100 48000
+     bits &#91;0xe]: 16 20 24
+     formats &#91;0x1]: PCM
+   Power states:  D0 D1 D2 D3 EPSS
+   Power: setting=D0, actual=D0
+ Node 0x03 &#91;Audio Output] wcaps 0x41d: Stereo Amp-Out
+   Control: name="Headphone Playback Volume", index=0, device=0
+     ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+   Device: name="ALC3234 Analog", type="Audio", device=0
+   Amp-Out caps: ofs=0x57, nsteps=0x57, stepsize=0x02, mute=0
+   Amp-Out vals:  &#91;0x00 0x00]
+   Converter: stream=1, channel=0
+   PCM:
+     rates &#91;0x60]: 44100 48000
+     bits &#91;0xe]: 16 20 24
+     formats &#91;0x1]: PCM
+   Power states:  D0 D1 D2 D3 EPSS
+   Power: setting=D0, actual=D0
+ Node 0x06 &#91;Audio Output] wcaps 0x611: Stereo Digital
+   Converter: stream=0, channel=0
+   Digital:
+   Digital category: 0x0
+   IEC Coding Type: 0x0
+   PCM:
+     rates &#91;0x5e0]: 44100 48000 88200 96000 192000
+     bits &#91;0xe]: 16 20 24
+     formats &#91;0x1]: PCM
+   Power states:  D0 D1 D2 D3 EPSS
+   Power: setting=D0, actual=D0</code></pre>
+</div></div>
+
+
+
+<p><strong>Tiến hành thôi</strong>:</p>
+
+
+
+<ul><li><strong>Speaker</strong>:</li></ul>
+
+
+
+<p>B1: mở file pin complex và search <code>Speaker</code></p>
+
+
+
+<pre class="wp-block-code"><code><strong>Node 0x14</strong> &#91;Pin Complex] wcaps 0x40058d: Stereo Amp-Out
+   Control: name="Speaker Playback Switch", index=0, device=0
+     ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+   Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+   Amp-Out vals:  &#91;0x00 0x00]
+   Pincap 0x00010014: OUT EAPD Detect
+   EAPD 0x2: EAPD
+   Pin Default 0x90170120: &#91;Fixed] Speaker at Int N/A
+     Conn = Analog, Color = Unknown
+     DefAssociation = 0x2, Sequence = 0x0
+     Misc = NO_PRESENCE
+   Pin-ctls: 0x40: OUT
+   Unsolicited: tag=00, enabled=0
+   Power states:  D0 D1 D2 D3 EPSS
+   Power: setting=D0, actual=D0
+  <strong> Connection: 1
+      0x0c</strong></code></pre>
+
+
+
+<p>ta có node đầu tiên là của pin comlex tiếp tục các bạn nhìn xuống phần <meta charset="utf-8"><code>Connection</code> ta thấy nó được két nối trực tiếp đến node <code>0x0c</code> </p>
+
+
+
+<p>B2: tiếp tục tìm node 0x0c trong file <code>Audio Mixer</code> </p>
+
+
+
+<pre class="wp-block-code"><code><strong>Node 0x0c</strong> &#91;Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+   Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+   Amp-In vals:  &#91;0x00 0x00] &#91;0x80 0x80]
+  <strong> Connection: 2
+      0x02 0x0b</strong></code></pre>
+
+
+
+<p>ta có thể thấy node <code>0x0c</code> là của audio mixer và nó đc kết nối trực tiếp đến <code>0x02</code> và <code>0x0b</code> ta tiếp tục tìm lần lượt <code>0x02</code> và <code>0x0b</code> trong file <code>audio out put</code> để xác định đâu là node cần dùng </p>
+
+
+
+<pre class="wp-block-preformatted">Node 0x02 [Audio Output] wcaps 0x41d: Stereo Amp-Out
+   Control: name="Speaker Playback Volume", index=0, device=0
+     ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+   Amp-Out caps: ofs=0x57, nsteps=0x57, stepsize=0x02, mute=0
+   Amp-Out vals:  [0x3c 0x3c]
+   Converter: stream=1, channel=0
+   PCM:
+     rates [0x60]: 44100 48000
+     bits [0xe]: 16 20 24
+     formats [0x1]: PCM
+   Power states:  D0 D1 D2 D3 EPSS
+   Power: setting=D0, actual=D0</pre>
+
+
+
+<p>ta có thể thấy chỉ có node <code>0x02</code> được tìm thấy vậy node thứ 3 sẽ là <code>0x02</code></p>
+
+
+
+<p>B3: ta kết nối các dữ kiện lại ta có <code>0x14 --&gt; 0x0c --&gt; 0x02</code> chuyển chúng về decimal ta được <code>20 --&gt; 12 --&gt; 2</code> ( theo quy tắt Pin Complex --> ( Audio Mixer ) --> Audio Output )</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/RFSlH41.png" alt=""/></figure>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/6RFVjWH.png" alt=""/></figure>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/Aok8HbL.png" alt=""/></figure>
+
+
+
+<ul><li>HP</li></ul>
+
+
+
+<p>B1: mở file pin complex và search <code>HP</code> </p>
+
+
+
+<pre class="wp-block-preformatted"><strong>Node 0x21</strong> [Pin Complex] wcaps 0x40058d: Stereo Amp-Out
+   Control: name="Headphone Playback Switch", index=0, device=0
+     ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+   Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+   Amp-Out vals:  [0x80 0x80]
+   Pincap 0x0001001c: OUT HP EAPD Detect
+   EAPD 0x2: EAPD
+   Pin Default 0x02211030: [Jack] HP Out at Ext Front
+     Conn = 1/8, Color = Black
+     DefAssociation = 0x3, Sequence = 0x0
+   Pin-ctls: 0xc0: OUT HP
+   Unsolicited: tag=01, enabled=1
+   Power states:  D0 D1 D2 D3 EPSS
+   Power: setting=D0, actual=D0
+   <strong>Connection: 2
+      0x0c 0x0d*</strong>
+
+// dấu hiệu ưu tiên là dấu * vậy node 0x0d sẽ được ưu tiên kết nối</pre>
+
+
+
+<p>B2: mở file<code> audio mixer</code> và search <code>0x0d</code> </p>
+
+
+
+<pre class="wp-block-code"><code><strong>Node 0x0d</strong> &#91;Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+   Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+   Amp-In vals:  &#91;0x00 0x00] &#91;0x80 0x80]
+<strong>   Connection: 2
+      0x03 0x0b</strong></code></pre>
+
+
+
+<p>Ta làm tương tự như ở mục <code>speaker</code> ta được <code>0x03 </code>là node cuối cùng</p>
+
+
+
+<p>B3: ta hệ thống lại các dữ liệu ta được &nbsp;<code>0x21 --&gt; 0x0d --&gt; 0x03</code> chuyển sang decimal ( các chuyển như mục speaker ) ta được <code>33 --&gt; 13 --&gt; 3</code></p>
+
+
+
+<ul><li>Mic in </li></ul>
+
+
+
+<p>B1: mở file complex ra và search <code>mic</code> ta được </p>
+
+
+
+<pre class="wp-block-code"><code><strong>Node 0x12</strong> &#91;Pin Complex] wcaps 0x40040b: Stereo Amp-In
+   Control: name="Internal Mic Boost Volume", index=0, device=0
+     ControlAmp: chs=3, dir=In, idx=0, ofs=0
+   Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0
+   Amp-In vals:  &#91;0x00 0x00]
+   Pincap 0x00000020: IN
+   Pin Default 0x90a60160: &#91;Fixed] Mic at Int N/A
+     Conn = Digital, Color = Unknown
+     DefAssociation = 0x6, Sequence = 0x0
+     Misc = NO_PRESENCE
+   Pin-ctls: 0x20: IN
+   Power states:  D0 D1 D2 D3 EPSS
+   Power: setting=D0, actual=D0</code></pre>
+
+
+
+<p>B2: Nhưng ở đây 1 điều kì lạ đã xuất hiện không hề có mục <code>connection</code> vì vậy ta sẽ phải tìm ngược lại tức ta sẽ tìm <code>0x12 </code>tại <code>audio mixer</code> ta được</p>
+
+
+
+<pre class="wp-block-preformatted"><strong>Node 0x23 </strong>[Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+   Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+   Amp-In vals:  [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x00 0x00]
+  <strong> Connection: 7
+      0x18 0x19 0x1a 0x1b 0x1d 0x0b 0x12</strong>
+</pre>
+
+
+
+<p>B3: như vậy node kế tiếp là <code>0x23</code> ta tiếp tục tìm <code>0x23</code> trong <code>audio in put</code></p>
+
+
+
+<pre class="wp-block-preformatted"><code><strong>Node 0x08</strong></code> [Audio Input] wcaps 0x10051b: Stereo Amp-In
+   Control: name="Capture Volume", index=0, device=0
+     ControlAmp: chs=3, dir=In, idx=0, ofs=0
+   Control: name="Capture Switch", index=0, device=0
+     ControlAmp: chs=3, dir=In, idx=0, ofs=0
+   Device: name="ALC3234 Analog", type="Audio", device=0
+   Amp-In caps: ofs=0x17, nsteps=0x3f, stepsize=0x02, mute=1
+   Amp-In vals:  [0x27 0x27]
+   Converter: stream=0, channel=0
+   SDI-Select: 0
+   PCM:
+     rates [0x560]: 44100 48000 96000 192000
+     bits [0xe]: 16 20 24
+     formats [0x1]: PCM
+   Power states:  D0 D1 D2 D3 EPSS
+   Power: setting=D0, actual=D0
+   <strong>Connection: 1
+      0x23</strong></pre>
+
+
+
+<p>ta có node cuối là <code>0x08</code> </p>
+
+
+
+<p>B4: ta tiến hành lắp ghép các dữ kiện <code>0x08 --&gt; 0x23 --&gt; 0x12</code> chuyển sang decimal ta được <code>8 --&gt; 35 --&gt; 18</code></p>
+
+
+
+<ul><li><strong>Headset</strong> </li></ul>
+
+
+
+<p>B1: mở file jack combo ( tạo ở  phần 4 )  ra và search <code>Headset</code> </p>
+
+
+
+<pre class="wp-block-code"><code><strong>Node 0x19</strong> &#91;Pin Complex] wcaps 0x40048b: Stereo Amp-In
+   Control: name="Headset Mic Boost Volume", index=0, device=0
+     ControlAmp: chs=3, dir=In, idx=0, ofs=0
+   Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0
+   Amp-In vals:  &#91;0x00 0x00]
+   Pincap 0x00003724: IN Detect
+     Vref caps: HIZ 50 GRD 80 100
+   Pin Default 0x411111f0: &#91;N/A] Speaker at Ext Rear
+     Conn = 1/8, Color = Black
+     DefAssociation = 0xf, Sequence = 0x0
+     Misc = NO_PRESENCE
+   Pin-ctls: 0x24: IN VREF_80
+   Unsolicited: tag=00, enabled=0
+   Power states:  D0 D1 D2 D3 EPSS
+   Power: setting=D0, actual=D0</code></pre>
+
+
+
+<p>B2: như ở đây ta không thấy connection thì tiếp tục làm như phần mic in ta được</p>
+
+
+
+<pre class="wp-block-preformatted"><strong>Node 0x0b</strong> [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+   Control: name="Headset Mic Playback Volume", index=0, device=0
+     ControlAmp: chs=3, dir=In, idx=1, ofs=0
+   Control: name="Headset Mic Playback Switch", index=0, device=0
+     ControlAmp: chs=3, dir=In, idx=1, ofs=0
+   Control: name="Headphone Mic Playback Volume", index=0, device=0
+     ControlAmp: chs=3, dir=In, idx=2, ofs=0
+   Control: name="Headphone Mic Playback Switch", index=0, device=0
+     ControlAmp: chs=3, dir=In, idx=2, ofs=0
+   Control: name="Beep Playback Volume", index=0, device=0
+     ControlAmp: chs=3, dir=In, idx=4, ofs=0
+   Control: name="Beep Playback Switch", index=0, device=0
+     ControlAmp: chs=3, dir=In, idx=4, ofs=0
+   Amp-In caps: ofs=0x17, nsteps=0x1f, stepsize=0x05, mute=1
+   Amp-In vals:  [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80]
+   <strong>Connection: 5
+      0x18 0x19 0x1a 0x1b 0x1d</strong>
+
+ <strong>Node 0x22</strong> [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+   Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+   Amp-In vals:  [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80]
+   <strong>Connection: 6
+      0x18 0x19 0x1a 0x1b 0x1d 0x0b</strong>
+
+ <strong>Node 0x23</strong> [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+   Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+   Amp-In vals:  [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x00 0x00]
+  <strong> Connection: 7
+      0x18 0x19 0x1a 0x1b 0x1d 0x0b 0x12</strong></pre>
+
+
+
+<p>B3: ta thấy có tới 3 node được kết nối với node 0x19 nhưng nếu để ý thật kỹ thì bạn sẽ thấy node 0x0b sẽ được kết nối tới 2 node là 0x22 và 0x23 vì vậy ta sẽ loại bỏ nó đi và tìm tiếp 2 node là node 0x22 à node 0x23 trong <code>audio in put </code>ta được</p>
+
+
+
+<pre class="wp-block-preformatted"><strong>Node 0x08</strong> [Audio Input] wcaps 0x10051b: Stereo Amp-In
+   Control: name="Capture Volume", index=0, device=0
+     ControlAmp: chs=3, dir=In, idx=0, ofs=0
+   Control: name="Capture Switch", index=0, device=0
+     ControlAmp: chs=3, dir=In, idx=0, ofs=0
+   Device: name="ALC3234 Analog", type="Audio", device=0
+   Amp-In caps: ofs=0x17, nsteps=0x3f, stepsize=0x02, mute=1
+   Amp-In vals:  [0x27 0x27]
+   Converter: stream=0, channel=0
+   SDI-Select: 0
+   PCM:
+     rates [0x560]: 44100 48000 96000 192000
+     bits [0xe]: 16 20 24
+     formats [0x1]: PCM
+   Power states:  D0 D1 D2 D3 EPSS
+   Power: setting=D0, actual=D0
+ <strong>  Connection: 1
+      0x23</strong>
+
+<strong> Node 0x09 </strong>[Audio Input] wcaps 0x10051b: Stereo Amp-In
+   Amp-In caps: ofs=0x17, nsteps=0x3f, stepsize=0x02, mute=1
+   Amp-In vals:  [0x97 0x97]
+   Converter: stream=0, channel=0
+   SDI-Select: 0
+   PCM:
+     rates [0x560]: 44100 48000 96000 192000
+     bits [0xe]: 16 20 24
+     formats [0x1]: PCM
+   Power states:  D0 D1 D2 D3 EPSS
+   Power: setting=D0, actual=D0
+  <strong> Connection: 1
+      0x22</strong></pre>
+
+
+
+<p>B4: gắn kết dữ liệu ta được <code>0x08 --&gt; 0x23 --&gt; 0x19</code> chuyển sang decimal ta có <code>8 --&gt; 35 --&gt; 25&nbsp;</code> và <code>0x09 --&gt; 0x22 --&gt; 0x19</code> chuyển sang decimal ta được <code>9 --&gt; 34 --&gt; 25</code>  </p>
+
+
+
+<ul><li>Headphone</li></ul>
+
+
+
+<p>B1: mở file  <code>jack combo</code> ( tạo ở phần 4 ) lên và search <code>Headphone</code> ta được </p>
+
+
+
+<pre class="wp-block-code"><code>
+<strong> Node 0x1a</strong> &#91;Pin Complex] wcaps 0x40048b: Stereo Amp-In
+   Control: name="Headphone Mic Boost Volume", index=0, device=0
+     ControlAmp: chs=3, dir=In, idx=0, ofs=0
+   Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0
+   Amp-In vals:  &#91;0x00 0x00]
+   Pincap 0x00003724: IN Detect
+     Vref caps: HIZ 50 GRD 80 100
+   Pin Default 0x411111f0: &#91;N/A] Speaker at Ext Rear
+     Conn = 1/8, Color = Black
+     DefAssociation = 0xf, Sequence = 0x0
+     Misc = NO_PRESENCE
+   Pin-ctls: 0x20: IN VREF_HIZ
+   Unsolicited: tag=00, enabled=0
+   Power states:  D0 D1 D2 D3 EPSS
+   Power: setting=D0, actual=D0</code></pre>
+
+
+
+<p>B2: làm tương tự như heaset vì ở đây cũng không thấy phần <code>connection</code> ta được</p>
+
+
+
+<pre class="wp-block-code"><code><strong>Node 0x0b</strong> &#91;Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+   Control: name="Headset Mic Playback Volume", index=0, device=0
+     ControlAmp: chs=3, dir=In, idx=1, ofs=0
+   Control: name="Headset Mic Playback Switch", index=0, device=0
+     ControlAmp: chs=3, dir=In, idx=1, ofs=0
+   Control: name="Headphone Mic Playback Volume", index=0, device=0
+     ControlAmp: chs=3, dir=In, idx=2, ofs=0
+   Control: name="Headphone Mic Playback Switch", index=0, device=0
+     ControlAmp: chs=3, dir=In, idx=2, ofs=0
+   Control: name="Beep Playback Volume", index=0, device=0
+     ControlAmp: chs=3, dir=In, idx=4, ofs=0
+   Control: name="Beep Playback Switch", index=0, device=0
+     ControlAmp: chs=3, dir=In, idx=4, ofs=0
+   Amp-In caps: ofs=0x17, nsteps=0x1f, stepsize=0x05, mute=1
+   Amp-In vals:  &#91;0x80 0x80] &#91;0x80 0x80] &#91;0x80 0x80] &#91;0x80 0x80] &#91;0x80 0x80]
+  <strong> Connection: 5
+      0x18 0x19 0x1a 0x1b 0x1d</strong>
+
+<strong>Node 0x22</strong> &#91;Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+   Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+   Amp-In vals:  &#91;0x80 0x80] &#91;0x80 0x80] &#91;0x80 0x80] &#91;0x80 0x80] &#91;0x80 0x80] &#91;0x80 0x80]
+  <strong> Connection: 6
+      0x18 0x19 0x1a 0x1b 0x1d 0x0b</strong>
+
+<strong>Node 0x23</strong> &#91;Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+   Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+   Amp-In vals:  &#91;0x80 0x80] &#91;0x80 0x80] &#91;0x80 0x80] &#91;0x80 0x80] &#91;0x80 0x80] &#91;0x80 0x80] &#91;0x00 0x00]
+  <strong> Connection: 7
+      0x18 0x19 0x1a 0x1b 0x1d 0x0b 0x12</strong></code></pre>
+
+
+
+<p>B3: cũng như phần headset ta cũng nhận thấy 0x0b được liên kết với 0x22 và 0x23  nên ta sẽ loại bỏ 0x0b đi ta tiếp tục tìm 0x22 và 0x23 trong phần <code>audio in put </code></p>
+
+
+
+<pre class="wp-block-code"><code><meta charset="utf-8"><strong>Node 0x08</strong> &#91;Audio Input] wcaps 0x10051b: Stereo Amp-In
+   Control: name="Capture Volume", index=0, device=0
+     ControlAmp: chs=3, dir=In, idx=0, ofs=0
+   Control: name="Capture Switch", index=0, device=0
+     ControlAmp: chs=3, dir=In, idx=0, ofs=0
+   Device: name="ALC3234 Analog", type="Audio", device=0
+   Amp-In caps: ofs=0x17, nsteps=0x3f, stepsize=0x02, mute=1
+   Amp-In vals:  &#91;0x27 0x27]
+   Converter: stream=0, channel=0
+   SDI-Select: 0
+   PCM:
+     rates &#91;0x560]: 44100 48000 96000 192000
+     bits &#91;0xe]: 16 20 24
+     formats &#91;0x1]: PCM
+   Power states:  D0 D1 D2 D3 EPSS
+   Power: setting=D0, actual=D0
+ <strong>  Connection: 1
+      0x23</strong>
+
+<strong> Node 0x09 </strong>&#91;Audio Input] wcaps 0x10051b: Stereo Amp-In
+   Amp-In caps: ofs=0x17, nsteps=0x3f, stepsize=0x02, mute=1
+   Amp-In vals:  &#91;0x97 0x97]
+   Converter: stream=0, channel=0
+   SDI-Select: 0
+   PCM:
+     rates &#91;0x560]: 44100 48000 96000 192000
+     bits &#91;0xe]: 16 20 24
+     formats &#91;0x1]: PCM
+   Power states:  D0 D1 D2 D3 EPSS
+   Power: setting=D0, actual=D0
+  <strong> Connection: 1
+      0x22</strong></code></pre>
+
+
+
+<p>B4: gắn kết dữ kiện ta được <code>0x08 --&gt; 0x23 --&gt; 0x1a</code> chuyển sang decimal ta được <code>8 --&gt; 35 --&gt; 26</code> và <code>0x09 --&gt; 0x22 --&gt; 0x1</code> chuyển sang decimal ta được <code>9 --&gt; 34 --&gt; 26</code> </p>
+
+
+
+<p>Sau khi có được tất cả dữ kiện từ các phần trên ta được </p>
+
+
+
+<pre class="wp-block-code"><code>Speaker: 20 -&gt; 12 -&gt; 2
+
+HP: 33 -&gt; 13 -&gt; 3
+
+Mic: 8 -&gt; 35 -&gt; 18
+
+Headset: 
+
+8 -&gt; 35 -&gt; 25 
+
+9 -&gt; 34 -&gt; 25
+
+Headphone: 
+
+8 -&gt; 35 -&gt; 26 
+
+9 -&gt; 34 -&gt; 26</code></pre>
+
+
+
+<h2>Phần 8: Patch Platforms.xml và layout#.xml</h2>
+
+
+
+<p>B1: mở file layout#.xml đã tải ở Phần 1</p>
+
+
+
+<p>Và chỉnh những nội dung sau:</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/sShKBC2.png" alt=""/></figure>
+
+
+
+<ul><li>LayoutID: bạn thay đổi hoặc giữ nguyên hoặc đổi đây mình sẽ thay thành 15</li></ul>
+
+
+
+<ul><li>CodecID: Phần này các bạn đã sửa ở phần 3</li></ul>
+
+
+
+<ul><li>Inputs: tuỳ vào codec của bạn có LineIn hay không, nếu không có thì xoá đi</li></ul>
+
+
+
+<ul><li>PatchMapID: bạn cho vào đây 1 số ngẫu nhiên </li></ul>
+
+
+
+<p>B2: mở file Platforms.xml lên </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/eSGoYik.png" alt=""/></figure>
+
+
+
+<p>bạn điền path map đã xác định phần 7 vào đây</p>
+
+
+
+<ul><li>PathMaps -&gt; 0 -&gt; PathMap -&gt; 0 -&gt; 0 là Mic</li></ul>
+
+
+
+<ul><li>PathMaps -&gt; 0 -&gt; PathMap -&gt; 0 -&gt; 1 là LineIn ( mic gắn ngoài do macos không hỗ trợ nên phải khai báo là linein )</li></ul>
+
+
+
+<ul><li>PathMaps -&gt; 0 -&gt; PathMap -&gt; 1 -&gt; 0 là HP ( headphone )</li></ul>
+
+
+
+<ul><li>PathMaps -&gt; 0 -&gt; PathMap -&gt; 1 -&gt; 1 là Speaker</li></ul>
+
+
+
+<ul><li>PathMaps -&gt; 0 -&gt; PathMap -&gt; PathMapID: ở đây bạn cần điền số giống với PathMapID ở layout#.xml</li></ul>
+
+
+
+<p>Nếu trường hợp không có Audio Mixer/Selector thì bạn xoá đi key 1, chỉ điền vào key 0 và key 2 thôi nhé!</p>
+
+
+
+<h2>Phần 9: Build kext</h2>
+
+
+
+<p>B1: bỏ kext lilu vào folder apple alc </p>
+
+
+
+<p>B2: vào resource xóa hết codec thừa và chừa lại codec của bạn </p>
+
+
+
+<p>B3: bỏ 2 file layoutid# và platformid# và folder tên codec ( nên rename lại theo layout id bạn đã set )</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/HZnoUwe.png" alt=""/></figure>
+
+
+
+<p>B4: <strong>&nbsp;</strong>Mở AppleALC.xcodeproj --> PinConfigs --> Info.plist --> IOKitPersonalities --> HDA Hardware Config Resource --> HDAConfigDefault bằng xcode bạn có thể tự tạo hoặc edit 1 cái có sẳn</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/h7WD12F.png" alt=""/></figure>
+
+
+
+<p>Các bạn sửa lại như sau:</p>
+
+
+
+<ul><li>Codec: thay đổi tuỳ thích</li><li>CodecID: thay bằng Vendor Id của codec ở hệ decimal đã chuẩn bị trên</li><li>ConfigData: bạn copy codec verb đã chuẩn bị đưa vào đây</li><li>LayoutID: nhập layout-id bạn đã chọn để patch ở trên</li></ul>
+
+
+
+<p>B5: &nbsp;Mở AppleALC.xcodeproj --> Resources --> (tên codec bạn đang patch) --> Info.plist --> Information Property List --> Files</p>
+
+
+
+<p>Và chỉnh những thứ sau:</p>
+
+
+
+<ul><li>Codec id: id codec của các bạn </li><li>Codec name: tên codec của các bạn </li><li>layout -&gt; 0 -&gt; comment: điền tên bạn muốn đặt</li><li>layout -&gt; 0 -&gt; id: điền id của bạn đã đặt ở phần 8</li><li>layout -&gt; 0 -&gt; path: điền path của file layout#.xml vào đây</li><li>platforms -&gt; 0 -&gt; comment: điền tên bạn muốn đặt</li><li>platforms -&gt; 0 -&gt; id: điền id của bạn đã đặt ở phần 8</li><li>platforms -&gt; 0 -&gt; path: điền path của file layout#.xml vào đây</li></ul>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/VhzXusw.png" alt=""/></figure>
+
+
+
+<p>B6: Các bạn ấn build kext</p>
+
+
+
+<h2>Phần 10: load kext apple alc</h2>
+
+
+
+<p>B1: bỏ kext vừa build vào EFI--> Oc --> Kext và snaps lại hoặc bỏ vào EFI --> Clover --> kext --> other  </p>
+
+
+
+<p>B2: add vào boot-arg <code>alcid=#</code> ( thay <code>#</code> thành layout id bạn đã đặt ở trên như của mình là <code>alcid=15</code> ) </p>
+
+
+
+<p><strong>Lưu ý: source tham khảo <a href="https://hackintosh.vn/patch-applehda-cho-cac-laptop-chay-hackintosh">Patch AppleHDA cho các laptop chạy Hackintosh – Hackintosh Vietnam – Chuyên trang cung cấp hướng dẫn cài hackintosh</a> | <a href="https://www.olarila.com/topic/1817-how-to-patch-applehda/">How to patch AppleHDA &#8211; Guides and Tutorials &#8211; Olarila</a> | <a href="http://trungnguyenblogs.blogspot.com/2015/10/huong-dan-patch-applehda-cho-cac-laptop.html">[Hướng dẫn] Patch AppleHDA cho các laptop chạy Hackintosh &#8211; Sharing Is Caring (trungnguyenblogs.blogspot.com)</a> </strong></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://heavietnam.ga/2021/11/13/patch-apple-hda/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>XXXVIII. Disable CFG-Clock</title>
+		<link>https://heavietnam.ga/2021/10/28/xxxviii-disable-cfg-clock/</link>
+					<comments>https://heavietnam.ga/2021/10/28/xxxviii-disable-cfg-clock/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Thu, 28 Oct 2021 16:10:09 +0000</pubDate>
+				<category><![CDATA[post install]]></category>
+		<guid isPermaLink="false">https://heavietnam.ga/?p=1100</guid>
+
+					<description><![CDATA[Cách 1: Disable trong config Nhược điểm sẽ bị mất 1 ít hiệu năng B1: mở config băng propertree B2: các bạn enable AppleCpuPmCfgLock và AppleXcpmCfgLock ở phần Kernel -&#62; Quirks Cách 2: Dùng tool grub-mod-setup B1: các bạn down tool tại đây B2: các bạn down uefitool tại đây B3: các bạn down Universal-IFR-Extractor [...]]]></description>
+										<content:encoded><![CDATA[
+<h2>Cách 1: Disable trong config </h2>
+
+
+
+<p>Nhược điểm sẽ bị mất 1 ít hiệu năng</p>
+
+
+
+<p>B1: mở config băng <a href="https://github.com/corpnewt/ProperTree">propertree</a></p>
+
+
+
+<p>B2: các bạn enable AppleCpuPmCfgLock và AppleXcpmCfgLock ở phần Kernel -&gt; Quirks</p>
+
+
+
+<h2>Cách 2: Dùng tool grub-mod-setup</h2>
+
+
+
+<p>B1: các bạn down tool <a href="https://github.com/datasone/grub-mod-setup_var/releases">tại đây</a> </p>
+
+
+
+<p>B2: các bạn down uefitool <a href="https://github.com/LongSoft/UEFITool/releases">tại đây</a></p>
+
+
+
+<p>B3: các bạn down Universal-IFR-Extractor <a href="https://github.com/LongSoft/Universal-IFR-Extractor/releases">tại đây</a></p>
+
+
+
+<p>B4: các bạn down mã bi bios của các bạn ( cái n mik không hướng dẫn được các bạn lên google search model + bin bios )</p>
+
+
+
+<p>B5: Các bạn kéo file bin bios vào uefi tool sau đó ấn command + F </p>
+
+
+
+<pre class="wp-block-code"><code>CFG Lock
+</code></pre>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/Wn0iuT4.png" alt=""/></figure>
+
+
+
+<figure class="wp-block-image size-large"><img src="	https://dortania.github.io/OpenCore-Post-Install/assets/img/uefi-tool.5f61054a.png" alt=""/></figure>
+
+
+
+<p>B6: các bạn click chuột phải vào  setup và nhấn <code>export as is</code> </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/gaOOJ8o.png" alt=""/></figure>
+
+
+
+<p>sau đó save dưới dạn <code>.bin</code> hoặc <code>.sct</code></p>
+
+
+
+<p>B7: các bạn mở terminal lên </p>
+
+
+
+<p>Và kéo file ifrextract đã tải ở trên vào sau đó ấn dấu cách tiếp tục kéo file vừa xuất tiếp theo bạn gõ đường dẫn file txt muốn xuất vd </p>
+
+
+
+<p><code>path/to/ifrextract path/to/Setup.bin path/to/Setup.txt</code></p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/rNX7OS4.png" alt=""/></figure>
+
+
+
+<p>B8: sau đó mở file vừa xuất lên và search <code>CFG Lock, VarStoreInfo (VarOffset/VarName):</code>  để tìm offset </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/rN8cSzN.png" alt=""/></figure>
+
+
+
+<p>Như ở đây là 0x54</p>
+
+
+
+<p>B9: reboot và chọn GRUB Shell sau đó gõ lệnh </p>
+
+
+
+<pre class="wp-block-code"><code>setup_var 0x5A4 // thay 0x54 thành offset bạn tìm được
+</code></pre>
+
+
+
+<p>nếu gặp lỗi <code>error: offset is out of range</code> thì các bạn gõ dòng sau </p>
+
+
+
+<pre class="wp-block-code"><code>setup_var2 0x5A4
+</code></pre>
+
+
+
+<p>Nếu vẫn gặp lỗi <code>error: offset is out of range</code> thì các bạn gõ dòng sau</p>
+
+
+
+<pre class="wp-block-code"><code>setup_var_3 0x5A4
+</code></pre>
+
+
+
+<p>Nếu không còn gặp lỗi đó nữa các bạn gõ lệnh </p>
+
+
+
+<pre class="wp-block-code"><code>setup_var_3 0x5A4 0x00
+</code></pre>
+
+
+
+<p>sau đó gõ </p>
+
+
+
+<pre class="wp-block-code"><code>reboot</code></pre>
+
+
+
+<p>và như vậy là xong bạn có thể tắt đi <code>Kernel -> Quirks -> AppleCpuPmCfgLock</code> và <code>Kernel -> Quirks -> AppleXcpmCfgLock</code></p>
+
+
+
+<p>Source tham khảo: <a href="https://dortania.github.io/OpenCore-Post-Install/misc/msr-lock.html#turning-off-cfg-lock-manually">Fixing CFG Lock | OpenCore Post-Install (dortania.github.io)</a></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://heavietnam.ga/2021/10/28/xxxviii-disable-cfg-clock/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>XXXVII. injects usb manual</title>
+		<link>https://heavietnam.ga/2021/10/28/xxxvii-map-usb-manual/</link>
+					<comments>https://heavietnam.ga/2021/10/28/xxxvii-map-usb-manual/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Thu, 28 Oct 2021 11:56:08 +0000</pubDate>
+				<category><![CDATA[post install]]></category>
+		<guid isPermaLink="false">https://heavietnam.ga/?p=1082</guid>
+
+					<description><![CDATA[ở bài hướng dẫn này mình sẽ chỉ các bạn cách tạo ra 1 kext map usb cho riêng mình nghe có vẻ thú vị đúng ko nào ( mình đã có 1 bài hướng dẫn map usb bằng cách dùng tool rồi nhé các bạn có thể xem tại đây ) và giờ bắt [...]]]></description>
+										<content:encoded><![CDATA[
+<p>ở bài hướng dẫn này mình sẽ chỉ các bạn cách tạo ra 1 kext map usb cho riêng mình nghe có vẻ thú vị đúng ko nào ( mình đã có 1 bài hướng dẫn map usb bằng cách dùng tool rồi nhé các bạn có thể xem <a href="https://heavietnam.ga/2021/09/29/vi-1map-usb-intel-and-amd/">tại đây</a> ) và giờ bắt đầu thôi </p>
+
+
+
+<h2>Chuẩn bị</h2>
+
+
+
+<ul><li>Tải ioreg <a href="https://github.com/khronokernel/IORegistryClone/blob/master/ioreg-302.zip">tại đây</a> </li><li>1 số tên device usb control </li></ul>
+
+
+
+<pre class="wp-block-code"><code>XHC
+XHC0
+XHC1
+XHC2
+XHCI
+XHCX
+AS43
+PTXH // thường gặp ở các main amd
+PTCP // thường gặp ở AsRock X399 
+PXSX // đây là 1 tên thường gặp hãy kiểm tra kỹ xem nó có phải là bộ điều khiển usb không</code></pre>
+
+
+
+<h2>Tạo kext</h2>
+
+
+
+<p>ở đây mình sẽ hướng dẫn cho amd intel làm tương tự vì cùng 1 nguyên tắt hoạt động ( với intel các bạn sử trên kext usb injects all )</p>
+
+
+
+<p>B1: các bạn search <code>XHC</code> trên ioreg và nhìn 1 danh sách sổ xuống tìm gốc của các thành phần ta được tên bộ điều khiển usb </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="	https://dortania.github.io/OpenCore-Post-Install/assets/img/controller-name.65fee9c7.png" alt=""/></figure>
+
+
+
+<p>Ở đây ta có bộ điều khiển  usb là PTXH ( nếu các bạn có các bộ điều khiển trùng với nhau thì các bạn sẽ lấy hết tên của nó là  PTXH@000000, phần này mình sẽ nói rõ hơn ở mục sau )</p>
+
+
+
+<p>B2: dump dsdt theo hướng dẫn <a href="https://heavietnam.ga/2021/09/29/xxvi-patch-dsdt-phan-1/">tại đây</a> </p>
+
+
+
+<p>B3: các bạn mở dsdt lên và search tên bộ điều khiên usb vừa xác định ở ioreg </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="	https://dortania.github.io/OpenCore-Post-Install/assets/img/dsdt-1.9fd16334.png" alt=""/></figure>
+
+
+
+<figure class="wp-block-image size-large"><img src="	https://dortania.github.io/OpenCore-Post-Install/assets/img/dsdt-2.fcac4b17.png" alt=""/></figure>
+
+
+
+<p>ở đây ta có thể thấy số port trong ioreg đang bị thiếu tức macos đang nhận thiếu port trong dsdt</p>
+
+
+
+<p>là do kext AppleUSBHostPlatformProperties nó chỉ tạo usb map theo smbios của apple vì vây nên ta sẽ bị thiếu các port usb để khắc phục các bạn sẽ tạo 1 kext cho riêng mình ( hoặc map usb theo hướng dẫn <a href="https://heavietnam.ga/2021/09/29/vi-1map-usb-intel-and-amd/">tại đây</a> ) đầu tiên các bạn sẽ down kext mẫu <a href="https://github.com/dortania/OpenCore-Post-Install/blob/master/extra-files/AMD-USB-Map.kext.zip">tại đây</a> ( đối với intel thì các bạn sửa trên <a href="https://bitbucket.org/RehabMan/os-x-usb-inject-all/downloads/">usb injects all</a> )</p>
+
+
+
+<p>B4: các bạn click chuột phải chọn show pack content </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/HutDs5k.png" alt=""/></figure>
+
+
+
+<p>B5: Các bạn mở file info.plist bằng propertree ( cách sử dụng propertree các bạn có thể xem hướng dẫn <a href="https://heavietnam.ga/2021/09/29/tim-hieu-ve-hackintosh/">tại đây</a> )</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/QFPihWX.png" alt=""/></figure>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/hrz6KiI.png" alt=""/></figure>
+
+
+
+<p>Ở đây các bạn chú ý các mục sau:</p>
+
+
+
+<ol><li>Các bạn sẽ sửa lại theo smbios và bộ điều khiển usb</li><li>mục IONameMatch là tên bộ điều khiển usb<ul><li>đối với 1 số bộ điều khiển usb ( thường là PXSX sẽ dùng IOPathMatch thay cho IONameMatch | xem chi tiết ở mục dưới )</li></ul></li><li>port-count là giá trị của port cao nhất ( vd như khi nãy ta có port  P022 có giá trị 0x16 cao nhất thì khi đưa vào port count nó sẽ là 16 00 00 00 00 )</li><li>Port đây là mục các bạn sẽ làm việc chủ yếu để add thêm các port bị thiếu</li><li>Mode ở mục này các bạn sẽ chỉnh về smbios hiện tại đang sử dụng </li></ol>
+
+
+
+<p>B6: các bạn sẽ tiến hành nhìn vào dsdt kết hợp ioreg để xác định type dựa vào tên ( thông thước 3 ký tự đầu của usb 3.0 sẽ trùng nhau và 2.0 cũng vậy )</p>
+
+
+
+<p>B7: tiến hành xác định giá trị port các bạn sẽ dựa vào mục </p>
+
+
+
+<pre class="wp-block-code"><code>Name (_ADR
+</code></pre>
+
+
+
+<p>để xác định giá trị port vd như ở đây mình có </p>
+
+
+
+<pre class="wp-block-code"><code>Device (PO18)
+   {
+   Name (_ADR, 0x12) // _ADR: Address
+   Name (_UPC, Package (0x04) // _UPC: USB Port Capabilities
+      {
+         Zero,
+         0xFF,
+         Zero,
+         Zero
+      })
+   }</code></pre>
+
+
+
+<p>thì port P018 ta có giá trị port là 0x12=1200000000 ta sẽ được ( do ở trên ioreg ta có port P010 có usbconnector là 0x3 tức là 3.0 nên cũng trương tự với P018 | nhớ rằng usb 3.0 sẽ có 2 port được xuất ra  )</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://dortania.github.io/OpenCore-Post-Install/assets/img/port-info.64852be6.png" alt=""/></figure>
+
+
+
+<p><strong>Lưu ý : 1 số dsdt mục </strong></p>
+
+
+
+<pre class="wp-block-code"><code><meta charset="utf-8"><strong>Name (_ADR
+</strong></code></pre>
+
+
+
+<p><strong>sẽ bị ẩn đi  do đó ta sẽ phải tự đọc dsdt vd như ở đây mình có </strong></p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/cey13IE.png" alt=""/></figure>
+
+
+
+<p>Ta sẽ có PR3 là 0xFFFFFFF0 </p>
+
+
+
+<h2>Trường hợp ngoại lệ thứ 1: dsdt bị thiếu port</h2>
+
+
+
+<p>Đôi với dsdt bị thiếu port ta sẽ cần remove tất cả các bộ điều khiển usb và để cho macos tự khởi tạo dữ liệu bằng cách cho dsdt dã xóa device vào EFI -&gt; OC -&gt; ACPI ( các bạn sẽ cần convert định dạng dsdt sang dsl <a href="https://heavietnam.ga/2021/09/29/xxvi-patch-dsdt-phan-1/">tại đây</a> )</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="	https://dortania.github.io/OpenCore-Post-Install/assets/img/dsdt-missing.fdae3b86.png" alt=""/></figure>
+
+
+
+<p>Ở đây ta thấy dsdt này thiếu các port usb như HS02, HS03, HS04, HS05,&#8230;.</p>
+
+
+
+<h2>Trường hợp ngoại lệ thứ 2: Tên của các port bị nhầm hoặc chưa đặt tên </h2>
+
+
+
+<p>Đối với trường hợp này các bạn chỉ việc dựa vào dsdt và đổi tên hoặc đạt tên trong kext của các bạn ở trên là được </p>
+
+
+
+<p>Before:</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="	https://dortania.github.io/OpenCore-Post-Install/assets/img/pre-map.29fe7763.png" alt=""/></figure>
+
+
+
+<p>Kext:</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://dortania.github.io/OpenCore-Post-Install/assets/img/genirc-plist.47f64f03.png" alt=""/></figure>
+
+
+
+<p>Do ở đây có 2 bộ điều khiển usb nên mình dùng IOPathMatch </p>
+
+
+
+<p>After:</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="	https://dortania.github.io/OpenCore-Post-Install/assets/img/post-map.6b7c1e5e.png" alt=""/></figure>
+
+
+
+<h2>Trường hợp ngoại lệ thứ 3: có 2 method XHC0</h2>
+
+
+
+<p>Trường hợp này thường xảy ra trên bộ điều khiển usb PXSX</p>
+
+
+
+<h2>Cách 1: dùng  kext với phương thức IOPathMatch ( khuyến khích )</h2>
+
+
+
+<figure class="wp-block-image size-large"><img src="	https://dortania.github.io/OpenCore-Post-Install/assets/img/iopathmatch.ce488cb3.png" alt=""/></figure>
+
+
+
+<p>Ở đây ta có thể thấy có 2 device XHC0 ta có thể thấy mục XHC0@61000000 ở dưới mục XHC0 và là gốc của tất cả các mục trên nên ta sẽ lấy path của mục này là </p>
+
+
+
+<pre class="wp-block-code"><code>IOService:/AppleACPIPlatformExpert/S0D1@0/AppleACPIPCI/D1C0@7,1/IOPP/XHC0@0,3/XHC0@61000000
+</code></pre>
+
+
+
+<p>( dựa vào vault củaport trên usb và ioreg để xme mục nào là bộ điều khiển usb ta sài thực sự )</p>
+
+
+
+<p>Tiếp theo ta chỉ cần add path trên vào mục <meta charset="utf-8">IOPathMatch</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="	https://dortania.github.io/OpenCore-Post-Install/assets/img/path-match-config.1139f1d8.png" alt=""/></figure>
+
+
+
+<h2>Cách 2: dùng SSDT </h2>
+
+
+
+<p>B1: các bạn tải ssdt <a href="https://github.com/dortania/OpenCore-Post-Install/blob/master/extra-files/SSDT-SHC0.dsl">tại đây</a> </p>
+
+
+
+<p>B2: Các bạn nhìn vào mục acpi-path trong bộ điều khiển usb đã sác định ở trên</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="	https://dortania.github.io/OpenCore-Post-Install/assets/img/acpi-path.b5562f4f.png" alt=""/></figure>
+
+
+
+<p>ta có thể thấy <code>IOACPIPlane:/_SB/PC00@0/RP05@1c0004/PXSX@0</code> có nghĩa là <code>SB.PC00.RP05.PXSX</code></p>
+
+
+
+<p>B3: ta sẽ chuyển các mục sau tương ứng sau bằng số liệu bạn lấy được trong ioreg tương tự như sau</p>
+
+
+
+<pre class="wp-block-code"><code>External (_SB_.PCI0.GP13, DeviceObj) -> External (_SB_.PC00.RP05, DeviceObj)
+External (_SB_.PCI0.GP13.XHC0, DeviceObj) -> External (_SB_.PC00.RP05.PXSX, DeviceObj)
+Scope (\_SB.PCI0.GP13) -> Scope (\_SB.PC00.RP05)
+Scope (XHC0) -> Scope (PXSX)
+</code></pre>
+
+
+
+<p><strong>Lưu ý: các này chỉ là injects usb chủ yếu dành cho amd và gen 10 intel sau khi làm theo các bạn phải map lại usb bằng hackintool</strong> theo hướng dẫn <a href="https://heavietnam.ga/2021/09/29/vi-1map-usb-intel-and-amd/">tại đây</a></p>
+
+
+
+<p><strong>Source tham khảo: <a href="https://dortania.github.io/OpenCore-Post-Install/usb/amd-mapping/amd.html#amd-and-3rd-party-usb-mapping">USB Mapping | OpenCore Post-Install (dortania.github.io)</a></strong></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://heavietnam.ga/2021/10/28/xxxvii-map-usb-manual/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>XXXVI. Patch Gma GPU</title>
+		<link>https://heavietnam.ga/2021/10/22/patch-gma-gpu/</link>
+					<comments>https://heavietnam.ga/2021/10/22/patch-gma-gpu/#comments</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Fri, 22 Oct 2021 10:33:18 +0000</pubDate>
+				<category><![CDATA[post install]]></category>
+		<guid isPermaLink="false">https://heavietnam.ga/?p=980</guid>
+
+					<description><![CDATA[Các GMA gpu support: GMA 900 (10.4 and 10.5) GMA 950(10.4-10.7) GMA 3150 có thể được support nếu spoof device id GMA X3100(10.5-10.7) Chỉ hỗ trợ laptop Chuẩn bị Hãy chắc rằng kext của bạn thuộc 32-Bit or FAT bằng cách vào terminal và gõ Hãy chắc rằng bạn đang boot ở 32 bit GMA [...]]]></description>
+										<content:encoded><![CDATA[
+<p>Các GMA gpu support:</p>
+
+
+
+<p>GMA 900 (10.4 and 10.5)</p>
+
+
+
+<p>GMA 950(10.4-10.7)</p>
+
+
+
+<ul><li>GMA 3150 có thể được support nếu spoof device id</li></ul>
+
+
+
+<p>GMA X3100(10.5-10.7)</p>
+
+
+
+<ul><li>Chỉ hỗ trợ laptop</li></ul>
+
+
+
+<h2>Chuẩn bị</h2>
+
+
+
+<ul><li>Hãy chắc rằng kext của bạn thuộc 32-Bit or FAT</li></ul>
+
+
+
+<p>bằng cách vào terminal và gõ </p>
+
+
+
+<pre class="wp-block-code"><code>lipo -archs path to kext
+</code></pre>
+
+
+
+<p>Hãy chắc rằng bạn đang boot ở 32 bit</p>
+
+
+
+<ul><li>GMA  900, 950 and 3150</li></ul>
+
+
+
+<pre class="wp-block-code"><code><strong># Grantsdale</strong>
+0x2582 - GMA 900 - 945GM/GMS/940GML
+0x258A - GMA 900 - E7221
+0x2782 - GMA 900 - 82915G
+
+<strong># Alviso</strong>
+0x2592 - GMA 900 - 915GM/GMS/910GML
+0x2792 - GMA 900 - 915GM/GMS/910GML
+
+<strong># Lakeport</strong>
+0x2772 - GMA 950 - 915GM/GMS/910GML
+0x2776 - GMA 950 - 915GM/GMS/910GML
+
+<strong># Calistoga</strong>
+0x27A2 - GMA 950 - 82915G/GV/910GL
+0x27A6 - GMA 950 - 945GM/GMS/GME, 943/940GML
+0x27AE - GMA 950 - 945GSE</code></pre>
+
+
+
+<ul><li>GMA X3100</li></ul>
+
+
+
+<pre class="wp-block-code"><code><meta charset="utf-8"><strong># Crestline</strong>
+0x2a02 - GMA X3100 - GM965/GL960
+
+<strong># Calistoga</strong>
+0x2A02 - GMA X3100 - GM965/GL960
+0x2A03 - GMA X3100 - GM965/GL960
+0x2A12 - GMA X3100 - GME965/GLE960
+0x2A13 - GMA X3100 - GME965/GLE960</code></pre>
+
+
+
+<p>các bạn xem igpu của mình thuộc nhóm nào thì tiến hành fake-id</p>
+
+
+
+<p>ví dụ như ở đây mình fake thành GMA 950(Calistoga)</p>
+
+
+
+<p>B1: Chọn 1 trong số các device id trên ( ví dụ 0x27A2 )</p>
+
+
+
+<p>B2: các bạn bỏ số &#8220;0&#8221; đi và chia thành từng cặp (vd: <meta charset="utf-8">0x27A2 -&gt; 27 A2 )</p>
+
+
+
+<p>B3: các bạn tiến hành hoán đổi vị trí từng cặp ( 27 A2 -&gt; A2 27 )</p>
+
+
+
+<p>B4: các bạn tiến hành thêm 2 cặp số 0 vào sau ( A2 27 -&gt; A2 27 00 00 )</p>
+
+
+
+<p>B5: viết lại dãy số này vào mục device properties -&gt; add -&gt; PciRoot(0x0)/Pci(0x2,0x0) -&gt; device-id | data | A2270000 </p>
+
+
+
+<h2>Clover</h2>
+
+
+
+<h2>Cách 1:</h2>
+
+
+
+<p>B1: các bạn tải clover configurator <a href="https://mackie100projects.altervista.org/download-clover-configurator/">tại đây</a></p>
+
+
+
+<p>B2: các bạn tick vào mục graphics ==&gt; inject intel</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://imgur.com/P5m6BH3.png" alt=""/></figure>
+
+
+
+<h2>Cách 2:</h2>
+
+
+
+<ul><li>GMA 900/950/3150</li></ul>
+
+
+
+<p>B1: các bạn add đoạn sau vào device properties-> <meta charset="utf-8">PciRoot(0x0)/Pci(0x2,0x0) | dictionary</p>
+
+
+
+<pre class="wp-block-code"><code>| built-in                  | Data | 01       |
+| AAPL,HasPanel             | Data | 01000000 |
+| AAPL01,BacklightIntensity | Data | 3F000008 |
+| AAPL01,BootDisplay        | Data | 01000000 |
+| AAPL01,DataJustify        | Data | 01000000 |
+| AAPL01,Dither             | Data | 00000000 |
+| AAPL01,Interlace          | Data | 00000000 |
+| AAPL01,Inverter           | Data | 00000000 |
+| AAPL01,InverterCurrent    | Data | 00000000 |
+| AAPL01,LinkFormat         | Data | 00000000 |
+| AAPL01,LinkType           | Data | 00000000 |
+| AAPL01,Pipe               | Data | 01000000 |
+| AAPL01,Refresh            | Data | 3B000000 |
+| AAPL01,Stretch            | Data | 00000000 |
+| AAPL01,T1                 | Data | 00000000 |
+| AAPL01,T2                 | Data | 01000000 |
+| AAPL01,T3                 | Data | C8000000 |
+| AAPL01,T4                 | Data | C8010000 |
+| AAPL01,T5                 | Data | 01000000 |
+| AAPL01,T6                 | Data | 00000000 |
+| AAPL01,T7                 | Data | 90100000 |
+| AAPL01,DualLink           | Data | 00       |
+<meta charset="utf-8">// thay đổi thành 01 nếu bạn đang dùng màn hình lớn hơn 1366x768
+<meta charset="utf-8"><meta charset="utf-8">| model                     | String | GMA 950| // thay đổi theo dòng igpu
+</code></pre>
+
+
+
+<p>Đối với GMA 3150 các bạn cần add mục sau vào kernel and kext patches -> kextstopatch</p>
+
+
+
+<pre class="wp-block-code"><code>Comment    = GMA 3150 Cursor corruption fix
+disable    = false
+Name       = com.apple.driver.AppleIntelIntegratedFramebuffer
+Find       = 8b550883bab0000000017e36890424e832bbffff
+Replace    = b800000002909090909090909090eb0400000000</code></pre>
+
+
+
+<ul><li>GMA X3100</li></ul>
+
+
+
+<p><meta charset="utf-8">B1: các bạn add đoạn sau vào device properties-> <meta charset="utf-8">PciRoot(0x0)/Pci(0x2,0x0) | dictionary</p>
+
+
+
+<pre class="wp-block-code"><code>| built-in                       | Data | 01       |
+| AAPL,HasPanel                  | Data | 01000000 |
+| AAPL,SelfRefreshSupported      | Data | 01000000 |
+| AAPL,aux-power-connected       | Data | 01000000 |
+| AAPL,backlight-control         | Data | 01000008 |
+| AAPL00,blackscreen-preferences | Data | 00000008 |
+| AAPL01,BootDisplay             | Data | 01000000 |
+| AAPL01,BacklightIntensity      | Data | 38000008 |
+| AAPL01,blackscreen-preferences | Data | 00000000 |
+| AAPL01,DataJustify             | Data | 01000000 |
+| AAPL01,Dither                  | Data | 00000000 |
+| AAPL01,Interlace               | Data | 00000000 |
+| AAPL01,Inverter                | Data | 00000000 |
+| AAPL01,InverterCurrent         | Data | 08520000 |
+| AAPL01,LinkFormat              | Data | 00000000 |
+| AAPL01,LinkType                | Data | 00000000 |
+| AAPL01,Pipe                    | Data | 01000000 |
+| AAPL01,Refresh                 | Data | 3D000000 |
+| AAPL01,Stretch                 | Data | 00000000 |
+| AAPL01,T1                      | Data | 00000000 |
+| AAPL01,T2                      | Data | 01000000 |
+| AAPL01,T3                      | Data | C8000000 |
+| AAPL01,T4                      | Data | C8010000 |
+| AAPL01,T5                      | Data | 01000000 |
+| AAPL01,T6                      | Data | 00000000 |
+| AAPL01,T7                      | Data | 90100000 |
+<meta charset="utf-8">| AAPL01,DualLink                | Data | 00       |
+<meta charset="utf-8">// thay đổi thành 01 nếu bạn đang dùng màn hình lớn hơn 1366x768
+<meta charset="utf-8"><meta charset="utf-8">| model                          | String | GMA 950| // thay đổi theo dòng igpu</code></pre>
+
+
+
+<h2>Opencore</h2>
+
+
+
+<ul><li>GMA  900, 950 and 3150</li></ul>
+
+
+
+<h2>Desktop</h2>
+
+
+
+<p>B1: Các bạn tiến hành tạo DeviceProperties -&gt; Add -&gt; PciRoot(0x0)/Pci(0x2,0x0) | dictionary</p>
+
+
+
+<p>B2: các bạn add đoạn sau vào </p>
+
+
+
+<pre class="wp-block-code"><code>| model         | String | GMA 950  | // thay đổi theo dòng igpu
+| AAPL,HasPanel | Data   | 00000000 |</code></pre>
+
+
+
+<h2>Laptop</h2>
+
+
+
+<p>B1: Các bạn tiến hành tạo DeviceProperties -&gt; Add -&gt; PciRoot(0x0)/Pci(0x2,0x0) | dictionary</p>
+
+
+
+<p>B2: các bạn add đoạn sau vào</p>
+
+
+
+<pre class="wp-block-code"><code>| model                     | String | GMA 950  | // thay đổi theo dòng igpu
+| AAPL,HasPanel             |  Data  | 01000000 |
+| AAPL01,BacklightIntensity |  Data  | 3F000008 |
+| AAPL01,BootDisplay        |  Data  | 01000000 |
+| AAPL01,DataJustify        |  Data  | 01000000 |
+| AAPL01,DualLink           |  Data  | 00       | 
+
+// thay đổi thành 01 nếu bạn đang dùng màn hình lớn hơn 1366x768
+
+</code></pre>
+
+
+
+<p>Đối với người dùng GMA 3150 các bạn sẽ cần add thêm patch sau vào Kernel -> Patch</p>
+
+
+
+<pre class="wp-block-code"><code>Comment    = GMA 3150 Cursor corruption fix
+Enabled    = True
+Identifier = com.apple.driver.AppleIntelIntegratedFramebuffer
+Find       = 8b550883bab0000000017e36890424e832bbffff
+Replace    = b800000002909090909090909090eb0400000000
+MaxKernel  = 11.99.99
+MinKernel  = 8.00.00</code></pre>
+
+
+
+<ul><li>GMA X3100 </li></ul>
+
+
+
+<p>B1: Các bạn tiến hành tạo DeviceProperties -&gt; Add -&gt; PciRoot(0x0)/Pci(0x2,0x0) | dictionary</p>
+
+
+
+<p>B2: các bạn add đoạn sau vào</p>
+
+
+
+<pre class="wp-block-code"><code>| model                     | String | GMA X3100 | // thay đổi theo dòng igpu 
+| AAPL,HasPanel             |  Data  | 01000000  |
+| AAPL,SelfRefreshSupported |  Data  | 01000000  | // tùy chọn
+| AAPL,aux-power-connected  |  Data  | 01000000  | // tùy chọn
+| AAPL,backlight-control    |  Data  | 01000008  | // tùy chọn
+| AAPL01,BacklightIntensity |  Data  | 38000008  |
+| AAPL01,BootDisplay        |  Data  | 01000000  |
+| AAPL01,DataJustify        |  Data  | 01000000  |
+| AAPL01,DualLink           |  Data  | 00        |
+
+// thay đổi thành 01 nếu bạn đang dùng màn hình lớn hơn 1366x768</code></pre>
+
+
+
+<h2>Fix 1 số lỗi </h2>
+
+
+
+<ul><li>Dell laptop </li></ul>
+
+
+
+<p>Ở 1 số dòng laptop của dell thường bị lỗi đen màn khi khởi động do div của gpu bị lỗi cách fix là các bạn tạo 1 ssdt-div như sau </p>
+
+
+
+<pre class="wp-block-code"><code>DefinitionBlock ("", "SSDT", 2, "DRTNIA", "SsdtDvi", 0x00001000)
+{
+    External (_SB_.PCI0.SBRG.GFX0.DVI_, DeviceObj)
+
+    Scope (\_SB.PCI0.SBRG.GFX0.DVI)
+    {
+        Method (_STA, 0, NotSerialized)  // _STA: Status
+        {
+            If (_OSI ("Darwin"))
+            {
+                Return (0)
+            }
+            Else
+            {
+                Return (0x0F)
+            }
+        }
+    }</code></pre>
+
+
+
+<ul><li>Kernel panic sau 30s</li></ul>
+
+
+
+<p>Do ở 10.6 vã cũ hơn thì PciRoot&#8217;s _UID phải là 0 đây là 1 ví dụ</p>
+
+
+
+<pre class="wp-block-code"><code>Device (PCI0)  {
+ Name (_HID, EisaId ("PNP0A08")) // Use PNP0A08 to find your PciRoot
+ Name (_CID, EisaId ("PNP0A03"))
+ Name (_ADR, One)
+ Name (_UID, Zero)               // Needs to be patched to Zero
+}</code></pre>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://heavietnam.ga/2021/10/22/patch-gma-gpu/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>
