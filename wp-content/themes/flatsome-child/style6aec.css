@@ -8,8 +8,8 @@ Version: 3.0
 
 /*************** ADD CUSTOM CSS HERE.   ***************/
 
-div#top-bar {
-    display: none!important;
+.header-top, .header-bottom {
+	display: none!important;
 }
 
 @media only screen and (max-width: 48em) {
