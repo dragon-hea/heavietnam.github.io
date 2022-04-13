@@ -12,13 +12,13 @@
 	<atom:link href="https://heavietnam.ga/feed/" rel="self" type="application/rss+xml" />
 	<link>https://heavietnam.ga</link>
 	<description>Everythingforhackintosher</description>
-	<lastBuildDate>Sun, 03 Apr 2022 04:58:39 +0000</lastBuildDate>
+	<lastBuildDate>Mon, 11 Apr 2022 16:19:05 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=5.9.2</generator>
+	<generator>https://wordpress.org/?v=5.9.3</generator>
 
 <image>
 	<url>https://heavietnam.ga/wp-content/uploads/2021/12/cropped-logo02-2-32x32.png</url>
@@ -28,2067 +28,419 @@
 	<height>32</height>
 </image> 
 	<item>
-		<title>Turn on Backlight Keyboard</title>
-		<link>https://heavietnam.ga/2022/03/22/turn-on-backlight-keyboard/</link>
-					<comments>https://heavietnam.ga/2022/03/22/turn-on-backlight-keyboard/#respond</comments>
-		
-		<dc:creator><![CDATA[admin]]></dc:creator>
-		<pubDate>Tue, 22 Mar 2022 04:50:20 +0000</pubDate>
-				<category><![CDATA[post install]]></category>
-		<guid isPermaLink="false">https://heavietnam.ga/?p=2848</guid>
-
-					<description><![CDATA[<p>Đối với 1 số bàn phím cơ khi Hackintosh sẽ bị mất led keyboard để khắc phục điều này chúng ta sẽ làm như sau: B1: Download Releases · damieng/setledsmac (github.com). B2: Download Keyboard_Backlit_Files.zip. B3: Giải nén cả 2 tệp. B4: Mở Finder nhấn tổ hợp phím Shift + Command + G và gõ /Library. [...]</p>
-<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/03/22/turn-on-backlight-keyboard/">Turn on Backlight Keyboard</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
-]]></description>
-										<content:encoded><![CDATA[
-<p>Đối với 1 số bàn phím cơ khi Hackintosh sẽ bị mất led keyboard để khắc phục điều này chúng ta sẽ làm như sau:</p>
-
-
-
-<p>B1: Download <a href="https://github.com/damieng/setledsmac/releases">Releases · damieng/setledsmac (github.com)</a>.</p>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://i.imgur.com/7woq4J6.png" alt=""/></figure>
-
-
-
-<p>B2: Download <a href="https://www.mediafire.com/file/iaghltseh3xtu6j/Keyboard_Backlit_Files.zip/file">Keyboard_Backlit_Files.zip</a>.</p>
-
-
-
-<p>B3: Giải nén cả 2 tệp. </p>
-
-
-
-<p>B4: Mở Finder nhấn tổ hợp phím <code>Shift + Command + G</code> và gõ <code>/Library</code>.</p>
-
-
-
-<p>B5: Tạo 1 folder có tên <code>Keyboard Backlit</code>.</p>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://i.imgur.com/Jc5XOHp.png" alt=""/></figure>
-
-
-
-<p>B6: Copy file <code>setleds</code> vào <code>Keyboard Backlit</code>.</p>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://i.imgur.com/iNsB6iW.png" alt=""/></figure>
-
-
-
-<p>B7: Copy K<code>eyboardBacklit.sh</code> vào <code>Keyboard Backlit</code>.</p>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://i.imgur.com/K14wnjo.png" alt=""/></figure>
-
-
-
-<p>B8: Nhấn tổ hợp phím S<code>hift + Command + G</code> và gõ đường dẫn <code>/Library/LaunchAgents/</code></p>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://i.imgur.com/6gxZuSQ.png" alt=""/></figure>
-
-
-
-<p>B9: Copy file <code>com.keyboardbacklit.init.plist</code> vào đây. </p>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://i.imgur.com/upK20yp.png" alt=""/></figure>
-
-
-
-<p>B10: Mở Terminal và gõ các lệnh sau:</p>
-
-
-
-<pre class="wp-block-code"><code>sudo chown root /Library/LaunchAgents/com.keyboardbacklit.init.plist
-
-sudo chmod -R 755 /Library/Keyboard\ Backlit/
-
-sudo launchctl load -w /Library/LaunchAgents/com.keyboardbacklit.init.plist</code></pre>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://i.imgur.com/va47hy3.png" alt=""/></figure>
-
-
-
-<p><strong>Source tham khảo: <a href="https://www.tonymacx86.com/threads/how-to-turn-on-keyboard-backlit-through-scroll-lock-led-on-macos.251506/?fbclid=IwAR2Qr1ELm77UKdxtc8BFSM2F-IlmM1DI5sbN77kX-UQNcwGb_Fd0T4qrs70">How To Turn On Keyboard Backlit Through Scroll Lock Led On macOS | tonymacx86.com</a></strong></p>
-<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/03/22/turn-on-backlight-keyboard/">Turn on Backlight Keyboard</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
-]]></content:encoded>
-					
-					<wfw:commentRss>https://heavietnam.ga/2022/03/22/turn-on-backlight-keyboard/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
-		
-		
-			</item>
-		<item>
-		<title>Fix for slow AMD GPU</title>
-		<link>https://heavietnam.ga/2022/03/20/fix-for-slow-amd-gpu/</link>
-					<comments>https://heavietnam.ga/2022/03/20/fix-for-slow-amd-gpu/#respond</comments>
-		
-		<dc:creator><![CDATA[admin]]></dc:creator>
-		<pubDate>Sun, 20 Mar 2022 07:33:34 +0000</pubDate>
-				<category><![CDATA[post install]]></category>
-		<guid isPermaLink="false">https://heavietnam.ga/?p=2823</guid>
-
-					<description><![CDATA[<p>Ở macOS Monterey version 12.3+ các AMD GPU sẽ bị Apple bóp hiệu năng để fix điều này các bạn sẽ làm như sau: B1: Tải gfxutil. B2: Mở terminal lên kéo gfxutil vào Terminal và gõ -f GFX0 B3: Bạn tải file sau về fix.xml và mở bằng ProperTree. B4: Các bạn tiến hành [...]</p>
-<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/03/20/fix-for-slow-amd-gpu/">Fix for slow AMD GPU</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
-]]></description>
-										<content:encoded><![CDATA[
-<p>Ở macOS Monterey version 12.3+ các AMD GPU sẽ bị Apple bóp hiệu năng để fix điều này các bạn sẽ làm như sau:</p>
-
-
-
-<p>B1: Tải <a href="https://github.com/acidanthera/gfxutil/releases">gfxutil</a>.</p>
-
-
-
-<p>B2: Mở terminal lên kéo gfxutil vào Terminal và gõ <code>-f GFX0</code></p>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://i.imgur.com/EVhS2mn.png" alt=""/></figure>
-
-
-
-<p>B3: Bạn tải file sau về <a href="https://www.mediafire.com/file/1wmh922goaj8khg/fix.xml/file">fix.xml</a> và mở bằng <a href="https://github.com/corpnewt/ProperTree">ProperTree</a>.</p>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://i.imgur.com/RaIquFF.png" alt=""/></figure>
-
-
-
-<p>B4: Các bạn tiến hành thay:</p>
-
-
-
-<ul><li>1: Thay đường dẫn ở bước 2 vào.</li><li>2: Thay giá trị sau theo model:<ul><li>Radeon 5500: <code>ATY,Python</code></li><li>Radeon 5600 / 5700: <code>ATY,Adder</code></li><li>Radeon 6600: <code>ATY,Deepbay</code></li><li>Radeon 6800: <code>ATY,Belknap</code></li><li>Radeon 6900: <code>ATY,Carswell</code></li></ul></li></ul>
-
-
-
-<p>B5: Save lại và Reboot.</p>
-
-
-
-<p><strong>Source tham khảo: <a href="https://www.olarila.com/topic/25302-fix-for-slow-amd-gpu-after-monterey-123-update/?fbclid=IwAR39arh0lOj-WAyLGNPJ6n_oY7zvFG11fP2F5HGmqdn20E1-uICORbgIAXE">Fix for slow AMD GPU after Monterey 12.3 update &#8211; Guides and Tutorials &#8211; Olarila</a> | <a href="https://www.reddit.com/r/hackintosh/comments/ter3g2/psa_macos_monterey_123_and_amd_5xxx_and_6xxx_gpu/">PSA: macOS Monterey 12.3 and AMD 5xxx and 6xxx GPU issues : hackintosh (reddit.com)</a></strong></p>
-<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/03/20/fix-for-slow-amd-gpu/">Fix for slow AMD GPU</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
-]]></content:encoded>
-					
-					<wfw:commentRss>https://heavietnam.ga/2022/03/20/fix-for-slow-amd-gpu/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
-		
-		
-			</item>
-		<item>
-		<title>Fix Internal/External Card Reader</title>
-		<link>https://heavietnam.ga/2022/03/12/fix-internal-external-card-reader/</link>
-					<comments>https://heavietnam.ga/2022/03/12/fix-internal-external-card-reader/#respond</comments>
-		
-		<dc:creator><![CDATA[admin]]></dc:creator>
-		<pubDate>Sat, 12 Mar 2022 12:47:00 +0000</pubDate>
-				<category><![CDATA[post install]]></category>
-		<guid isPermaLink="false">https://heavietnam.ga/?p=2602</guid>
-
-					<description><![CDATA[<p>Chuẩn bị: B1: Mở Terminal và dán đoạn code sau vào: B2: Tải ProperTree (hoặc các trình edit file plist khác). B3: Tải Hackintool hoặc Kext-Droplet cho Big Sur. Tiến hành B1: Mở Finder và nhấn tổ hợp phím Shift + Command + G và gõ đường dẫn /System/Library/Extensions (S/L/E). B2: Ấn Command + F [...]</p>
-<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/03/12/fix-internal-external-card-reader/">Fix Internal/External Card Reader</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
-]]></description>
-										<content:encoded><![CDATA[
-<h2>Chuẩn bị:</h2>
-
-
-
-<p>B1: Mở Terminal và dán đoạn code sau vào:</p>
-
-
-
-<pre class="wp-block-code"><code>// dán từng dòng 1 vào terminal
-
-defaults write com.apple.Finder AppleShowAllFiles true
-
-killall Finder</code></pre>
-
-
-
-<p>B2: Tải <a href="https://github.com/corpnewt/ProperTree">ProperTree</a> (hoặc các trình edit file plist khác).</p>
-
-
-
-<p>B3: Tải <a href="https://github.com/headkaze/Hackintool">Hackintool</a> hoặc <a href="https://github.com/chris1111/Kext-Droplet-Big-Sur">Kext-Droplet</a> cho Big Sur.</p>
-
-
-
-<h2>Tiến hành</h2>
-
-
-
-<p>B1: Mở Finder và nhấn tổ hợp phím <code>Shift + Command + G</code> và gõ đường dẫn  <code>/System/Library/Extensions</code> (S/L/E).</p>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://i.imgur.com/b3ziwa6.png" alt=""/></figure>
-
-
-
-<p>B2: Ấn Command + F và search <code>AppleStorageDriver</code>.</p>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://i.imgur.com/bBnKxpo.png" alt=""/></figure>
-
-
-
-<p>B3: Copy Kext đó ra ngoài Desktop (hoặc bất cứ chỗ nào bạn thích).</p>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://i.imgur.com/a47Jh2i.png" alt=""/></figure>
-
-
-
-<p>B4: Bạn ấn chuột phải vào kext sau đó chọn <code>Show Package Contents</code> và truy cập vào <code>Contents &gt; Plugin</code> sau đó tìm kext <code>AppleUSBCardReader.kext</code> trong đó. </p>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://imgur.com/AU6fSld.png" alt=""/></figure>
-
-
-
-<p>B5: Bạn tiếp tục chọn <code>Show package Contents</code> &gt; <code>Contents</code> và edit file <code>info.plist</code> bằng ProperTree hoặc trình edit file plist của bạn. </p>
-
-
-
-<p>B6: Bạn ấn Command + F và Search <code>Physical Interconnect</code> sau đó edit giá trị của nó thành <code>External</code>.</p>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://i.imgur.com/Ve4S4HW.png" alt=""/></figure>
-
-
-
-<p>B7: Bạn có thể edit Vendor Identification thành tên của bạn hoặc bất cứ cái gì bạn thích (nếu tôn trọng tác giả thì thay đổi thành <code>Generic Reader by NoobsPlanet</code>).</p>
-
-
-
-<p>B8: Vào System Report. </p>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://imgur.com/fNWCjVv.png" alt=""/></figure>
-
-
-
-<p>B9: Vào tab USB sau đó Copy <code>Product ID and Vendor ID</code>.</p>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://i.imgur.com/frzLwOV.png" alt=""/></figure>
-
-
-
-<p>B10: Bạn ấn Command + F và search <code>Apple_Internal_SD_Card_Reader_1_00</code>.</p>
-
-
-
-<p>B11: Sửa <code>idProduct</code> và <code>idVenedor</code> bằng các giá trị vừa lấy ở Bước 9 (lưu ý chuyển nó về decimal trước khi nhập).</p>
-
-
-
-<ul><li>B1: Mở Hackintool tap Caculator.</li><li>B2: Nhập dữ liệu lấy được ở bước 9 vào ô Hex. </li></ul>
-
-
-
-<figure class="wp-block-embed is-type-rich is-provider-imgur wp-block-embed-imgur"><div class="wp-block-embed__wrapper">
-<blockquote class="imgur-embed-pub" lang="en" data-id="IkrVgZQ"><a href="https://imgur.com/IkrVgZQ">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
-</div></figure>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://i.imgur.com/unbgWtf.png" alt=""/></figure>
-
-
-
-<p>B12: Chỉnh 2 mục <code>dProduct</code> và <code>idVenedor</code> ở <code>Apple_Internal_SD_Card_Reader_2_00</code> với cùng giá trị dữ liệu như ở B11.</p>
-
-
-
-<p>B13: Chỉnh mục <code>Physical Interconnect</code> ở <code>Apple_internal_SD_Card_Reader_1_00</code>&nbsp;và&nbsp;<code>Apple_Internal_SD_Card_Reader_2_00</code> thành <code>External</code>.</p>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://i.imgur.com/1Yl1PAP.png" alt=""/></figure>
-
-
-
-<p>B14: Save Kext lại (Ấn tổ hợp phím Command + S).</p>
-
-
-
-<h2>Inject Kext</h2>
-
-
-
-<h3>Catalina: </h3>
-
-
-
-<p>B1: Bạn mở Hackintool lên. </p>
-
-
-
-<p>B2: Bạn chọn như ảnh. </p>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://i.imgur.com/qWXwm70.png" alt=""/></figure>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://i.imgur.com/KufJX3R.png" alt=""/></figure>
-
-
-
-<p>B3: Reboot</p>
-
-
-
-<h3>Big Sur:</h3>
-
-
-
-<p>B1: Các bạn chỉnh <code>CFBundleShortVersionString</code> và <code>CFBundleVersion</code> trong cả 2 file <code>info.plist</code> và <code>version.plist</code> cao hơn file gốc (cao hơn trong hình VD 511.141.2)</p>
-
-
-
-<figure class="wp-block-embed is-type-rich is-provider-imgur wp-block-embed-imgur"><div class="wp-block-embed__wrapper">
-<blockquote class="imgur-embed-pub" lang="en" data-id="wfgokdH"><a href="https://imgur.com/wfgokdH">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
-</div></figure>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://i.imgur.com/uIqevTJ.png" alt=""/></figure>
-
-
-
-<p>B2: Các bạn sử dụng Kext-Droplet để inject vào L/E (nhớ tắt <code>Gatekeeper</code> và <code>SIP</code>).</p>
-
-
-
-<p>B3: Reboot.</p>
-
-
-
-<p><strong>Lưu ý: Source tham khảo <a href="https://noobsplanet.com/threads/32/">https://noobsplanet.com/threads/32/</a> | <a href="https://www.youtube.com/watch?v=rIvoIfG6yzc">https://www.youtube.com/watch?v=rIvoIfG6yzc</a></strong></p>
-<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/03/12/fix-internal-external-card-reader/">Fix Internal/External Card Reader</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
-]]></content:encoded>
-					
-					<wfw:commentRss>https://heavietnam.ga/2022/03/12/fix-internal-external-card-reader/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
-		
-		
-			</item>
-		<item>
-		<title>SSDT  recomend</title>
-		<link>https://heavietnam.ga/2022/03/10/ssdt-recomend/</link>
-					<comments>https://heavietnam.ga/2022/03/10/ssdt-recomend/#respond</comments>
-		
-		<dc:creator><![CDATA[admin]]></dc:creator>
-		<pubDate>Thu, 10 Mar 2022 12:54:37 +0000</pubDate>
-				<category><![CDATA[post install]]></category>
-		<guid isPermaLink="false">https://heavietnam.ga/?p=2565</guid>
-
-					<description><![CDATA[<p>Đối với hầu hết các model chỉ cần SSDT-EC là đã có thể boot lên. Tuy nhiên để sử được đầy đủ chức năng thì các bạn sẽ cần add đầy đủ các SSDT. Sau đây là 1 sô ssdt khuyến khích nên có: Desktop Penryn/Lynnfield/Clarkdale SSDT-EC SandyBridge/Ivy Bridge CPU-PM SSDT-EC Haswell/Broadwell SSDT-PLUG ( hoặc [...]</p>
-<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/03/10/ssdt-recomend/">SSDT  recomend</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
-]]></description>
-										<content:encoded><![CDATA[
-<p>Đối với hầu hết các model chỉ cần <a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-DESKTOP.aml">SSDT-EC</a> là đã có thể boot lên. Tuy nhiên để sử được đầy đủ chức năng thì các bạn sẽ cần add đầy đủ các SSDT. Sau đây là 1 sô ssdt khuyến khích nên có:</p>
-
-
-
-<h2>Desktop</h2>
-
-
-
-<h3>Penryn/Lynnfield/Clarkdale</h3>
-
-
-
-<ul><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-DESKTOP.aml">SSDT-EC</a></li></ul>
-
-
-
-<h3>SandyBridge/Ivy Bridge</h3>
-
-
-
-<ul><li><a href="https://heavietnam.ga/2021/09/29/vi-3fix-power-manager/">CPU-PM</a></li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-DESKTOP.aml">SSDT-EC</a></li></ul>
-
-
-
-<h3>Haswell/Broadwell</h3>
-
-
-
-<ul><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-PLUG-DRTNIA.aml">SSDT-PLUG</a> ( hoặc <a href="https://heavietnam.ga/2021/09/29/vi-3fix-power-manager/">SSDT-PM</a> )</li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-DESKTOP.aml">SSDT-EC</a></li></ul>
-
-
-
-<h3>Skylake/Kaby Lake</h3>
-
-
-
-<ul><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-PLUG-DRTNIA.aml">SSDT-PLUG</a> ( hoặc <a href="https://heavietnam.ga/2021/09/29/vi-3fix-power-manager/">SSDT-PM</a> )</li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-USBX-DESKTOP.aml">SSDT-EC</a></li></ul>
-
-
-
-<h3>Coffee Lake</h3>
-
-
-
-<ul><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-PLUG-DRTNIA.aml">SSDT-PLUG</a> ( hoặc <a href="https://heavietnam.ga/2021/09/29/vi-3fix-power-manager/">SSDT-PM</a> )</li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-USBX-DESKTOP.aml">SSDT-EC</a></li><li><a href="https://heavietnam.ga/2021/09/29/xxix-dung-ssdt-time-de-prebuilt-ssdt/">SSDT-AWAC</a> ( dùng ssdt-time để prebuilt ssdt )</li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-PMC.aml">SSDT-PMC</a></li></ul>
-
-
-
-<h3>Comet Lake</h3>
-
-
-
-<ul><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-PLUG-DRTNIA.aml">SSDT-PLUG</a> ( hoặc <a href="https://heavietnam.ga/2021/09/29/vi-3fix-power-manager/">SSDT-PM</a> )</li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-USBX-DESKTOP.aml">SSDT-EC</a></li><li><a href="https://heavietnam.ga/2021/09/29/xxix-dung-ssdt-time-de-prebuilt-ssdt/">SSDT-AWAC</a> ( dùng ssdt-time để prebuilt ssdt )</li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-RHUB.aml">SSDT-RHUB</a></li></ul>
-
-
-
-<h3>AMD (17/19h)</h3>
-
-
-
-<ul><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-CPUR.aml">SSDT-CPUR</a></li></ul>
-
-
-
-<h2>High End Desktop</h2>
-
-
-
-<h3>Nehalem and Westmere</h3>
-
-
-
-<ul><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-USBX-DESKTOP.aml"><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-DESKTOP.aml">SSDT-EC</a></a></li></ul>
-
-
-
-<h3>Sandy Bridge-E/Ivy Bridge-E</h3>
-
-
-
-<ul><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-USBX-DESKTOP.aml"><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-DESKTOP.aml">SSDT-EC</a></a></li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-UNC.aml">SSDT-UNC</a></li></ul>
-
-
-
-<h3>Haswell-E/Broadwell-E</h3>
-
-
-
-<ul><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-PLUG-DRTNIA.aml">SSDT-PLUG</a> ( hoặc <a href="https://heavietnam.ga/2021/09/29/vi-3fix-power-manager/">SSDT-PM</a> )</li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-USBX-DESKTOP.aml">SSDT-EC</a></li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-RTC0-RANGE-HEDT.aml">SSDT-RTC0-RANGE</a></li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-UNC.aml">SSDT-UNC</a></li></ul>
-
-
-
-<h3>Skylake-X</h3>
-
-
-
-<ul><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-PLUG-DRTNIA.aml">SSDT-PLUG</a> ( hoặc <a href="https://heavietnam.ga/2021/09/29/vi-3fix-power-manager/">SSDT-PM</a> )</li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-USBX-DESKTOP.aml">SSDT-EC</a></li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-RTC0-RANGE-HEDT.aml">SSDT-RTC0-RANGE</a></li></ul>
-
-
-
-<h2>Laptop</h2>
-
-
-
-<h3>Clarksfield and Arrandale</h3>
-
-
-
-<ul><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-LAPTOP.aml">SSDT-EC</a></li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-PNLF.aml">SSDT-PNLF</a></li><li><a href="https://heavietnam.ga/2021/09/29/ii-patch-am-thanh-voi-apple-alc-with-patch-hpet/">SSDT-IRQ</a></li></ul>
-
-
-
-<h3>SandyBridge/Ivy Bridge</h3>
-
-
-
-<ul><li><a href="https://heavietnam.ga/2021/09/29/vi-3fix-power-manager/">SSDT-PM</a></li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-LAPTOP.aml">SSDT-EC</a></li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-PNLF.aml">SSDT-PNLF</a></li><li><a href="https://heavietnam.ga/2021/09/29/ii-patch-am-thanh-voi-apple-alc-with-patch-hpet/">SSDT-IRQ</a></li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-IMEI.aml">SSDT-IMEI</a></li></ul>
-
-
-
-<h3>Haswell/Broadwell</h3>
-
-
-
-<ul><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-PLUG-DRTNIA.aml">SSDT-PLUG</a> ( hoặc <a href="https://heavietnam.ga/2021/09/29/vi-3fix-power-manager/">SSDT-PM</a> )</li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-LAPTOP.aml">SSDT-EC</a></li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-PNLF.aml">SSDT-PNLF</a></li><li><a href="https://heavietnam.ga/2021/09/29/ii-patch-am-thanh-voi-apple-alc-with-patch-hpet/">SSDT-IRQ</a></li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-XOSI.aml">SSDT-XOSI</a> ( hoặc <a href="https://heavietnam.ga/2021/09/29/v-fix-trackpad/">SSDT-GPI0</a> )</li></ul>
-
-
-
-<h3>Skylake/Kaby Lake</h3>
-
-
-
-<ul><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-PLUG-DRTNIA.aml">SSDT-PLUG</a> ( hoặc <a href="https://heavietnam.ga/2021/09/29/vi-3fix-power-manager/">SSDT-PM</a> )</li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-USBX-LAPTOP.aml">SSDT-EC</a></li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-PNLF.aml">SSDT-PNLF</a></li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-XOSI.aml">SSDT-XOSI</a> ( hoặc <a href="https://heavietnam.ga/2021/09/29/v-fix-trackpad/">SSDT-GPI0</a> )</li></ul>
-
-
-
-<h3>Coffee Lake/Whiskey Lake/Comet Lake</h3>
-
-
-
-<ul><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-PLUG-DRTNIA.aml">SSDT-PLUG</a> ( hoặc <a href="https://heavietnam.ga/2021/09/29/vi-3fix-power-manager/">SSDT-PM</a> )</li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-USBX-LAPTOP.aml">SSDT-EC</a></li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-PNLF.aml">SSDT-PNLF</a></li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-XOSI.aml">SSDT-XOSI</a> ( hoặc <a href="https://heavietnam.ga/2021/09/29/v-fix-trackpad/">SSDT-GPI0</a> )</li><li><a href="https://heavietnam.ga/2021/09/29/xxix-dung-ssdt-time-de-prebuilt-ssdt/">SSDT-AWAC</a> ( dùng ssdt-time để prebuilt ssdt )</li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-PMC.aml">SSDT-PMC</a> ( chỉ sử dụng cho coffelake gen 9 )</li></ul>
-
-
-
-<h3>Ice Lake</h3>
-
-
-
-<ul><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-PLUG-DRTNIA.aml">SSDT-PLUG</a> ( hoặc <a href="https://heavietnam.ga/2021/09/29/vi-3fix-power-manager/">SSDT-PM</a> )</li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-USBX-LAPTOP.aml">SSDT-EC</a></li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-PNLF.aml">SSDT-PNLF</a></li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-XOSI.aml">SSDT-XOSI</a> ( hoặc <a href="https://heavietnam.ga/2021/09/29/v-fix-trackpad/">SSDT-GPI0</a> )</li><li><a href="https://heavietnam.ga/2021/09/29/xxix-dung-ssdt-time-de-prebuilt-ssdt/">SSDT-AWAC</a> ( dùng ssdt-time để prebuilt ssdt )</li><li><a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-RHUB.aml">SSDT-RHUB</a></li></ul>
-
-
-
-<p><strong>Lưu ý: đối với ssdt-awac các bạn có thay thế bằng cách sử dụng <a href="https://heavietnam.ga/2021/10/14/fix-rtc/">fix rtc</a></strong></p>
-
-
-
-<p><strong>Main source: <a href="https://dortania.github.io/OpenCore-Install-Guide/ktext.html#ssdts">https://dortania.github.io/OpenCore-Install-Guide/ktext.html#ssdts</a></strong></p>
-<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/03/10/ssdt-recomend/">SSDT  recomend</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
-]]></content:encoded>
-					
-					<wfw:commentRss>https://heavietnam.ga/2022/03/10/ssdt-recomend/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
-		
-		
-			</item>
-		<item>
-		<title>[EB&#124;#LOG:EXITBS:START]</title>
-		<link>https://heavietnam.ga/2022/03/03/eblogexitbsstart/</link>
-					<comments>https://heavietnam.ga/2022/03/03/eblogexitbsstart/#respond</comments>
+		<title>Fix lỗi glitch trên những máy chạy Intel HD 3000 có DVMT=0MB</title>
+		<link>https://heavietnam.ga/2022/04/10/fix-loi-glitch-tren-nhung-maychay-intel-hd-3000-co-dvmt0mb/</link>
+					<comments>https://heavietnam.ga/2022/04/10/fix-loi-glitch-tren-nhung-maychay-intel-hd-3000-co-dvmt0mb/#respond</comments>
 		
 		<dc:creator><![CDATA[nghilw]]></dc:creator>
-		<pubDate>Thu, 03 Mar 2022 10:47:59 +0000</pubDate>
+		<pubDate>Sun, 10 Apr 2022 14:56:09 +0000</pubDate>
+				<category><![CDATA[post install]]></category>
+		<guid isPermaLink="false">https://heavietnam.ga/?p=2957</guid>
+
+					<description><![CDATA[<p>Đây là cách làm cảu mình nên các bạn có thể tham khảo và làm thử *Lưu ý: patch này chỉ áp dụng cho macOS High Sierra trở xuống, nếu như các bạn ở Catalina thì các bạn cần pahri inject kext Intel HD 3000 trước Chuyện là mình có con HP Probook 6560b hackintosh [...]</p>
+<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/04/10/fix-loi-glitch-tren-nhung-maychay-intel-hd-3000-co-dvmt0mb/">Fix lỗi glitch trên những máy chạy Intel HD 3000 có DVMT=0MB</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p><strong>Đây là cách làm cảu mình nên các bạn có thể tham khảo và làm thử</strong></p>
+
+
+
+<p>*Lưu ý: patch này chỉ áp dụng cho macOS High Sierra trở xuống, nếu như các bạn ở Catalina thì các bạn cần pahri inject kext Intel HD 3000 trước</p>
+
+
+
+<p>Chuyện là mình có con HP Probook 6560b hackintosh Catalina nhưng nó cứ bị glitch và hay bị đơ. Sau và tháng mày mò thi mình tìm được một cách fix tạm bợ</p>
+
+
+
+<p>Cách làm:</p>
+
+
+
+<p>B1: Các bạn vào trang sau:&nbsp;<a href="https://www.applelife.ru/threads/ustanovka-macos-high-sierra-10-13-na-intel-pc.2210706/page-742#post-730496">https://www.applelife.ru/threads/ustanovka-macos-high-sierra-10-13-na-intel-pc.2210706/page-742#post-730496</a></p>
+
+
+
+<p>B2 Khi vào trong đó, bạn sẽ thấy một bài post có nội dung như sau của Slava77:</p>
+
+
+
+<pre class="wp-block-preformatted">&lt;dict&gt;
+                &lt;key&gt; Comment &lt;/key&gt;
+                &lt;string&gt; hd3000 Fix &lt;/string&gt;
+                &lt;key&gt; Find &lt;/key&gt;
+                &lt;data&gt;
+                AQIEABAHAAAQBw ==
+                &lt;/data&gt;
+                &lt;key&gt; Name &lt;/key&gt;
+                &lt;string&gt; com.apple.driver.AppleIntelSNBGraphicsFB &lt;/string&gt;
+                &lt;key&gt; Replace &lt;/key&gt;
+                &lt;data&gt;
+                AAEEgBAHAAAQBw ==
+                &lt;/data&gt;
+            &lt;/dict&gt;
+            &lt;dict&gt;
+                &lt;key&gt; Comment &lt;/key&gt;
+                &lt;string&gt; HD3000 384 - &amp; gt; 2048 &lt;/string&gt;
+                &lt;key&gt; Find &lt;/key&gt;
+                &lt;data&gt;
+                0AAAABg =
+                &lt;/data&gt;
+                &lt;key&gt; Name &lt;/key&gt;
+                &lt;string&gt; com.apple.driver.AppleIntelSNBGraphicsFB &lt;/string&gt;
+                &lt;key&gt; Replace &lt;/key&gt;
+                &lt;data&gt;
+                0AAAAIA =
+                &lt;/data&gt;
+            &lt;/dict&gt;
+            &lt;dict&gt;
+                &lt;key&gt; Comment &lt;/key&gt;
+                &lt;string&gt; HD3000 512 - &amp; gt; 2048 &lt;/string&gt;
+                &lt;key&gt; Find &lt;/key&gt;
+                &lt;data&gt;
+                0AAAACA =
+                &lt;/data&gt;
+                &lt;key&gt; Name &lt;/key&gt;
+                &lt;string&gt; com.apple.driver.AppleIntelSNBGraphicsFB &lt;/string&gt;
+                &lt;key&gt; Replace &lt;/key&gt;
+                &lt;data&gt;
+                0AAAAIA =
+                &lt;/data&gt;
+&lt;/dict&gt;
+
+B3 các bạn add các giá trị ở trên vào OpenCore
+*lưu ý đối với 2 cái patch cuối: HD3000 384 - &amp; gt; 2048 và HD3000 512 - &amp; gt; 2048 thì các bạn chỉ chọn 1 trong 2. Nếu máy các bạn có 4GB ram thì chọn patch HD3000 384 - &amp; gt; 2048</pre>
+
+
+
+<p>còn nếu&nbsp; máy bạn có +8GB ram thì chọn cái patch HD3000 512 &#8211; &amp; gt; 2048</p>
+
+
+
+<p>Các bạn add vào OC như sau:</p>
+
+
+
+<p>Các bạn vào mục Kernel-&gt;Patch của config OpenCore-Bấm copy mục 0 ở đó và paste ra Kernel-Patch</p>
+
+
+
+<p>Sau đó add các giá trị như sau:</p>
+
+
+
+<pre class="wp-block-code"><code>Enabled : True
+
+comment: hd3000 fix
+
+count:0
+
+limit:0
+
+Max kernel: để trống
+
+Min kernel: để trống
+
+Find: Các bạn convert AQIEABAHAAAQBw == dưới dạng BASE64 sang HEX sẽ thành: 01020400100700001007. Các bạn copy giá trị HEX đó vào Mục Find
+
+Identifier: com.apple.driver.AppleIntelSNBGraphicsFB
+
+Replace: Tương tự như phần Find, các bạn convert AAEEgBAHAAAQBw == dưới dạng BASE64 sang HEX sẽ được 00010480100700001007. Các bạn copy giá trị HEX vừa convert vào mục Find</code></pre>
+
+
+
+<p>Tăng Vram lên 2048MB:</p>
+
+
+
+<p>Các bạn tạo tiếp một setting 0 ở dưới như cách làm ở phần trên</p>
+
+
+
+<p>Các bạn diền nhưng thông tin sau vào các ô:</p>
+
+
+
+<pre class="wp-block-code"><code>Comment: HD3000 384 – &amp; gt; 2048 cho máy có 4GB Ram hoặc  HD3000 512 – &amp; gt; 2048 nếu máy các bạn có +8GB ram
+
+Enabled: True
+
+Count:0
+
+Limit:0
+
+Max kernel: để trống
+
+Min kernel: để trống
+
+Find: D000000018(nếu máy các bạn có 4GB ram) hoặc D000000020 (nếu máy các bạn có +8GB ram)
+
+Replace:D000000080(áp dụng cho tất cả các máy)</code></pre>
+
+
+
+<p>B4: Save config lại và reboot thử</p>
+<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/04/10/fix-loi-glitch-tren-nhung-maychay-intel-hd-3000-co-dvmt0mb/">Fix lỗi glitch trên những máy chạy Intel HD 3000 có DVMT=0MB</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://heavietnam.ga/2022/04/10/fix-loi-glitch-tren-nhung-maychay-intel-hd-3000-co-dvmt0mb/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>1 số lỗi propertree</title>
+		<link>https://heavietnam.ga/2022/04/10/1-so-loi-propertree/</link>
+					<comments>https://heavietnam.ga/2022/04/10/1-so-loi-propertree/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Sun, 10 Apr 2022 14:47:35 +0000</pubDate>
 				<category><![CDATA[install hackintosh]]></category>
-		<guid isPermaLink="false">https://heavietnam.ga/?p=2546</guid>
+		<guid isPermaLink="false">https://heavietnam.ga/?p=2953</guid>
 
-					<description><![CDATA[<p>Phần này sẽ được chia làm 3 phần: Vấn đề về booter Vấn đề về Patch Kernel Vấn đề về UEFI Vấn đề về máy ảo Lỗi liên quan&#160;đến booster Những nguyên nhân chính gây ra lỗi này là: DevirtualiseMmio Một vài vùng MMIO vẫn bắt buộc phải có để hoạt động bình thường, vì [...]</p>
-<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/03/03/eblogexitbsstart/">[EB|#LOG:EXITBS:START]</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
+					<description><![CDATA[<p>monterey: nếu các bạn đã lên monterey thì có thể gặp những&#160; lỗi sao khi sử dụng propertree black screen propertree: nguyên nhân là do gói tk đi kèm theo python bạn cài chưa tương thích với macos monterey Cách khác phục là các bạn tải gói python 3.9.7 ( không phải bản&#160;universal ) từ [...]</p>
+<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/04/10/1-so-loi-propertree/">1 số lỗi propertree</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
 ]]></description>
 										<content:encoded><![CDATA[
-<p>Phần này sẽ được chia làm 3 phần:</p>
+<h1>monterey:</h1>
 
 
 
-<ul><li>Vấn đề về booter</li><li>Vấn đề về Patch Kernel</li><li>Vấn đề về UEFI</li><li>Vấn đề về máy ảo</li></ul>
+<p>nếu các bạn đã lên monterey thì có thể gặp những&nbsp; lỗi sao khi sử dụng propertree</p>
 
 
 
-<h2><strong>Lỗi liên quan&nbsp;đến booster</strong></h2>
+<ol><li>black screen propertree:<ul><li>nguyên nhân là do gói tk đi kèm theo python bạn cài chưa tương thích với macos monterey</li><li>Cách khác phục là các bạn tải gói python 3.9.7 ( không phải bản&nbsp;universal ) từ trang&nbsp;<a href="http://python.org/">python.org</a>&nbsp;hoặc tải trực tiếp&nbsp;<a href="https://www.python.org/ftp/python/3.9.7/python-3.9.7-macosx10.9.pkg">tại đây</a>. Sau đó tiến hành cài và tải bản propertree mới nhất&nbsp;<a href="https://github.com/corpnewt/ProperTree">tại đây</a>. Và chạy tập lệnh&nbsp;<code>buildapp-select.command</code>&nbsp;sau đó trong folder&nbsp;<code>Scripts</code>&nbsp;của propertree ( chọn mục build app với python3 )</li></ul></li><li>không thể save và mở file plist<ul><li>nguyên nhân cũng tương tự như lỗi 1 đây là do sử dụng gói&nbsp;universal&nbsp;</li><li>Cách khắc phục là các bạn tải bản propertree 3.9.7 ( intel only ) tại trang&nbsp;<a href="http://python.org/">python.org</a>&nbsp;hoặc tải&nbsp;<a href="https://www.python.org/ftp/python/3.9.7/python-3.9.7-macosx10.9.pkg">tại đây</a>&nbsp;sau đó chạy tập lệnh&nbsp;<code>buildapp-select.command</code>&nbsp;trong folder&nbsp;<code>Scripts</code>&nbsp;( nhớ chọn build app with python3 )</li></ul></li></ol>
 
 
 
-<p>Những nguyên nhân chính gây ra lỗi này là:</p>
+<h1>ubuntu:</h1>
 
 
 
-<h3><strong>DevirtualiseMmio</strong></h3>
+<ol><li>khi run propertree gặp lỗi&nbsp;<strong><code>[ModuleNotFoundError: No module name 'tkinter']</code></strong><ul><li>nguyên nhân là do tk chưa được cài đặt</li><li>Cách khắc phục là chạy lệnh sau trong terminal&nbsp;<code>sudo apt-get install python3-tk -y</code></li></ul></li><li>Propertree không chạy vì không đủ quyền<ul><li>nguyên nhân do propertree không có quyền để chạy</li><li>Cách khắc phục các bạn gõ lệnh sau vào terminal&nbsp;<code>chmod +x ProperTree.command</code></li></ul></li></ol>
 
 
 
-<ul><li> Một vài vùng MMIO vẫn bắt buộc phải có để hoạt động bình thường, vì vậy bạn cần phải loại những vùng này ở trong Booter -&gt; MMIOWhitelist hoặc là bạn phải tắt cái dòng config này luôn. Các bạn có thể xem ở đây: <a href="http://heavietnam.ga/2022/01/31/using-devirtualisemmio/">Using Devirtualise MMIO</a><ul><li> Đối với những bạn dùng mainboard chipset TRx40 của AMD thì hãy bật cái dòng config này</li></ul><ul><li> Đối với những bạn dùng Mainboard chipset X99 thì hãy tắt cái dòng config này vì nó có thể vô tác dụng đối với một số firmware</li></ul></li></ul>
+<p>và như vậy là xong  nếu có lỗi gì mình sẽ tiếp tục cập nhân follow this forum để nhận được nhưng tin tức mới liên tục.</p>
 
 
 
-<h3><strong>SetupVirtualMap</strong></h3>
-
-
-
-<ul><li> Dòng config này là bắt buộc phỉa bật đối với hầu hết các firrmware, nếu không có nó thì máy các bạn sẽ dễ bị dính lỗi kernel pannic ở đây, vì vậy các bạn nên bật nó nếu như các bạn vẫn chưa bật nó trong config</li></ul>
-
-
-
-<ul><li> Những máy nào có chipset Z390 hoặc cũ hơn thì bắt buộc phải bật cái này</li></ul>
-
-
-
-<ul><li><strong>Tuy nhiên</strong>,&nbsp;một số firmware(chủ yếu là những firmware từ năm 2020 trở đi) sẽ không tương thích với cái setting này và làm cho máy bạn bị kernel pannic chảng hạn như:<ul><li> CPU Intel dòng Icelake</li></ul><ul><li> Chipset Intel dòng Commet Lake(B460, H470, Z490, vv)</li></ul><ul><li> Mainboard AMD chipset B550 ,A520(bao gồm cả chipset X570 với bios bản mới nhất)</li></ul><ul><li> Một số mainboard AMD chipset B450 và X470 cũng giống với những mainboard ở trên khi cập nhật bios lên bản mới nhất</li><li>Mainboard chipset TRx40 của AMD</li><li>Các máy ảo chẳng hạn như QEMU</li><li> Mainboard chipset X299 với bios từ năm 2020 trở đi (cái này cũng áp dụng cho những mainboard X299 với bản BIOS từ cuối năm 2019 và sau từ năm 2020 trở đi)</li></ul></li></ul>
-
-
-
-<h3><strong>EnableWriteUnprotector</strong></h3>
-
-
-
-<p>&nbsp;&nbsp;&nbsp;  Một vấn đề khác chính là macOS có thể đang bị xung đột với lại chức năng chống ghi từ CR0, để fix cái này chũng ta có 2 lựa chọn:</p>
-
-
-
-<ul><li> Nếu frmware của máy các ban hỗ trợ MATs (firmware tù năm 2018 trở đi)<ul><li> EnableWriteUnprotector -> False</li><li> RebuildAppleMemoryMap -> True</li><li> SyncRuntimePermissions -> True</li></ul></li><li> Đối với những máy có firmware cũ hơn:<ul><li> EnableWriteUnprotector -> True</li><li> RebuildAppleMemoryMap -> False</li><li> SyncRuntimePermissions -> True</li></ul></li></ul>
-
-
-
-<p> Lưu ý: Một vài laptop (ví dụ như Dell Inspiron 5370) mặc dù có hỗ trợ MATs nhưng chũng vẫn bị lỗi khi boot lên, đối với nhũng máy như thế này các bạn có 2 lựa chọn:</p>
-
-
-
-<ul><li> Boot máy với setting của máy có firrmware cũ hơn (*Đối với những máy có firmware cũ hơn)</li></ul>
-
-
-
-<ul><li> Bật DevirtualiseMmio và làm theo <a href="https://heavietnam.ga/2022/01/31/using-devirtualisemmio/">Using DevirtualiseMmio</a></li></ul>
-
-
-
-<p>Về vấn đề hỗ trợ MATs những firmware chống lại EDK 2018đã hỗ trợ MATs và nhều OEM đã support nó từ thời laptop Skylake(2016) vấn đề chỉ là chũng ta không rx liệu các OEM đã cập nhật firrmware đề hỗ trợ tính năng này hay chưa. Để kiểm tra xem amsy các bạn có hỗ tợ MATS hay không, các bạn có thể dùng tính năng lấy log của OpenCore &nbsp;&nbsp;</p>
-
-
-
-<p><code>OCABC: MAT support is 1</code></p>
-
-
-
-<p>*Lưu ý: &nbsp;có nghĩa là firrmware của máy các bạn hỗ trợ MAT còn 0 có nghĩ là nó không hỗ trợ</p>
-
-
-
-<h2><strong>Lỗi liên quan đến</strong><strong>&nbsp;</strong><strong>Patch Kernel</strong>&nbsp;</h2>
-
-
-
-<p>Lỗi liên quan đến cái này sẽ được phân ra làm 2 giữa Intel và AMD</p>
-
-
-
-<h3> AMD</h3>
-
-
-
-<p>     Thiếu các <a href="https://github.com/AMD-OSX/AMD_Vanilla">patch kernel</a> (chỉ áp dụng cho CPU AMD, hãy đảm bảo là chũng là nhũng patch OpenCore chứ không phải Clover). Clover sử dụng MatchOS trong khi OpenCore dùng MinKernel and Maxkernel)</p>
-
-
-
-<p><strong>     Lưu ý là những bản patch cũng gây ra những lỗi tương tự nên các bạn hãy đảm bảo rằng các bạn đang dùng bản patch mới nhất cho AMD OS X</strong></p>
-
-
-
-<h3> Intel</h3>
-
-
-
-<ul><li>AppleXcpmCfgLock và AppleCpuPmCfgLock</li><li>Nếu thiếu patch CFG hoặc XCPM thì các bạn hãy bật AppleXcpmCfgLock và AppleCpuPmCfgLock trong config<ul><li> Các máy dùng CPU Haswell và mới hơn chỉ cần AppleXcpmCfgLock &nbsp;&nbsp;&nbsp;</li><li> Các máy dùng CPU Ivy Bridge và cũ hơn chỉ cần AppleCpuPmCfgLock</li><li> Các máy dùng CPU Broadwell và cũ hơn cần phải bật AppleCpuPmCfgLock khi các bạn chạy OSX 10.10 trở xuống</li></ul></li></ul>
-
-
-
-<p><strong>Ngoài ra các bạn co thể tắt hoàn toàn CFG-Lock: Fixing CFG Lock</strong></p>
-
-
-
-<p>AppleXcpmExtraMsrs Có thể bắt buộc, seting này thường chỉ dành cho các CPU như Pentinum, HEDT và một số các máy khác có CPU không được hỗ trợ chĩnh thức trong macOS</p>
-
-
-
-<ul><li>Các CPU Intel đời rất cũ:<ul><li>Đối với macOS Big Sur, nhiều firmware gặp vấn đề trong việc các định số nhân CPU và khi đó sẽ gặp kernel pannic sớm nên không thể in lỗi này lên màn hình . Thông qua serial, các bạn có thể thấy nó báo như sau: <code>max_cpus_from_firmware not yet initialized</code></li><li>Cách giải quyết:<ul><li>Bật AvoidRuntimeDefrag ở trong Booter -&gt; Quirks</li><li>Cách này sẽ hoạt động đối với hầu hết các firmware</li><li>Trong trường hợp các bạn đã làm cách trên những nó vẫn không fix được thfi các bạn hãy thêm như sau vào mục Kernel -&gt; Patch</li></ul></li></ul></li></ul>
-
-
-
-<figure class="wp-block-image is-style-default"><img alt=""/></figure>
-
-
-
-
-
-<h2>Lỗi liên quan đến UEFI</h2>
-
-
-
-<ul><li>ProvideConsoleGop<ul><li>Bắt buộc phải có cho việc chuyển từ màn hình log của OpenCore. Đây từng là một phần trong AptioMemoryFix nhưng hiện tại thì tính năng này đã được chuyển sang dạng setting trong OpenCore.</li><li>Từ bản OpenCore version 0.5.6, tính năng này đã được bật từ động trong config.plist</li></ul></li></ul>
-
-
-
-<ul><li>IgnoreInvalidFlexRatio<ul><li>Bắt buộc phải có đối với các CPU từ đời Broadwell trờ xuống, Không bắt buộc đối với CPU AMD và CPU Intel từ đời Skylake trờ lên</li></ul></li></ul>
-
-
-
-<p>Sources: <a href="https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/kernel-issues.html#stuck-on-eb-log-exitbs-start">Dortania</a></p>
-<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/03/03/eblogexitbsstart/">[EB|#LOG:EXITBS:START]</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
+<p>Source tham khảo: <a href="https://github.com/corpnewt/ProperTree">corpnewt/ProperTree: Cross platform GUI plist editor written in python. (github.com)</a></p>
+<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/04/10/1-so-loi-propertree/">1 số lỗi propertree</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>https://heavietnam.ga/2022/03/03/eblogexitbsstart/feed/</wfw:commentRss>
+					<wfw:commentRss>https://heavietnam.ga/2022/04/10/1-so-loi-propertree/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
-		<title>HotPlug Thunderbolt 3</title>
-		<link>https://heavietnam.ga/2022/02/13/hotplug-thunderbolt-3/</link>
-					<comments>https://heavietnam.ga/2022/02/13/hotplug-thunderbolt-3/#respond</comments>
+		<title>Macos 12: monterey￼</title>
+		<link>https://heavietnam.ga/2022/04/10/fix-loi-khong-mount-duoc-file-dmg-tren-monterey/</link>
+					<comments>https://heavietnam.ga/2022/04/10/fix-loi-khong-mount-duoc-file-dmg-tren-monterey/#respond</comments>
 		
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<pubDate>Sun, 13 Feb 2022 10:44:51 +0000</pubDate>
-				<category><![CDATA[post install]]></category>
-		<guid isPermaLink="false">https://heavietnam.ga/?p=2475</guid>
-
-					<description><![CDATA[<p>Tìm hiểu chung Patch Thunderbolt là 1 việc khá vất vả bạn nên tìm hiểu việc Patch DSDT trước khi đọc guide này (Patch DSDT Phần 1, Patch DSDT Phần 2, Patch DSDT Phần 3). Trước tiên chúng ta hãy cùng nhau tìm hiểu sự hoạt động của Thunderbolt trên Windows và macOS. Ở trên [...]</p>
-<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/02/13/hotplug-thunderbolt-3/">HotPlug Thunderbolt 3</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
-]]></description>
-										<content:encoded><![CDATA[
-<h2 id="tim-hiểu-chung">Tìm hiểu chung </h2>
-
-
-
-<p>Patch Thunderbolt là 1 việc khá vất vả bạn nên tìm hiểu việc Patch DSDT trước khi đọc guide này (<a href="https://heavietnam.ga/2021/09/29/xxvi-patch-dsdt-phan-1/">Patch DSDT Phần 1</a>, <a href="https://heavietnam.ga/2021/09/29/xxvii-patch-dsdt-phan-2/">Patch DSDT Phần 2</a>, <a href="https://heavietnam.ga/2021/09/29/xxviii-patch-dsdt-phan-3/">Patch DSDT Phần 3</a>).</p>
-
-
-
-<p>Trước tiên chúng ta hãy cùng nhau tìm hiểu sự hoạt động của Thunderbolt trên Windows và macOS.</p>
-
-
-
-<p>Ở trên Windows cổng Thunderbolt được cấp nguồn khi có 1 thiết bị được cắm vào cổng Thunderbolt. Khi bị ngắt kết nối thì nguồn điện cũng tự ngắt khỏi cổng Thunderbolt.</p>
-
-
-
-<p>Mặt khác ở macOS Thunderbolt luôn được cấp nguồn khi được kết nối thì nó sẽ được kết nối vào Thunderbolt cho đến khi tắt máy.</p>
-
-
-
-<p>Nhưng đối với Hackintosh nó là sự hỗ hợp của Windows và macOS do đó bạn chỉ có thể sử dụng Thunderbolt nếu bạn cắm nó trước khi khởi động do đó chúng ta cần hotplug.</p>
-
-
-
-<h2 id="setting-bios">Setting BIOS</h2>
-
-
-
-<h3 id="lưu-y">Lưu ý:</h3>
-
-
-
-<p>Nhưng giá trị mặc định tức là giữ nguyên sau khi bạn đặt lại BIOS.</p>
-
-
-
-<p>Nếu dòng máy của bạn không có những Option trong đây thì hãy để mặc định.</p>
-
-
-
-<p>Nếu bạn đang dùng Thunderbolt cards or chips with flashed firmware thì disable <code>Thunderbolt USB Support</code> hoặc không tìm thấy option này thì disable <code>Thunderbolt Boot Support</code>.</p>
-
-
-
-<p>Nếu máy không có tùy chọn GPIO Force Pwr thì hãy xem cách enable nó ở phần dưới.</p>
-
-
-
-<h3 id="desktop">Desktop </h3>
-
-
-
-<h4 id="general-1">General: </h4>
-
-
-
-<ul><li>Discrete Thunderbolt(TM) Support: Enabled.</li><li>TBT Vt-d base security: Disable.</li><li>Thunderbolt Boot Support: Enabled / Boot Once.</li><li>GPIO Force Pwr: Enable.</li><li>Skip PCI OptionRom: Enable.</li><li>Wake from Thunderbolt(TM) Devices: Enable.</li><li>Security Level: SL0-No Security.</li><li>DTBT Controller 0: Enable.</li><li>TBT Host Router: Two port.</li><li>Extra Bus Reserved: Mặc định.</li><li>Reserved Memory: Mặc định. </li><li>Reserved PMemory: Mặc định. </li><li>Reserved I/O: Mặc định. </li></ul>
-
-
-
-<h4 id="asus-600-series">Asus 600 series:</h4>
-
-
-
-<ul><li>PCIE Tunneling Over USB4: Disable.</li><li>Discrete Thunderbolt(TM) Support: Enable.</li><li>Wake from Thunderbolt(TM) Devices: Enable.</li><li>Thunderbolt Boot Support: Enable.</li><li>DTBT Go2Sx Command: Enable.</li><li>Windows 10 Thunderbolt support: Enable.</li><li>DTBT Controller 0: Enable.</li><li>TBT Host Router: Enable.</li><li>Extra Bus Reserved: Mặc định.</li><li>Reserved Memory: Mặc định.</li><li>Memory Alignment: Mặc định.</li><li>Reserved PMemory: Mặc định.</li><li>PMemory Alignment: Mặc định.</li><li>Reserved I/O: Mặc định. </li></ul>
-
-
-
-<h4 id="msi">MSI:</h4>
-
-
-
-<ul><li>Discrete Thunderbolt(TM) Support: Enable. </li><li>Wake from Thunderbolt(TM) Devices: Enable.</li><li>Current Security Level: Enable.</li><li>Native OS Security for TBT: Enable.</li><li>Thunderbolt USB Support: Enable.</li><li>Thunderbolt Boot Support: Enable. </li><li>Titan Ridge Workaround for OSUP: Enable.</li><li>Tbt Dynamic AC/DC L1: Enable.</li><li>GPIO Force Pwr: Enable.</li><li>Wait time in ms after applying Force Pwr: Mặc định. </li><li>GPIO filter: Enable.</li><li>DTBT Controller 0: Enable.</li><li>TBT Host Router: two port </li><li>Extra Bus Reserved: Mặc định.</li><li>Reserved Memory: Mặc định.</li><li>Memory Alignment: Mặc định.</li><li>Reserved PMemory: Mặc định.</li><li>PMemory Alignment: Mặc định.</li><li>Reserved I/O: Mặc định.</li><li>Windows 10 Thunderbolt support: Enable + RTD3</li></ul>
-
-
-
-<h3 id="laptop">Laptop</h3>
-
-
-
-<h4 id="asus-clevo">ASUS/Clevo:</h4>
-
-
-
-<ul><li>Intel Thunderbolt Technology: Enable.</li><li>Security: <ul><li>Unique ID:  Trên Laptop đời mới.</li><li>Normal Mode w/o NHI: trên lap cũ hơn như Haswell. </li></ul></li><li>Thunderbolt Boot Support: Enable.</li><li>Security Level: SL0-No Security.</li><li>Extra Bus Reserved: Mặc định.</li><li>Reserved Memory: Mặc định.</li><li>Reserved PMemory: Mặc định.</li><li>PMemory Alignment: Mặc định.</li><li>Reserved I/O: Mặc định.</li></ul>
-
-
-
-<h4 id="general">General:</h4>
-
-
-
-<ul><li>Intel Thunderbolt Technology: Enable.</li><li>Discrete Thunderbolt(TM) Support: Enable.</li><li>TBT Vt-d Base Security: disable</li><li>Thunderbolt Boot Support: disable</li><li>Wake from Thunderbolt(TM) Devices: Enable.</li><li>Security Level:<ul><li>No Security: Đối với hầu hết các loại máy.</li><li>SL0-No Security: Giống như tùy chọn No Security sử dụng khi không có tùy chọn No Security.</li><li>Legacy Mode: Thiết bị Legacy.</li><li>Unique ID: Chỉ áp dụng đối với laptop.</li></ul><ul><li>One time saved Key: One time saved Key.</li><li>DP++ only: DP++ only.</li><li>Normal Mode w/o NHI: Ở trên 1 số laptop cũ như haswell sử dụng tùy chọn này thay cho debug mode.</li><li>Debug Mode: Ở trên 1 số laptop cũ như haswell sử dụng tùy chọn <code>Normal Mode w/o NH</code> thay cho tùy chọn này. </li></ul></li><li>Thunderbolt Usb Support: Enable/ Disable.</li><li>GPIO Force Pwr: Enable. </li><li>DTBT Controller 0: Enable.</li><li>TBT Host Router: Mặc định.</li><li>Extra Bus Reserved: Mặc định.</li><li>Reserved Memory: Mặc định.</li><li>Memory Alignment: Mặc định.</li><li>Reserved PMemory: Mặc định.</li><li>PMemory Alignment: Mặc định. </li><li>Reserved I/O: Mặc định.  </li><li>TBT Root port Selector: <ul><li>Auto Detect: Tự động chọn cổng Thunderbolt.</li><li>Thunderbolt USB: Nếu Thunderbolt USB hoạt động thì nên chọn tùy chọn này. </li></ul></li><li>Thunderbolt(TM) PCI Cache-line size: Mặc định.</li><li>Wait time in ms after applying Force Pwr: Mặc định.</li><li>Skip PCI OptionRom: enable</li><li>Reserve memory per phy slot: Mặc định.</li><li>Reserve P memory per phy slot: Mặc định.</li><li>Reserve IO per phy slot: Mặc định.</li><li>Delay before SX Exit: Mặc định.</li><li>GPIO Filter: Enable.</li><li>Enable CLK REQ: Disable.</li><li>Enable ASPM: Disable.</li><li>Enable LTR: Disable.</li><li>Alpine Ridge XHCi WA: Enable.</li><li>AR XHCI Host Pre-Wake: Enable.</li><li>AR XHCI Host Active LTR: Mặc định.</li><li>AR XHCI Host High LTR: Mặc định.</li><li>AR XHCI Host Medium LTR: Mặc định.</li><li>AR XHCI Host Low LTR: Mặc định.</li></ul>
-
-
-
-<h2 id="enable-gpio-force-pwr">Enable GPIO Force Pwr</h2>
-
-
-
-<h3 id="cach-1-dung-uefitool">Cách 1: Dùng UEFITool</h3>
-
-
-
-<p>B1: Tải UEFITool <a href="https://github.com/LongSoft/UEFITool/releases">tại đây</a> Không tải version Axx</p>
-
-
-
-<p>B2: Tải file BIOS của các bạn ( định dạng .bin ).</p>
-
-
-
-<p>B3: Mở file BIOS ra bằng UEFITool và nhấn Command + F sau đó search <code>Force Pwr</code> (định dạng là unicode).</p>
-
-
-
-<p>B4: Bạn sẽ nhận được kết quả tìm kiếm ở mục có subtext là <code>DXE driver </code>text là <code>setup</code>.</p>
-
-
-
-<p>B5: Nhấn extra body. </p>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://www.tonymacx86.com/attachments/screen-shot-2020-06-29-at-13-01-53-png.478421/" alt=""/></figure>
-
-
-
-<p>B6: Tải <a rel="noreferrer noopener" href="https://github.com/LongSoft/Universal-IFR-Extractor/releases/" target="_blank">Universal-IFR-Extractor</a> và run ở trên Terminal (các run tham khảo <a href="https://heavietnam.ga/2021/10/28/xxxviii-disable-cfg-clock/#Cach_1_Disable_trong_config">XXXVIII. Disable CFG-Clock &#8211; Heavietnam February 2022</a>).</p>
-
-
-
-<figure class="wp-block-image"><img src="https://www.tonymacx86.com/attachments/screen-shot-2020-06-29-at-13-07-03-png.478422/" alt=""/></figure>
-
-
-
-<p>B7: Mở file text vừa dump ra và search <code>GPIO3 Force Pwr</code> (mặc định là disable | hoặc search <code>GPIO Force Pwr</code>).</p>
-
-
-
-<p>B8: Nhìn phía trên dòng tìm được:</p>
-
-
-
-<figure class="wp-block-image"><img src="https://www.tonymacx86.com/attachments/screen-shot-2020-06-29-at-13-12-03-png.478423/" alt=""/></figure>
-
-
-
-<p>B9: Copy <code>12 06 25 2B 00 00</code> và thay thế bằng <code>12 06 25 2B <strong>FF</strong> 00</code>.</p>
-
-
-
-<p>B10: Sử dụng hex editor để thay thế (ấn replace on).</p>
-
-
-
-<figure class="wp-block-image"><img src="https://www.tonymacx86.com/attachments/screen-shot-2020-06-29-at-13-15-32-png.478424/" alt=""/></figure>
-
-
-
-<p>B11 Save file lại.</p>
-
-
-
-<p>B12: Mở lại file bin ban đầu và ấn <code>replace body</code> sau đó chọn đến file vừa sửa và save lại tiếp theo Reboot.</p>
-
-
-
-<figure class="wp-block-image"><img src="https://www.tonymacx86.com/attachments/screen-shot-2020-06-29-at-13-17-01-png.478425/" alt=""/></figure>
-
-
-
-<h3 id="cach-2-dung-driver-tbtforcepower-efi">Cách 2: Dùng Driver TbtForcePower.efi </h3>
-
-
-
-<p>B1: Tải <a href="https://github.com/al3xtjames/ThunderboltPkg">TbtForcePower.efi</a>.</p>
-
-
-
-<p>B2: Bỏ file driver vào <code>EFI ==> OC ==> driver</code>  hoặc <code>EFI ==> Clover ==> driver ==> UEFI</code>.</p>
-
-
-
-<p>B3: Snapshot lại nếu ở OpenCore.</p>
-
-
-
-<p>B4: Reboot.</p>
-
-
-
-<h5 id="lưu-y-dối-với-1-số-pc-thi-khi-dung-cach-2-sẽ-bị-panic-bạn-phải-dung-cach-1">Lưu ý: </h5>
-
-
-
-<p id="lưu-y-dối-với-1-số-pc-thi-khi-dung-cach-2-sẽ-bị-panic-bạn-phải-dung-cach-1">Đối với 1 số PC thì khi dùng cách 2 sẽ bị Panic bạn phải dùng cách 1.</p>
-
-
-
-<h2 id="hotplug-thunderbolt-3">Hotplug Thunderbolt 3</h2>
-
-
-
-<h3 id="xac-dịnh-acpi-path">Xác định ACPI Path</h3>
-
-
-
-<h4 id="cach-1-dung-ioreg">Cách 1: dùng IOReg</h4>
-
-
-
-<p>B1: Tải IOReg <a href="https://github.com/vulgo/IORegistryExplorer">tại đây</a>. </p>
-
-
-
-<p>B2: Cắm Thunderbolt (cắm trước khi mở máy).</p>
-
-
-
-<p>B3: Nhấn Command + F và search Thunderbolt. </p>
-
-
-
-<figure class="wp-block-image"><img src="https://elitemacx86.com/attachments/screenshot-2020-01-28-at-5-52-53-am-png.2047/" alt=""/></figure>
-
-
-
-<p>Ta có thể thấy đường dẫn dẫn tới thunderbolt sẽ là <code>PCI0.RP21.PXSX</code></p>
-
-
-
-<h4 id="cach-2-dung-device-manager">Cách 2: Dùng Device Manager</h4>
-
-
-
-<p>B1: Chọn Option Thunderbolt</p>
-
-
-
-<p>B2: Chọn vào mục <code>Details ==> Location Paths</code>.</p>
-
-
-
-<p>B3: Lấy đường dẫn (chi tiết về cách lấy xem ở bài <a href="https://heavietnam.ga/2021/09/29/xxiii-patch-card-doi-hoa-amd/">này</a>). </p>
-
-
-
-<h4 id="lưu-y-cho-multiple-cards">Lưu ý cho <strong>Multiple Cards</strong>: </h4>
-
-
-
-<p>Đối với những máy có nhiều Card Thunderbolt thì bạn sẽ xác định đường dẫn card bằng cách cắm vào từng port trước khi khởi động. </p>
-
-
-
-<p>Ngoài ra để sử dụng Type-C bạn sẽ cần 1 cầu nối trong SSDT Thunderbolt và thường cầu nói đó sẽ là <code>PEGP</code>.</p>
-
-
-
-<pre class="wp-block-code"><code>// ví dụ chúng ta có các đường dẫn là 
-
-PCI0.RP21.PXSX
-PCI0.BR1A.SL01
-PCI0.BR3A.SL09
-
-// khi thêm cầu nối sẽ là 
-
-PCI0.RP21.PEGP
-PCI0.BR1A.PEGP
-PCI0.BR3A.PEGP
-</code></pre>
-
-
-
-<h3 id="lấy-mẫu-ssdt-từ-hackindrom">Lấy mẫu SSDT từ <a href="https://hackindrom.zapto.org/">HackinDrom</a></h3>
-
-
-
-<p>B1: Các bản tải SSDT từ <a href="https://hackindrom.zapto.org/">HackinDrom</a>.</p>
-
-
-
-<p>B2: Các bạn chọn 1 mẫu Thunderbolt Device phù hợp với cấu hình của bạn. </p>
-
-
-
-<p>B3: Đối với những bạn sử dụng Multiple Cards thì hãy chọn vào mục Custom và và định dạng Busid là 0 hoặc 1. Số 0 hoặc 1 chính là Thunderbolt Card thứ nhất của bạn. Ví dụ bạn có 3 Card Thunderbolt nếu card đầu tiên có Busid là 0 thì các card tiếp theo sẽ là 1 và 2. Ngược lại thì Busid của card đầu tiên là 0 thì 2 Vard tiếp theo tương ứng sẽ là 2 và 3.</p>
-
-
-
-<p>B4: Ấn COMPILE.</p>
-
-
-
-<p>B5: Ấn Download.</p>
-
-
-
-<h3 id="thay-dổi-dường-dẫn-của-ssdt-thunderbolt">Thay đổi đường dẫn của SSDT Thunderbolt</h3>
-
-
-
-<p>B1: Tìm đường dẫn mặc định của SSDT. </p>
-
-
-
-<p>B2: Ấn Replace.</p>
-
-
-
-<p>B3: Rồi thay bằng đường dẫn bạn đã tìm được ở phần trên ví dụ như thay <code>RP05 to RP21</code>.<img src="https://imgur.com/9LKnktd.png"> </p>
-
-
-
-<h4 id="lưu-y-cho-lưu-y-cho-multiple-cards">Lưu ý cho Lưu ý cho <strong>Multiple Cards</strong>: </h4>
-
-
-
-<p>Như đã nói ở trên đối với Multiple Cards thì ta sẽ cần dùng cầu nối nên ta vẫn cần sử dụng Method gốc.</p>
-
-
-
-<p>B1: Thêm cầu nối vào đường dẫn: </p>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://imgur.com/aR0JH68.png" alt=""/></figure>
-
-
-
-<p>B2: Add Method gốc (paste trước dòng method pegp)</p>
-
-
-
-<pre class="wp-block-code"><code>Scope (PXSX)
-            {
-                Name (_STA, Zero)  // _STA: Status
-            }
-// thay method thích hợp</code></pre>
-
-
-
-<p>B3: Khai báo method vừa Add: </p>
-
-
-
-<pre class="wp-block-code"><code>External (_SB_.PCI0.RP21.PXSX, DeviceObj)   </code></pre>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://imgur.com/zvkylQQ.png" alt=""/><figcaption>Sau khi hoàn thành sẽ được</figcaption></figure>
-
-
-
-<h2 id="lưu-y-cuối-bai">Lưu ý cuối bài </h2>
-
-
-
-<p>Các bạn đừng quên cho SSDT vào EFI ==> OC ==> ACPI hoặc EFI ==> Clover ==> ACPI (nhớ Snapshot nếu ở OpenCore)</p>
-
-
-
-<p>Đối với Multiple Cards. Bạn nên thử bus id cho card đầu tiên là busid 0 và thử tiếp sau đó.</p>
-
-
-
-<p>Để hotplug cho Alpine Ridge Cards thì bạn phải disable THB_C Header.</p>
-
-
-
-<p>Ngoài ra khi patch Multiple Cards có thể sẽ không hiện trong About This Mac đó là vì macOS chưa nhận dạng được chipset của Thunderbolt. Nhưng cũng không cần quan tâm vì mọi chức năng đều hoạt động (1 số chức năng không chạy như kết nối màn 5k)</p>
-
-
-
-<p>Source tham khảo: <a href="https://elitemacx86.com/threads/how-to-enable-thunderbolt-3-hotplug-on-macos.462/">GUIDE &#8211; How to Enable Thunderbolt 3 Hotplug on macOS | EliteMacx86 Forum</a> | <a href="https://elitemacx86.com/threads/how-to-enable-thunderbolt-2-thunderbolt-3-and-thunderbolt-4-on-macos.461/">GUIDE &#8211; How to Enable ThunderBolt 2, Thunderbolt 3 and Thunderbolt 4 on macOS | EliteMacx86 Forum</a> | <a href="https://www.tonymacx86.com/threads/howto-real-thunderbolt-hotplug-hotswap-on-the-fly.282953/page-3">HowTo: Real Thunderbolt HotPlug/HotSwap on the fly | Page 3 | tonymacx86.com</a></p>
-<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/02/13/hotplug-thunderbolt-3/">HotPlug Thunderbolt 3</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
-]]></content:encoded>
-					
-					<wfw:commentRss>https://heavietnam.ga/2022/02/13/hotplug-thunderbolt-3/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
-		
-		
-			</item>
-		<item>
-		<title>Fixing KASLR</title>
-		<link>https://heavietnam.ga/2022/01/31/using-devirtualisemmio/</link>
-					<comments>https://heavietnam.ga/2022/01/31/using-devirtualisemmio/#comments</comments>
-		
-		<dc:creator><![CDATA[admin]]></dc:creator>
-		<pubDate>Mon, 31 Jan 2022 01:57:05 +0000</pubDate>
+		<pubDate>Sun, 10 Apr 2022 14:38:27 +0000</pubDate>
 				<category><![CDATA[install hackintosh]]></category>
-		<guid isPermaLink="false">https://heavietnam.ga/?p=2432</guid>
+		<guid isPermaLink="false">https://heavietnam.ga/?p=2945</guid>
 
-					<description><![CDATA[<p>KASLR là gì? Nó là viết tắt của cụm từ Kernel address space layout randomization. Nó là 1 công cụ bảo mật của Apple làm cho những Hacker khó có thể tìm ra những object quan trọng trong bộ nhớ vì nó luôn thay đổi ngẫu nhiên sau mỗi lần khởi động chi tiết xem [...]</p>
-<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/01/31/using-devirtualisemmio/">Fixing KASLR</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
+					<description><![CDATA[<p>Tin tức mới trên monterey smbios: Các smbios sau sẽ ko còn support nữa iMac15,x và cũ hơn Macmini6,x và cũ hơn MacBook8,1 và cũ hơn MacBookAir6,x và cũ hơn MacBookPro11,3 và cũ hơn Đối với những smbios khác vẫn còn support Hardware: các gpu sau sẽ không được support nữa Ivy Bridge (HD 4000 [...]</p>
+<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/04/10/fix-loi-khong-mount-duoc-file-dmg-tren-monterey/">Macos 12: monterey￼</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
 ]]></description>
 										<content:encoded><![CDATA[
-<h2>KASLR là gì?</h2>
+<h2>Tin tức mới trên monterey</h2>
 
 
 
-<p>Nó là viết tắt của cụm từ <strong>Kernel address space layout randomization</strong>. Nó là 1 công cụ bảo mật của Apple làm cho những Hacker khó có thể tìm ra những object quan trọng trong bộ nhớ vì nó luôn thay đổi ngẫu nhiên sau mỗi lần khởi động chi tiết xem <a href="https://lwn.net/Articles/569635/">tại đây</a>.</p>
+<h3>smbios:</h3>
 
 
 
-<p>Đối với những máy có memory maps nhỏ hoặc hoặc có quá nhiều device trong DSDT. Có thể sẽ có space cho kernel hoạt động nhưng cũng có thể sẽ có free space mà kernel không bao phủ tới. Vì thế ta sẽ không để macOS chọn 1 khu vực ngẫu nhiên để hoạt động trong mỗi lần reboot mà ta sẽ giới hạn khu vực bất kì mà chắc chắn nó sẽ hoạt động.</p>
+<p>Các smbios sau sẽ ko còn support nữa</p>
 
 
 
-<h2>Vậy khi nào cần Fix KASLR</h2>
+<ul><li>iMac15,x và cũ hơn</li><li>Macmini6,x và cũ hơn</li><li>MacBook8,1 và cũ hơn</li><li>MacBookAir6,x và cũ hơn</li><li>MacBookPro11,3 và cũ hơn<ul></ul></li></ul>
 
 
 
-<p>Thường khi boot macOS sẽ gặp các lỗi như sau: </p>
+<p>Đối với những smbios khác vẫn còn support</p>
 
 
 
-<pre class="wp-block-code"><code>Error allocating 0x1197b pages at 0x0000000017a80000 alloc type 2
-Couldn't allocate runtime area
+<h3>Hardware:</h3>
 
-//hoặc
 
-Only 244/256 slide values are usable!
 
-//hoặc
+<p>các gpu sau sẽ không được support nữa</p>
 
-panic(cpu 6 caller 0xffffff801fc057ba): a freed zone element has been modified in zone kalloc.4096: expected 0x3f00116dbe8a46f6 but found 0x3f00116d00000000</code></pre>
 
 
+<ul><li>Ivy Bridge (HD 4000 and HD 2500 | bạn có thể dùng&nbsp;<a href="https://github.com/dortania/OpenCore-Legacy-Patcher/releases">opencore legacy patcher</a>&nbsp;để add support và có thể dùng&nbsp;<a href="https://github.com/chris1111/Patch-HD4000-Monterey">hd4000 patcher</a>&nbsp;để add các kext và bundle của bigsur )</li><li>Nvidia Kepler (GTX 6xx/7xx Cards | bạn có thể dùng opencore legacy patcher để add support và có thể dùng&nbsp;<a href="https://github.com/chris1111/Geforce-Kepler-patcher">kepler patcher</a>&nbsp;để add các kext và bundle của bigsur)</li></ul>
 
-<h2>Chuẩn bị:</h2>
 
 
+<h3>AMD patcher:</h3>
 
-<p>B1: Tải OpenRuntime.efi (trong OpenCorePKG xem chi tiết <a href="https://heavietnam.ga/2020/11/23/cach-tao-efi-cho-opencore/" data-type="post" data-id="1885">tại đây</a>).</p>
 
 
+<p>các bạn phải nhớ là update kernel patcher nhé download&nbsp;<a href="https://github.com/AMD-OSX/AMD_Vanilla">ở đây</a></p>
 
-<p>B2: Tải OpenShell.efi (xem cách tải OpenShell <a href="https://heavietnam.ga/2020/11/23/cach-tao-efi-cho-opencore/" data-type="post" data-id="1885">tại đây</a>).</p>
 
 
+<h3>bluetooth:</h3>
 
-<p>B3: chỉnh config --> Booter theo sau:</p>
 
 
+<p>Ở thời điểm hiện tại bluetooth vẫn còn 1 số lỗi hãy đợi cộng đồng update kext riêng các dòng card ar9XXX đã chính thức không còn support</p>
 
-<ul><li>AvoidRuntimeDefrag: YES</li><li>DevirtualiseMmio: YES</li><li>EnableSafeModeSlide: YES</li><li>ProtectUefiServices: NO</li><li>ProvideCustomSlide: YES</li><li>RebuildAppleMemoryMap: YES</li></ul>
 
 
+<h3>ota update:</h3>
 
-<h2>Setting BIOS</h2>
 
 
+<p>Nếu bạn đang sử dụng T2 smbios thì phải boot với opencore 0.7.4+ và&nbsp;<code>SecureBootModel</code>&nbsp;set là&nbsp;<code>Default</code>&nbsp;nếu bạn không sử dụng t2 smbios thì có thể set là&nbsp;<code>Default</code>&nbsp;hoặc&nbsp;<code>Disabled</code>&nbsp;xem chi tiết&nbsp;<a href="https://dortania.github.io/OpenCore-Post-Install/universal/security/applesecureboot.html#apecid">tại đây</a></p>
 
-<p>B1: Update BIOS (khá quan trọng đặc biệt là Z390).</p>
 
 
+<h2>1 số app bị lỗi</h2>
 
-<p>B2: Clear CMOS.</p>
 
 
+<p>Tổng hợp 1 số app bị lỗi trên monterey</p>
 
-<p>B3: Bật các option sau trong BIOS:</p>
 
 
+<ol><li><strong>Illustrator 2021:&nbsp;</strong>(kể cả bản quyền và thuốc): Chuột phải thanh Menu bị hiện ở góc dưới chứ không xuất hiện ngay chỗ click. Update: AI dùng bản quyền thì cập nhật lên Illustrator 2022 fix lỗi này rồi</li><li><strong>Mamp Pro</strong>&nbsp;bản thuốc ko chạy trên M1, Intel vẫn chạy</li><li><strong>Cleanmymac:</strong>&nbsp;ae cứ than ko chạy, nhưng maclife có hd fix từ hồi còn Beta rồi</li><li><strong>Wirecast:</strong>&nbsp;Crash &#8211; Chưa có cách fix, chờ cập nhật thôi</li><li><strong>Sketchup&nbsp;</strong>(thuốc): Crash</li><li><strong>Tg Pro</strong>&nbsp;(bản thuốc): Crash:&nbsp;<strong>Update:&nbsp;</strong>Đã có bản 2.6.1 chạy được trên Monterey</li><li><strong>Yoink</strong>: Không chạy</li><li><strong>Adobe Audition:</strong>&nbsp;(bản thuốc) &#8211; Crash</li><li><strong>On1 Photo Raw</strong>&nbsp;&#8211; Crash</li><li><strong>Smart Album</strong>&nbsp;&#8211; Crash</li><li><strong>TextSniper</strong>&nbsp;&#8211; Crash</li><li><strong>Total Finder</strong>&nbsp;&#8211; Không ổn định</li><li><strong>Airserver</strong></li><li><strong>Sketch</strong>&nbsp;&#8211; Lỗi trên Mac Intel,&nbsp;<strong>M1 xài bình thường</strong></li><li><strong>Photoscape x</strong></li><li><strong>Fl Studio</strong></li><li><strong>Itube Studio</strong></li></ol>
 
-<ul><li>Above4GDecoding (đảm bảo rằng Booter -&gt; Quirks -&gt; ResizeAppleGpuBars: 0).</li><li>Boot Options -&gt; Windows8.1/10 mode.</li><li>Disable các option không cần thiết trong bios (không cần thiết ở đây có nghĩa là bạn không sử dụng):<ul><li>CSM</li><li>Intel SGX</li><li>Parallel Port</li><li>Serial Port</li><li>iGPU</li><li>Thunderbolt</li><li>LED lighting</li><li>Legacy USB</li></ul></li></ul>
 
 
+<h2>Fix lỗi không mount disk được </h2>
 
-<h2>Tìm Slide Value</h2>
 
 
+<p>hiện nay 1 số may xuất hiện tình trang không thể mount được file dmg trên monterey và đây là cách khắc mục</p>
 
-<p>B1: Bạn chọn OpenShell.efi tại picker của OpenCore.</p>
 
 
+<p>B1: mở terminal</p>
 
-<p>B2: Ấn Enter hoặc đợi vài giây.</p>
 
 
+<p>B2: gõ dòng lệnh sau vào terminal</p>
 
-<p>B3: Các bạn gõ lệnh:</p>
 
 
+<p><code>hdiutil attach [ khoảng trắng ] path\to\dmg file&nbsp;</code></p>
 
-<pre class="wp-block-code"><code>//truy cập vào ổ đĩa
 
-fs0:
 
-// kiểm tra xem bạn có đang ở đúng đường dẫn mong muốn không nếu không có thể thử fs1:
+<figure class="wp-block-image"><img src="https://imgur.com/xGfUsX3.png" alt=""/></figure>
 
-ls
 
-// tạo file memmap.txt
 
-memmap &gt; memmap.txt</code></pre>
+<figure class="wp-block-image"><img src="https://imgur.com/yKYs3DM.png" alt=""/></figure>
 
 
 
-<figure class="wp-block-image size-large"><img src="https://i.imgur.com/uQQPkHc.jpg" alt=""/></figure>
-
-
-
-<p>B4: Mở file memmap.txt ra ta sẽ được:</p>
-
-
-
-<pre class="wp-block-code"><code>Type       Start            End              # Pages          Attributes
-BS_Code    0000000000000000-0000000000007FFF 0000000000000008 000000000000000F
-Available  0000000000008000-000000000005DFFF 0000000000000056 000000000000000F
-BS_Data    000000000005E000-000000000005FFFF 0000000000000002 000000000000000F
-BS_Code    0000000000060000-000000000009EFFF 000000000000003F 000000000000000F
-RT_Data    000000000009F000-000000000009FFFF 0000000000000001 800000000000000F
-Available  0000000000100000-0000000000FFFFFF 0000000000000F00 000000000000000F
-LoaderData 0000000001000000-00000000010FFFFF 0000000000000100 000000000000000F
-<strong>Available</strong>  <strong>0000000001100000</strong>-000000001FFFFFFF 000000000001EF00 000000000000000F
-Reserved   0000000020000000-00000000201FFFFF 0000000000000200 000000000000000F
-Available  0000000020200000-0000000040003FFF 000000000001FE04 000000000000000F
-Reserved   0000000040004000-0000000040004FFF 0000000000000001 000000000000000F
-Available  0000000040005000-00000000CD431FFF 000000000008D42D 000000000000000F
-LoaderCode 00000000CD432000-00000000CD53AFFF 0000000000000109 000000000000000F
-BS_Data    00000000CD53B000-00000000CE025FFF 0000000000000AEB 000000000000000F
-Available  00000000CE026000-00000000CE220FFF 00000000000001FB 000000000000000F
-BS_Data    00000000CE221000-00000000CE5C2FFF 00000000000003A2 000000000000000F
-Available  00000000CE5C3000-00000000CE5D6FFF 0000000000000014 000000000000000F
-BS_Data    00000000CE5D7000-00000000CE762FFF 000000000000018C 000000000000000F
-LoaderCode 00000000CE763000-00000000CE7EAFFF 0000000000000088 000000000000000F
-BS_Data    00000000CE7EB000-00000000D90E3FFF 000000000000A8F9 000000000000000F
-Available  00000000D90E4000-00000000D96C3FFF 00000000000005E0 000000000000000F
-BS_Code    00000000D96C4000-00000000D9762FFF 000000000000009F 000000000000000F
-RT_Code    00000000D9763000-00000000D9767FFF 0000000000000005 800000000000000F
-BS_Code    00000000D9768000-00000000D97C5FFF 000000000000005E 000000000000000F
-ACPI_NVS   00000000D97C6000-00000000D9DC6FFF 0000000000000601 000000000000000F
-RT_Code    00000000D9DC7000-00000000D9DC9FFF 0000000000000003 800000000000000F
-BS_Code    00000000D9DCA000-00000000D9DE0FFF 0000000000000017 000000000000000F
-RT_Code    00000000D9DE1000-00000000D9DE6FFF 0000000000000006 800000000000000F
-BS_Code    00000000D9DE7000-00000000D9DE8FFF 0000000000000002 000000000000000F
-RT_Code    00000000D9DE9000-00000000D9DF6FFF 000000000000000E 800000000000000F
-BS_Code    00000000D9DF7000-00000000D9F4DFFF 0000000000000157 000000000000000F
-RT_Code    00000000D9F4E000-00000000D9F51FFF 0000000000000004 800000000000000F
-BS_Code    00000000D9F52000-00000000D9F9CFFF 000000000000004B 000000000000000F
-RT_Code    00000000D9F9D000-00000000D9FA3FFF 0000000000000007 800000000000000F
-RT_Data    00000000D9FA4000-00000000D9FB0FFF 000000000000000D 800000000000000F
-RT_Code    00000000D9FB1000-00000000D9FC2FFF 0000000000000012 800000000000000F
-BS_Code    00000000D9FC3000-00000000D9FC5FFF 0000000000000003 000000000000000F
-RT_Code    00000000D9FC6000-00000000D9FC7FFF 0000000000000002 800000000000000F
-BS_Code    00000000D9FC8000-00000000D9FDEFFF 0000000000000017 000000000000000F
-RT_Code    00000000D9FDF000-00000000D9FE4FFF 0000000000000006 800000000000000F
-BS_Code    00000000D9FE5000-00000000D9FECFFF 0000000000000008 000000000000000F
-RT_Code    00000000D9FED000-00000000D9FEDFFF 0000000000000001 800000000000000F
-BS_Code    00000000D9FEE000-00000000D9FFCFFF 000000000000000F 000000000000000F
-RT_Code    00000000D9FFD000-00000000D9FFDFFF 0000000000000001 800000000000000F
-BS_Code    00000000D9FFE000-00000000DA008FFF 000000000000000B 000000000000000F
-RT_Code    00000000DA009000-00000000DA00DFFF 0000000000000005 800000000000000F
-BS_Code    00000000DA00E000-00000000DA039FFF 000000000000002C 000000000000000F
-RT_Code    00000000DA03A000-00000000DA03AFFF 0000000000000001 800000000000000F
-BS_Code    00000000DA03B000-00000000DA04AFFF 0000000000000010 000000000000000F
-RT_Code    00000000DA04B000-00000000DA070FFF 0000000000000026 800000000000000F
-BS_Code    00000000DA071000-00000000DA083FFF 0000000000000013 000000000000000F
-RT_Code    00000000DA084000-00000000DA084FFF 0000000000000001 800000000000000F
-BS_Code    00000000DA085000-00000000DA085FFF 0000000000000001 000000000000000F
-RT_Code    00000000DA086000-00000000DA087FFF 0000000000000002 800000000000000F
-BS_Code    00000000DA088000-00000000DA088FFF 0000000000000001 000000000000000F
-RT_Code    00000000DA089000-00000000DA08DFFF 0000000000000005 800000000000000F
-BS_Code    00000000DA08E000-00000000DA0A2FFF 0000000000000015 000000000000000F
-RT_Data    00000000DA0A3000-00000000DA102FFF 0000000000000060 800000000000000F
-RT_Code    00000000DA103000-00000000DA11DFFF 000000000000001B 800000000000000F
-RT_Data    00000000DA11E000-00000000DA120FFF 0000000000000003 800000000000000F
-RT_Data    00000000DA121000-00000000DA127FFF 0000000000000007 800000000000000F
-RT_Data    00000000DA128000-00000000DA128FFF 0000000000000001 800000000000000F
-RT_Data    00000000DA129000-00000000DA147FFF 000000000000001F 800000000000000F
-Reserved   00000000DA148000-00000000DA4ADFFF 0000000000000366 000000000000000F
-Reserved   00000000DA4AE000-00000000DA647FFF 000000000000019A 000000000000000F
-ACPI_NVS   00000000DA648000-00000000DA70DFFF 00000000000000C6 000000000000000F
-ACPI_NVS   00000000DA70E000-00000000DA8C7FFF 00000000000001BA 000000000000000F
-ACPI_Recl  00000000DA8C8000-00000000DA8CCFFF 0000000000000005 000000000000000F
-BS_Data    00000000DA8CD000-00000000DA8CDFFF 0000000000000001 000000000000000F
-ACPI_NVS   00000000DA8CE000-00000000DA910FFF 0000000000000043 000000000000000F
-BS_Data    00000000DA911000-00000000DAA5CFFF 000000000000014C 000000000000000F
-BS_Code    00000000DAA5D000-00000000DACF6FFF 000000000000029A 000000000000000F
-BS_Data    00000000DACF7000-00000000DAD06FFF 0000000000000010 000000000000000F
-BS_Code    00000000DAD07000-00000000DAD18FFF 0000000000000012 000000000000000F
-BS_Data    00000000DAD19000-00000000DAD1FFFF 0000000000000007 000000000000000F
-RT_Data    00000000DAD20000-00000000DAFF3FFF 00000000000002D4 800000000000000F
-BS_Data    00000000DAFF4000-00000000DAFFFFFF 000000000000000C 000000000000000F
-<strong>Available</strong>  <strong>0000000100000000</strong>-000000011F1FFFFF 000000000001F200 000000000000000F
-Reserved   00000000DBC00000-00000000DFDFFFFF 0000000000004200 8000000000000000
-MMIO       00000000F8000000-00000000FBFFFFFF 0000000000004000 8000000000000001
-MMIO       00000000FEC00000-00000000FEC00FFF 0000000000000001 8000000000000001
-MMIO       00000000FED00000-00000000FED03FFF 0000000000000004 8000000000000001
-MMIO       00000000FED1C000-00000000FED1FFFF 0000000000000004 8000000000000001
-MMIO       00000000FEE00000-00000000FEE00FFF 0000000000000001 8000000000000001
-MMIO       00000000FF000000-00000000FFFFFFFF 0000000000001000 8000000000000001
- 
-  Reserved  :         18,689 Pages (76,550,144 Bytes)
-  LoaderCode:            401 Pages (1,642,496 Bytes)
-  LoaderData:            256 Pages (1,048,576 Bytes)
-  BS_Code   :          1,613 Pages (6,606,848 Bytes)
-  BS_Data   :         47,748 Pages (195,575,808 Bytes)
-  RT_Code   :            146 Pages (598,016 Bytes)
-  RT_Data   :            876 Pages (3,588,096 Bytes)
-  ACPI_Recl :              5 Pages (20,480 Bytes)
-  ACPI_NVS  :          2,244 Pages (9,191,424 Bytes)
-  MMIO      :         20,490 Pages (83,927,040 Bytes)
-  MMIO_Port :              0 Pages (0 Bytes)
-  PalCode   :              0 Pages (0 Bytes)
-  Available :        969,334 Pages (3,970,392,064 Bytes)
-  Persistent:              0 Pages (0 Bytes)
-              -------------- 
-Total Memory:          3,994 MB (4,188,663,808 Bytes)
-</code></pre>
+<p>B3: các bạn sẽ thấy file dmg được mount ngoài desktop ấn vào là dùng được</p>
 
 
 
-<p>B5: Bây giờ ta sẽ tiến hành chuyển giá trị thành Slide value chú ý vào giá trị <code>Available</code> lớn nhất ở cột <code>start</code> (chuyển sang decimal để so sánh).</p>
+<figure class="wp-block-image"><img src="https://imgur.com/HTkzDvU.png" alt=""/></figure>
 
 
 
-<p>B6: Các bạn sẽ thực hiện tính toán theo công thức (chuyển sang decimal để tính toán).</p>
+<p><strong>Lưu ý: Bài viết mang tính chất tạm thời tương lai có thể sẽ thay đổi thì mình sẽ cập nhật lại</strong></p>
 
 
 
-<pre class="wp-block-code"><code>(HEX - 0x100000)/0x200000 = Slide Value in HEX
-
-(DECIMAL - 0x100000)/0x200000 = Slide Value in decimal
-
-(0000000100000000 - 0x100000)/0x200000
-
-// convert hex to decimal 
-
-(4294967296 - 1048576)/2097152 = 2047,5</code></pre>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://i.imgur.com/LiarwbH.png" alt=""/></figure>
-
-
-
-<p>B7: Nhưng con số này quá lớn (<strong>&gt; 256</strong>) vì vậy ta cần phải hạ xuống các <code>Available</code> có giá trị nhỏ hơn cho đến khi bé hơn hoặc bằng 256.</p>
-
-
-
-<p>B8: Ta sẽ thử với <code>0000000001100000</code> covert to decimal: <code>17825792</code> ta được kết quả là 8.</p>
-
-
-
-<p>B9: Add vào boot-arg tham số <code>slide=XXX</code> (ở đây ta sẽ có là s<code>lide=8</code>).</p>
-
-
-
-<p>B10: Reboot.</p>
-
-
-
-<h3><strong>Lưu ý:</strong></h3>
-
-
-
-<p> Ở 1 số máy sẽ nhận được slide value rất nhỏ như <code>slide=-0.379150390625</code> đối với trưởng hợp này ta sẽ đặt <code>slide=0</code>.</p>
-
-
-
-<h2>Using DevirtualiseMmio</h2>
-
-
-
-<p>Đối với 1 số main như Z390 và hầu hết dòng HEDT chúng ta cần lập 1 danh sách trắng. Đó là lúc MmioWhitelist phát huy tác dụng. Với <strong>DevirtualiseMmio</strong> và <strong>ProvideCustomSlide</strong> bạn vừa có thể bảo mật lại vừa có thể Boot, 1 combo hoàn hảo.</p>
-
-
-
-<p>B1: Tạo 1 EFI Debug theo hướng dẫn <a href="https://heavietnam.ga/forum/topic/opencore-debugging/">tại đây</a> (nhớ enable <code>DevirtualiseMmio</code>).</p>
-
-
-
-<ul><li>Đối với clover các bản cũng build tương tự (sử dụng bản clover debug) để dump được log file các bạn sẽ dùng hackintool  &#8211;> log </li></ul>
-
-
-
-<p>B2: Bạn sẽ nhận được 1 file log mở nó ra và ta sẽ có:</p>
-
-
-
-<pre class="wp-block-code"><code>21:495 00:009 OCABC: MMIO devirt start
-<strong>21:499 00:003 OCABC: MMIO devirt 0x60000000 (0x10000 pages, 0x8000000000000001) skip 0
-21:503 00:003 OCABC: MMIO devirt 0xFE000000 (0x11 pages, 0x8000000000000001) skip 0
-21:506 00:003 OCABC: MMIO devirt 0xFEC00000 (0x1 pages, 0x8000000000000001) skip 0
-21:510 00:003 OCABC: MMIO devirt 0xFED00000 (0x1 pages, 0x8000000000000001) skip 0
-21:513 00:003 OCABC: MMIO devirt 0xFEE00000 (0x1 pages, 0x800000000000100D) skip 0
-21:516 00:003 OCABC: MMIO devirt 0xFF000000 (0x1000 pages, 0x800000000000100D) skip 0</strong>
-21:520 00:003 OCABC: MMIO devirt end, saved 278608 KB</code></pre>
-
-
-
-<p>Bây giờ ta có 6 regions cần thêm vào danh sách trắng (in đậm).</p>
-
-
-
-<p>Ta cần convert hex to decimal (có thể dùng Hackintool).</p>
-
-
-
-<ul><li>MMIO devirt 0x60000000 -&gt; 1610612736</li><li>MMIO devirt 0xFE000000 -&gt; 4261412864</li><li>MMIO devirt 0xFEC00000 -&gt; 4273995776</li><li>MMIO devirt 0xFED00000 -&gt; 4275044352</li><li>MMIO devirt 0xFEE00000 -&gt; 4276092928</li><li>MMIO devirt 0xFF000000 -&gt; 4278190080</li></ul>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://imgur.com/4a65sZl.png" alt=""/></figure>
-
-
-
-<p>B3: Add vào config ==&gt; booter ==&gt; MmioWhitelist.</p>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://dortania.github.io/OpenCore-Install-Guide/assets/img/mmio-white.0ee7b5c7.png" alt=""/></figure>
-
-
-
-<p><strong>Source tham khảo: <a href="https://dortania.github.io/OpenCore-Install-Guide/extras/kaslr-fix.html">Fixing KASLR slide values | OpenCore Install Guide (dortania.github.io)</a></strong></p>
-<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/01/31/using-devirtualisemmio/">Fixing KASLR</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
+<p>Source tham khảo: <a href="http://maclife.vn">maclife.vn</a></p>
+<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/04/10/fix-loi-khong-mount-duoc-file-dmg-tren-monterey/">Macos 12: monterey￼</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>https://heavietnam.ga/2022/01/31/using-devirtualisemmio/feed/</wfw:commentRss>
-			<slash:comments>1</slash:comments>
-		
-		
-			</item>
-		<item>
-		<title>XXXXII. Fix System Clocks on HEDT</title>
-		<link>https://heavietnam.ga/2022/01/22/fix-system-clocks-on-hedt/</link>
-					<comments>https://heavietnam.ga/2022/01/22/fix-system-clocks-on-hedt/#respond</comments>
-		
-		<dc:creator><![CDATA[admin]]></dc:creator>
-		<pubDate>Sat, 22 Jan 2022 07:04:24 +0000</pubDate>
-				<category><![CDATA[post install]]></category>
-		<guid isPermaLink="false">https://heavietnam.ga/?p=2378</guid>
-
-					<description><![CDATA[<p>Chuẩn bị: Dump DSDT theo hướng dẫn tại đây. Maciasl. SSDT-RTC0-RANGE. Xác định vấn đề: Các bạn cần xác định vấn đề của mình có thật sự cần dùng SSDT-RTC0 hay không. B1: Mở SSDT ra và ấn tổ hợp phím Command + F và gõ từ khóa PNP0B00 nhìn vào dòng _CRS. Chúng ta [...]</p>
-<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/01/22/fix-system-clocks-on-hedt/">XXXXII. Fix System Clocks on HEDT</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
-]]></description>
-										<content:encoded><![CDATA[
-<h2>Chuẩn bị:</h2>
-
-
-
-<ul><li>Dump DSDT theo hướng dẫn <a href="https://heavietnam.ga/2021/09/29/xxvi-patch-dsdt-phan-1/">tại đây</a>.</li><li><a href="https://github.com/acidanthera/MaciASL/releases">Maciasl</a>.</li><li><a href="https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/Source/SSDT-RTC0-RANGE.dsl">SSDT-RTC0-RANGE</a>.</li></ul>
-
-
-
-<h2>Xác định vấn đề:</h2>
-
-
-
-<p>Các bạn cần xác định vấn đề của mình có thật sự cần dùng SSDT-RTC0 hay không. </p>
-
-
-
-<p>B1: Mở SSDT ra và ấn tổ hợp phím <code>Command + F</code> và gõ từ khóa <code>PNP0B00</code> nhìn vào dòng  <code>_CRS</code>.</p>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://dortania.github.io/Getting-Started-With-ACPI/assets/img/rtc-range-check.d964e9c9.png" alt=""/></figure>
-
-
-
-<p>Chúng ta có: </p>
-
-
-
-<pre class="wp-block-code"><code>                Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
-                {
-                    IO (Decode16,
-                        0x0070,             // Range Minimum 1
-                        0x0070,             // Range Maximum 1
-                        0x01,               // Alignment 1
-                        0x02,               // Length 1
-                       )
-                    IO (Decode16,
-                        0x0074,             // Range Minimum 2
-                        0x0074,             // Range Maximum 2
-                        0x01,               // Alignment 2
-                        0x04,               // Length 2
-                       )
-                    IRQNoFlags ()
-                        {8}
-                })</code></pre>
-
-
-
-<p>Các bạn để ý vào các dòng <meta charset="utf-8"><code>IRQNoFlags</code> (số vùng bao phủ) và 2 dòng <meta charset="utf-8"><code>IO (Decode16,</code> chúng ta có rtc bao phủ 8 vùng là 0x70 (0x007 chính là 0x70 do được viết bằng hex), 0x71, 0x72, 0x73, 0x74, 0x75, 0x76, 0x77 ta có: </p>
-
-
-
-<ul><li>Dòng io đầu tiên:<ul><li>Bắt đầu ở 0x70.</li><li>Bao gồm 2 vùng.</li><li>Chứa 0x70, 0x71.</li></ul></li><li>Dòng io thứ hai:<ul><li>Bắt đầu ở 0x74.</li><li>Bao gồm 4 vùng.</li><li>Chứa 0x74, 0x75, 0x76, 0x77.</li></ul></li></ul>
-
-
-
-<p>Thiếu 0x72 và 0x73.</p>
-
-
-
-<p>Ta cần sửa phạm vi ở dòng io đầu tiên thành 4.</p>
-
-
-
-<h2>Tìm ACPI Path:</h2>
-
-
-
-<p>B1: Mở DSDT lên và ấn <code>Command + F</code> </p>
-
-
-
-<p>B2: Search các từ khóa sau:</p>
-
-
-
-<ul><li><code>PNP0B00</code> : Dùng để tìm tên của Device RTC.</li><li><code>Name (_ADR, 0x001F0000)</code>: Dùng để tìm LPC Path (LowPinCount Path).</li><li><code>PNP0A08</code>: Dùng để tìm PCI Path (có thể có nhiều kết quả cùng xuất hiện hãy chọn cái đầu tiên).</li></ul>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://dortania.github.io/Getting-Started-With-ACPI/assets/img/rtc-name.afa4c3f4.png" alt=""/><figcaption>RTC Pathing</figcaption></figure>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://dortania.github.io/Getting-Started-With-ACPI/assets/img/lpc.bfa9cf23.png" alt=""/><figcaption>LPC Pathing</figcaption></figure>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://dortania.github.io/Getting-Started-With-ACPI/assets/img/pci0.4477f361.png" alt=""/><figcaption>PCI Pathing</figcaption></figure>
-
-
-
-<p>Bây giờ chúng ta có các Path của ACPI là <code>rtc,lpc,pci0</code></p>
-
-
-
-<h2>Edit SSDT:</h2>
-
-
-
-<p>B1: Mở SSDT-RTC0 vừa tải ở bước chuẩn bị lên và sửa lại các Path như sau: </p>
-
-
-
-<pre class="wp-block-code"><code>//Path mặc định sẽ là
-
-PC00.LPC0.RTC
-
-//chúng ta cần sửa lại là
-
-PCI0.LPC.RTC </code></pre>
-
-
-
-<p>B2: Rename trong SSDT:</p>
-
-
-
-<pre class="wp-block-code"><code>//Trước khi rename
-
-External (_SB_.PC00.LPC0, DeviceObj) &lt;- Rename 
-
-External (_SB_.PC00.LPC0.RTC_, DeviceObj) &lt;- Rename 
-
-Scope (_SB.PC00.LPC0) &lt;- Rename
-
-//Sau khi rename
-
-External (_SB_.PCI0.LPC, DeviceObj) &lt;- Renamed
-
-Scope (_SB.PCI0.LPC.RTC) &lt;- Renamed
-
-Scope (_SB.PCI0.LPC) &lt;- Renamed</code></pre>
-
-
-
-<p>B3: Tiếp theo search <code>device(ACPI000E)</code> ( hoặc <meta charset="utf-8"><code>ACPI000E</code> ) Nếu DSDT của bạn có dòng này thì </p>
-
-
-
-<pre class="wp-block-code"><code>  /* &lt;- xóa nó trong ssdt
-  Scope (RTC)
-        {
-            Method (_STA, 0, NotSerialized)  // _STA: Status
-            {
-                If (_OSI ("Darwin"))
-                {
-                    Return (Zero)
-                }
-                Else
-                {
-                    Return (0x0F)
-                }
-            }
-        }
-  */ &lt;- xóa nó trong ssdt
-
-// Nếu không có thì xóa luôn phần ghi chú này trong ssdt</code></pre>
-
-
-
-<p>B4: Chúng ta có phần này:</p>
-
-
-
-<pre class="wp-block-code"><code>            Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
-            {
-                IO (Decode16,
-                    0x0070,             // Range Minimum 1
-                    0x0070,             // Range Maximum 1
-                    0x01,               // Alignment 1
-                    0x04,               // Length 1      (Expanded to include 0x72 and 0x73)
-                    )
-                IO (Decode16,
-                    0x0074,             // Range Minimum 2
-                    0x0074,             // Range Maximum 2
-                    0x01,               // Alignment 2
-                    0x04,               // Length 2
-                    )
-                IRQNoFlags ()
-                    {8}
-            })
-// Sửa các giá trị theo phân tích ở bước xác định vấn đề ở đây mình đã sửa dòng io đầu tiên có phạm vi giá trị là 0x04</code></pre>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://imgur.com/oBdHjTa.png" alt=""/></figure>
-
-
-
-<p>Chúng ta có: </p>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://imgur.com/pHiUOhF.png" alt=""/></figure>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://imgur.com/H0oVCx0.png" alt=""/></figure>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://imgur.com/id7Wk74.png" alt=""/></figure>
-
-
-
-<p>B5: Save lại dưới dạng file aml theo hướng dẫn <a href="https://heavietnam.ga/2021/09/29/xxvii-patch-dsdt-phan-2/">tại đây</a>.</p>
-
-
-
-<p>B6: Bỏ file SSDT vừa sửa vào EFI ==> OC ==> ACPI và Snapshot lại ( hoặc EFI ==> Clover ==> ACPI ) sau đó Restart.</p>
-
-
-
-<p>Lưu ý: Source tham khảo: <a href="https://dortania.github.io/Getting-Started-With-ACPI/Universal/awac-methods/manual-hedt.html#edits-to-the-sample-ssdt">Fixing System Clocks on HEDT: Manual | Getting Started With ACPI (dortania.github.io)</a> | <a href="https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/Source/SSDT-RTC0-RANGE.dsl">OpenCorePkg/SSDT-RTC0-RANGE.dsl at master · acidanthera/OpenCorePkg (github.com)</a></p>
-<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/01/22/fix-system-clocks-on-hedt/">XXXXII. Fix System Clocks on HEDT</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
-]]></content:encoded>
-					
-					<wfw:commentRss>https://heavietnam.ga/2022/01/22/fix-system-clocks-on-hedt/feed/</wfw:commentRss>
+					<wfw:commentRss>https://heavietnam.ga/2022/04/10/fix-loi-khong-mount-duoc-file-dmg-tren-monterey/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
-		<title>XXXXI. Patch SATA Controller</title>
-		<link>https://heavietnam.ga/2021/12/06/xxxxi-patch-sata-controller/</link>
-					<comments>https://heavietnam.ga/2021/12/06/xxxxi-patch-sata-controller/#respond</comments>
+		<title>1 số lỗi ở xuất hiện ở bigsur</title>
+		<link>https://heavietnam.ga/2022/04/10/1-so-loi-o-xuat-hien-o-bigsur/</link>
+					<comments>https://heavietnam.ga/2022/04/10/1-so-loi-o-xuat-hien-o-bigsur/#respond</comments>
 		
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<pubDate>Mon, 06 Dec 2021 12:36:47 +0000</pubDate>
-				<category><![CDATA[post install]]></category>
-		<guid isPermaLink="false">https://heavietnam.ga/?p=2141</guid>
+		<pubDate>Sun, 10 Apr 2022 14:26:37 +0000</pubDate>
+				<category><![CDATA[install hackintosh]]></category>
+		<guid isPermaLink="false">https://heavietnam.ga/?p=2940</guid>
 
-					<description><![CDATA[<p>Trước tiên ta phải tìm hiểu Patch SATA Controller dùng để làm gì. Nó dùng để inject device id SATA Controller (AHCI Mode). Nếu Device ID không được inject thì các bạn sẽ không thể nhận ổ cứng hoặc gặp lỗi still waiting for root device. Cách 1: Dùng Kext B1: Các bạn sẽ chọn [...]</p>
-<p>The post <a rel="nofollow" href="https://heavietnam.ga/2021/12/06/xxxxi-patch-sata-controller/">XXXXI. Patch SATA Controller</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
+					<description><![CDATA[<p>Stuck at&#160;Forcing CS_RUNTIME for entitlement Nhìn có vẻ giống như 1 lỗi nhưng nó không phải lỗi bạn cần khá nhiều thời gian để vượt qua nó. Không khởi động lại vì nó có thể phá hủy quá trình cài đặt của bạn Stuck at&#160;PCI Configuration Begins&#160;ở các main X99 và X299 Ở bigsur các [...]</p>
+<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/04/10/1-so-loi-o-xuat-hien-o-bigsur/">1 số lỗi ở xuất hiện ở bigsur</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
 ]]></description>
 										<content:encoded><![CDATA[
-<p>Trước tiên ta phải tìm hiểu Patch SATA Controller dùng để làm gì. Nó dùng để inject device id SATA Controller (AHCI Mode). Nếu Device ID không được inject thì các bạn sẽ không thể nhận ổ cứng hoặc gặp lỗi <code>still waiting for root device</code>.</p>
+<h2>Stuck at&nbsp;<code>Forcing CS_RUNTIME for entitlement</code></h2>
 
 
 
-<h2>Cách 1: Dùng Kext</h2>
+<figure class="wp-block-image"><img src="https://dortania.github.io/OpenCore-Install-Guide/assets/img/cs-stuck.bddc4a2d.jpg" alt=""/></figure>
 
 
 
-<p>B1: Các bạn sẽ chọn Kext theo sau:</p>
+<p>Nhìn có vẻ giống như 1 lỗi nhưng nó không phải lỗi bạn cần khá nhiều thời gian để vượt qua nó. Không khởi động lại vì nó có thể phá hủy quá trình cài đặt của bạn</p>
 
 
 
-<ul><li><a href="https://github.com/khronokernel/Legacy-Kexts/blob/master/Injectors/Zip/SATA-unsupported.kext.zip">SATA-Unsupported.kext</a>: dùng để kích hoạt các bộ điều khiển SATA thường dùng với Laptop.</li></ul>
+<h2>Stuck at&nbsp;<code>PCI Configuration Begins</code>&nbsp;ở các main X99 và X299</h2>
 
 
 
-<ul><li><a href="https://github.com/dortania/OpenCore-Install-Guide/blob/master/extra-files/CtlnaAHCIPort.kext.zip">CtlnaAHCIPort.kext</a>: thường được sử dụng ở Big Sur thay cho nhiều bộ điều khiển bị loại bỏ.</li></ul>
+<figure class="wp-block-image"><img src="https://dortania.github.io/OpenCore-Install-Guide/assets/img/rtc-error.d53fdc66.jpg" alt=""/></figure>
 
 
 
-<ul><li>Legacy SATA Kexts:<ul><li><a href="https://github.com/khronokernel/Legacy-Kexts/blob/master/Injectors/Zip/AHCIPortInjector.kext.zip">AHCIPortInjector.kext</a>: sử dụng trên Legacy SATA/AHC thường cần ở Penryn trở về trước.</li><li><a href="https://github.com/khronokernel/Legacy-Kexts/blob/master/Injectors/Zip/ATAPortInjector.kext.zip">ATAPortInjector.kext</a>: thường được dùng khi không có tùy chọn AHCI trong BIOS.</li></ul></li></ul>
+<p>Ở bigsur các dòng main hedt bị thiếu các vùng rtc do đó macos gặp lỗi fix chi tiết theo trang&nbsp;<a href="../../../2022/01/22/fix-system-clocks-on-hedt/index.html">sau</a></p>
 
 
 
-<p>B2: Các bạn bỏ kext vào <code>EFI ==> OC ==> kext </code>và Snapshot lại config hoặc bỏ kext vào <code>EFI ==> Clover ==> kext ==> Other</code> nếu dùng Clover.</p>
+<h2>Stuck on&nbsp;<code>ramrod</code>(^^^^^^^^^^^^^)</h2>
 
 
 
-<p>B3: Reboot.</p>
+<figure class="wp-block-image"><img src="https://dortania.github.io/OpenCore-Install-Guide/assets/img/ramrod.55591fc5.jpg" alt=""/></figure>
 
 
 
-<p><strong>Lưu ý: 1 số trưởng hợp không kích hoạt được các bạn có thể thử bỏ vào L/E sử dụng <a href="https://github.com/chris1111/Kext-Droplet-Big-Sur/releases">Kext DropletV2</a> hoặc S/L/E sử dụng <a href="https://github.com/chris1111/Kext-Droplet/releases/tag/V2">Kext Droplet</a></strong>.</p>
+<p>Khi bạn bị stuck ở dòng&nbsp;<code>ramrod</code>thì macos sẽ bị reset sau đó lại gặp dòng này và tiếp tục reset. Nó đã tạo 1 vòng lập restart. Điều đó cho thấy bộ phận giả lập smc của bạn đã bị hỏng vì vậy bạn có 2 sự lựa chọn</p>
 
 
 
-<h2>Cách 2: Inject qua Device Properties</h2>
+<ul><li>Sử dụng bản cập nhật mới nhất của VirtualSMC và Lilu sau đó add boot-arg&nbsp;&nbsp;<code>vsmcgen=1</code></li><li>Hoặc bạn có thể chuyển qua kext&nbsp;<a href="https://bitbucket.org/RehabMan/os-x-fakesmc-kozlek/downloads/">Fake-smc</a>&nbsp;của rehabMan</li><li>Lưu ý: không đồng thời sử dụng cả 2 kext VirtualSMC và Fake-smc</li></ul>
 
 
 
-<p>B1: Các bạn cần xác định series của SATA Controler bằng cách vào Device Manager ==> IDE ATA/ATAPI Controllers.</p>
+<h2>Kernel panic on&nbsp;<code>OPCIFamily</code>&nbsp;ở X79 and X99</h2>
 
 
 
-<figure class="wp-block-image size-large"><img src="https://photo2.tinhte.vn/data/attachment-files/2020/12/5260111_image.png" alt=""/></figure>
+<p>Lỗi này là do uncore PCI Bridges không được enable trong acpi. Do đó IOPCIFamily sẽ bị kernel panic để giải quyết vấn đề này các bạn có thể dùng&nbsp;<a href="https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/Source/SSDT-UNC.dsl">ssdt-unc</a>&nbsp;chỉ cần biên dịch bằng maciasl và sử dụng theo guide chi tiết&nbsp;<a href="../../../2021/09/29/xxviii-patch-dsdt-phan-3/index.html">tại đây</a></p>
 
 
 
-<p>Đối với 1 số máy sẽ không thấy được series các bạn tiến hành cài driver cho nó link chi tiết <a href="https://tinhte.vn/thread/sua-loi-full-disk-100-thanh-cong-tren-windows-10-bang-driver-hardisk-controller.3238245/">tại đây</a>.</p>
+<h2>DeviceProperties injection failing</h2>
 
 
 
-<p>B2: Các bạn tiến hành tải App <a href="https://www.hwinfo.com/download/">aida64</a> về sau đó tiến hành đổi chiếu để tìn ra model gần với model của bạn nhất. Nhưng đặc biệt là phải trùng series và vendor id của các bạn.</p>
+<p>Khi gặp lỗi này các bạn sẽ không thể tiêm được device-properties được cách fix các có thể dùng ssdt-brg0. Fix chi tiết theo trang&nbsp;<a href="../../../2021/09/29/xxiii-patch-card-doi-hoa-amd/index.html">sau</a></p>
 
 
 
-<p>B3: Các bạn truy cập vào trang <a href="https://devicehunt.com/">sau</a>.</p>
+<h2>Keyboard and Mouse broken</h2>
 
 
 
-<p>B4: tìm đến model các bạn cần fake nhập vendor id vào tìm đến model sát cấu hình nhất và lấy device id.</p>
-
-
-
-<p>Ở đây mình được device-id là <code>1E03</code>.</p>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://imgur.com/ELQLcyW.png" alt=""/></figure>
-
-
-
-<p>B5: Mở hackintool lên tìm ở phần device name là sata controller và nhìn vào tab device path. </p>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://imgur.com/DuQ2lxc.png" alt=""/></figure>
-
-
-
-<p>B6: Mở config lên vào mục <code>device properties</code> hoặc <code>device ==> prperties</code> nếu ở clover add 1 key với kiểu dữ liệu là <code>dictionary</code> và tên là device path vừa xác định ở trên sao đó add <code>device-id</code> vào với kiểu dữ liệu là <code>data</code>.</p>
-
-
-
-<p>Biến đổi device-id theo quy tắc sau:</p>
-
-
-
-<pre class="wp-block-code"><code>// Thêm chữ số 0 vào trước dãy số để được 8 chứ số 
-
-1e03 ==&gt; 00001e03
-
-// Tác thành từng cặp 2 chứ số 
-
-<meta charset="utf-8">00001e03 ==&gt; <meta charset="utf-8">00 00 1e 03
-
-// Đảo thứ tự các cặp
-
-<meta charset="utf-8">00 00 1e 03 ==&gt; <meta charset="utf-8">00 00 1e 03
-
-// Viết lại thành device-id
-
-<meta charset="utf-8">00 00 1e 03 ==&gt; <meta charset="utf-8">00001e03</code></pre>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://imgur.com/6AD50xQ.png" alt=""/></figure>
-
-
-
-<p>B7: Save lại và Reboot.</p>
-<p>The post <a rel="nofollow" href="https://heavietnam.ga/2021/12/06/xxxxi-patch-sata-controller/">XXXXI. Patch SATA Controller</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
-]]></content:encoded>
-					
-					<wfw:commentRss>https://heavietnam.ga/2021/12/06/xxxxi-patch-sata-controller/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
-		
-		
-			</item>
-		<item>
-		<title>XXXX. Patch Apple HDA (Phần 2)</title>
-		<link>https://heavietnam.ga/2021/11/15/xxxx-patch-applehda-phan-2/</link>
-					<comments>https://heavietnam.ga/2021/11/15/xxxx-patch-applehda-phan-2/#respond</comments>
-		
-		<dc:creator><![CDATA[admin]]></dc:creator>
-		<pubDate>Mon, 15 Nov 2021 14:28:14 +0000</pubDate>
-				<category><![CDATA[post install]]></category>
-		<guid isPermaLink="false">https://heavietnam.ga/?p=1647</guid>
-
-					<description><![CDATA[<p>Phần 1: Chuẩn bị: B1: 1 Cái USB 8GB. B2: 1 File ISO Linux (khuyến khích dùng Ubuntu hoăc có thể dùng WSL). B3: Xcode. B4: Tải Pin Configuration và giải nén. B5: Tải layout và platform. B6: Tải graphviz.pkg. B7: Tải CodecGraph và giải nén. B8: Tải ProperTree. B9: Tải AppleALP Repo và Lilu.kext. [...]</p>
-<p>The post <a rel="nofollow" href="https://heavietnam.ga/2021/11/15/xxxx-patch-applehda-phan-2/">XXXX. Patch Apple HDA (Phần 2)</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
-]]></description>
-										<content:encoded><![CDATA[
-<h2>Phần 1: Chuẩn bị:</h2>
-
-
-
-<p>B1: 1 Cái USB 8GB.</p>
-
-
-
-<p>B2: 1 File ISO Linux (khuyến khích dùng Ubuntu hoăc có thể dùng WSL).</p>
-
-
-
-<p>B3: Xcode.</p>
-
-
-
-<p>B4: Tải <a href="https://www.mediafire.com/file/u196a0fsjz2mrcc/PinConfigurator.zip/file">Pin Configuration</a> và giải nén.</p>
-
-
-
-<p>B5: Tải <a href="https://www.mediafire.com/folder/vb127kviaqlv4/Layout+&amp;+Platform">layout và platform</a>.</p>
-
-
-
-<p>B6: Tải <a href="https://www.mediafire.com/file/x6gkjnwoyddyn4v/graphviz-2.32.0.pkg/file">graphviz.pkg</a>.</p>
-
-
-
-<p>B7: Tải <a href="https://www.mediafire.com/file/zz7jm3pjo9on3do/codecgraph.zip/file">CodecGraph</a> và giải nén.</p>
-
-
-
-<p>B8: Tải <a href="https://github.com/corpnewt/ProperTree">ProperTree</a>.</p>
-
-
-
-<p>B9: Tải <a href="https://github.com/acidanthera/AppleALC">AppleALP Repo</a> và <a href="https://github.com/acidanthera/Lilu">Lilu.kext</a>.</p>
-
-
-
-<h2>Phần 2: Dump Codec</h2>
-
-
-
-<p>B1: Các bạn Boot qua Linux (có thể sử dụng Dualboot hoặc Live trên USB hoặc WSL).</p>
-
-
-
-<p>B2: Mở Terminal (ấn Ctrl + T) và gõ các lệnh sau:</p>
-
-
-
-<pre class="wp-block-code"><code>cat /proc/asound/card0/codec#1 &gt; ~/Desktop/codec_dump.txt
-</code></pre>
-
-
-
-<p>Hoặc:</p>
-
-
-
-<pre class="wp-block-code"><code>cat /proc/asound/card0/codec#0 &gt; ~/Desktop/codec_dump.txt
-</code></pre>
-
-
-
-<p>Hoặc:</p>
-
-
-
-<pre class="wp-block-code"><code>cd ~/Desktop &amp;&amp; mkdir CodecDump &amp;&amp; for c in /proc/asound/card*/codec#*; do f="${c/\/*card/card}"; cat "$c" &gt; CodecDump/${f//\//-}.txt; done &amp;&amp; zip -r CodecDump.zip CodecDump
-</code></pre>
-
-
-
-<p>Sau đó các bạn copy file <code>codecdump.zip</code> sang macOS.</p>
-
-
-
-<h2>Phần 3: Chuẩn bị sơ đồ Path Map và Verbs</h2>
-
-
-
-<p>B1: Cài <code>graphviz.pkg</code></p>
-
-
-
-<p>B2: Giải nén file codec dump.zip và copy file  <code>c<meta charset="utf-8">codec_dump.txt</code> vào folder CodecGraph (folder này nên đặt ngoài Desktop).</p>
-
-
-
-<p>B3: Gõ lệnh sau vào Terminal: </p>
-
-
-
-<pre class="wp-block-code"><code>cd ~/Desktop/codecgraph
-
-// và sau đó gõ tiếp lệnh dưới
-
-kéo thả file script patch codec vào rồi enter</code></pre>
-
-
-
-<p>B4: Chúng ta sẽ Copy 2 file <code>codec_dump_dec.txt.svg</code> và <code>finalverbs.txt</code> ra một nơi khác.</p>
-
-
-
-<h2>Phần 4: Xác định Verb Data</h2>
-
-
-
-<p>Ở đây các bạn mở file finalverbs.txt lên sẽ có dạng: </p>
-
-
-
-<pre class="wp-block-code"><code>
-Verbs from Linux Codec Dump File: codec_dump.txt
-
-Codec: Realtek ALC269VC   Address: 0   DevID: 283902569 (0x10ec0269)
-
-   Jack   Color  Description                  Node     PinDefault             Original Verbs
---------------------------------------------------------------------------------------------------------
-Digital Unknown  Mic at Int N/A              18 0x12   0x90a60930   01271c30 01271d09 01271ea6 01271f90
- Speaker at Int N/A    0x14 0x14                        2417426704 01471c10 01471d01     01471e17 01471f90  
- HP Out at Ext Left    0x15 0x15                        52498463 01571c1f 01571d10     01571e21 01571f03  
-    1/8   Black  Speaker at Ext Rear         23 0x17   0x411111f0   01771cf0 01771d11 01771e11 01771f41
- Mic at Ext Left    0x18 0x18                        60905504 01871c20 01871d58     01871ea1 01871f03  
-    1/8   Black  Speaker at Ext Rear         25 0x19   0x411111f0   01971cf0 01971d11 01971e11 01971f41
-    1/8   Black  Speaker at Ext Rear         26 0x1a   0x411111f0   01a71cf0 01a71d11 01a71e11 01a71f41
-    1/8   Black  Speaker at Ext Rear         27 0x1b   0x411111f0   01b71cf0 01b71d11 01b71e11 01b71f41
-  ATAPI  Purple  Speaker at Ext N/A          29 0x1d   0x40138205   01d71c05 01d71d82 01d71e13 01d71f40
-    1/8   Black  Speaker at Ext Rear         30 0x1e   0x411111f0   01e71cf0 01e71d11 01e71e11 01e71f41
---------------------------------------------------------------------------------------------------------
-
-
-   Jack   Color  Description                  Node     PinDefault             Modified Verbs
---------------------------------------------------------------------------------------------------------
-Digital Unknown  Mic at Int N/A              18 0x12   0x90a60930   01271c30 01271d00 01271ea6 01271f90
- Speaker at Int N/A    0x14 0x14                        2417426704 01471c10 01471d00     01471e17 01471f90  
- HP Out at Ext Left    0x15 0x15                        52498463 01571c40 01571d10     01571e21 01571f00  
- Mic at Ext Left    0x18 0x18                        60905504 01871c20 01871d50     01871ea1 01871f00  
-  ATAPI  Purple  Speaker at Ext N/A          29 0x1d   0x40138205   01d71c50 01d71d80 01d71e13 01d71f40
---------------------------------------------------------------------------------------------------------</code></pre>
-
-
-
-<p>Ở đây 2 có 2 mục cần quan tâm mục đầu tiên là devid (sẽ dùng ở phần dưới) mục thứ 2 là <meta charset="utf-8"> Modified Verbs (ta sẽ làm việc với mục này)</p>
-
-
-
-<p>Ta có dòng đầu tiên được chia thành 4 nhóm hãy cùng tìm hiểu chức năng và ý nghĩa các nhóm nhưng trước hết ta sẽ hiểu định nghĩa chung.</p>
-
-
-
-<pre class="wp-block-code"><code><meta charset="utf-8"><strong><meta charset="utf-8"></strong> <strong>01271c30</strong> 01271d00 01271ea6 01271f90</code></pre>
-
-
-
-<p>Ta có <meta charset="utf-8"><strong><code><meta charset="utf-8"> <strong>0 12 71c 30</strong></code></strong> có nghĩa là: </p>
-
-
-
-<p>0 : Codec address.</p>
-
-
-
-<p>12: Node id.</p>
-
-
-
-<p>71c : Verb command (sẽ tuần theo 1uy tắt nhóm đầu sẽ là 71c nhóm 2 là 71d nhóm 3 là 71 e nhóm 4 là 71f và 70c EAPD)</p>
-
-
-
-<p>30: Verb data (đây là phần quan trọng nhất)</p>
-
-
-
-<h2>Phần 5: Patch Verb Data</h2>
-
-
-
-<p>B1: Các bạn copy Modified Verbs ra 1 text riêng sao đó sao chép vào bộ nhớ tạm (Command + C | node 1d là 1 node không cần thiết nên các bạn xóa đi)</p>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://imgur.com/5ZseMVX.png" alt=""/></figure>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://imgur.com/KjF0DFy.png" alt=""/></figure>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://imgur.com/EZz9cBg.png" alt=""/></figure>
-
-
-
-<p>Các bạn sẽ cần chú ý kỹ vào ảnh trên ta thấy 12 và node 18 đều là micin nhưng 18 lại là external nên ta cần file chuyển 18 về line in như thế này: </p>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://imgur.com/u1jy4Pi.png" alt=""/></figure>
-
-
-
-<p>Vậy quy tắc chuyển như thế nào thì các bạn xem phần dưới nhé:</p>
-
-
-
-<p>Bây giờ mình sẽ lấy node 18 làm ví dụ chuyển:</p>
-
-
-
-<p>Đầu tiên là nhóm 1:</p>
-
-
-
-<pre class="wp-block-code"><code><strong>01871c20</strong> 01871d50 01871e81 01871f00  </code></pre>
-
-
-
-<p>20 là verb data ( như đã nói ở trên ) ở đây mình sẽ gọi verb data là xy sẽ có dạng:</p>
-
-
-
-<p><meta charset="utf-8">01871cXY</p>
-
-
-
-<ul><li>X: Là thông tin port (ở đây các thông tin port không được trùng nhau vd như <strong>5</strong>0,<strong> 5</strong>0, <strong>2</strong>0 ta có 2 lần giá trị 5 xuất hiện ở X thì các bạn phải đổi 1 giá trị thành 1 giá trị khác bất kì miễn là không trùng lặp vd ở đây ta có <strong>5</strong>0,<strong> 3</strong>0, <strong>2</strong>0).</li></ul>
+<p>Lỗi này khiến cho các HID-based devices như chuột và bạn phím bị hỏng trong khi các cổng usb vẫn hoạt động&nbsp; để khắc phục tình trạng này các bạn add patch như sau</p>
 
 
 
@@ -2096,422 +448,1306 @@ Digital Unknown  Mic at Int N/A              18 0x12   0x90a60930   01271c30 012
 
 
 
-<ul><li>Y: là thông tin kênh (các bạn chỉnh hết về 0).</li></ul>
+<pre class="wp-block-code"><code>// add vào config.plist -&gt; Kernel -&gt; Patch
 
+base | string | _isSingleUser
 
+Count | Integer | 1
 
-<p><meta charset="utf-8">Tiếp tục ta chuyển đến nhóm thứ 2:</p>
+Enabled | Boolean  |  True
 
+Find  | Data | &lt;blank&gt;
 
+Identifier | String | com.apple.iokit.IOHIDFamily
 
-<pre class="wp-block-code"><code><meta charset="utf-8">01871c20 <strong>01871d50</strong> 01871e81 01871f00 
- </code></pre>
+Limit | Integer |  0
 
+Mask | Data | &lt;blank&gt;
 
+MaxKernel | String | &lt;blank&gt;
 
-<p>Cũng như ở trên mình gọi verbs data là X và Y ta có: </p>
+MinKernel | String | 20.0.0
 
+Replace | Data | B801000000C3
 
+ReplaceMask | Data | &lt;blank&gt;
 
-<p><meta charset="utf-8">01871dXY</p>
+Skip | Integer | 0</code></pre>
 
 
 
-<ul><li>X là màu của jack (dựa vào bảng dưới để xác định màu).</li></ul>
+<h2 id="early-kernel-panic-on-max-cpus-from-firmware-not-yet-initialized">Early Kernel Panic on&nbsp;<code>max_cpus_from_firmware not yet initialized</code></h2>
 
 
 
-<p>Tùy chỉnh theo bảng sau:</p>
+<p>để fix lỗi này các bạn cần đảm bảo đang ở opencore version 0.6.0+ và&nbsp;<code>AvoidRuntimeDefrag</code>&nbsp;được enable</p>
 
 
 
-<pre class="wp-block-preformatted">Unknown 0 
-Black 1 
-Grey 2
-Blue 3 
-Green 4
-Red 5
-Orange 6
-Yellow 7
-Purple 8
-Pink 9
-Reserved A-D
-White E
-Other F</pre>
+<p>Trên 1 số máy chủ yếu trên HP DC7900. Kernel không thể xác định chính xác có bao nhiêu luồng ở phần cứng của các bạn gây panic cách fix như sau</p>
 
 
 
-<ul><li>Y là thông tin jack cắm (external là 0 và internal là 1).</li></ul>
+<pre class="wp-block-code"><code>// add vào config.plist -&gt; Kernel -&gt; Patch
 
+base | string | _acpi_count_enabled_logical_processors
 
+Count | Integer | 1
 
-<p>Tiếp theo là nhóm thứ 3:</p>
+Enabled | Boolean  |  True
 
+Find  | Data | &lt;blank&gt;
 
+Identifier | String | Kernel
 
-<pre class="wp-block-code"><code><meta charset="utf-8">01871c20 01871d50 <strong>01871e81</strong> 01871f00 </code></pre>
+Limit | Integer |  0
 
+Mask | Data | &lt;blank&gt;
 
+MaxKernel | String | &lt;blank&gt;
 
-<p><meta charset="utf-8">01871eXY</p>
+MinKernel | String | 20.0.0
 
+Replace | Data | B804000000C3
 
+ReplaceMask | Data | &lt;blank&gt;
 
-<ul><li>X là thiết bị âm thanh (xem bảng dưới để xác định).</li></ul>
+Skip | Integer | 0
 
+// thay 04 bằng số luồng ở phần cứng của các bạn</code></pre>
 
 
-<pre class="wp-block-preformatted">Line Out: 0 
-Speaker:  1 
-HP Out: 2 
-CD: 3 
-SPDIF Out: 4 
-Digital Other Out: 5 
-Modem Line Side: 6 
-Modem Handset Side: 7 
-Line In: 8 
-AUX: 9 
-Mic In: A 
-Telephony: B 
-SPDIF In: C 
-Digital Other In: D 
-Reserved: E 
-Other: F</pre>
 
+<h2>Cannot update to newer versions of Big Sur</h2>
 
 
-<ul><li>Y là cổng kết nối âm thanh (xem bảng dưới để xác định).</li></ul>
 
+<p>có 2 trường hợp Broken Update Utility và Broken Seal</p>
 
 
-<pre class="wp-block-preformatted">Unknown: 0  
-1/8" stereo/mono: 1 
-1/4" stereo/mono: 2 
-ATAPI internal: 3 
-RCA: 4 
-Optical: 5 
-Other Digital: 6 
-Other Analog: 7 
-Multichannel Analog (DIN): 8 
-XLR/Professional: 9 
-RJ-11 (Modem): A 
-Combination: B  
-Other: F</pre>
 
+<h3>Broken Update Utility</h3>
 
 
-<p>Cặp thứ 4</p>
 
+<p>lỗi này thường xảy ra khi bạn dùng bản beta. Để khắc phục chúng ta chỉ cần hủy đăng kí và đăng kí lại</p>
 
 
-<pre class="wp-block-code"><code><meta charset="utf-8">01871c20 01871d50 01871e81 <strong>01871f00</strong> </code></pre>
 
+<pre class="wp-block-code"><code># hủy đăng kí
+sudo /System/Library/PrivateFrameworks/Seeding.framework/Resources/seedutil unenroll
+# đăng kí lại
+sudo /System/Library/PrivateFrameworks/Seeding.framework/Resources/seedutil enroll</code></pre>
 
 
-<p><meta charset="utf-8">01871fXY</p>
 
+<p>Tiếp theo bản vào cài đặt và kiểm tra lại nếu vẫn chưa được hãy kiểm tra tới phần tiếp theo</p>
 
 
-<ul><li>X là Port Connectivity (giúp ứng dụng biết đang kết nói vói speaker, hp hay line in).</li><li>Y là vị trí port.</li></ul>
 
+<h3>Broken Seal</h3>
 
 
-<pre class="wp-block-code"><code>//*
-ta lấy xy chuyển về dạng nhị phân ( dùng hackintool )
 
-sau đó thêm các số 0 vào trước dãy số đến khi nào đủ 8 chữ số trong dãy số
-tiếp theo bạn tách dãy số từ trái sang phải theo quy tắt 2-2-4 
-Sau đó thay X và Y lần lượt theo bảng sau 
-Ví dụ:
-01011001 --&gt; 01 01 1001
-*//
+<p>bạn gõ câu lệnh sau vào terminal</p>
 
-Port Connectivity bits 7:6 
------------------------------------------------------------
-00 - Port is connected to a Jack
-01 - No External Port -or- No physical connection for Port  
-10 - Fixed Function/Built In Device (integrated speaker, mic, etc)
-11 - Jack and Internal device are attached 
 
-Location Part 1 - bits 5:4
------------------------------------------------------------
-00 - External on primary chassis
-01 - Internal
-10 - Separate chassis
-11 - Other
 
-Location Part 2 - bits 3:0
------------------------------------------------------------
-The meaning depends on Location Part 1 
+<pre class="wp-block-code"><code>diskutil apfs list</code></pre>
 
-00 0000	N/A
-00 0001   Rear
-00 0010   Front
-00 0011   Left
-00 0100   Right
-00 0101   Top
-00 0110   Bottom
-00 0111   Special (Rear panel)
-00 1000   Special (Drive bay)
 
-01 0000   N/A
-01 0111   Special (Riser)
-01 1000   HDMI
-01 1001   ATAPI
 
-10 0000	N/A
-10 0001   Rear
-10 0010   Front
-10 0011   Left
-10 0100   Right
-10 0101   Top
-10 0110   Bottom
+<p>Nhìn vào phần&nbsp;<code>Snapshot Sealed</code>&nbsp;Nếu nó trả về là&nbsp;<code>broken</code>&nbsp;thì bạn hãy fix theo các cách sau</p>
 
-11 0000   N/A
-11 0110   ?
-11 0111   Inside Mobile Lid (example: mic)
-11 1000   Outside Mobile Lid
 
-		Bits
-Hex	  76 54 3210
--------------------
-71cf01 = 00 00 0001 - Port has a jack - It is External - Rear Location
-71cf02 = 00 00 0010 - Port has a jack - It is External - Front Panel Location 
-71cf59 = 01 01 1001 - No External Port - ATAPI 
-71cf18 = 00 01 1000 - Port has a jack - External - HDMI
-71cf90 = 10 01 0000 - Built In Device - Internal - N/A 
-	   |  |  ||||
-	   |  |  |--------- Location part 2
-	   |  |------------ Location part 1  
-	   |--------------- Port Connectivity</code></pre>
 
+<ul><li>update opencore version 0.6.4+</li><li>Khôi phục đến bản snapshot củ hơn tham khảo tại link&nbsp;<a href="https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/post-issues.html#rolling-back-apfs-snapshot">sau</a></li></ul>
 
 
-<p>Nếu bạn sử dụng jack combo thì chắc bạn sẽ cần EAPD thì thêm verb 0XY70c02 thêm nó vào sau cùng và thay XY là node id của speaker.</p>
 
+<h2>Kernel Panic on&nbsp;<code>Rooting from the live fs</code></h2>
 
 
-<h2>Phần 6: Xác định Path Map</h2>
 
+<p>Lỗi đầy đủ</p>
 
 
-<p>Đây là lúc bạn dùng đến file <code>codec_dump_dec.txt.svg</code> được dump từ Terminal ở Phần 3.</p>
 
+<pre class="wp-block-code"><code>Rooting from the live fs of a sealed volume is not allowed on a RELEASE build
+</code></pre>
 
 
-<p>Các bạn mở lên và sẽ xuất hiện như sau:</p>
 
+<p>Do secureboot được khởi động để khắc phục chỉ cần update lên version 0.6.4+</p>
 
 
-<figure class="wp-block-image size-large"><img src="https://imgur.com/n04PdIg.png" alt=""/></figure>
 
+<h2>Asus Z97 and HEDT (cụ thể là X99 và X299) thật bại trong giai đoạn 2 của quá trình cài đặt</h2>
 
 
-<p>Nhìn khá rối đúng không nào nhưng các bạn đừng vội nản vì nó thật sự rất dễ  và dễ hơn cách thủ công nhiều.</p>
 
+<p>Có 2 cách fix</p>
 
 
-<p>Trước hết ta cần tìm hiểu các kí hiệu trong sơ đồ sau:</p>
 
+<ul><li>Cài bigsur vào 1 máy khác sau đó chuyển ổ đĩa vào máy cần cài</li><li>Fix the motherboard&#8217;s NVRAM<ul><li>chủ yếu cho Asus Z97 series</li></ul></li><li>Chi tiết tham khảo tại trang&nbsp;<a href="https://www.reddit.com/r/hackintosh/comments/jw7qf1/haswell_asus_z97_big_sur_update_and_installation/">sau</a></li></ul>
 
 
-<figure class="wp-block-image size-large"><img src="http://3.bp.blogspot.com/-WyG40Fq1qEk/ViPT-GHvfmI/AAAAAAAAAsM/hzkCMkVHs4Y/s1600/20.png" alt=""/></figure>
 
+<h2>Laptops kernel panicking on&nbsp;<code>cannot perform kext scan</code></h2>
 
 
-<p>Và đây là thứ tự đọc của Output:</p>
 
+<p>Lỗi này thường xảy ra do có nhiều bản sao của cùng 1 kext trong bộ nhớ cache của kernel. Thường là kext voodooinput. Để khắc phục tình trạng này các bạn hãy kiểm tra trong config.plist -->&nbsp; kernel --> add và chỉ enable 1 kext voodooinput duy nhất.</p>
 
 
-<figure class="wp-block-image size-large"><img src="	http://4.bp.blogspot.com/-YMRr0VNgDnY/ViPJY7IeALI/AAAAAAAAArk/6tIf8AP3vPE/s1600/17.png" alt=""/><figcaption>Audio mixer có thể có hoặc không</figcaption></figure>
 
+<h2>Reboot on &#8220;AppleUSBHostPort::createDevice: failed to create device&#8221; on macOS 11.3+</h2>
 
 
-<p>Thứ tự của Input:</p>
 
+<p>Để fix lỗi này các bạn cần phải tắt <code>XhciPortLimit</code> ở mục <code>Kernel -> Quirks</code>  và map usb theo hướng dẫn <a href="../../../2021/09/29/vi-1map-usb-intel-and-amd/index.html">tại đây</a></p>
 
 
-<figure class="wp-block-image size-large"><img src="	http://2.bp.blogspot.com/-tkCiU6zflJg/ViPJYyJhILI/AAAAAAAAAro/sguGvTiot_s/s1600/16.png" alt=""/><figcaption>Audio mixer và audio selector có thể có hoặc không</figcaption></figure>
 
+<h2>An error occurred preparing the software update</h2>
 
 
-<p>Tiếp theo các bạn hãy chú ý đến các node nào có chữ [N/A] đằng trước tức đây là các node ảo các bạn có thể bỏ qua các node này. </p>
 
+<figure class="wp-block-image size-large"><img src="https://i.imgur.com/ESyQ5QL.jpg" alt=""/></figure>
 
 
-<ul><li><strong>Bây giờ ta sẽ xác định các node của audio output</strong>:</li></ul>
 
+<p>Có 3 cách fix cho trường hợp này</p>
 
 
-<figure class="wp-block-image size-large"><img src="https://imgur.com/laa3aOn.png" alt=""/></figure>
 
+<ul><li>Bật firmwarevolume trong config.plist lên </li><li>Có thể là do ổng cứng của bạn <ul><li>Thử boot bằng hdd</li><li>Hoặc thay ổ mới</li><li>Cần tránh mua các ổ sau<ul><li>kingston, kingspec, kingmax, colorful, fgloway,&#8230;.</li></ul></li></ul></li><li>Hoặc bạn có thể tạo máy ảo rồi dùng time machine tạo thành file backup sao đó tiến hành bung file ra trong recovery của macos trên usb </li></ul>
 
 
-<p>Nhưng nhìn vào mục số 3 ( node 24 ) đây là Mic nhưng chúng ta đang Patch Output tức là chỉ qua tâm đến Speaker và Headphone nên ta có mục 2 và mục 1 là 2 mục cần quan tâm.</p>
 
-
-
-<figure class="wp-block-image size-large"><img src="https://imgur.com/HzvkWzv.png" alt=""/></figure>
-
-
-
-<p>Ta thấy đc liên kết với node 33 là 2 audio mixer 12, 13 nhưng ta thấy node 13 liên kết với node 33 bằng đường không ưu tiên nên ta sẽ loại node 13 đi  ta tiếp tục nhìn vào node 12 có 2 đường ưu tiên đc nối đến node 12 nhưng chỉcó 1 audio output đc nối với node 12 nên ta sẽ loại đường kia đi vậy ta có headphone là 33-12-2 tương tự ta có speaker là 20-13-3.</p>
-
-
-
-<ul><li>Input </li></ul>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://imgur.com/iqZps6q.png" alt=""/></figure>
-
-
-
-<p>Ở đây thì tương dối dễ xác định hơn ta có node 25 có 2 luồng kết nối 1 luồn kết nối đến audio mixer 11 và audio mixer 35 nhưng đường nối đến audio mixer 35 là luồng ưu tiên nên ta loại audio mixer 11 đi và audio mixer đc nối đến audio input 8 nên ta có path map mic in như sau 8-35-25 tương tự ta có path map line in như sau 9-34-24.</p>
-
-
-
-<h2>Phần 7: Patch Platforms.xml và layout#.xml</h2>
-
-
-
-<p>B1: Mở file layout#.xml đã tải ở Phần 1</p>
-
-
-
-<p>Và chỉnh những nội dung sau:</p>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://imgur.com/sShKBC2.png" alt=""/></figure>
-
-
-
-<ul><li>LayoutID: Bạn thay đổi hoặc giữ nguyên hoặc đổi đây mình sẽ thay thành 15.</li></ul>
-
-
-
-<ul><li>CodecID: Phần này các bạn đã sửa ở Phần 3.</li></ul>
-
-
-
-<ul><li>Inputs: Tuỳ vào codec của bạn có LineIn hay không, nếu không có thì xoá đi.</li></ul>
-
-
-
-<ul><li>PatchMapID: Bạn cho vào đây 1 số ngẫu nhiên. </li></ul>
-
-
-
-<p>B2: Mở file Platforms.xml lên:</p>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://imgur.com/eSGoYik.png" alt=""/></figure>
-
-
-
-<p>Bạn điền Path Map đã xác định Phần 7 vào đây:</p>
-
-
-
-<ul><li>PathMaps -> 0 -> PathMap -> 0 -> 0 là Mic.</li></ul>
-
-
-
-<ul><li>PathMaps -> 0 -> PathMap -> 0 -> 1 là LineIn (mic gắn ngoài do macos không hỗ trợ nên phải khai báo là linein).</li></ul>
-
-
-
-<ul><li>PathMaps -> 0 -> PathMap -> 1 -> 0 là HP (Headphone).</li></ul>
-
-
-
-<ul><li>PathMaps -> 0 -> PathMap -> 1 -> 1 là Speaker.</li></ul>
-
-
-
-<ul><li>PathMaps -&gt; 0 -&gt; PathMap -&gt; PathMapID: ở đây bạn cần điền số giống với PathMapID ở layout#.xml</li></ul>
-
-
-
-<p>Nếu trường hợp không có Audio Mixer/Selector thì bạn xoá đi key 1, chỉ điền vào key 0 và key 2 thôi nhé!</p>
-
-
-
-<h2>Phần 8: Build Kext</h2>
-
-
-
-<p>B1: Bỏ Kext Lilu vào folder AppleALC. </p>
-
-
-
-<p>B2: Vào Resource xóa hết Codec thừa và chừa lại Codec của bạn. </p>
-
-
-
-<p>B3: Bỏ 2 file layoutid# và platformid# và folder tên Codec (nên Rename lại theo layout-id bạn đã set)</p>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://imgur.com/HZnoUwe.png" alt=""/></figure>
-
-
-
-<p>B4: <strong> </strong>Mở AppleALC.xcodeproj &#8211;> PinConfigs &#8211;> Info.plist &#8211;> IOKitPersonalities &#8211;> HDA Hardware Config Resource &#8211;> HDAConfigDefault bằng Xcode bạn có thể tự tạo hoặc edit 1 cái có sẳn.</p>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://imgur.com/h7WD12F.png" alt=""/></figure>
-
-
-
-<p>Các bạn sửa lại như sau:</p>
-
-
-
-<ul><li>Codec: thay đổi tuỳ thích.</li><li>CodecID: thay bằng Vendor Id của codec ở hệ decimal đã chuẩn bị trên.</li><li>ConfigData: bạn copy codec verb đã chuẩn bị đưa vào đây.</li><li>LayoutID: nhập layout-id bạn đã chọn để patch ở trên.</li></ul>
-
-
-
-<p>B5:  Mở AppleALC.xcodeproj &#8211;> Resources &#8211;> (tên codec bạn đang patch) &#8211;> Info.plist &#8211;> Information Property List &#8211;> Files.</p>
-
-
-
-<p>Và chỉnh những thứ sau:</p>
-
-
-
-<ul><li>Codec id: id codec của các bạn. </li><li>Codec name: tên codec của các bạn.</li><li>layout -> 0 -> comment: điền tên bạn muốn đặt.</li><li>layout -> 0 -> id: điền id của bạn đã đặt ở Phần 8.</li><li>layout -> 0 -> path: điền path của file layout#.xml vào đây.</li><li>platforms -> 0 -> comment: điền tên bạn muốn đặt.</li><li>platforms -> 0 -> id: điền id của bạn đã đặt ở Phần 8.</li><li>platforms -> 0 -> path: điền path của file layout#.xml vào đây.</li></ul>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://imgur.com/VhzXusw.png" alt=""/></figure>
-
-
-
-<p>B6: Các bạn ấn Build Kext.</p>
-
-
-
-<h2>Phần 9: Load Kext AppleALC</h2>
-
-
-
-<p>B1: Bỏ Kext vừa Build vào EFI&#8211;> OC &#8211;> Kext và snapshot lại hoặc bỏ vào EFI &#8211;> Clover &#8211;> kext &#8211;> Other.  </p>
-
-
-
-<p>B2: Add vào boot-arg <code>alcid=#</code> (thay <code>#</code> thành layout id bạn đã đặt ở trên như của mình là <code>alcid=15</code>) </p>
-
-
-
-<p><strong>Lưu ý: Source tham khảo <a href="https://hackintosh.vn/patch-applehda-cho-cac-laptop-chay-hackintosh">Patch AppleHDA cho các laptop chạy Hackintosh – Hackintosh Vietnam – Chuyên trang cung cấp hướng dẫn cài hackintosh</a> | <a href="https://www.olarila.com/topic/1817-how-to-patch-applehda/">How to patch AppleHDA &#8211; Guides and Tutorials &#8211; Olarila</a> | <a href="http://trungnguyenblogs.blogspot.com/2015/10/huong-dan-patch-applehda-cho-cac-laptop.html">[Hướng dẫn] Patch AppleHDA cho các laptop chạy Hackintosh &#8211; Sharing Is Caring (trungnguyenblogs.blogspot.com)</a> </strong></p>
-<p>The post <a rel="nofollow" href="https://heavietnam.ga/2021/11/15/xxxx-patch-applehda-phan-2/">XXXX. Patch Apple HDA (Phần 2)</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
+<p>Source tham khảo:&nbsp;<a href="https://dortania.github.io/OpenCore-Install-Guide/extras/big-sur/#stuck-at-forcing-cs-runtime-for-entitlement">OpenCore and macOS 11: Big Sur | OpenCore Install Guide (dortania.github.io)</a></p>
+<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/04/10/1-so-loi-o-xuat-hien-o-bigsur/">1 số lỗi ở xuất hiện ở bigsur</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>https://heavietnam.ga/2021/11/15/xxxx-patch-applehda-phan-2/feed/</wfw:commentRss>
+					<wfw:commentRss>https://heavietnam.ga/2022/04/10/1-so-loi-o-xuat-hien-o-bigsur/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Add device-id vào amd kext</title>
+		<link>https://heavietnam.ga/2022/04/10/add-device-id-vao-amd-kext/</link>
+					<comments>https://heavietnam.ga/2022/04/10/add-device-id-vao-amd-kext/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Sun, 10 Apr 2022 14:01:59 +0000</pubDate>
+				<category><![CDATA[post install]]></category>
+		<guid isPermaLink="false">https://heavietnam.ga/?p=2930</guid>
+
+					<description><![CDATA[<p>B1: Các bạn mở terminal lên và gõ&#160;kextstat &#124; grep AMD B2: Các bạn mở file&#160;info.plist&#160;các kext được liệt kê sau khi gõ lệnh trên và sửa lại như sau ( ở S/L/E ) Add device-id của các bạn vào mục IOPCIMatch B3: các bạn chỉnh version cao hơn version gốc ( nếu ở cata [...]</p>
+<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/04/10/add-device-id-vao-amd-kext/">Add device-id vào amd kext</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>B1: Các bạn mở terminal lên và gõ&nbsp;<code>kextstat | grep AMD</code></p>
+
+
+
+<p>B2: Các bạn mở file&nbsp;<code>info.plist</code>&nbsp;các kext được liệt kê sau khi gõ lệnh trên và sửa lại như sau ( ở S/L/E )</p>
+
+
+
+<figure class="wp-block-image"><img src="https://imgur.com/qz9Zpxx.png" alt=""/></figure>
+
+
+
+<figure class="wp-block-image"><img src="https://imgur.com/qz9Zpxx.png" alt=""/></figure>
+
+
+
+<p>Add device-id của các bạn vào mục IOPCIMatch</p>
+
+
+
+<p>B3: các bạn chỉnh version cao hơn version gốc ( nếu ở cata thì không cần chỉnh )</p>
+
+
+
+<figure class="wp-block-image"><img src="https://imgur.com/XXTRdil.png" alt=""/></figure>
+
+
+
+<p>tiếp theo chỉnh cả file version.plist ( nếu cata thì không cần )</p>
+
+
+
+<figure class="wp-block-image"><img src="https://imgur.com/DAlmIHD.png" alt=""/></figure>
+
+
+
+<p>B4: Các bạn dùng hackintool để bỏ kext và L/E ( hoặc nếu ở cata thì S/L/E )</p>
+
+
+
+<figure class="wp-block-image"><img src="https://imgur.com/Yu6BbPL.png" alt=""/></figure>
+
+
+
+<p>Lưu ý: nếu ở cata thì các bạn tiến hành xóa các kext đã xác định ở bước 1 đi và tiến hành bỏ&nbsp; đã patch vào S/L/E và tiến hành rebuild kext cache</p>
+
+
+
+<figure class="wp-block-image"><img src="https://imgur.com/ILPsvvF.png" alt=""/></figure>
+
+
+
+<p>Source tham khảo:&nbsp;<a href="https://howtophackintosh.top/">howtohackintosh.top</a></p>
+<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/04/10/add-device-id-vao-amd-kext/">Add device-id vào amd kext</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://heavietnam.ga/2022/04/10/add-device-id-vao-amd-kext/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Opencore legacy</title>
+		<link>https://heavietnam.ga/2022/04/10/2925/</link>
+					<comments>https://heavietnam.ga/2022/04/10/2925/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Sun, 10 Apr 2022 13:27:44 +0000</pubDate>
+				<category><![CDATA[post install]]></category>
+		<guid isPermaLink="false">https://heavietnam.ga/?p=2925</guid>
+
+					<description><![CDATA[<p>Tạo usb boot Đối với các máy legacy thì chắc hẳn phần cứng đã cũ rồi đúng không nào. Do đó các bác cũng sẽ cần các phiên bản macos phù hợp thì hãy làm theo sau: offline (10.10-10.12) B1: Các bạn truy cập vào trang&#160;sau&#160;để tải bộ cài B2: Các bạn chạy file pkg [...]</p>
+<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/04/10/2925/">Opencore legacy</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<h2>Tạo usb boot</h2>
+
+
+
+<p>Đối với các máy legacy thì chắc hẳn phần cứng đã cũ rồi đúng không nào. Do đó các bác cũng sẽ cần các phiên bản macos phù hợp thì hãy làm theo sau:</p>
+
+
+
+<ul><li>offline (10.10-10.12)<ul><li>B1: Các bạn truy cập vào trang&nbsp;<a href="https://support.apple.com/en-us/HT211683">sau</a>&nbsp;để tải bộ cài</li><li>B2: Các bạn chạy file pkg lên và cài đặt. Nếu gặp lỗi sau&nbsp;<img src="https://dortania.github.io/OpenCore-Install-Guide/assets/img/unsupported.679e01e6.png" alt=""></li></ul></li></ul>
+
+
+
+<p>Các bạn mount file dmg ra và mở termianl lên sau đó gõ các lệnh sau</p>
+
+
+
+<pre class="wp-block-code"><code>cd ~/Desktop
+mkdir MacInstall &amp;&amp; cd MacInstall</code></pre>
+
+
+
+<p>Tiếp theo bạn sẽ tiến hành giải nén file installer ( mở termianl lên và gõ )</p>
+
+
+
+<pre class="wp-block-code"><code>// 10.11 và cũ hơn
+
+xar -xf /Volumes/Install\ OS\ X/InstallMacOSX.pkg
+
+// 10.12
+
+xar -xf /Volumes/Install\ macOS/InstallOS.pkg</code></pre>
+
+
+
+<p>Tiếp theo hãy chạy các lệnh sau (chạy từng lệnh 1)<code></code><code></code></p>
+
+
+
+<pre class="wp-block-code"><code>//Yosemite
+cd InstallMacOSX.pkg
+tar xvzf Payload
+mv InstallESD.dmg Install\ OS\ X\ Yosemite.app/Contents/SharedSupport/
+mv Install\ OS\ X\ Yosemite.app /Applications
+
+//El Capitan
+cd InstallMacOSX.pkg
+tar xvzf Payload
+mv InstallESD.dmg Install\ OS\ X\ El\ Capitan.app/Contents/SharedSupport/
+mv Install\ OS\ X\ El\ Capitan.app /Applications
+
+//Sierra
+cd InstallOS.pkg
+tar xvzf Payload
+mv InstallESD.dmg Install\ macOS\ Sierra.app/Contents/SharedSupport/
+mv Install\ macOS\ Sierra.app /Applications</code></pre>
+
+
+
+<ul><li>B3: Các bạn chạy lệnh cài đặt theo trang&nbsp;<a href="../../../2021/09/29/xxxi-cac-tao-bo-cai-offline-khi-khong-co-usb/index.html">sau</a></li></ul>
+
+
+
+<h2>Setting up</h2>
+
+
+
+<h3>Macos</h3>
+
+
+
+<ul><li>Chuẩn bị:<ul><li>BootInstall_IA32.tool or BootInstall_X64.tool trong thư mục&nbsp;&nbsp;<code>/Utilties/LegacyBoot/</code>(File này ở trong&nbsp; thư mục&nbsp;<a href="https://github.com/acidanthera/OpenCorePkg/releases">opencore pkg</a>)</li><li>Install USB (tạo theo link&nbsp;<a href="../../../2020/12/23/cach-tao-bo-cai-online/index.html">sau</a>&nbsp;hoặc theo link&nbsp;<a href="../../../2020/12/23/cach-tao-bo-cai-offline/index.html">sau</a>)</li><li>Sau đó mở terminal lên và nhập lệnh sau:</li></ul></li></ul>
+
+
+
+<p><code>sudo ~/Downloads/OpenCore/Utilities/legacyBoot/BootInstall_X64.tool </code>Nếu là 32 bit thì thay <code>X64</code> thành <code>IA32</code> Sau đó các bạn sẽ nhận được 1 phân vùng EFI có 1 folder EFI và 1 file <code>bootx64.efi</code> hoặc <code>bootia32.efi</code></p>
+
+
+
+<h3>Windows</h3>
+
+
+
+<ul><li>Chuẩn bị:<ul><li><a href="https://www.7-zip.org/" target="_blank" rel="noreferrer noopener">7-Zip</a></li><li><a href="https://www.majorgeeks.com/files/details/bootice_64_bit.html" target="_blank" rel="noreferrer noopener">BOOTICE</a></li><li><a href="https://github.com/acidanthera/OpenCorePkg/releases" target="_blank" rel="noreferrer noopener">OpenCorePkg</a></li></ul></li><li>Tiến hành:<ul><li>B1: Các bạn mở bootice lên và chọn đúng ổ đĩa</li></ul></li></ul>
+
+
+
+<figure class="wp-block-image"><img src="https://dortania.github.io/OpenCore-Install-Guide/assets/img/bootice.f83b0859.png" alt=""/></figure>
+
+
+
+<ul><li>B2: ấn Process MBR và chọn Restore MBR tiếp theo bạn chọn file boot0 trong Utilities/LegacyBoot/ ở opencore pkg</li></ul>
+
+
+
+<figure class="wp-block-image"><img src="https://dortania.github.io/OpenCore-Install-Guide/assets/img/restore-mbr.8e5164a9.png" alt=""/></figure>
+
+
+
+<figure class="wp-block-image"><img src="https://dortania.github.io/OpenCore-Install-Guide/assets/img/restore-mbr-file.a0daa24a.png" alt=""/></figure>
+
+
+
+<ul><li>B3: Các bạn trở về menu chính và ấn Process PBR sau đó ấn Restore PBR và chọn file boot1f32 từ Utilities/LegacyBoot/ ở OpenCorePkg</li></ul>
+
+
+
+<figure class="wp-block-image"><img src="https://dortania.github.io/OpenCore-Install-Guide/assets/img/restore-pbr.2635de6c.png" alt=""/></figure>
+
+
+
+<figure class="wp-block-image"><img src="https://dortania.github.io/OpenCore-Install-Guide/assets/img/restore-pbr-file.cbf5dcf4.png" alt=""/></figure>
+
+
+
+<ul><li>B4: Mở usb ra rồi copy file bootx64 và bootia32&nbsp; từ Utilities/LegacyBoot/ và đổi tên chúng lại thành boot</li></ul>
+
+
+
+<figure class="wp-block-image"><img src="https://dortania.github.io/OpenCore-Install-Guide/assets/img/final-boot-file.a45bcbb9.png" alt=""/></figure>
+
+
+
+<p><strong>Source tham khảo:&nbsp;<a href="https://dortania.github.io/OpenCore-Install-Guide/installer-guide/winblows-install.html#making-the-installer">Making the installer in Windows | OpenCore Install Guide (dortania.github.io)</a></strong></p>
+<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/04/10/2925/">Opencore legacy</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://heavietnam.ga/2022/04/10/2925/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Cách sử kext S/L/E trên bigsur</title>
+		<link>https://heavietnam.ga/2022/04/10/cach-su-kext-s-l-e-tre-bigsur/</link>
+					<comments>https://heavietnam.ga/2022/04/10/cach-su-kext-s-l-e-tre-bigsur/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Sun, 10 Apr 2022 13:03:13 +0000</pubDate>
+				<category><![CDATA[post install]]></category>
+		<guid isPermaLink="false">https://heavietnam.ga/?p=2922</guid>
+
+					<description><![CDATA[<p>Tìm hiểu chung Đối với bigsur apple đã chặn tính năng write ở S/L/E (để biết S/L/E là gì bạn vui lòng xem lại thuật ngữ ở đây). Tuy nhiên khi đã tìm hiểu sâu vào hackintosh bạn sẽ cần mod kext và cần cho nó vào S/L/E. Ta sẽ có 2 phương pháp cho [...]</p>
+<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/04/10/cach-su-kext-s-l-e-tre-bigsur/">Cách sử kext S/L/E trên bigsur</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<h2>Tìm hiểu chung</h2>
+
+
+
+<p>Đối với bigsur apple đã chặn tính năng write ở S/L/E (để biết S/L/E là gì bạn vui lòng xem lại thuật ngữ <a href="https://heavietnam.ga/2021/09/29/tim-hieu-ve-hackintosh/">ở đây</a>). Tuy nhiên khi đã tìm hiểu sâu vào hackintosh bạn sẽ cần mod kext và cần cho nó vào S/L/E. Ta sẽ có 2 phương pháp cho trường hợp này:</p>
+
+
+
+<ul><li>Snapshot: đây cũng là 1 cách cho phép bạn tạo 1 folder extension ở user và tiến hành snapshot nó với S/L/E <ul><li>Không khuyến khích vì nó rất nguy hiểm chỉ cần 1 sơ xuất hoạt sử dụng ko đúng phiên bản macos có thể bay ngay lập tức</li></ul></li><li>Sử dụng L/E<ul><li>đúng đối với cách này việc cần làm là bạn chỉ cần tăng version kext đã mod lên cao hơn version kext gốc và dùng kext-droplet cho nó vào L/E thì sẽ nhận kext</li></ul></li></ul>
+
+
+
+<h2>Tiến hành</h2>
+
+
+
+<p>B1: mở kext ra </p>
+
+
+
+<ul><li>Chuột phải chọn <code>show package contents</code></li></ul>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://i.imgur.com/bEAh6tw.png" alt=""/></figure>
+
+
+
+<p>B2: sửa <code>CFBundleVersion</code> và <code>CFBundleShortVersionString</code> thành version cao hơn</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://i.imgur.com/oZmbOhs.png" alt=""/></figure>
+
+
+
+<p>B3: mở file version.plist và chỉnh những mục tương tự</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://i.imgur.com/kdu6m4i.png" alt=""/></figure>
+
+
+
+<p>B4: tải kext-droplet <a href="https://github.com/chris1111/Kext-Droplet-Big-Sur">tại đây</a></p>
+
+
+
+<p>B5: tắt sip theo hướng dẫn <a href="https://maclife.vn/huong-dan-tat-system-integrity-protection-sip-de-cai-app.html">tại đây</a></p>
+
+
+
+<p>B6: bỏ kext vào kext-droplet</p>
+
+
+
+<p><strong>Source tham khảo: howtohackintosh.top</strong></p>
+<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/04/10/cach-su-kext-s-l-e-tre-bigsur/">Cách sử kext S/L/E trên bigsur</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://heavietnam.ga/2022/04/10/cach-su-kext-s-l-e-tre-bigsur/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Fix rtc manual</title>
+		<link>https://heavietnam.ga/2022/04/10/fix-rtc-manual/</link>
+					<comments>https://heavietnam.ga/2022/04/10/fix-rtc-manual/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Sun, 10 Apr 2022 01:48:18 +0000</pubDate>
+				<category><![CDATA[install hackintosh]]></category>
+		<guid isPermaLink="false">https://heavietnam.ga/?p=2913</guid>
+
+					<description><![CDATA[<p>Đối với lỗi thiếu rtc thì có 3 cách để sửa do macos cần rtc mà ko cần awac do đó ta nên disable awac và enable rtc Static patch B1: dump dsdt theo hướng dẫn tại đây B2: mở dsdt ra và search ACPI000E ta sẽ thấy như sau B3: search PNP0B00 ta sẽ [...]</p>
+<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/04/10/fix-rtc-manual/">Fix rtc manual</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>Đối với lỗi thiếu rtc thì có 3 cách để sửa do macos cần rtc mà ko cần awac do đó ta nên disable awac và enable rtc</p>
+
+
+
+<h2>Static patch </h2>
+
+
+
+<p>B1: dump dsdt theo hướng dẫn <a href="https://heavietnam.ga/2021/09/29/xxvi-patch-dsdt-phan-1/">tại đây</a></p>
+
+
+
+<p>B2: mở dsdt ra và search <code>ACPI000E</code> ta sẽ thấy như sau</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://i.imgur.com/UpcoVpV.png" alt=""/></figure>
+
+
+
+<p>B3: search <code>PNP0B00</code> ta sẽ thấy như sau</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://i.imgur.com/xsvaKc3.png" alt=""/></figure>
+
+
+
+<p>B4: bạn chú ý phần khoanh đỏ ta sẽ có thể hiểu như sau</p>
+
+
+
+<ul><li>Method(_STA thể hiện status của device đó ở đây là device RTC và AWAC</li><li>Tiếp đó sẽ là câu lệnh if ta sẽ thấy ở AWAC là <code>If (LEqual (STAS, zero))</code> ở RTC là <code>If (LEqual (STAS, One)) </code></li><li>và trả về 2 giá trị là 0x0f và 0x00<ul><li>0x0f: enable</li><li>0x00: disable</li></ul></li><li>từ đó ta có thể thấy như sau khi STAS=zero tức là điều kiện của AWAC đúng sẽ trả về giá trị là <code>0x0f</code>. Ngược lại điều kiện ở RTC sai tức là trả về giá trị là <code>0x00</code></li><li>Ngược lại khi STAS=one tức là điều kiện của AWAC sai và trả về là <code>0x00</code>. Khi này điều kiện ở RTC đúng và trả về là <code>0x0f</code></li><li>Như vậy có thể hiểu rằng khi STAS=one thì enable RTC và disable AWAC và ngược lại</li><li>Nhưng STAS thì được các os set </li></ul>
+
+
+
+<p>B5: Như vậy ta đã hiểu được nguyên lý hoạt động của method _STA. Vì vậy để fix nó ta có 3 cách đi ở phần này mình sẽ hướng dẫn cách đi đầu tiên là static patch </p>
+
+
+
+<ul><li>Ta nhận thấy rằng giá trị method _sta phụ thuộc vào if ((STAS vậy nếu như ta xóa if đi và chỉnh cho giá trị method _STA của rtc luôn hoạt động thì RTC được enable</li></ul>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://i.imgur.com/WfXnZuR.png" alt=""/></figure>
+
+
+
+<ul><li>Sao khi xóa ta được</li></ul>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://i.imgur.com/AoHhCha.png" alt=""/></figure>
+
+
+
+<p>B6: như vậy là xong vì macos chỉ cần RTC không cần AWAC</p>
+
+
+
+<h2>Hotpatch</h2>
+
+
+
+<h3>Sửa giá trị STAS cho nó luôn bằng one</h3>
+
+
+
+<p>B1: Ta cần xác định biến được dùng để so sánh trong method <code>_sta</code> </p>
+
+
+
+<ul><li>Search <code>PNP0B00</code> nhìn vào method STA ta sẽ thấy biến được dùng để so sánh như ở trên là STAS có 1 số máy là STSl vân vân</li></ul>
+
+
+
+<p>B2: tạo SSDT-AWAC với nói dung như sau</p>
+
+
+
+<pre class="wp-block-code"><code>
+DefinitionBlock ("", "SSDT", 2, "heavn", "AWAC", 0x00000000)
+{
+    External (STAS, IntObj)
+
+    Scope (_SB)
+    {
+        Method (_INI, 0, NotSerialized)  // _INI: Initialize
+        {
+            If (_OSI ("Darwin"))
+            {
+                STAS = One
+            }
+        }
+    }
+}
+</code></pre>
+
+
+
+<p> B3: thay <code>STAS</code> bằng biến mà method <code>_STA</code> dùng để so sánh </p>
+
+
+
+<p>B4: save lại</p>
+
+
+
+<p>B5: bỏ file vào EFI &#8211;> OC &#8211;> ACPI hoặc EFI &#8211;> clover &#8211;> ACPI &#8211;> patched (snaps nếu ở opencore)</p>
+
+
+
+<h3>Sử dụng SSDT-RTC0</h3>
+
+
+
+<p>B1: tải SSDT-RTC0 <a href="https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/Source/SSDT-RTC0.dsl">tại đây</a></p>
+
+
+
+<p>B2: Xác định đường dẫn </p>
+
+
+
+<ul><li>Search <code>PNP0B00</code> ta sẽ thấy được đường dẫn </li></ul>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://i.imgur.com/zz4tg5t.png" alt=""/></figure>
+
+
+
+<ul><li>Ở đây ta có đường dẫn là _SB.PCI0.LPCB.RTC</li></ul>
+
+
+
+<p>B3: tiến hành chỉnh sửa vào SSDT-RTC0</p>
+
+
+
+<pre class="wp-block-code"><code>//thay _SB_.PCI0.LPCB bằng đường dẫn mà bạn tìm thấy
+
+DefinitionBlock ("", "SSDT", 2, "ACDT", "RTC0", 0x00000000)
+{
+    External (_SB_.PCI0.LPCB, DeviceObj)    // (from opcode)
+
+    Scope (_SB.PCI0.LPCB)
+    {
+        Device (RTC0)
+        {
+            Name (_HID, EisaId ("PNP0B00"))  // _HID: Hardware ID
+            Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
+            {
+                IO (Decode16,
+                    0x0070,             // Range Minimum
+                    0x0070,             // Range Maximum
+                    0x01,               // Alignment
+                    0x08,               // Length
+                    )
+                IRQNoFlags ()
+                    {8}
+            })
+            Method (_STA, 0, NotSerialized)  // _STA: Status
+            {
+                If (_OSI ("Darwin")) {
+                    Return (0x0F)
+                } Else {
+                    Return (0);
+                }
+            }
+        }
+    }
+}</code></pre>
+
+
+
+<p>B4: bỏ nó vào EFI &#8211;> OC &#8211;> ACPI hoặc EFI &#8211;> Clover &#8211;> ACPI &#8211;> Patched (snaps nếu là oc)</p>
+
+
+
+<p><strong>Source tham khảo: <a href="https://www.facebook.com/groups/2631037280276507/user/100007125750144">(7) Văn Hùng Nguyễn | Facebook</a> | <a href="https://dortania.github.io/Getting-Started-With-ACPI/Universal/awac-methods/manual.html#finding-the-acpi-path">Fixing System Clocks: Manual | Getting Started With ACPI (dortania.github.io)</a> | <a href="http://howtohackintosh.top">Howtohackintosh.top</a></strong></p>
+<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/04/10/fix-rtc-manual/">Fix rtc manual</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://heavietnam.ga/2022/04/10/fix-rtc-manual/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Emulated NVRAM</title>
+		<link>https://heavietnam.ga/2022/04/09/emulated-nvram/</link>
+					<comments>https://heavietnam.ga/2022/04/09/emulated-nvram/#comments</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Sat, 09 Apr 2022 15:37:03 +0000</pubDate>
+				<category><![CDATA[install hackintosh]]></category>
+		<guid isPermaLink="false">https://heavietnam.ga/?p=2910</guid>
+
+					<description><![CDATA[<p>hầu hết các model đều native nhận NVRAM nhưng đối với các chip set X99 và X299 series thì bạn cần phải patch NVRAM Đối với B360, B365, H310, H370, Z390 thì bạn có thể sử dụng ssdt-pmc để kích hoạt được nvram. Gen 10 thì không cần ssdt này Cleaning out the Clover gunk [...]</p>
+<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/04/09/emulated-nvram/">Emulated NVRAM</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>hầu hết các model đều native nhận NVRAM nhưng đối với các chip set X99 và X299 series thì bạn cần phải patch NVRAM</p>
+
+
+
+<p>Đối với B360, B365, H310, H370, Z390 thì bạn có thể sử dụng <a href="https://heavietnam.ga/2022/03/10/ssdt-recomend/">ssdt-pmc</a> để kích hoạt được nvram. Gen 10 thì không cần ssdt này</p>
+
+
+
+<h2>Cleaning out the Clover gunk</h2>
+
+
+
+<p>có thể bạn không biết nhưng clover có thêm các tệp rc vào macos để mô phỏng nvram điều này sẽ xung đột với phương pháp mô phỏng của opencore. Để khác phục các bạn sẽ xóa các file sau:</p>
+
+
+
+<ul><li><code>/Volumes/EFI/EFI/CLOVER/drivers64UEFI/EmuVariableUefi-64.efi</code></li><li><code>/Volumes/EFI/nvram.plist</code></li><li><code>/etc/rc.clover.lib</code></li><li><code>/etc/rc.boot.d/10.save_and_rotate_boot_log.local</code></li><li><code>/etc/rc.boot.d/20.mount_ESP.local</code></li><li><code>/etc/rc.boot.d/70.disable_sleep_proxy_client.local.disabled</code></li><li><code>/etc/rc.shutdown.d/80.save_nvram_plist.local​</code></li></ul>
+
+
+
+<ul><li><code>/etc/rc.boot.d</code></li><li><code>/etc/rc.shutdown.d​</code></li></ul>
+
+
+
+<p>Nếu các thư mục trống các bạn vẫn phải xóa chúng</p>
+
+
+
+<h2>Kiểm tra xem nvram của bạn có hoạt động hay không</h2>
+
+
+
+<pre class="wp-block-code"><code>// dán từng dòng code sau vào
+
+sudo -s
+nvram -c
+nvram myvar=test
+exit
+
+// reboot và chạy tiếp dòng sau
+
+nvram -p | grep -i myvar
+
+// nếu không có gì trả về thì nvram bạn không hoạt động. Nếu như nó trả về 1 dòng có từ khóa myvar test thì nvram của bạn hoạt động
+
+// lệnh nvram -c yêu cầu tắt sip. Tuy nhiên bạn có thể thay thế dòng này bằng cách reset nvram ở menu boot (bật Misc -> Security -> AllowNvramReset -> YES)</code></pre>
+
+
+
+<h2>Enabling emulated NVRAM</h2>
+
+
+
+<p>B1: chỉnh config theo sau</p>
+
+
+
+<ul><li>Booter:<ul><li>DisableVariableWrite: NO</li></ul></li><li>Misc -> Security:<ul><li>ExposeSensitiveData: 0x3</li></ul></li><li>NVRAM:<ul><li>LegacyEnable: YES</li><li>LegacyOverwrite: YES</li><li>LegacySchema: được opencore set mặc định</li><li>WriteFlash: YES</li></ul></li></ul>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://dortania.github.io/OpenCore-Post-Install/assets/img/nvram.c97ef040.png" alt=""/></figure>
+
+
+
+<p>bây giờ bạn sẽ chạy <a href="https://github.com/acidanthera/OpenCorePkg/releases">LogoutHook.command</a> (trong /Utilities/LogoutHook/) </p>
+
+
+
+<pre class="wp-block-code"><code>// chạy đoạn code sau 
+sudo defaults write com.apple.loginwindow LogoutHook</code></pre>
+
+
+
+<p>B2: bán sẽ kéo file LogoutHook.command vào terminal và nhấn enter</p>
+
+
+
+<p>Lưu ý: boot-arg <code>-x</code> yêu cầu nvram để hoạt động. với những macos 10.12- thì điều này sẽ không khả dụng. Bạn sẽ cần copy file <code>nvram.mojave</code> vàocùng folder với <code>LogoutHook.command</code>. Nó sẽ gọi nvram.mojave thay vì gọi nvram hệ thống</p>
+
+
+
+<p><strong>Source: <a href="https://dortania.github.io/OpenCore-Post-Install/misc/nvram.html#enabling-emulated-nvram-with-a-nvram-plist">Emulated NVRAM | OpenCore Post-Install (dortania.github.io)</a></strong></p>
+<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/04/09/emulated-nvram/">Emulated NVRAM</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://heavietnam.ga/2022/04/09/emulated-nvram/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Kernel issue</title>
+		<link>https://heavietnam.ga/2022/04/09/kernel-issue/</link>
+					<comments>https://heavietnam.ga/2022/04/09/kernel-issue/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Sat, 09 Apr 2022 10:24:19 +0000</pubDate>
+				<category><![CDATA[install hackintosh]]></category>
+		<guid isPermaLink="false">https://heavietnam.ga/?p=2904</guid>
+
+					<description><![CDATA[<p>Stuck on [EB&#124;#LOG:EXITBS:START] Xem chi tiết tại đây Stuck on EndRandomSeed Fix giống như lỗi Stuck on [EB&#124;#LOG:EXITBS:START] Đối với các máy đang sử dụng opencore version 0.7.3+ boot cata bị stuck lỗi này thì chuyển SecureBootModel trong config về Disable Stuck sau khi select macos partion ở opencore Fix giống như lỗi Stuck on [...]</p>
+<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/04/09/kernel-issue/">Kernel issue</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<h2>Stuck on [EB|#LOG:EXITBS:START]</h2>
+
+
+
+<p>Xem chi tiết <a href="https://heavietnam.ga/2022/03/03/eblogexitbsstart/">tại đây</a></p>
+
+
+
+<h2>Stuck on <code>EndRandomSeed</code></h2>
+
+
+
+<ul><li>Fix giống như lỗi Stuck on [EB|#LOG:EXITBS:START]</li><li>Đối với các máy đang sử dụng opencore version 0.7.3+ boot cata bị stuck lỗi này thì chuyển <code>SecureBootModel</code> trong config về <code>Disable</code> </li></ul>
+
+
+
+<h2>Stuck sau khi select macos partion ở opencore</h2>
+
+
+
+<ul><li>Fix giống như lỗi Stuck on [EB|#LOG:EXITBS:START]</li><li>Nên sử dụng <a href="https://heavietnam.ga/2022/04/09/opencore-debug/">EFI debug</a> trong trường hợp này</li></ul>
+
+
+
+<h2>Kernel Panic on <code>Invalid frame pointer</code></h2>
+
+
+
+<p>Đây là lỗi ở <code>Booter --&gt; quirks</code> các bạn sẽ tiến hành check các phần sau:</p>
+
+
+
+<ul><li>DevirtualiseMmio<ul><li>Một số Certain MMIO vẫn yêu được bật để có thể hoạt động được vì vậy bạn cần loại trừ các Certain này trong <code>Booter -&gt; MmioWhitelist</code> hoặc disable hoàn toàn tính năng này</li><li>Xem chi tiết <a href="https://heavietnam.ga/2022/01/31/using-devirtualisemmio/">tại đây</a></li></ul></li><li>SetupVirtualMap <ul><li>Tính năng này là bắt buộc đối với hầu hết các model. Nếu chưa có bạn hãy bật lên</li><li>Tuy nhiên 1 số model sẽ không hoạt động với quirks này và có thể xảy ra panic<ul><li>Intel&#8217;s Ice Lake series</li><li>Intel&#8217;s Comet Lake series</li><li>AMD&#8217;s B550</li><li>AMD&#8217;s A520</li><li>AMD&#8217;s TRx40</li><li>VMs like QEMU</li></ul></li></ul></li></ul>
+
+
+
+<p>1 số lỗi khác có thể xảy ra do macos xung đột với tính năng write protection from CR0 register để giải quyết  ta có thể làm như sau</p>
+
+
+
+<ul><li>Nếu firmware của bạn support MATs (2018+) thì làm theo sau<ul><li>EnableWriteUnprotector -&gt; False</li><li>RebuildAppleMemoryMap -&gt; True</li><li>SyncRuntimePermissions -&gt; True</li></ul></li><li>Đối với những firmware cũ hơn thì bạn chỉnh theo sau<ul><li>EnableWriteUnprotector -&gt; True</li><li>RebuildAppleMemoryMap -&gt; False</li><li>SyncRuntimePermissions -&gt; False</li></ul></li></ul>
+
+
+
+<p>Tuy nhiên đối với 1 số máy thì gen 6 đã hộ trợ MATs để check xem máy bạn có hỗ trợ không bạn có thể check ở opencore log </p>
+
+
+
+<pre class="wp-block-code"><code>OCABC: MAT support is 1
+
+// Nếu hiện là 1 tức là support còn hiện là 0 tức là không support</code></pre>
+
+
+
+<h2 id="stuck-on-eb-ld-ofs-err-0xe-when-booting-preboot-volume">Stuck on&nbsp;<code>[EB|LD:OFS] Err(0xE)</code>&nbsp;when booting preboot volume</h2>
+
+
+
+<pre class="wp-block-code"><code>// full error
+
+&#91;EB|`LD:OFS] Err(0xE) @ OPEN (System\\Library\\PrelinkedKernels\\prelinkedkernel)</code></pre>
+
+
+
+<p>Lỗi này xảy ra khi bạn preboot volume không được cập nhất đúng cách sẽ fix theo sau:</p>
+
+
+
+<ul><li>Enable <code>JumpstartHotplug</code> ở <code>UEFI -&gt; APFS</code> (Nếu không có nó sẽ không thể boot vào recovery ở macos)</li><li>Boot vào recovery</li><li>mở terminal và chạy đoạn code sau:</li></ul>
+
+
+
+<pre class="wp-block-code"><code>// Đầu tiên cần tìm preboot volume
+diskutil list
+
+// Nhìn vào list sau, ở đây preboot volume là disk5s2
+/dev/disk5 (synthesized):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      APFS Container Scheme -                      +255.7 GB   disk5
+                                 Physical Store disk4s2
+   1:                APFS Volume ⁨Big Sur HD - Data⁩       122.5 GB   disk5s1
+   2:                <strong>APFS Volume ⁨Preboot⁩</strong>                 309.4 MB   disk5s2
+   3:                APFS Volume ⁨Recovery⁩                887.8 MB   disk5s3
+   4:                APFS Volume ⁨VM⁩                      1.1 MB     disk5s4
+   5:                APFS Volume ⁨Big Sur HD⁩              16.2 GB    disk5s5
+   6:              APFS Snapshot ⁨com.apple.os.update-...⁩ 16.2 GB    disk5s5s
+
+// Mount Preboot volume
+diskutil mount disk5s2
+
+// sau đó run updatePreboot trên the Preboot volume
+diskutil apfs updatePreboot /volume/disk5s2
+
+// reboot hệ thống
+reboot</code></pre>
+
+
+
+<h2>Stuck on <code>OCB: LoadImage failed - Security Violation</code></h2>
+
+
+
+<pre class="wp-block-code"><code>// full error
+
+OCSB: No suitable signature - Security Violation
+OCB: Apple Secure Boot prohibits this boot entry, enforcing!
+OCB: LoadImage failed - Security Violation</code></pre>
+
+
+
+<p>Điều này là do Apple Secure Boot đã bị lỗi thời hoặc thiếu trên preboot của bạn volume dẫn đến failure to load nếu bạn có bật securebootmodel. Lý do cho các file này bị thiếu là 1 lỗi của macos</p>
+
+
+
+<p>Để khắc phục lỗi này các bạn làm theo sau:</p>
+
+
+
+<ul><li>Disable SecureBootModel <ul><li>&nbsp;<code>Misc -&gt; Security -&gt; SecureBootModel -&gt; Disabled</code></li></ul></li><li>cài đặt lại bản macos mới nhất</li><li>hoặc copy the Secure Boot manifests từ&nbsp;<code>/usr/standalone/i386</code>&nbsp;to&nbsp;<code>/Volumes/Preboot/&lt;UUID&gt;/System/Library/CoreServices</code><ul><li>Bạn có thể chỉnh điều này qua termianl ở recovery vì preboot volume không thể chỉnh sửa qua finder</li><li>Chạy đoạn code sau ở terminal <br> </li></ul></li></ul>
+
+
+
+<pre class="wp-block-code"><code>// Tìm preboot volume
+diskutil list
+
+// Nhìn vào đoạn sau ta thấy preboot volume là disk5s2
+/dev/disk5 (synthesized):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      APFS Container Scheme -                      +255.7 GB   disk5
+                                 Physical Store disk4s2
+   1:                APFS Volume ⁨Big Sur HD - Data⁩       122.5 GB   disk5s1
+   2:                <strong>APFS Volume ⁨Preboot⁩  </strong>               309.4 MB   disk5s2
+   3:                APFS Volume ⁨Recovery⁩                887.8 MB   disk5s3
+   4:                APFS Volume ⁨VM⁩                      1.1 MB     disk5s4
+   5:                APFS Volume ⁨Big Sur HD⁩              16.2 GB    disk5s5
+   6:              APFS Snapshot ⁨com.apple.os.update-...⁩ 16.2 GB    disk5s5s
+
+// mount Preboot volume
+diskutil mount disk5s2
+
+// CD vào Preboot volume
+// Lưu ý rằng preboot volume có đường dẫn là /System/Volumes/Preboot
+cd /System/Volumes/Preboot
+
+// lấy UUID
+ls
+ 46923F6E-968E-46E9-AC6D-9E6141DF52FD
+ CD844C38-1A25-48D5-9388-5D62AA46CFB8
+
+// nếu có nhiều UUID cũng hiện (bạn dual nhiều macos), bạn sẽ cần xác định UUID nào là chính xác
+// Để làm như vậy bạn sẽ tiến hành in ra .disk_label.contentDetails của mỗi volume
+
+cat ./46923F6E-968E-46E9-AC6D-9E6141DF52FD/System/Library/CoreServices/.disk_label.contentDetails
+ Big Sur HD%
+
+cat ./CD844C38-1A25-48D5-9388-5D62AA46CFB8/System/Library/CoreServices/.disk_label.contentDetails
+ Catalina HD%
+
+
+// thay CD844C38-1A25-48D5-9388-5D62AA46CFB8 với UUID của bạn
+cd ~
+sudo cp -a /usr/standalone/i386/. /System/Volumes/Preboot/CD844C38-1A25-48D5-9388-5D62AA46CFB8/System/Library/CoreServices</code></pre>
+
+
+
+<h2>Stuck on <code>OCABC: Memory pool allocation failure - Not Found</code></h2>
+
+
+
+<p>Để khắc phục các bạn có thể chỉnh setting bios theo sau:</p>
+
+
+
+<ul><li>Above4GDecoding: Enabled</li><li>CSM: Disabled<ul><li>1 vài laptop phải bật CSM</li></ul></li><li>update bios </li></ul>
+
+
+
+<h2>Stuck on <code>Buffer Too Small</code></h2>
+
+
+
+<ul><li>Enable Above4GDecoding in the BIOS</li></ul>
+
+
+
+<h2>Stuck on <code>Plist only kext has CFBundleExecutable key</code></h2>
+
+
+
+<p>Đường dẫn không chính xác trong config.plist. Để khắc phục tiến hành snapshot bằng propertree xem cách snapshot <a href="https://heavietnam.ga/2021/09/29/tim-hieu-ve-hackintosh/">tại đây</a></p>
+
+
+
+<h2>Stuck on <code>This version of Mac OS X is not supported: Reason Mac…</code></h2>
+
+
+
+<p>Lỗi này xảy ra khi SMbios không còn được hỗ trợ nữa để khắc phục lỗi này các bạn có 2 phương pháp</p>
+
+
+
+<ul><li>Add boot-arg <code>-no_compat_check</code></li><li>Hoặc thay các smbios  được hỗ trợ<ul><li>Catalina<ul><li>iMac13,x+</li><li>iMacPro1,1</li><li>MacPro6,1+</li><li>Macmini6,x+</li><li>MacBook8,1+</li><li>MacBookAir5,x+</li><li>MacBookPro9,x+</li></ul></li><li>Bigsur<ul><li>iMac14,4+</li><li>iMacPro1,1</li><li>MacPro6,1+</li><li>Macmini7,1+</li><li>MacBook8,1+</li><li>MacBookAir6,x+</li><li>MacBookPro11,x+</li></ul></li><li>Monterey<ul><li>iMac16,1+</li><li>iMacPro1,1</li><li>MacPro6,1+</li><li>Macmini7,1+</li><li>MacBook9,1+</li><li>MacBookAir7,1+</li><li>MacBookPro11,3+</li></ul></li></ul></li></ul>
+
+
+
+<h2><code>Couldn't allocate runtime area errors</code></h2>
+
+
+
+<p>Xem cách fix KASLR <a href="https://heavietnam.ga/2022/01/31/using-devirtualisemmio/">tại đây</a></p>
+
+
+
+<h2>Stuck on <code>RTC…, PCI Configuration Begins, Previous Shutdown…, HPET, HID: Legacy…</code></h2>
+
+
+
+<p>Đây là nơi  có  nhiều PCI device được thiết lập và cấu hình và là nơi  các lỗi khởi động sẽ xảy ra:</p>
+
+
+
+<ul><li><code>apfs_module_start...</code>,</li><li><code>Waiting for Root device</code>,</li><li><code>Waiting on...IOResources...</code>,</li><li><code>previous shutdown cause...</code></li></ul>
+
+
+
+<p>Những vấn đề chính gây lỗi:</p>
+
+
+
+<ul><li>Thiếu EC (cata+): <ul><li>Thêm SSDT-EC theo <a href="https://heavietnam.ga/2022/03/10/ssdt-recomend/">link</a></li><li>Bỏ SSDT-EC vào EFI --> OC --> ACPI và snaps (hoặc EFI --> Clover --> ACPI --> Patched)</li></ul></li><li>Xung đột IRQ: <ul><li>dump SSDT-HPET theo <a href="https://heavietnam.ga/2021/09/29/ii-patch-am-thanh-voi-apple-alc-with-patch-hpet/#Patch_Hpet_IRQ">link</a> </li></ul></li><li>PCI allocation issue:<ul><li>Update bios</li><li>bật Above4G trong bios. Nếu bios của bạn không có option này hãy add boot-arg <code>npci=0x2000</code> <ul><li>các main X99 and X299 có thể yêu cầu cả ncpi boot-arg và Above4G trong bios</li><li>AMD CPU không đồng thời bật cả Above4G và NCPI trong boot-arg vì chúg sẽ xung đột</li><li>Đối với bios thế hệ 2020+ thì khi bật Above4G các bạn phải set Booter -&gt; Quirks -&gt; ResizeAppleGpuBars:0 vì Resizable BAR Support có thể sẽ trở nên khả dụng </li></ul></li><li>CSM disabled, Windows 8.1/10 UEFI Mode enabled</li></ul></li><li>NVMe or SATA issue:<ul><li>không sử dụng Samsung PM981 or Micron 2200S NVMe SSD</li><li>cài đặt latest firmware cho Samsung 970 EVO Plus xem chi tiết <a href="https://semiconductor.samsung.com/consumer-storage/support/tools/">tại đây</a></li><li>Disable SATA Hot-Plug trong bios</li><li>Đảm bảo ổ NVMe được đặt là NVMe trong bios</li></ul></li><li>NVRAM Failing:<ul><li>Đây là lỗi phổ biến trên các dòng HEDT hoặc trên các main 300 series<ul><li>Trên 300 series: tải và cài đặt SDT-PMC <a href="https://heavietnam.ga/2022/03/10/ssdt-recomend/">tại đây</a></li><li>HEDT thì các bạn sẽ Emulating NVRAM theo link <a href="https://heavietnam.ga/2022/04/09/emulated-nvram/">sau</a> (chỉ cần chỉnh config không cần chạy lệnh)</li></ul></li></ul></li></ul>
+
+
+
+<ul><li>RTC missing<ul><li>Với các chip 300+ series bạn cần <a href="https://heavietnam.ga/2022/03/10/ssdt-recomend/">ssdt-awac</a></li><li>Đối với các máy hedt (X99 và X299) các rtc device sẽ bị thiếu  cần dùng SSDT-RTC0-RANGE xem chi tiết <a href="https://heavietnam.ga/2022/01/22/fix-system-clocks-on-hedt/">tại đây</a></li><li>1 số máy hp cũng gặp trường hợp này các bạn có thể dùng SSDT-RTC xem chi tiết các fix <a href="https://heavietnam.ga/2022/04/10/fix-rtc-manual/">tại đây</a></li></ul></li></ul>
+
+
+
+<h2>Stuck at <code>ACPI table loading on B550</code></h2>
+
+
+
+<p>Thêm ssdt-cpur.aml <a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-CPUR.aml">tại đây</a></p>
+
+
+
+<h2 id="waiting-for-root-device-or-prohibited-sign-error">&#8220;<code>Waiting for Root Device</code>&#8221; or &#8220;<code>Prohibited Sign error</code>&#8220;</h2>
+
+
+
+<ul><li>USB<ul><li>Map usb theo hướng dẫn <a href="https://heavietnam.ga/2021/09/29/vi-1map-usb-intel-and-amd/">tại đây</a></li><li><code>Kernel -&gt; Quirks -&gt; XhciPortLimit -&gt; flase</code></li><li>1 vài lỗi khác có thể do  firmware không truyền quyền điều khiển usb cho macos<ul><li><code>UEFI -&gt; Quirks -&gt; bạn có thể đổi port usb để khắc pục lỗi nàyeleaseUsbOwnership -&gt; True</code></li><li>Hoặc bật XHCI Handoff</li></ul></li><li>Đôi khi việc đổi port usb cũng có thể giúp bạn khắc phục lỗi này</li><li>Đối với các cpu amd gen 15 và 16 thì cần add <a href="https://cdn.discordapp.com/attachments/566705665616117760/566728101292408877/XLNCUSBFix.kext.zip" target="_blank" rel="noreferrer noopener">XLNCUSBFix.kext</a><ul><li>Nếu như kext đó không hoạt động thì bạn có thể thử kext <a href="https://cdn.discordapp.com/attachments/249992304503291905/355235241645965312/StopSign-fixv5.zip" target="_blank" rel="noreferrer noopener">AMD StopSign-fixv5</a></li></ul></li><li>Ngoài ra hedt X299 cũng cần Enable Above4G Decoding</li><li>Thiếu usb port trong ACPI<ul><li>Các máy intel các bạn sử dụng <a href="https://github.com/daliansky/OS-X-USB-Inject-All">usbinjectall</a></li><li>Còn đối với các cpu amd thì bạn cần sử dụng ssdt-rhub<ul><li>chọn <code>7.usb reset</code> trong ssdt-time</li></ul></li></ul></li></ul></li><li>Sata issue<ul><li>Xem chi tiết <a href="https://heavietnam.ga/2021/12/06/xxxxi-patch-sata-controller/">tại đây</a></li></ul></li></ul>
+
+
+
+<h2>Kernel panic with <code>IOPCIFamily</code> trên hedt X99</h2>
+
+
+
+<ul><li>Bật các mục sau trong config<ul><li>AppleCpuPmCfgLock</li><li>AppleXcpmCfgLock</li><li>AppleXcpmExtraMsrs</li></ul></li><li>Thêm SSDT-UNC <a href="https://heavietnam.ga/2022/03/10/ssdt-recomend/">tại đây</a></li></ul>
+
+
+
+<h2>Stuck on or near&nbsp;<code>IOConsoleUsers: gIOScreenLock...</code>/<code>gIOLockState (3...</code></h2>
+
+
+
+<ul><li>DGPU không support hãy disable nó đi theo hướng dẫn <a href="https://heavietnam.ga/2021/09/29/xxi-disable-dgpu/">tại đây</a></li><li>CSM bị tắt trong bios<ul><li>1 số laptop phải bật CSM</li></ul></li><li>Force tốc  độ PCIe 3.0 link</li><li>Check patch igpu theo hướng dẫn <a href="https://heavietnam.ga/2021/09/29/xii-patch-igpu/">tại đây</a><ul><li>Desktop UHD 630 có thể thử <code>00009B3E</code></li><li><code>-igfxmlr</code>&nbsp;boot-arg. Điều này cũng có thể giúp fix lỗi <code>Divide by Zero</code></li><li>igfxonln=1 boot-arg trên igpu coffelake+ từ 10.15.4+</li></ul></li></ul>
+
+
+
+<h2>Scrambled Screen on laptops</h2>
+
+
+
+<p>Enable <code>CSM</code> trong bios setting nó có thể có tên là <code>Boot legacy ROMs </code>hoặc vài setting legacy khác</p>
+
+
+
+<h2 id="black-screen-after-ioconsoleusers-gioscreenlock-on-navi">Black screen after&nbsp;<code>IOConsoleUsers: gIOScreenLock...</code>&nbsp;on Navi</h2>
+
+
+
+<ul><li><code>agdpmod=pikera</code> add vào boot-arg</li><li>Thử thay đổi các display output khác</li><li>thử smbios MacPro7,1&nbsp;với boot-arg <code>agdpmod=ignore</code></li><li>Đối với máy MSI thì bạn hãy add patch sau vào <code>Kernel -&gt; Patch</code> (ở bigsur không yêu cầu bản vá này)</li></ul>
+
+
+
+<pre class="wp-block-code"><code>Base:
+Comment: Navi VBIOS Bug Patch
+Count: 1
+Enabled: YES
+Find: 4154592C526F6D2300
+Identifier: com.apple.kext.AMDRadeonX6000Framebuffer
+Limit: 0
+Mask:
+MinKernel: 19.00.00
+MaxKernel: 19.99.99
+Replace: 414D442C526F6D2300
+ReplaceMask:
+Skip: 0</code></pre>
+
+
+
+<h2>Kernel Panic&nbsp;<code>Cannot perform kext summary</code></h2>
+
+
+
+<ul><li>Hãy chắc rằng bạn đã add kext chính trước khi add plugin<ul><li>Vì những plugin chỉ có file plist mà không chứa tệp thực thi nên cần pahỉ sử dụng với kext chính </li></ul></li><li>Không sử dụng nhiều kext giống nhau trong config.plist<ul><li>như voodooinput có thể xuất hiện trong kẽt i2c và cả pss2 nên bạn chỉ nên dùng 1 kext voodooinput và xóa cái còn lại trong kext kia</li></ul></li><li>Sử dụng phương pháp fix lỗi giống như <code>invalid frame pointer</code></li></ul>
+
+
+
+<h2>Kernel Panic&nbsp;<code>AppleIntelMCEReporter</code></h2>
+
+
+
+<p>thêm kext <a href="https://github.com/acidanthera/bugtracker/files/3703498/AppleMCEReporterDisabler.kext.zip" target="_blank" rel="noreferrer noopener">AppleMCEReporterDisabler</a> vào EFI --> OC --> Kext hoặc EFI --> Clover --> kext --> other (snaps nếu ở opencore)</p>
+
+
+
+<h2>Kernel Panic&nbsp;<code>AppleIntelCPUPowerManagement</code></h2>
+
+
+
+<ul><li>Patch power manager <a href="https://heavietnam.ga/2021/09/29/vi-3fix-power-manager/">tại đây</a></li><li>Thêm kext <a href="https://www.mediafire.com/folder/rhjg943ja2cc1/NullCPUPowerManagement.kext">NullCPUPowerManagement</a></li><li>Hoặc bạn có thể enable <code>DummyPowerManagement</code> trong <code>Kernel -&gt; Emulate</code> (chỉ đối với opencore)</li><li>Ở 1 số các cpu thế hệ cũ cung có thể bị thiếu hpet hoặc xung đột irq<ul><li>Fix hpet theo hướng dẫn <a href="https://heavietnam.ga/2021/09/29/ii-patch-am-thanh-voi-apple-alc-with-patch-hpet/">tại đây</a></li><li>Force hpet</li></ul></li></ul>
+
+
+
+<pre class="wp-block-code"><code>// add patch sau vào ACPI --&gt; Patch
+
+Comment	String	Force HPET Online
+Enabled	Boolean	YES
+Count	Number	0
+Limit	Number	0
+Find	Data	A010934F53464C00
+Replace	Data	A40A0FA3A3A3A3A3</code></pre>
+
+
+
+<h2>Kernel Panic&nbsp;<code>AppleACPIPlatform</code>&nbsp;in 10.13</h2>
+
+
+
+<figure class="wp-block-image size-full"><img width="1024" height="347" src="https://heavietnam.ga/wp-content/uploads/2022/04/image-1.png" alt="" class="wp-image-2916" srcset="https://heavietnam.ga/wp-content/uploads/2022/04/image-1.png 1024w, https://heavietnam.ga/wp-content/uploads/2022/04/image-1-768x260.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>Bật <code>NormalizeHeaders</code> trong <code>ACPI -&gt; Quirks</code> </p>
+
+
+
+<h2>macOS frozen right before login</h2>
+
+
+
+<p>Thêm kext <a href="https://github.com/lvs1974/CpuTscSync" target="_blank" rel="noreferrer noopener">CpuTscSync</a> vào EFI --> OC --> kext hoặc EFI --> Clover --> kext --> other (snaps nếu là opencore)</p>
+
+
+
+<figure class="wp-block-image"><img src="https://dortania.github.io/OpenCore-Install-Guide/assets/img/asus-tsc.2397797f.png" alt=""/><figcaption>Lỗi 1</figcaption></figure>
+
+
+
+<figure class="wp-block-image"><img src="https://dortania.github.io/OpenCore-Install-Guide/assets/img/asus-tsc-2.029ce318.png" alt=""/><figcaption>Lỗi 2</figcaption></figure>
+
+
+
+<h2>Keyboard works but trackpad does not</h2>
+
+
+
+<p>Fix trackpad theo <a href="https://heavietnam.ga/2021/09/29/v-fix-trackpad/">link</a></p>
+
+
+
+<h2 id="kextd-stall-0-appleacpicpu"><code>kextd stall[0]: AppleACPICPU</code></h2>
+
+
+
+<p>Điều này là do macos bị thiếu giả lập smc hãy đảm bản bạn có những phần sau:</p>
+
+
+
+<ul><li><a href="https://github.com/acidanthera/Lilu/releases">Lilu</a> và <a href="https://github.com/acidanthera/VirtualSMC/releases">VirtualSMC</a> trong EFI --> OC --> kext hoặc EFI --> Clover --> kext --> other (snaps nếu là opencore)</li><li>Nếu không được hãy thử sử dụng <a href="https://bitbucket.org/RehabMan/os-x-fakesmc-kozlek/downloads/">fake-smc</a> (không sử dụng cả 2 fake-smc và VirtualSMC)</li></ul>
+
+
+
+<h2>Kernel Panic on <code>AppleIntelI210Ethernet</code></h2>
+
+
+
+<p>Đối với những main Comet lake&nbsp;với card I225-V NIC có thể xảy ra panic do kext I210 . Để khắc phục bạn cần có PciRoot đúng với card ethernet. 1 số  đường dẫn phổ biến là </p>
+
+
+
+<ul><li>PciRoot(0x0)/Pci(0x1C,0x1)/Pci(0x0, 0x0)<ul><li>đối với main Asus, Gigabyte và đây cũng là mặc định</li></ul></li><li>PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)<ul><li>được dùng để thay thế khi dường dẫn trên không hoạt động</li></ul></li></ul>
+
+
+
+<p>Bạn cũng có thể sử dụng &nbsp;<a href="https://github.com/acidanthera/gfxutil/releases" target="_blank" rel="noreferrer noopener">gfxutil</a> để tìm PciRoot của card ethernet 1 cách thủ công</p>
+
+
+
+<pre class="wp-block-code"><code>&lt;kéo gfxutil vào terminal&gt; | grep -i "8086:15f3"
+00:1f.6 8086:15f3 /PC00@0/GBE1@1F,6 = PciRoot(0x0)/Pci(0x1F,0x6)</code></pre>
+
+
+
+<p>Ta sẽ dễ thấy PciRoot là PciRoot(0x0)/Pci(0x1F,0x6). Ta sẽ add PciRoot(0x0)/Pci(0x1F,0x6)|data| F2150000</p>
+
+
+
+<h2>Kernel panic on &#8220;<code>Wrong CD Clock Frequency</code>&#8221; with Icelake laptop</h2>
+
+
+
+<figure class="wp-block-image"><img src="https://dortania.github.io/OpenCore-Install-Guide/assets/img/cd-clock.ad48e008.jpg" alt=""/></figure>
+
+
+
+<p>Add boot-arg <code>-igfxcdc</code></p>
+
+
+
+<h2>Kernel panic on &#8220;<code>cckprng_int_gen</code>&#8220;</h2>
+
+
+
+<pre class="wp-block-code"><code>// full error
+"cckprng_int_gen: generator has already been sealed"</code></pre>
+
+
+
+<p>Có 2 khả năng dẫn đến lỗi</p>
+
+
+
+<ul><li>Thiếu SMC<ul><li>add <a href="https://github.com/acidanthera/VirtualSMC/releases">VirtualSMC</a> vào EFI --> OC --> kext hoặc EFI --> Clover --> Kext --> other (snaps nếu dùng opencore)</li><li>sử dụng SSDT-CPUR không đúng<ul><li>chỉ sử dụng SSDT này trên B550 and A520</li><li>Không sử dụng SSDT này trên X570 (B450 or A320)</li></ul></li></ul></li></ul>
+
+
+
+<h2>Stuck at&nbsp;<code>Forcing CS_RUNTIME for entitlement</code>&nbsp;in Big Sur</h2>
+
+
+
+<figure class="wp-block-image"><img src="https://dortania.github.io/OpenCore-Install-Guide/assets/img/cs-stuck.bddc4a2d.jpg" alt="Credit to Stompy for image"/></figure>
+
+
+
+<p>Đây thực sự không phải là lỗi. Chỉ vì quá trình này rất lâu để vượt qua mà nhiều người nghĩ đây là lỗi nhưng hãy kiên nhẫn và đừng tắt máy</p>
+
+
+
+<h2>Stuck on&nbsp;<code>ramrod</code>(^^^^^^^^^^^^^)</h2>
+
+
+
+<p>bị stuck ở ramrod có nghĩa là nó boot --> gặp lỗi --> reboot --> vòng lặp</p>
+
+
+
+<p>Điều này có nghĩa là giả lặp smc của bạn đã bị hỏng có 2 cách khắc phục</p>
+
+
+
+<ul><li>Cài đặt VirtualSMC và lilu new version  kèm boot-arg <code>vsmcgen=1</code></li><li>Bạn cũng thể thử kext <a href="https://bitbucket.org/RehabMan/os-x-fakesmc-kozlek/downloads/">fake-smc</a> để thay thế</li></ul>
+
+
+
+<h2 id="virtual-machine-issues">Virtual Machine Issues</h2>
+
+
+
+<p>VMware 15 sẽ bị stuck ở <code>[EB|#LOG:EXITBS:START]</code>. Cách fix là nâng câp lên VMware 16</p>
+
+
+
+<h2>Reboot on &#8220;<code>AppleUSBHostPort::createDevice: failed to create device</code>&#8221; on macOS 11.3+</h2>
+
+
+
+<ul><li>Map usb theo link <a href="https://heavietnam.ga/2021/09/29/vi-1map-usb-intel-and-amd/">tại đây</a></li><li>Tắt <code>XhciPortLimit</code> ở  <code>Kernel -&gt; Quirks</code> (ở 11.3+)</li></ul>
+
+
+
+<p><strong>Lưu ý: Tuy bài viết này dựa trên cách fix lỗi cho opencore. nhưng người dùng cloverr vẫn có thể áp dụng cách đọc lỗi và nguyên nhân dẫn đến lỗi vì về bản chất thì nguyên nhân dẫn đến lỗi của opencore và oc là giống nhau</strong></p>
+
+
+
+<p><strong>Source tham khảo: <a href="https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/kernel-issues.html">Kernel Issues | OpenCore Install Guide (dortania.github.io)</a></strong></p>
+<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/04/09/kernel-issue/">Kernel issue</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://heavietnam.ga/2022/04/09/kernel-issue/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		
