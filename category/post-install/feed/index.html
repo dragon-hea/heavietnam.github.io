@@ -12,7 +12,7 @@
 	<atom:link href="https://heavietnam.ga/category/post-install/feed/" rel="self" type="application/rss+xml" />
 	<link>https://heavietnam.ga</link>
 	<description>Everythingforhackintosher</description>
-	<lastBuildDate>Mon, 11 Apr 2022 04:16:07 +0000</lastBuildDate>
+	<lastBuildDate>Thu, 14 Apr 2022 14:58:42 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -264,7 +264,7 @@ Replace:D000000080(áp dụng cho tất cả các máy)</code></pre>
 		
 			</item>
 		<item>
-		<title>Opencore legacy</title>
+		<title>OpenCore Legacy</title>
 		<link>https://heavietnam.ga/2022/04/10/2925/</link>
 					<comments>https://heavietnam.ga/2022/04/10/2925/#respond</comments>
 		
@@ -273,23 +273,23 @@ Replace:D000000080(áp dụng cho tất cả các máy)</code></pre>
 				<category><![CDATA[post install]]></category>
 		<guid isPermaLink="false">https://heavietnam.ga/?p=2925</guid>
 
-					<description><![CDATA[<p>Tạo usb boot Đối với các máy legacy thì chắc hẳn phần cứng đã cũ rồi đúng không nào. Do đó các bác cũng sẽ cần các phiên bản macos phù hợp thì hãy làm theo sau: offline (10.10-10.12) B1: Các bạn truy cập vào trang&#160;sau&#160;để tải bộ cài B2: Các bạn chạy file pkg [...]</p>
-<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/04/10/2925/">Opencore legacy</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
+					<description><![CDATA[<p>Tạo USB Boot Đối với các máy Legacy thì chắc hẳn phần cứng đã cũ rồi đúng không nào. Do đó các bác cũng sẽ cần các phiên bản macOS phù hợp thì hãy làm theo sau: Offline (10.10-10.12) B1: Các bạn truy cập vào trang sau để tải bộ cài. B2: Các bạn chạy file PKG [...]</p>
+<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/04/10/2925/">OpenCore Legacy</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
 ]]></description>
 										<content:encoded><![CDATA[
-<h2>Tạo usb boot</h2>
+<h2>Tạo USB Boot</h2>
 
 
 
-<p>Đối với các máy legacy thì chắc hẳn phần cứng đã cũ rồi đúng không nào. Do đó các bác cũng sẽ cần các phiên bản macos phù hợp thì hãy làm theo sau:</p>
+<p>Đối với các máy Legacy thì chắc hẳn phần cứng đã cũ rồi đúng không nào. Do đó các bác cũng sẽ cần các phiên bản macOS phù hợp thì hãy làm theo sau:</p>
 
 
 
-<ul><li>offline (10.10-10.12)<ul><li>B1: Các bạn truy cập vào trang&nbsp;<a href="https://support.apple.com/en-us/HT211683">sau</a>&nbsp;để tải bộ cài</li><li>B2: Các bạn chạy file pkg lên và cài đặt. Nếu gặp lỗi sau&nbsp;<img src="https://dortania.github.io/OpenCore-Install-Guide/assets/img/unsupported.679e01e6.png" alt=""></li></ul></li></ul>
+<ul><li>Offline (10.10-10.12)<ul><li>B1: Các bạn truy cập vào trang <a href="https://support.apple.com/en-us/HT211683">sau</a> để tải bộ cài.</li><li>B2: Các bạn chạy file PKG lên và cài đặt. Nếu gặp lỗi sau: <img src="https://dortania.github.io/OpenCore-Install-Guide/assets/img/unsupported.679e01e6.png" alt=""></li></ul></li></ul>
 
 
 
-<p>Các bạn mount file dmg ra và mở termianl lên sau đó gõ các lệnh sau</p>
+<p>Các bạn mount file dmg ra và mở terminal lên sau đó gõ các lệnh sau:</p>
 
 
 
@@ -298,7 +298,7 @@ mkdir MacInstall &amp;&amp; cd MacInstall</code></pre>
 
 
 
-<p>Tiếp theo bạn sẽ tiến hành giải nén file installer ( mở termianl lên và gõ )</p>
+<p>Tiếp theo bạn sẽ tiến hành giải nén file installer (mở terminal lên và gõ)</p>
 
 
 
@@ -312,7 +312,7 @@ xar -xf /Volumes/Install\ macOS/InstallOS.pkg</code></pre>
 
 
 
-<p>Tiếp theo hãy chạy các lệnh sau (chạy từng lệnh 1)<code></code><code></code></p>
+<p>Tiếp theo hãy chạy các lệnh sau (chạy từng lệnh một)</p>
 
 
 
@@ -340,11 +340,11 @@ mv Install\ macOS\ Sierra.app /Applications</code></pre>
 
 
 
-<h2>Setting up</h2>
+<h2>Setting Up</h2>
 
 
 
-<h3>Macos</h3>
+<h3>macOS</h3>
 
 
 
@@ -360,7 +360,7 @@ mv Install\ macOS\ Sierra.app /Applications</code></pre>
 
 
 
-<ul><li>Chuẩn bị:<ul><li><a href="https://www.7-zip.org/" target="_blank" rel="noreferrer noopener">7-Zip</a></li><li><a href="https://www.majorgeeks.com/files/details/bootice_64_bit.html" target="_blank" rel="noreferrer noopener">BOOTICE</a></li><li><a href="https://github.com/acidanthera/OpenCorePkg/releases" target="_blank" rel="noreferrer noopener">OpenCorePkg</a></li></ul></li><li>Tiến hành:<ul><li>B1: Các bạn mở bootice lên và chọn đúng ổ đĩa</li></ul></li></ul>
+<ul><li>Chuẩn bị:<ul><li><a href="https://www.7-zip.org/" target="_blank" rel="noreferrer noopener">7-Zip</a></li><li><a href="https://www.majorgeeks.com/files/details/bootice_64_bit.html" target="_blank" rel="noreferrer noopener">BOOTICE</a></li><li><a href="https://github.com/acidanthera/OpenCorePkg/releases" target="_blank" rel="noreferrer noopener">OpenCorePkg</a></li></ul></li><li>Tiến hành:<ul><li>B1: Các bạn mở Bootice lên và chọn đúng ổ đĩa:</li></ul></li></ul>
 
 
 
@@ -368,7 +368,7 @@ mv Install\ macOS\ Sierra.app /Applications</code></pre>
 
 
 
-<ul><li>B2: ấn Process MBR và chọn Restore MBR tiếp theo bạn chọn file boot0 trong Utilities/LegacyBoot/ ở opencore pkg</li></ul>
+<ul><li>B2: Ấn Process MBR và chọn Restore MBR tiếp theo bạn chọn file boot0 trong Utilities/LegacyBoot/ ở OpenCore PKG.</li></ul>
 
 
 
@@ -392,7 +392,7 @@ mv Install\ macOS\ Sierra.app /Applications</code></pre>
 
 
 
-<ul><li>B4: Mở usb ra rồi copy file bootx64 và bootia32&nbsp; từ Utilities/LegacyBoot/ và đổi tên chúng lại thành boot</li></ul>
+<ul><li>B4: Mở USB ra rồi copy file bootx64 và bootia32  từ Utilities/LegacyBoot/ và đổi tên chúng lại thành boot</li></ul>
 
 
 
@@ -401,7 +401,7 @@ mv Install\ macOS\ Sierra.app /Applications</code></pre>
 
 
 <p><strong>Source tham khảo:&nbsp;<a href="https://dortania.github.io/OpenCore-Install-Guide/installer-guide/winblows-install.html#making-the-installer">Making the installer in Windows | OpenCore Install Guide (dortania.github.io)</a></strong></p>
-<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/04/10/2925/">Opencore legacy</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
+<p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/04/10/2925/">OpenCore Legacy</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
 ]]></content:encoded>
 					
 					<wfw:commentRss>https://heavietnam.ga/2022/04/10/2925/feed/</wfw:commentRss>
