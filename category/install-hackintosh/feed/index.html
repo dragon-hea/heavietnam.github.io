@@ -12,7 +12,7 @@
 	<atom:link href="https://heavietnam.ga/category/install-hackintosh/feed/" rel="self" type="application/rss+xml" />
 	<link>https://heavietnam.ga</link>
 	<description>Everythingforhackintosher</description>
-	<lastBuildDate>Sat, 16 Apr 2022 03:30:28 +0000</lastBuildDate>
+	<lastBuildDate>Sat, 23 Apr 2022 10:22:57 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -239,7 +239,7 @@
 
 
 
-<p>Ở Big Sur các dòng main hedt bị thiếu các vùng rtc do đó macos gặp lỗi fix chi tiết theo trang <a href="../../../2022/01/22/fix-system-clocks-on-hedt/index.html">sau</a>.</p>
+<p>Ở Big Sur các dòng main hedt bị thiếu các vùng rtc do đó macos gặp lỗi fix chi tiết theo trang&nbsp;<a href="../../../2022/01/22/fix-system-clocks-on-hedt/index.html">sau</a>.</p>
 
 
 
@@ -251,11 +251,11 @@
 
 
 
-<p>Khi bạn bị stuck ở dòng <code>ramrod</code>thì macOS sẽ bị reset sau đó lại gặp dòng này và tiếp tục reset. Nó đã tạo 1 vòng lập restart. Điều đó cho thấy bộ phận giả lập SMC của bạn đã bị hỏng vì vậy bạn có 2 sự lựa chọn:</p>
+<p>Khi bạn bị stuck ở dòng&nbsp;<code>ramrod</code>thì macOS sẽ bị reset sau đó lại gặp dòng này và tiếp tục reset. Nó đã tạo 1 vòng lập restart. Điều đó cho thấy bộ phận giả lập SMC của bạn đã bị hỏng vì vậy bạn có 2 sự lựa chọn:</p>
 
 
 
-<ul><li>Sử dụng bản cập nhật mới nhất của VirtualSMC và Lilu sau đó add boot-arg  <code>vsmcgen=1</code></li><li>Hoặc bạn có thể chuyển qua kext <a href="https://bitbucket.org/RehabMan/os-x-fakesmc-kozlek/downloads/">Fake-SMC</a> của rehabMan.</li><li>Lưu ý: không đồng thời sử dụng cả 2 kext VirtualSMC và Fake-SMC.</li></ul>
+<ul><li>Sử dụng bản cập nhật mới nhất của VirtualSMC và Lilu sau đó add boot-arg&nbsp;&nbsp;<code>vsmcgen=1</code></li><li>Hoặc bạn có thể chuyển qua kext&nbsp;<a href="https://bitbucket.org/RehabMan/os-x-fakesmc-kozlek/downloads/">Fake-SMC</a>&nbsp;của rehabMan.</li><li>Lưu ý: không đồng thời sử dụng cả 2 kext VirtualSMC và Fake-SMC.</li></ul>
 
 
 
@@ -263,7 +263,7 @@
 
 
 
-<p>Lỗi này là do uncore PCI Bridges không được enable trong ACPI. Do đó IOPCIFamily sẽ bị kernel panic để giải quyết vấn đề này các bạn có thể dùng <a href="https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/Source/SSDT-UNC.dsl">SSDT-UNC</a> chỉ cần biên dịch bằng Maciasl và sử dụng theo guide chi tiết <a href="../../../2021/09/29/xxviii-patch-dsdt-phan-3/index.html">tại đây</a>.</p>
+<p>Lỗi này là do uncore PCI Bridges không được enable trong ACPI. Do đó IOPCIFamily sẽ bị kernel panic để giải quyết vấn đề này các bạn có thể dùng&nbsp;<a href="https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/Source/SSDT-UNC.dsl">SSDT-UNC</a>&nbsp;chỉ cần biên dịch bằng Maciasl và sử dụng theo guide chi tiết&nbsp;<a href="../../../2021/09/29/xxviii-patch-dsdt-phan-3/index.html">tại đây</a>.</p>
 
 
 
@@ -271,7 +271,7 @@
 
 
 
-<p>Khi gặp lỗi này các bạn sẽ không thể tiêm được device-properties được cách fix các có thể dùng SSDT-BRG0. Fix chi tiết theo trang <a href="../../../2021/09/29/xxiii-patch-card-doi-hoa-amd/index.html">sau</a>.</p>
+<p>Khi gặp lỗi này các bạn sẽ không thể tiêm được device-properties được cách fix các có thể dùng SSDT-BRG0. Fix chi tiết theo trang&nbsp;<a href="../../../2021/09/29/xxiii-patch-card-doi-hoa-amd/index.html">sau</a>.</p>
 
 
 
@@ -319,7 +319,7 @@ Skip | Integer | 0</code></pre>
 
 
 
-<p>Để fix lỗi này các bạn cần đảm bảo đang ở OpenCore version 0.6.0+ và <code>AvoidRuntimeDefrag</code> được enable.</p>
+<p>Để fix lỗi này các bạn cần đảm bảo đang ở OpenCore version 0.6.0+ và&nbsp;<code>AvoidRuntimeDefrag</code>&nbsp;được enable.</p>
 
 
 
@@ -396,11 +396,11 @@ sudo /System/Library/PrivateFrameworks/Seeding.framework/Resources/seedutil enro
 
 
 
-<p>Nhìn vào phần <code>Snapshot Sealed</code> Nếu nó trả về là <code>broken</code> thì bạn hãy fix theo các cách sau:</p>
+<p>Nhìn vào phần&nbsp;<code>Snapshot Sealed</code>&nbsp;Nếu nó trả về là&nbsp;<code>broken</code>&nbsp;thì bạn hãy fix theo các cách sau:</p>
 
 
 
-<ul><li>Update OpenCore version 0.6.4+</li><li>Khôi phục đến bản Snapshot cũ hơn tham khảo tại link <a href="https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/post-issues.html#rolling-back-apfs-snapshot">sau</a>.</li></ul>
+<ul><li>Update OpenCore version 0.6.4+</li><li>Khôi phục đến bản Snapshot cũ hơn tham khảo tại link&nbsp;<a href="https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/post-issues.html#rolling-back-apfs-snapshot">sau</a>.</li></ul>
 
 
 
@@ -429,7 +429,7 @@ sudo /System/Library/PrivateFrameworks/Seeding.framework/Resources/seedutil enro
 
 
 
-<ul><li>Cài Big Sur vào 1 máy khác sau đó chuyển ổ đĩa vào máy cần cài</li><li>Fix the motherboard&#8217;s NVRAM.<ul><li>Chủ yếu cho Asus Z97 series.</li></ul></li><li>Chi tiết tham khảo tại trang <a href="https://www.reddit.com/r/hackintosh/comments/jw7qf1/haswell_asus_z97_big_sur_update_and_installation/">sau</a>.</li></ul>
+<ul><li>Cài Big Sur vào 1 máy khác sau đó chuyển ổ đĩa vào máy cần cài</li><li>Fix the motherboard&#8217;s NVRAM.<ul><li>Chủ yếu cho Asus Z97 series.</li></ul></li><li>Chi tiết tham khảo tại trang&nbsp;<a href="https://www.reddit.com/r/hackintosh/comments/jw7qf1/haswell_asus_z97_big_sur_update_and_installation/">sau</a>.</li></ul>
 
 
 
@@ -445,7 +445,7 @@ sudo /System/Library/PrivateFrameworks/Seeding.framework/Resources/seedutil enro
 
 
 
-<p>Để fix lỗi này các bạn cần phải tắt <code>XhciPortLimit</code> ở mục <code>Kernel -> Quirks</code>  và map usb theo hướng dẫn <a href="../../../2021/09/29/vi-1map-usb-intel-and-amd/index.html">tại đây</a>.</p>
+<p>Để fix lỗi này các bạn cần phải tắt&nbsp;<code>XhciPortLimit</code>&nbsp;ở mục&nbsp;<code>Kernel -&gt; Quirks</code>&nbsp; và map usb theo hướng dẫn&nbsp;<a href="../../../2021/09/29/vi-1map-usb-intel-and-amd/index.html">tại đây</a>.</p>
 
 
 
@@ -465,7 +465,19 @@ sudo /System/Library/PrivateFrameworks/Seeding.framework/Resources/seedutil enro
 
 
 
-<p>Source tham khảo:&nbsp;<a href="https://dortania.github.io/OpenCore-Install-Guide/extras/big-sur/#stuck-at-forcing-cs-runtime-for-entitlement">OpenCore and macOS 11: Big Sur | OpenCore Install Guide (dortania.github.io)</a></p>
+<h2>Failed to install required firmware update</h2>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://i.imgur.com/y4vGxLo.jpg" alt=""/></figure>
+
+
+
+<p>Để khắc phụ lỗi này các bạn sẽ cần enable <code>AdviseFeatures</code> trong <code>EFI --> OC --> config.plist</code></p>
+
+
+
+<p>Source tham khảo: <a href="https://dortania.github.io/OpenCore-Install-Guide/extras/big-sur/#stuck-at-forcing-cs-runtime-for-entitlement">OpenCore and macOS 11: Big Sur | OpenCore Install Guide (dortania.github.io)</a></p>
 <p>The post <a rel="nofollow" href="https://heavietnam.ga/2022/04/10/1-so-loi-o-xuat-hien-o-bigsur/">Một số lỗi ở xuất hiện ở macOS Big Sur</a> appeared first on <a rel="nofollow" href="https://heavietnam.ga">Heavietnam</a>.</p>
 ]]></content:encoded>
 					
@@ -836,7 +848,7 @@ sudo defaults write com.apple.loginwindow LogoutHook</code></pre>
 
 
 
-<ul><li>Nếu firmware của bạn support MATs (2018+) thì làm theo sau:<ul><li>EnableWriteUnprotector -> False</li><li>RebuildAppleMemoryMap -> True</li><li>SyncRuntimePermissions -> True</li></ul></li><li>Đối với những firmware cũ hơn thì bạn chỉnh theo sau:<ul><li>EnableWriteUnprotector -> True</li><li>RebuildAppleMemoryMap -> False</li><li>SyncRuntimePermissions -> False</li></ul></li></ul>
+<ul><li>Nếu firmware của bạn support MATs (2018+) thì làm theo sau:<ul><li>EnableWriteUnprotector -&gt; False</li><li>RebuildAppleMemoryMap -&gt; True</li><li>SyncRuntimePermissions -&gt; True</li></ul></li><li>Đối với những firmware cũ hơn thì bạn chỉnh theo sau:<ul><li>EnableWriteUnprotector -&gt; True</li><li>RebuildAppleMemoryMap -&gt; False</li><li>SyncRuntimePermissions -&gt; False</li></ul></li></ul>
 
 
 
@@ -1025,7 +1037,7 @@ sudo cp -a /usr/standalone/i386/. /System/Volumes/Preboot/CD844C38-1A25-48D5-938
 
 
 
-<ul><li>Thiếu EC (cata+): <ul><li>Thêm SSDT-EC theo <a href="https://heavietnam.ga/2022/03/10/ssdt-recomend/">link</a></li><li>Bỏ SSDT-EC vào EFI &#8211;> OC &#8211;> ACPI và snaps (hoặc EFI &#8211;> Clover &#8211;> ACPI &#8211;> Patched)</li></ul></li><li>Xung đột IRQ: <ul><li>dump SSDT-HPET theo <a href="https://heavietnam.ga/2021/09/29/ii-patch-am-thanh-voi-apple-alc-with-patch-hpet/#Patch_Hpet_IRQ">link</a> </li></ul></li><li>PCI allocation issue:<ul><li>Update BIOS.</li><li>Bật Above4G trong bios. Nếu bios của bạn không có option này hãy add boot-arg <code>npci=0x2000</code> <ul><li>Các main X99 and X299 có thể yêu cầu cả ncpi boot-arg và Above4G trong bios</li><li>AMD CPU không đồng thời bật cả Above4G và NCPI trong boot-arg vì chúg sẽ xung đột</li><li>Đối với bios thế hệ 2020+ thì khi bật Above4G các bạn phải set Booter -> Quirks -> ResizeAppleGpuBars:0 vì Resizable BAR Support có thể sẽ trở nên khả dụng </li></ul></li><li>CSM disabled, Windows 8.1/10 UEFI Mode enabled.</li></ul></li><li>NVMe or SATA issue:<ul><li>không sử dụng Samsung PM981 or Micron 2200S NVMe SSD</li><li>cài đặt latest firmware cho Samsung 970 EVO Plus xem chi tiết <a href="https://semiconductor.samsung.com/consumer-storage/support/tools/">tại đây</a></li><li>Disable SATA Hot-Plug trong bios</li><li>Đảm bảo ổ NVMe được đặt là NVMe trong bios</li></ul></li><li>NVRAM Failing:<ul><li>Đây là lỗi phổ biến trên các dòng HEDT hoặc trên các main 300 series<ul><li>Trên 300 series: tải và cài đặt SDT-PMC <a href="https://heavietnam.ga/2022/03/10/ssdt-recomend/">tại đây</a></li><li>HEDT thì các bạn sẽ Emulating NVRAM theo link <a href="https://heavietnam.ga/2022/04/09/emulated-nvram/">sau</a> (chỉ cần chỉnh config không cần chạy lệnh)</li></ul></li></ul></li></ul>
+<ul><li>Thiếu EC (cata+): <ul><li>Thêm SSDT-EC theo <a href="https://heavietnam.ga/2022/03/10/ssdt-recomend/">link</a></li><li>Bỏ SSDT-EC vào EFI --> OC --> ACPI và snaps (hoặc EFI --> Clover --> ACPI --> Patched)</li></ul></li><li>Xung đột IRQ: <ul><li>dump SSDT-HPET theo <a href="https://heavietnam.ga/2021/09/29/ii-patch-am-thanh-voi-apple-alc-with-patch-hpet/#Patch_Hpet_IRQ">link</a> </li></ul></li><li>PCI allocation issue:<ul><li>Update BIOS.</li><li>Bật Above4G trong bios. Nếu bios của bạn không có option này hãy add boot-arg <code>npci=0x2000</code> <ul><li>Các main X99 and X299 có thể yêu cầu cả ncpi boot-arg và Above4G trong bios</li><li>AMD CPU không đồng thời bật cả Above4G và NCPI trong boot-arg vì chúg sẽ xung đột</li><li>Đối với bios thế hệ 2020+ thì khi bật Above4G các bạn phải set Booter -&gt; Quirks -&gt; ResizeAppleGpuBars:0 vì Resizable BAR Support có thể sẽ trở nên khả dụng </li></ul></li><li>CSM disabled, Windows 8.1/10 UEFI Mode enabled.</li></ul></li><li>NVMe or SATA issue:<ul><li>không sử dụng Samsung PM981 or Micron 2200S NVMe SSD</li><li>cài đặt latest firmware cho Samsung 970 EVO Plus xem chi tiết <a href="https://semiconductor.samsung.com/consumer-storage/support/tools/">tại đây</a></li><li>Disable SATA Hot-Plug trong bios</li><li>Đảm bảo ổ NVMe được đặt là NVMe trong bios</li></ul></li><li>NVRAM Failing:<ul><li>Đây là lỗi phổ biến trên các dòng HEDT hoặc trên các main 300 series<ul><li>Trên 300 series: tải và cài đặt SDT-PMC <a href="https://heavietnam.ga/2022/03/10/ssdt-recomend/">tại đây</a></li><li>HEDT thì các bạn sẽ Emulating NVRAM theo link <a href="https://heavietnam.ga/2022/04/09/emulated-nvram/">sau</a> (chỉ cần chỉnh config không cần chạy lệnh)</li></ul></li></ul></li></ul>
 
 
 
@@ -1045,7 +1057,7 @@ sudo cp -a /usr/standalone/i386/. /System/Volumes/Preboot/CD844C38-1A25-48D5-938
 
 
 
-<ul><li>USB<ul><li>Map USB theo hướng dẫn <a href="https://heavietnam.ga/2021/09/29/vi-1map-usb-intel-and-amd/">tại đây</a></li><li><code>Kernel -> Quirks -> XhciPortLimit -> flase</code></li><li>1 vài lỗi khác có thể do firmware không truyền quyền điều khiển USB cho macOS.<ul><li><code>UEFI -> Quirks -> bạn có thể đổi port usb để khắc pục lỗi nàyeleaseUsbOwnership -> True</code></li><li>Hoặc bật XHCI Handoff</li></ul></li><li>Đôi khi việc đổi port usb cũng có thể giúp bạn khắc phục lỗi này</li><li>Đối với các cpu amd gen 15 và 16 thì cần add <a href="https://cdn.discordapp.com/attachments/566705665616117760/566728101292408877/XLNCUSBFix.kext.zip" target="_blank" rel="noreferrer noopener">XLNCUSBFix.kext</a><ul><li>Nếu như kext đó không hoạt động thì bạn có thể thử kext <a href="https://cdn.discordapp.com/attachments/249992304503291905/355235241645965312/StopSign-fixv5.zip" target="_blank" rel="noreferrer noopener">AMD StopSign-fixv5</a></li></ul></li><li>Ngoài ra hedt X299 cũng cần Enable Above4G Decoding</li><li>Thiếu USB port trong ACPI<ul><li>Các máy Intel các bạn sử dụng <a href="https://github.com/daliansky/OS-X-USB-Inject-All">usbinjectall</a></li><li>Còn đối với các CPU AMD thì bạn cần sử dụng SSDT-RHUB<ul><li>chọn <code>7.usb reset</code> trong SSDT-Time</li></ul></li></ul></li></ul></li><li>Sata issue:<ul><li>Xem chi tiết <a href="https://heavietnam.ga/2021/12/06/xxxxi-patch-sata-controller/">tại đây</a>.</li></ul></li></ul>
+<ul><li>USB<ul><li>Map USB theo hướng dẫn <a href="https://heavietnam.ga/2021/09/29/vi-1map-usb-intel-and-amd/">tại đây</a></li><li><code>Kernel -&gt; Quirks -&gt; XhciPortLimit -&gt; flase</code></li><li>1 vài lỗi khác có thể do firmware không truyền quyền điều khiển USB cho macOS.<ul><li><code>UEFI -&gt; Quirks -&gt; bạn có thể đổi port usb để khắc pục lỗi nàyeleaseUsbOwnership -&gt; True</code></li><li>Hoặc bật XHCI Handoff</li></ul></li><li>Đôi khi việc đổi port usb cũng có thể giúp bạn khắc phục lỗi này</li><li>Đối với các cpu amd gen 15 và 16 thì cần add <a href="https://cdn.discordapp.com/attachments/566705665616117760/566728101292408877/XLNCUSBFix.kext.zip" target="_blank" rel="noreferrer noopener">XLNCUSBFix.kext</a><ul><li>Nếu như kext đó không hoạt động thì bạn có thể thử kext <a href="https://cdn.discordapp.com/attachments/249992304503291905/355235241645965312/StopSign-fixv5.zip" target="_blank" rel="noreferrer noopener">AMD StopSign-fixv5</a></li></ul></li><li>Ngoài ra hedt X299 cũng cần Enable Above4G Decoding</li><li>Thiếu USB port trong ACPI<ul><li>Các máy Intel các bạn sử dụng <a href="https://github.com/daliansky/OS-X-USB-Inject-All">usbinjectall</a></li><li>Còn đối với các CPU AMD thì bạn cần sử dụng SSDT-RHUB<ul><li>chọn <code>7.usb reset</code> trong SSDT-Time</li></ul></li></ul></li></ul></li><li>Sata issue:<ul><li>Xem chi tiết <a href="https://heavietnam.ga/2021/12/06/xxxxi-patch-sata-controller/">tại đây</a>.</li></ul></li></ul>
 
 
 
@@ -1077,7 +1089,7 @@ sudo cp -a /usr/standalone/i386/. /System/Volumes/Preboot/CD844C38-1A25-48D5-938
 
 
 
-<ul><li>Thêm <code>agdpmod=pikera</code> add vào boot-arg</li><li>Thử thay đổi các display output khác.</li><li>Thử smbios MacPro7,1 với boot-arg <code>agdpmod=ignore</code></li><li>Đối với máy MSI thì bạn hãy add patch sau vào <code>Kernel -> Patch</code> (ở bigsur không yêu cầu bản vá này).</li></ul>
+<ul><li>Thêm <code>agdpmod=pikera</code> add vào boot-arg</li><li>Thử thay đổi các display output khác.</li><li>Thử smbios MacPro7,1&nbsp;với boot-arg <code>agdpmod=ignore</code></li><li>Đối với máy MSI thì bạn hãy add patch sau vào <code>Kernel -&gt; Patch</code> (ở bigsur không yêu cầu bản vá này).</li></ul>
 
 
 
@@ -1109,7 +1121,7 @@ Skip: 0</code></pre>
 
 
 
-<p>Thêm kext <a href="https://github.com/acidanthera/bugtracker/files/3703498/AppleMCEReporterDisabler.kext.zip" target="_blank" rel="noreferrer noopener">AppleMCEReporterDisabler</a> vào EFI &#8211;> OC &#8211;> Kext hoặc EFI &#8211;> Clover &#8211;> kext &#8211;> other (snaps nếu ở OpenCore).</p>
+<p>Thêm kext <a href="https://github.com/acidanthera/bugtracker/files/3703498/AppleMCEReporterDisabler.kext.zip" target="_blank" rel="noreferrer noopener">AppleMCEReporterDisabler</a> vào EFI --> OC --> Kext hoặc EFI --> Clover --> kext --> other (snaps nếu ở OpenCore).</p>
 
 
 
@@ -1148,7 +1160,7 @@ Replace	Data	A40A0FA3A3A3A3A3</code></pre>
 
 
 
-<p>Thêm kext <a href="https://github.com/lvs1974/CpuTscSync" target="_blank" rel="noreferrer noopener">CpuTscSync</a> vào EFI &#8211;> OC &#8211;> kext hoặc EFI &#8211;> Clover &#8211;> kext &#8211;> other (snaps nếu là OpenCore).</p>
+<p>Thêm kext <a href="https://github.com/lvs1974/CpuTscSync" target="_blank" rel="noreferrer noopener">CpuTscSync</a> vào EFI --> OC --> kext hoặc EFI --> Clover --> kext --> other (snaps nếu là OpenCore).</p>
 
 
 
@@ -1176,7 +1188,7 @@ Replace	Data	A40A0FA3A3A3A3A3</code></pre>
 
 
 
-<ul><li><a href="https://github.com/acidanthera/Lilu/releases">Lilu</a> và <a href="https://github.com/acidanthera/VirtualSMC/releases">VirtualSMC</a> trong EFI &#8211;> OC &#8211;> kext hoặc EFI &#8211;> Clover &#8211;> kext &#8211;> other (snaps nếu là OpenCore)</li><li>Nếu không được hãy thử sử dụng <a href="https://bitbucket.org/RehabMan/os-x-fakesmc-kozlek/downloads/">Fake-SMC</a> (không sử dụng cả 2 fake-smc và VirtualSMC)</li></ul>
+<ul><li><a href="https://github.com/acidanthera/Lilu/releases">Lilu</a> và <a href="https://github.com/acidanthera/VirtualSMC/releases">VirtualSMC</a> trong EFI --> OC --> kext hoặc EFI --> Clover --> kext --> other (snaps nếu là OpenCore)</li><li>Nếu không được hãy thử sử dụng <a href="https://bitbucket.org/RehabMan/os-x-fakesmc-kozlek/downloads/">Fake-SMC</a> (không sử dụng cả 2 fake-smc và VirtualSMC)</li></ul>
 
 
 
@@ -1192,7 +1204,7 @@ Replace	Data	A40A0FA3A3A3A3A3</code></pre>
 
 
 
-<p>Bạn cũng có thể sử dụng <a href="https://github.com/acidanthera/gfxutil/releases" target="_blank" rel="noreferrer noopener">gfxutil</a> để tìm PciRoot của card ethernet 1 cách thủ công:</p>
+<p>Bạn cũng có thể sử dụng&nbsp;<a href="https://github.com/acidanthera/gfxutil/releases" target="_blank" rel="noreferrer noopener">gfxutil</a> để tìm PciRoot của card ethernet 1 cách thủ công:</p>
 
 
 
@@ -1274,11 +1286,31 @@ Replace	Data	A40A0FA3A3A3A3A3</code></pre>
 
 
 
-<ul><li>Map usb theo link <a href="https://heavietnam.ga/2021/09/29/vi-1map-usb-intel-and-amd/">tại đây</a></li><li>Tắt <code>XhciPortLimit</code> ở  <code>Kernel -&gt; Quirks</code> (ở 11.3+)</li></ul>
+<ul><li>Map usb theo link <a href="https://heavietnam.ga/2021/09/29/vi-1map-usb-intel-and-amd/">tại đây</a></li><li>Tắt <code>XhciPortLimit</code> ở  <code>Kernel -> Quirks</code> (ở 11.3+)</li></ul>
 
 
 
-<p><strong>Lưu ý: Tuy bài viết này dựa trên cách fix lỗi cho opencore. nhưng người dùng cloverr vẫn có thể áp dụng cách đọc lỗi và nguyên nhân dẫn đến lỗi vì về bản chất thì nguyên nhân dẫn đến lỗi của opencore và oc là giống nhau</strong></p>
+<h2>OC: Prelinked injection USBInjectAll.kext (USBInjectAll.kext) &#8211; Invalid Parameter</h2>
+
+
+
+<p>Convert usb injectall về version 2018 của rehabman <a href="https://bitbucket.org/RehabMan/os-x-usb-inject-all/downloads/RehabMan-USBInjectAll-2018-1108.zip">tại đây</a></p>
+
+
+
+<h2>Stuck on <code>CpuTscSync</code></h2>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://i.imgur.com/YtYrwMa.jpg" alt=""/></figure>
+
+
+
+<p>Hãy xóa kext CpuTscSync đi sau đó (snaps nếu là opencore)  reboot</p>
+
+
+
+<p><strong>Lưu ý: Tuy bài viết này dựa trên cách fix lỗi cho opencore. nhưng người dùng clover vẫn có thể áp dụng cách đọc lỗi và nguyên nhân dẫn đến lỗi vì về bản chất thì nguyên nhân dẫn đến lỗi của opencore và oc là giống nhau</strong></p>
 
 
 
